@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Phantom - Walkthrough | My Blog</title>
+<meta property="og:title" content="Phantom - Walkthrough | My Blog" />
+<meta name="twitter:title" content="Phantom - Walkthrough | My Blog" />
+<meta itemprop="name" content="Phantom - Walkthrough | My Blog" />
+<meta name="application-name" content="Phantom - Walkthrough | My Blog" />
+<meta property="og:site_name" content="My Blog" />
+
+<meta name="description" content="Walkthrough for Phantom machine.">
+<meta itemprop="description" content="Walkthrough for Phantom machine." />
+<meta property="og:description" content="Walkthrough for Phantom machine." />
+<meta name="twitter:description" content="Walkthrough for Phantom machine." />
+
+<meta property="og:locale" content="en-US" />
+<meta name="language" content="en-US" />
+
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/posts/hmv/phantom/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2026-07-03T00:00:00Z />
+    <meta property="article:published_time" content=2026-07-03T00:00:00Z />
+    <meta property="og:url" content="https://nvru.github.io/posts/hmv/phantom/" />
+
+    
+    <meta property="og:article:author" content="null void root" />
+    <meta property="article:author" content="null void root" />
+    <meta name="author" content="null void root" />
+    
+    
+
+    
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Phantom - Walkthrough",
+        "author": {
+        "@type": "Person",
+        "name": "null void root"
+        },
+        "datePublished": "2026-07-03",
+        "description": "Walkthrough for Phantom machine.",
+        "wordCount":  648 ,
+        "mainEntityOfPage": "https://nvru.github.io/posts/hmv/phantom/",
+        "dateModified": "2026-07-03",
+        "image": {
+        "@type": "ImageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "My Blog"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.163.3">
+
+    
+    <meta property="og:url" content="https://nvru.github.io/posts/hmv/phantom/">
+	<meta property="og:site_name" content="My Blog">
+	<meta property="og:title" content="Phantom - Walkthrough">
+	<meta property="og:description" content="Walkthrough for Phantom machine.">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-07-03T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-03T00:00:00+00:00">
+		<meta property="article:tag" content="Ctf">
+		<meta property="article:tag" content="Walkthrough">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Web">
+		<meta property="article:tag" content="Privilege-Escalation">
+
+
+    
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Phantom - Walkthrough">
+	<meta name="twitter:description" content="Walkthrough for Phantom machine.">
+
+
+    
+
+    <link rel="canonical" href="https://nvru.github.io/posts/hmv/phantom/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://nvru.github.io/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+    <meta name="color-scheme" content="light dark">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://nvru.github.io/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Phantom - Walkthrough</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-07-03T00:00:00&#43;00:00" itemprop="datePublished"> 3 Jul 2026 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#target-information">Target Information</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#port-scanning">Port Scanning</a>
+      <ul>
+        <li><a href="#nmap-results">Nmap Results</a></li>
+        <li><a href="#ssh">SSH</a></li>
+        <li><a href="#http">HTTP</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#copy-fail">Copy-Fail</a></li>
+    <li><a href="#dirty-frag">Dirty Frag</a></li>
+    <li><a href="#copy-fail-c-implementation">Copy-Fail (C Implementation)</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p><img src="/images/phantom/vm.png" alt="VM"></p>
+<h2 id="target-information">Target Information</h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.162.21.142</code></li>
+<li><strong>Target Machine:</strong> <code>10.162.21.86</code></li>
+</ul>
+<hr>
+<h1 id="enumeration">Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.162.21.86 -- -A -oN nmap/rust
+</span></span></code></pre></div><h3 id="nmap-results">Nmap Results</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE REASON         VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     syn-ack ttl 64 OpenSSH 8.4p1 Debian 5+deb11u3 (protocol 2.0)
+</span></span><span style="display:flex;"><span>80/tcp open  http    syn-ack ttl 64 nginx 1.14.2
+</span></span></code></pre></div><h3 id="ssh">SSH</h3>
+<ul>
+<li>OpenSSH <code>8.4p1</code></li>
+<li>Debian <code>5+deb11u3</code></li>
+</ul>
+<h3 id="http">HTTP</h3>
+<ul>
+<li><strong>Server:</strong> <code>nginx/1.14.2</code></li>
+<li><strong>Title:</strong> <code>MazeSec | 迷踪安全</code></li>
+</ul>
+<hr>
+<h1 id="web-enumeration">Web Enumeration</h1>
+<p>The website did not reveal much useful information during the initial assessment.</p>
+<p><img src="/images/phantom/port_80_nginx.png" alt="Web"></p>
+<p>Several names appeared throughout the website, so I noted them as potential usernames for future login attempts</p>
+<p><img src="/images/phantom/about_hidden.png" alt="About Hidden"></p>
+<p>The <strong>About</strong> page also contained another image that looked worth investigating.</p>
+<hr>
+<h1 id="steganography">Steganography</h1>
+<p>Since the web application offered very little attack surface, I decided to inspect the available images for hidden content.</p>
+<p><img src="/images/phantom/stego_cat.png" alt="Cat Image"></p>
+<p>The first extraction revealed another embedded file.</p>
+<p><img src="/images/phantom/stego_part1.png" alt="Stego Stage 1"></p>
+<p>Extracting the second layer exposed yet another archive.</p>
+<p><img src="/images/phantom/stego_part2.png" alt="Stego Stage 2"></p>
+<p>Finally, the last extraction produced a QR code along with another hidden file.</p>
+<p>The QR code did not lead to any additional useful information</p>
+<p>Further analysis revealed another password-protected object hidden inside <code>666.jpg</code>.</p>
+<p>Using one of the names discovered on the website as the password successfully decrypted the archive and revealed:</p>
+<p><img src="/images/phantom/stego_part3.png" alt="666 File"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>11104567
+</span></span></code></pre></div><p>This value later proved to be an important clue.</p>
+<hr>
+<h1 id="host-discovery">Host Discovery</h1>
+<p>The extracted information suggested the existence of a virtual host.</p>
+<p>After adding the hostname to <code>/etc/hosts</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/hosts
+</span></span></code></pre></div><p><img src="/images/phantom/etc_hosts.png" alt="Hosts File"></p>
+<p>The hostname resolved successfully, exposing a different web application.</p>
+<hr>
+<h1 id="login-page">Login Page</h1>
+<p>Browsing to the newly discovered virtual host presented a login portal.</p>
+<p><img src="/images/phantom/login_page.png" alt="Login Page"></p>
+<p>Since no credentials were available, the next step was attempting account registration.</p>
+<hr>
+<h1 id="registration">Registration</h1>
+<p>Attempting to register required entering a PIN before an account could be created.</p>
+<p><img src="/images/phantom/register.png" alt="Registration"></p>
+<hr>
+<h1 id="directory-brute-force">Directory Brute Force</h1>
+<p>During enumeration, I performed directory brute forcing against the application, which revealed an internal file containing sensitive information.</p>
+<p><img src="/images/phantom/token_db.png" alt="Database Token"></p>
+<p>The discovered file exposed an internal token (<code>token_db</code>), which was later used during the registration process.</p>
+<p>After entering the correct PIN, registration was successfully completed.</p>
+<p><img src="/images/phantom/token_sqlit3.png" alt="PIN"></p>
+<hr>
+<h1 id="user-access">User Access</h1>
+<p>After logging in, the user dashboard became accessible.</p>
+<p><img src="/images/phantom/user_access_web.png" alt="User Dashboard"></p>
+<p>At first glance, nothing appeared particularly useful, so I began inspecting the application&rsquo;s requests using Burp Suite.</p>
+<hr>
+<h1 id="jwt--token-manipulation">JWT / Token Manipulation</h1>
+<p>After exploring the application, no obvious vulnerabilities were found. Since authentication relied on a JWT, I inspected the token using <strong>jwt.io</strong>.</p>
+<p>The payload contained user-related information that appeared suitable for privilege escalation.</p>
+<p><img src="/images/phantom/jwt_io.png" alt="JWT"></p>
+<p>I modified the token to impersonate an administrator. Before forwarding the request, the application required an additional password to validate the modified JWT.</p>
+<p>After brute-forcing the password, I recovered:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>6jlRvvwpO4
+</span></span></code></pre></div><p><img src="/images/phantom/brute_force_jwt.png" alt="Brute Force"></p>
+<p>With the correct password supplied, I replayed the request through Burp Suite.</p>
+<hr>
+<h1 id="administrator-access">Administrator Access</h1>
+<p>Although the modified JWT was accepted, access to the administrator panel was still denied.</p>
+<p><img src="/images/phantom/access_denied_web.png" alt="Access Denied"></p>
+<p>The admin panel enforced a localhost restriction, likely via the X-Forwarded-For header. Modifying this header in Burp Suite allowed bypassing the restriction</p>
+<p><img src="/images/phantom/burp_forward.png" alt="Burp Forward"></p>
+<p><img src="/images/phantom/admin_access.png" alt="Administrator Access"></p>
+<p>One of the administrator features exposed an <strong>arbitrary file read</strong> vulnerability through the <code>file_path</code> parameter. Since it accepted absolute file paths without validation, it was possible to read arbitrary files from the target system.</p>
+<p>Using this functionality, I retrieved <code>/etc/passwd</code>.</p>
+<p><img src="/images/phantom/burp_passwd.png" alt="Reading /etc/passwd"></p>
+<p>Inspecting <code>/etc/passwd</code> revealed the local user <code>12138</code> along with a partially masked password:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>To***21**
+</span></span></code></pre></div><p>Earlier during reconnaissance, I had noted several names mentioned throughout the website as potential usernames. Combining one of those names, <strong>Todd</strong>, with the masked password pattern and the username identified in <code>/etc/passwd</code> resulted in the credential <code>Todd12138</code>.</p>
+<p>These credentials were then used to authenticate successfully over SSH as <code>12138</code>.</p>
+<p><img src="/images/phantom/ssh_as_12138.png" alt="SSH Access"></p>
+<hr>
+<h1 id="privilege-escalation">Privilege Escalation</h1>
+<p>The target was running an outdated Linux kernel, making it potentially vulnerable to public privilege escalation exploits</p>
+<h2 id="copy-fail">Copy-Fail</h2>
+<ul>
+<li><a href="https://copy.fail/">https://copy.fail/</a></li>
+</ul>
+<p>The first exploit attempted was Copy-Fail.</p>
+<p><img src="/images/phantom/copy_fail.png" alt="Copy-Fail"></p>
+<p>Unfortunately, the original exploit failed.</p>
+<h2 id="dirty-frag">Dirty Frag</h2>
+<ul>
+<li><a href="https://github.com/v4bel/dirtyfrag">https://github.com/v4bel/dirtyfrag</a></li>
+</ul>
+<p>Next, I attempted the Dirty Frag exploit.</p>
+<p>The public exploit also failed against this target.</p>
+<h2 id="copy-fail-c-implementation">Copy-Fail (C Implementation)</h2>
+<ul>
+<li><a href="https://github.com/tgies/copy-fail-c.git">https://github.com/tgies/copy-fail-c.git</a></li>
+</ul>
+<p>Finally, I used a C implementation of the Copy-Fail exploit.</p>
+<p><img src="/images/phantom/copy_fail_c.png" alt="Copy-Fail C"></p>
+<p>This version successfully exploited the vulnerable kernel and provided a root shell.</p>
+<hr>
+<h1 id="user-flag">User Flag</h1>
+<p>The user flag was located inside the user&rsquo;s home directory.</p>
+<p><img src="/images/phantom/find_user_flag.png" alt="User Flag"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>flag{user-e962b914ff98c867373b60d34943b8f7}
+</span></span></code></pre></div><hr>
+<h1 id="root-flag">Root Flag</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>flag{root-2bd1dc759be8c8940e35569092e7dac2}
+</span></span></code></pre></div>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://codeberg.org/vru" target="_blank" rel="noopener noreferrer me"
+    title="Codeberg">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+ <g transform="translate(2.4, 2.4) scale(0.8)">
+  <path d="M11.955.49A12 12 0 0 0 0 12.49a12 12 0 0 0 1.832 6.373L11.838 5.928a.187.14 0 0 1 .324 0l10.006 12.935A12 12 0 0 0 24 12.49a12 12 0 0 0-12-12 12 12 0 0 0-.045 0zm.375 6.467 4.416 16.553a12 12 0 0 0 5.137-4.213z"/>
+ </g>
+</svg>
+</a>
+<a href="https://github.com/nvru" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://linkedin.com/in/abdullah-keitut-880a09385" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2026 null void root.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script src="https://nvru.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>

