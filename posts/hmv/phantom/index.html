@@ -53,7 +53,7 @@
         },
         "datePublished": "2026-07-03",
         "description": "Walkthrough for Phantom machine.",
-        "wordCount":  648 ,
+        "wordCount":  657 ,
         "mainEntityOfPage": "https://nvru.github.io/posts/hmv/phantom/",
         "dateModified": "2026-07-03",
         "image": {
@@ -97,7 +97,7 @@
     
 
     <link rel="canonical" href="https://nvru.github.io/posts/hmv/phantom/">
-    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/style.min.e390ba7da26222f4dc42a349955d76dbbe44e5ce2535a43de5a70633a0a9ec3c.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
     
@@ -207,35 +207,50 @@ stroke-linejoin="round" class="feather feather-home">
         <nav id="TableOfContents">
   <ul>
     <li><a href="#target-information">Target Information</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#port-scanning">Port Scanning</a>
+    <li><a href="#enumeration">Enumeration</a>
       <ul>
+        <li><a href="#port-scanning">Port Scanning</a></li>
         <li><a href="#nmap-results">Nmap Results</a></li>
         <li><a href="#ssh">SSH</a></li>
         <li><a href="#http">HTTP</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#copy-fail">Copy-Fail</a></li>
-    <li><a href="#dirty-frag">Dirty Frag</a></li>
-    <li><a href="#copy-fail-c-implementation">Copy-Fail (C Implementation)</a></li>
+    <li><a href="#web-enumeration">Web Enumeration</a></li>
+    <li><a href="#steganography">Steganography</a></li>
+    <li><a href="#host-discovery">Host Discovery</a></li>
+    <li><a href="#login-page">Login Page</a></li>
+    <li><a href="#registration">Registration</a></li>
+    <li><a href="#directory-brute-force">Directory Brute Force</a></li>
+    <li><a href="#user-access">User Access</a></li>
+    <li><a href="#jwt--token-manipulation">JWT / Token Manipulation</a></li>
+    <li><a href="#administrator-access">Administrator Access</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a>
+      <ul>
+        <li><a href="#copy-fail">Copy-Fail</a></li>
+        <li><a href="#dirty-frag">Dirty Frag</a></li>
+        <li><a href="#copy-fail-c-implementation">Copy-Fail (C Implementation)</a></li>
+      </ul>
+    </li>
+    <li><a href="#flags">Flags</a>
+      <ul>
+        <li><a href="#user-flag">User Flag</a></li>
+        <li><a href="#root-flag">Root Flag</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </details>
             <div class="page-content">
                 <p><img src="/images/phantom/vm.png" alt="VM"></p>
+<hr>
 <h2 id="target-information">Target Information</h2>
 <ul>
 <li><strong>Attacker IP:</strong> <code>10.162.21.142</code></li>
 <li><strong>Target Machine:</strong> <code>10.162.21.86</code></li>
 </ul>
 <hr>
-<h1 id="enumeration">Enumeration</h1>
-<h2 id="port-scanning">Port Scanning</h2>
+<h2 id="enumeration">Enumeration</h2>
+<h3 id="port-scanning">Port Scanning</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.162.21.86 -- -A -oN nmap/rust
 </span></span></code></pre></div><h3 id="nmap-results">Nmap Results</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE REASON         VERSION
@@ -252,14 +267,14 @@ stroke-linejoin="round" class="feather feather-home">
 <li><strong>Title:</strong> <code>MazeSec | 迷踪安全</code></li>
 </ul>
 <hr>
-<h1 id="web-enumeration">Web Enumeration</h1>
+<h2 id="web-enumeration">Web Enumeration</h2>
 <p>The website did not reveal much useful information during the initial assessment.</p>
 <p><img src="/images/phantom/port_80_nginx.png" alt="Web"></p>
-<p>Several names appeared throughout the website, so I noted them as potential usernames for future login attempts</p>
+<p>Several names appeared throughout the website. Since SSH was exposed, I noted them as potential usernames for later attacks.</p>
 <p><img src="/images/phantom/about_hidden.png" alt="About Hidden"></p>
 <p>The <strong>About</strong> page also contained another image that looked worth investigating.</p>
 <hr>
-<h1 id="steganography">Steganography</h1>
+<h2 id="steganography">Steganography</h2>
 <p>Since the web application offered very little attack surface, I decided to inspect the available images for hidden content.</p>
 <p><img src="/images/phantom/stego_cat.png" alt="Cat Image"></p>
 <p>The first extraction revealed another embedded file.</p>
@@ -267,42 +282,40 @@ stroke-linejoin="round" class="feather feather-home">
 <p>Extracting the second layer exposed yet another archive.</p>
 <p><img src="/images/phantom/stego_part2.png" alt="Stego Stage 2"></p>
 <p>Finally, the last extraction produced a QR code along with another hidden file.</p>
-<p>The QR code did not lead to any additional useful information</p>
+<p>The QR code did not lead to any additional useful information.</p>
 <p>Further analysis revealed another password-protected object hidden inside <code>666.jpg</code>.</p>
-<p>Using one of the names discovered on the website as the password successfully decrypted the archive and revealed:</p>
+<p>Using one of the names discovered on the website as the password (<strong>11104567</strong>) successfully decrypted the archive and revealed:</p>
 <p><img src="/images/phantom/stego_part3.png" alt="666 File"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>11104567
-</span></span></code></pre></div><p>This value later proved to be an important clue.</p>
+<p>This value later proved to be an important clue during the exploitation phase.</p>
 <hr>
-<h1 id="host-discovery">Host Discovery</h1>
+<h2 id="host-discovery">Host Discovery</h2>
 <p>The extracted information suggested the existence of a virtual host.</p>
 <p>After adding the hostname to <code>/etc/hosts</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/hosts
 </span></span></code></pre></div><p><img src="/images/phantom/etc_hosts.png" alt="Hosts File"></p>
 <p>The hostname resolved successfully, exposing a different web application.</p>
 <hr>
-<h1 id="login-page">Login Page</h1>
+<h2 id="login-page">Login Page</h2>
 <p>Browsing to the newly discovered virtual host presented a login portal.</p>
 <p><img src="/images/phantom/login_page.png" alt="Login Page"></p>
 <p>Since no credentials were available, the next step was attempting account registration.</p>
 <hr>
-<h1 id="registration">Registration</h1>
+<h2 id="registration">Registration</h2>
 <p>Attempting to register required entering a PIN before an account could be created.</p>
 <p><img src="/images/phantom/register.png" alt="Registration"></p>
 <hr>
-<h1 id="directory-brute-force">Directory Brute Force</h1>
-<p>During enumeration, I performed directory brute forcing against the application, which revealed an internal file containing sensitive information.</p>
+<h2 id="directory-brute-force">Directory Brute Force</h2>
+<p>While investigating the backend, I also discovered an internal application token.</p>
 <p><img src="/images/phantom/token_db.png" alt="Database Token"></p>
-<p>The discovered file exposed an internal token (<code>token_db</code>), which was later used during the registration process.</p>
-<p>After entering the correct PIN, registration was successfully completed.</p>
+<p>After entering the correct PIN, registration completed successfully and a normal user account was created.</p>
 <p><img src="/images/phantom/token_sqlit3.png" alt="PIN"></p>
 <hr>
-<h1 id="user-access">User Access</h1>
+<h2 id="user-access">User Access</h2>
 <p>After logging in, the user dashboard became accessible.</p>
 <p><img src="/images/phantom/user_access_web.png" alt="User Dashboard"></p>
 <p>At first glance, nothing appeared particularly useful, so I began inspecting the application&rsquo;s requests using Burp Suite.</p>
 <hr>
-<h1 id="jwt--token-manipulation">JWT / Token Manipulation</h1>
+<h2 id="jwt--token-manipulation">JWT / Token Manipulation</h2>
 <p>After exploring the application, no obvious vulnerabilities were found. Since authentication relied on a JWT, I inspected the token using <strong>jwt.io</strong>.</p>
 <p>The payload contained user-related information that appeared suitable for privilege escalation.</p>
 <p><img src="/images/phantom/jwt_io.png" alt="JWT"></p>
@@ -312,10 +325,10 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></code></pre></div><p><img src="/images/phantom/brute_force_jwt.png" alt="Brute Force"></p>
 <p>With the correct password supplied, I replayed the request through Burp Suite.</p>
 <hr>
-<h1 id="administrator-access">Administrator Access</h1>
+<h2 id="administrator-access">Administrator Access</h2>
 <p>Although the modified JWT was accepted, access to the administrator panel was still denied.</p>
 <p><img src="/images/phantom/access_denied_web.png" alt="Access Denied"></p>
-<p>The admin panel enforced a localhost restriction, likely via the X-Forwarded-For header. Modifying this header in Burp Suite allowed bypassing the restriction</p>
+<p>Further testing revealed that administrator functionality was restricted to requests originating from <code>localhost</code> (<code>127.0.0.1</code>). By intercepting the request in Burp Suite and modifying the required headers, I was able to bypass this restriction and gain access to the administrator panel.</p>
 <p><img src="/images/phantom/burp_forward.png" alt="Burp Forward"></p>
 <p><img src="/images/phantom/admin_access.png" alt="Administrator Access"></p>
 <p>One of the administrator features exposed an <strong>arbitrary file read</strong> vulnerability through the <code>file_path</code> parameter. Since it accepted absolute file paths without validation, it was possible to read arbitrary files from the target system.</p>
@@ -327,22 +340,22 @@ stroke-linejoin="round" class="feather feather-home">
 <p>These credentials were then used to authenticate successfully over SSH as <code>12138</code>.</p>
 <p><img src="/images/phantom/ssh_as_12138.png" alt="SSH Access"></p>
 <hr>
-<h1 id="privilege-escalation">Privilege Escalation</h1>
-<p>The target was running an outdated Linux kernel, making it potentially vulnerable to public privilege escalation exploits</p>
-<h2 id="copy-fail">Copy-Fail</h2>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
+<p>The target kernel was significantly outdated, making it a good candidate for publicly available local privilege escalation exploits.</p>
+<h3 id="copy-fail">Copy-Fail</h3>
 <ul>
 <li><a href="https://copy.fail/">https://copy.fail/</a></li>
 </ul>
 <p>The first exploit attempted was Copy-Fail.</p>
 <p><img src="/images/phantom/copy_fail.png" alt="Copy-Fail"></p>
 <p>Unfortunately, the original exploit failed.</p>
-<h2 id="dirty-frag">Dirty Frag</h2>
+<h3 id="dirty-frag">Dirty Frag</h3>
 <ul>
 <li><a href="https://github.com/v4bel/dirtyfrag">https://github.com/v4bel/dirtyfrag</a></li>
 </ul>
 <p>Next, I attempted the Dirty Frag exploit.</p>
 <p>The public exploit also failed against this target.</p>
-<h2 id="copy-fail-c-implementation">Copy-Fail (C Implementation)</h2>
+<h3 id="copy-fail-c-implementation">Copy-Fail (C Implementation)</h3>
 <ul>
 <li><a href="https://github.com/tgies/copy-fail-c.git">https://github.com/tgies/copy-fail-c.git</a></li>
 </ul>
@@ -350,12 +363,12 @@ stroke-linejoin="round" class="feather feather-home">
 <p><img src="/images/phantom/copy_fail_c.png" alt="Copy-Fail C"></p>
 <p>This version successfully exploited the vulnerable kernel and provided a root shell.</p>
 <hr>
-<h1 id="user-flag">User Flag</h1>
+<h2 id="flags">Flags</h2>
+<h3 id="user-flag">User Flag</h3>
 <p>The user flag was located inside the user&rsquo;s home directory.</p>
 <p><img src="/images/phantom/find_user_flag.png" alt="User Flag"></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>flag{user-e962b914ff98c867373b60d34943b8f7}
-</span></span></code></pre></div><hr>
-<h1 id="root-flag">Root Flag</h1>
+</span></span></code></pre></div><h3 id="root-flag">Root Flag</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>flag{root-2bd1dc759be8c8940e35569092e7dac2}
 </span></span></code></pre></div>
             </div>
@@ -398,15 +411,8 @@ stroke-linejoin="round" class="feather feather-home">
         © 2026 null void root.
         Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
     </small>
-</footer><a href="#" title="Go to top" id="totop">
-    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
-    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
-</svg>
+</footer>
 
-</a>
-
-
-    
 
 
 
@@ -414,7 +420,7 @@ stroke-linejoin="round" class="feather feather-home">
 
 
     
-    <script src="https://nvru.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+    <script src="https://nvru.github.io/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js" integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script>
 
     
 

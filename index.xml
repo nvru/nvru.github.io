@@ -6,7 +6,39 @@
     <description>Recent content on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Suidy - Walkthrough</title>
+      <link>https://nvru.github.io/posts/hmv/suidy/</link>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/posts/hmv/suidy/</guid>
+      
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; 10.10.10.2&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; 10.10.10.8&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The objective was to enumerate the target, identify exposed services, and escalate privileges.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
+&lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.8 -- -oA nmap/rust
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;open-ports&#34;&gt;Open Ports&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Open 10.10.10.8:22
+Open 10.10.10.8:80
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h3 id=&#34;nmap-scan&#34;&gt;Nmap Scan&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -sSCV -p22,80 10.10.10.8 -A -oA nmap/22_80
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2
+80/tcp open  http    nginx 1.14.2
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&#34;web-enumeration-port-80&#34;&gt;Web Enumeration (Port 80)&lt;/h2&gt;
+&lt;p&gt;The web server returned a very minimal page:&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Phantom - Walkthrough</title>
       <link>https://nvru.github.io/posts/hmv/phantom/</link>
@@ -15,14 +47,15 @@
       <guid>https://nvru.github.io/posts/hmv/phantom/</guid>
       
       <description>&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/phantom/vm.png&#34; alt=&#34;VM&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;target-information&#34;&gt;Target Information&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.162.21.142&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Target Machine:&lt;/strong&gt; &lt;code&gt;10.162.21.86&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h1&gt;
-&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
+&lt;h2 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h2&gt;
+&lt;h3 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.162.21.86 -- -A -oN nmap/rust
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;nmap-results&#34;&gt;Nmap Results&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT   STATE SERVICE REASON         VERSION
@@ -39,7 +72,7 @@
 &lt;li&gt;&lt;strong&gt;Title:&lt;/strong&gt; &lt;code&gt;MazeSec | 迷踪安全&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;web-enumeration&#34;&gt;Web Enumeration&lt;/h1&gt;
+&lt;h2 id=&#34;web-enumeration&#34;&gt;Web Enumeration&lt;/h2&gt;
 &lt;p&gt;The website did not reveal much useful information during the initial assessment.&lt;/p&gt;</description>
       
     </item>
