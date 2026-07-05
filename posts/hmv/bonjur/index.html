@@ -158,8 +158,22 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link active" href="/posts/">
-                        Posts
+                    <a class="menu-link active" href="/posts/hmv/">
+                        HMV
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/posts/htb/">
+                        HTB
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/posts/thm/">
+                        THM
                     </a>
                     
                 </li>
@@ -240,7 +254,7 @@ stroke-linejoin="round" class="feather feather-home">
 </nav>
     </details>
             <div class="page-content">
-                <p><img src="/images/bonjur/vm.png" alt="VM"></p>
+                <p><img src="/images/hmv/bonjur/vm.png" alt="VM"></p>
 <h2 id="target-information">Target Information</h2>
 <table>
 	<thead>
@@ -331,10 +345,10 @@ stroke-linejoin="round" class="feather feather-home">
 <p>Using Python, I changed the effective UID to <code>0</code> and spawned a root shell:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/bin/python3.13 -c <span style="color:#e6db74">&#39;import os; os.setuid(0); os.execl(&#34;/bin/sh&#34;, &#34;sh&#34;)&#39;</span>
 </span></span></code></pre></div><p>This successfully provided a root shell.</p>
-<p><img src="/images/bonjur/find_cap.png" alt="Privilege Escalation"></p>
+<p><img src="/images/hmv/bonjur/find_cap.png" alt="Privilege Escalation"></p>
 <h2 id="root">Root</h2>
 <p>With root privileges obtained, I was able to read the root flag.</p>
-<p><img src="/images/bonjur/root.png" alt="Root"></p>
+<p><img src="/images/hmv/bonjur/root.png" alt="Root"></p>
 <hr>
 <h1 id="credentials">Credentials</h1>
 <h2 id="ssh">SSH</h2>

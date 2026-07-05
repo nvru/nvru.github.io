@@ -158,8 +158,22 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link active" href="/posts/">
-                        Posts
+                    <a class="menu-link active" href="/posts/hmv/">
+                        HMV
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/posts/htb/">
+                        HTB
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/posts/thm/">
+                        THM
                     </a>
                     
                 </li>
@@ -255,7 +269,7 @@ stroke-linejoin="round" class="feather feather-home">
     </details>
             <div class="page-content">
                 <h2 id="target-information">Target Information</h2>
-<p><img src="/images/darkside/darkside_vm.png" alt="The DarkSide VM"></p>
+<p><img src="/images/hmv/darkside/darkside_vm.png" alt="The DarkSide VM"></p>
 <table>
 	<thead>
 			<tr>
@@ -313,18 +327,18 @@ stroke-linejoin="round" class="feather feather-home">
 <h1 id="enumeration">Enumeration</h1>
 <h2 id="http-port-80">HTTP (Port 80)</h2>
 <p>The web application presents a regular login page.</p>
-<p><img src="/images/darkside/http.png" alt="HTTP Login Page"></p>
+<p><img src="/images/hmv/darkside/http.png" alt="HTTP Login Page"></p>
 <h3 id="source-code">Source Code</h3>
 <p>Nothing particularly interesting was found in the page source.</p>
-<p><img src="/images/darkside/src_http.png" alt="HTTP Source Code"></p>
+<p><img src="/images/hmv/darkside/src_http.png" alt="HTTP Source Code"></p>
 <p>The highlighted (red) text in the page source contains request parameters that may be useful for later brute-force attack</p>
 <hr>
 <h2 id="directory-brute-force">Directory Brute Force</h2>
 <p>After brute-forcing directories, a hidden directory was discovered.</p>
-<p><img src="/images/darkside/dir_brute_force.png" alt="Directory Brute Force"></p>
+<p><img src="/images/hmv/darkside/dir_brute_force.png" alt="Directory Brute Force"></p>
 <p>Only a single file existed inside the directory.</p>
-<p><img src="/images/darkside/backup_dir.png" alt="Back Directory"></p>
-<p><img src="/images/darkside/users_vote.png" alt="Users Vote"></p>
+<p><img src="/images/hmv/darkside/backup_dir.png" alt="Back Directory"></p>
+<p><img src="/images/hmv/darkside/users_vote.png" alt="Users Vote"></p>
 <hr>
 <h2 id="login-brute-force">Login Brute Force</h2>
 <p>The usernames discovered from the web application were used during brute-forcing.</p>
@@ -365,19 +379,19 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></code></pre></div><h3 id="credentials-found">Credentials Found</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: kevin
 </span></span><span style="display:flex;"><span>Password: iloveyou
-</span></span></code></pre></div><p><img src="/images/darkside/kevin_web_pass.png" alt="Kevin Web Password"></p>
+</span></span></code></pre></div><p><img src="/images/hmv/darkside/kevin_web_pass.png" alt="Kevin Web Password"></p>
 <hr>
 <h1 id="web-access">Web Access</h1>
 <p>Successfully logged into the web application as <strong>kevin</strong>.</p>
-<p><img src="/images/darkside/logged_in.png" alt="Logged In"></p>
+<p><img src="/images/hmv/darkside/logged_in.png" alt="Logged In"></p>
 <p>A string was discovered that was encoded twice:</p>
 <ol>
 <li>Base58</li>
 <li>Base64</li>
 </ol>
-<p><img src="/images/darkside/convert_base.png" alt="Convert "></p>
+<p><img src="/images/hmv/darkside/convert_base.png" alt="Convert "></p>
 <p>After decoding both layers, nothing immediately useful was revealed.</p>
-<p><img src="/images/darkside/which_side.png" alt="Which Side"></p>
+<p><img src="/images/hmv/darkside/which_side.png" alt="Which Side"></p>
 <hr>
 <h2 id="source-code-1">Source Code</h2>
 <p>The source code contains an interesting condition.</p>
@@ -388,14 +402,14 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></code></pre></div><hr>
 <h1 id="ssh-access">SSH Access</h1>
 <p>Successfully logged into SSH using the <strong>kevin</strong> account.</p>
-<p><img src="/images/darkside/ssh_as_kevin.png" alt="SSH as Kevin"></p>
+<p><img src="/images/hmv/darkside/ssh_as_kevin.png" alt="SSH as Kevin"></p>
 <hr>
 <h1 id="privilege-escalation">Privilege Escalation</h1>
 <p>After obtaining access as the <strong>rijaba</strong> user, I enumerated the user&rsquo;s <code>sudo</code> permissions using:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
 </span></span></code></pre></div><p>The output showed that <strong>rijaba</strong> was permitted to execute <strong>nano</strong> as the <strong>root</strong> user without additional restrictions.</p>
-<p><img src="/images/darkside/su_rijaba.png" alt="Switch to rijaba"></p>
-<p><img src="/images/darkside/sudo_rijaba.png" alt="Sudo Privileges"></p>
+<p><img src="/images/hmv/darkside/su_rijaba.png" alt="Switch to rijaba"></p>
+<p><img src="/images/hmv/darkside/sudo_rijaba.png" alt="Sudo Privileges"></p>
 <h2 id="vulnerability">Vulnerability</h2>
 <p>Granting <code>sudo</code> access to interactive text editors such as <strong>nano</strong> can be dangerous because they provide features that allow users to execute external commands. When the editor is launched through <code>sudo</code>, any spawned command inherits the editor&rsquo;s privileges, making it possible to obtain a shell running as <strong>root</strong>.</p>
 <h2 id="exploitation">Exploitation</h2>
@@ -403,7 +417,7 @@ stroke-linejoin="round" class="feather feather-home">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano
 </span></span></code></pre></div><p>From within the editor, I accessed the file browser using <strong>Ctrl + T</strong>. The browser allows commands to be executed, which can be abused to spawn a shell. Since <code>nano</code> was running as <strong>root</strong>, the spawned shell also inherited <strong>root</strong> privileges.</p>
 <p>After executing the command, a root shell was obtained.</p>
-<p><img src="/images/darkside/root.png" alt="Root Shell"></p>
+<p><img src="/images/hmv/darkside/root.png" alt="Root Shell"></p>
 <h2 id="impact">Impact</h2>
 <p>This misconfiguration resulted in complete privilege escalation from the <strong>rijaba</strong> user to <strong>root</strong>, providing unrestricted access to the system. An attacker with this level of access could:</p>
 <ul>

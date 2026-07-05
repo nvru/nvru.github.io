@@ -158,8 +158,22 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link active" href="/posts/">
-                        Posts
+                    <a class="menu-link active" href="/posts/hmv/">
+                        HMV
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/posts/htb/">
+                        HTB
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/posts/thm/">
+                        THM
                     </a>
                     
                 </li>
@@ -255,9 +269,9 @@ Open 10.10.10.8:80
 <h2 id="web-enumeration-port-80">Web Enumeration (Port 80)</h2>
 <p>The web server returned a very minimal page:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>hi
-</span></span></code></pre></div><p><img src="/images/suidy/hi_port_80.png" alt="Port 80 home page"></p>
+</span></span></code></pre></div><p><img src="/images/hmv/suidy/hi_port_80.png" alt="Port 80 home page"></p>
 <p>No useful information was found in the page source.</p>
-<p><img src="/images/suidy/src_port_80.png" alt="source code"></p>
+<p><img src="/images/hmv/suidy/src_port_80.png" alt="source code"></p>
 <h3 id="robotstxt-discovery">Robots.txt Discovery</h3>
 <p>During enumeration, <code>/robots.txt</code> was found.</p>
 <p>Contents:</p>
@@ -267,34 +281,34 @@ Open 10.10.10.8:80
 </code></pre><p>when trying to decode this dots it appear to be valid morse code after deleting the <code>\</code> but nothing usefull just <code>HIAGAIN</code></p>
 <pre tabindex="0"><code>HIAGAIN
 </code></pre><p>After visiting <code>/shehatesme</code>, the page returned:</p>
-<p><img src="/images/suidy/shehatesme.png" alt="shehatesme endpoint"></p>
+<p><img src="/images/hmv/suidy/shehatesme.png" alt="shehatesme endpoint"></p>
 <p>found creds as theuser - thepass</p>
 <hr>
 <h2 id="privilege-escalation">Privilege Escalation</h2>
 <h3 id="initial-access-context">Initial Access Context</h3>
 <p>No sudo privileges were available for the current user.</p>
-<p><img src="/images/suidy/sudo_l.png" alt="sudo check"></p>
+<p><img src="/images/hmv/suidy/sudo_l.png" alt="sudo check"></p>
 <hr>
 <h3 id="suid-enumeration">SUID Enumeration</h3>
 <p>A suspicious SUID binary was discovered and executed, which switched execution context to user <code>suidy</code>.</p>
-<p><img src="/images/suidy/suid_binary.png" alt="SUID binary found"></p>
+<p><img src="/images/hmv/suidy/suid_binary.png" alt="SUID binary found"></p>
 <p>Further analysis showed no meaningful output from <code>strings</code>.</p>
 <p>The binary was copied locally for deeper inspection.</p>
-<p><img src="/images/suidy/copy_host.png" alt="copy binary"></p>
+<p><img src="/images/hmv/suidy/copy_host.png" alt="copy binary"></p>
 <hr>
 <h3 id="exploitation">Exploitation</h3>
 <p>When executed on the target machine, the binary switches the current user to <code>suidy</code>.</p>
-<p><img src="/images/suidy/switch_suidy_user.png" alt="switch to suidy user"></p>
+<p><img src="/images/hmv/suidy/switch_suidy_user.png" alt="switch to suidy user"></p>
 <p>Static analysis showed that the program modifies the process UID and GID, setting both values to <code>1001</code>. While this appears to drop privileges to a low-privileged user, the binary’s execution flow still allows insecure privilege handling that can be abused to escalate access.</p>
 <p>This behavior was confirmed through reverse engineering in Ghidra.</p>
-<p><img src="/images/suidy/ghidra.png" alt="analysis in Ghidra"></p>
+<p><img src="/images/hmv/suidy/ghidra.png" alt="analysis in Ghidra"></p>
 <p>Final step:</p>
 <ul>
 <li>A small C program was written to replicate the same logic but force UID/GID to <code>0</code> (root)</li>
 <li>The program was compiled on the target system using <code>gcc</code> (which was available on the machine)</li>
 <li>Executing the binary spawned a root shell via <code>/bin/bash</code></li>
 </ul>
-<p><img src="/images/suidy/exploit_to_root.png" alt="exploit to root"></p>
+<p><img src="/images/hmv/suidy/exploit_to_root.png" alt="exploit to root"></p>
 <hr>
 <h2 id="credential-discovery">Credential Discovery</h2>
 <pre tabindex="0"><code>theuser:thepass
