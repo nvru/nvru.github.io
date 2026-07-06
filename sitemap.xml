@@ -8,6 +8,9 @@
     <loc>https://nvru.github.io/tags/ctf/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/posts/hmv/find/</loc>
+    <lastmod>2026-07-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/posts/hmv/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
   </url><url>
@@ -21,6 +24,12 @@
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
+    <lastmod>2026-07-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/ssh/</loc>
+    <lastmod>2026-07-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/steganography/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/</loc>
@@ -42,9 +51,6 @@
     <lastmod>2026-07-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/snmp/</loc>
-    <lastmod>2026-07-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/ssh/</loc>
     <lastmod>2026-07-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/posts/hmv/suidy/</loc>
