@@ -1,7 +1,7 @@
 {
     "name": "My Blog",
     "short_name": "My Blog",
-    "start_url": "https://nvru.github.io/",
+    "start_url": "http://localhost:1313/",
     "theme_color": "#434648",
     "background_color": "#131418",
     "display": "standalone",

@@ -1,18 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HackMyVM on My Blog</title>
-    <link>https://nvru.github.io/posts/hmv/</link>
-    <description>Recent content in HackMyVM on My Blog</description>
+    <title>HackMyVM Writeups on My Blog</title>
+    <link>http://localhost:1313/posts/hmv/</link>
+    <description>Recent content in HackMyVM Writeups on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 08 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/posts/hmv/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/hmv/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yuan112 - Walkthrough</title>
+      <link>http://localhost:1313/posts/hmv/yuan112/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/hmv/yuan112/</guid>
+      
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Target IP:&lt;/strong&gt; &lt;code&gt;10.10.10.18&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The objective was to enumerate the target, identify an XML External Entity (XXE) vulnerability to recover user credentials, gain initial access through SSH, and escalate privileges by abusing an insecure URL validation script executed with sudo.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/yuan112/vm.png&#34; alt=&#34;Machine Information&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h1&gt;
+&lt;h2 id=&#34;rustscan&#34;&gt;RustScan&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.18 -- -sC -sV -A -oA nmap/rust
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT   STATE SERVICE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u3
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;80/tcp open  http    Apache httpd 2.4.62 (Debian)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Only SSH and an Apache web server were exposed, so I began with web enumeration.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Yuan113 - Walkthrough</title>
+      <link>http://localhost:1313/posts/hmv/yuan113/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/hmv/yuan113/</guid>
+      
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Target IP:&lt;/strong&gt; &lt;code&gt;10.10.10.17&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The objective was to enumerate the target, identify exposed services, obtain initial access by enumerating SNMP credentials, and escalate privileges by exploiting an insecure use of Bash&amp;rsquo;s &lt;code&gt;declare&lt;/code&gt; builtin in a sudo-allowed script.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/yuan113/vm.png&#34; alt=&#34;Machine Information&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h1&gt;
+&lt;h2 id=&#34;rustscan&#34;&gt;RustScan&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.17 -- -sC -sV -A -oA nmap/rust
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT   STATE SERVICE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u3
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;80/tcp open  http    Apache httpd 2.4.62 (Debian)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Only SSH and HTTP were exposed, so I began enumerating the web application.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Yuan114 - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/yuan114/</link>
+      <link>http://localhost:1313/posts/hmv/yuan114/</link>
       <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/yuan114/</guid>
+      <guid>http://localhost:1313/posts/hmv/yuan114/</guid>
       
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
@@ -20,7 +72,7 @@
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.16&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The objective was to enumerate the target, identify exposed services, exploit a Local File Inclusion vulnerability to obtain credentials, gain SSH access, and escalate privileges through a vulnerable sudo script.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/yuan114/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/yuan114/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;
@@ -48,10 +100,10 @@
     
     <item>
       <title>Jabita - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/jabita/</link>
+      <link>http://localhost:1313/posts/hmv/jabita/</link>
       <pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/jabita/</guid>
+      <guid>http://localhost:1313/posts/hmv/jabita/</guid>
       
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
@@ -59,7 +111,7 @@
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.15&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access through a Local File Inclusion vulnerability, and escalate privileges through sudo misconfigurations and Python library hijacking.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/jabita/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/jabita/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;
@@ -88,13 +140,13 @@
     
     <item>
       <title>Find - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/find/</link>
+      <link>http://localhost:1313/posts/hmv/find/</link>
       <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/find/</guid>
+      <guid>http://localhost:1313/posts/hmv/find/</guid>
       
       <description>&lt;h2 id=&#34;target-information&#34;&gt;Target Information&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/find/vm.png&#34; alt=&#34;Find VM&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/find/vm.png&#34; alt=&#34;Find VM&#34;&gt;&lt;/p&gt;
 &lt;table&gt;
 	&lt;thead&gt;
 			&lt;tr&gt;
@@ -159,12 +211,12 @@
     
     <item>
       <title>Translator - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/translator/</link>
+      <link>http://localhost:1313/posts/hmv/translator/</link>
       <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/translator/</guid>
+      <guid>http://localhost:1313/posts/hmv/translator/</guid>
       
-      <description>&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/translator/vm.png&#34; alt=&#34;Translator VM&#34;&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/translator/vm.png&#34; alt=&#34;Translator VM&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;target-information&#34;&gt;Target Information&lt;/h2&gt;
 &lt;table&gt;
 	&lt;thead&gt;
@@ -220,10 +272,10 @@
     
     <item>
       <title>Helix - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/helix/</link>
+      <link>http://localhost:1313/posts/hmv/helix/</link>
       <pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/helix/</guid>
+      <guid>http://localhost:1313/posts/hmv/helix/</guid>
       
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
@@ -231,7 +283,7 @@
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.162.21.133&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access, and escalate privileges.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/helix/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/helix/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;
@@ -254,10 +306,10 @@
     
     <item>
       <title>The Suidy - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/suidy/</link>
+      <link>http://localhost:1313/posts/hmv/suidy/</link>
       <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/suidy/</guid>
+      <guid>http://localhost:1313/posts/hmv/suidy/</guid>
       
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
@@ -286,12 +338,12 @@ Open 10.10.10.8:80
     
     <item>
       <title>Phantom - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/phantom/</link>
+      <link>http://localhost:1313/posts/hmv/phantom/</link>
       <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/phantom/</guid>
+      <guid>http://localhost:1313/posts/hmv/phantom/</guid>
       
-      <description>&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/phantom/vm.png&#34; alt=&#34;VM&#34;&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/phantom/vm.png&#34; alt=&#34;VM&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;target-information&#34;&gt;Target Information&lt;/h2&gt;
 &lt;ul&gt;
@@ -324,12 +376,12 @@ Open 10.10.10.8:80
     
     <item>
       <title>Bonjur - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/bonjur/</link>
+      <link>http://localhost:1313/posts/hmv/bonjur/</link>
       <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/bonjur/</guid>
+      <guid>http://localhost:1313/posts/hmv/bonjur/</guid>
       
-      <description>&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/bonjur/vm.png&#34; alt=&#34;VM&#34;&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/bonjur/vm.png&#34; alt=&#34;VM&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;target-information&#34;&gt;Target Information&lt;/h2&gt;
 &lt;table&gt;
 	&lt;thead&gt;
@@ -382,13 +434,13 @@ Open 10.10.10.8:80
     
     <item>
       <title>The DarkSide - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/darkside/</link>
+      <link>http://localhost:1313/posts/hmv/darkside/</link>
       <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/darkside/</guid>
+      <guid>http://localhost:1313/posts/hmv/darkside/</guid>
       
       <description>&lt;h2 id=&#34;target-information&#34;&gt;Target Information&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/darkside/darkside_vm.png&#34; alt=&#34;The DarkSide VM&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/darkside/darkside_vm.png&#34; alt=&#34;The DarkSide VM&#34;&gt;&lt;/p&gt;
 &lt;table&gt;
 	&lt;thead&gt;
 			&lt;tr&gt;

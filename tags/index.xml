@@ -2,17 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on My Blog</title>
-    <link>https://nvru.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 08 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apache</title>
-      <link>https://nvru.github.io/tags/apache/</link>
-      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/tags/apache/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/tags/apache/</guid>
+      <guid>http://localhost:1313/tags/apache/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>http://localhost:1313/tags/bash/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/bash/</guid>
       
       <description></description>
       
@@ -20,21 +31,10 @@
     
     <item>
       <title>Ctf</title>
-      <link>https://nvru.github.io/tags/ctf/</link>
-      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/tags/ctf/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/tags/ctf/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Lfi</title>
-      <link>https://nvru.github.io/tags/lfi/</link>
-      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/lfi/</guid>
+      <guid>http://localhost:1313/tags/ctf/</guid>
       
       <description></description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Linux</title>
-      <link>https://nvru.github.io/tags/linux/</link>
-      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/tags/linux/</guid>
+      <guid>http://localhost:1313/tags/linux/</guid>
       
       <description></description>
       
@@ -53,109 +53,10 @@
     
     <item>
       <title>Privilege-Escalation</title>
-      <link>https://nvru.github.io/tags/privilege-escalation/</link>
-      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/tags/privilege-escalation/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Procfs</title>
-      <link>https://nvru.github.io/tags/procfs/</link>
-      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/procfs/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Ssh</title>
-      <link>https://nvru.github.io/tags/ssh/</link>
-      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/ssh/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Sudo</title>
-      <link>https://nvru.github.io/tags/sudo/</link>
-      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/sudo/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Walkthrough</title>
-      <link>https://nvru.github.io/tags/walkthrough/</link>
-      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/walkthrough/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Python-Library-Hijacking</title>
-      <link>https://nvru.github.io/tags/python-library-hijacking/</link>
-      <pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/python-library-hijacking/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Command-Injection</title>
-      <link>https://nvru.github.io/tags/command-injection/</link>
-      <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/command-injection/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Steganography</title>
-      <link>https://nvru.github.io/tags/steganography/</link>
-      <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/steganography/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Web</title>
-      <link>https://nvru.github.io/tags/web/</link>
-      <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/web/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Dirtyfrag</title>
-      <link>https://nvru.github.io/tags/dirtyfrag/</link>
-      <pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/dirtyfrag/</guid>
+      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
       
       <description></description>
       
@@ -163,10 +64,153 @@
     
     <item>
       <title>Snmp</title>
-      <link>https://nvru.github.io/tags/snmp/</link>
+      <link>http://localhost:1313/tags/snmp/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/snmp/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Snmp-Enumeration</title>
+      <link>http://localhost:1313/tags/snmp-enumeration/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/snmp-enumeration/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>http://localhost:1313/tags/ssh/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/ssh/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Walkthrough</title>
+      <link>http://localhost:1313/tags/walkthrough/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/walkthrough/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Xml</title>
+      <link>http://localhost:1313/tags/xml/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/xml/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Xxe</title>
+      <link>http://localhost:1313/tags/xxe/</link>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/xxe/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Lfi</title>
+      <link>http://localhost:1313/tags/lfi/</link>
+      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/lfi/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Procfs</title>
+      <link>http://localhost:1313/tags/procfs/</link>
+      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/procfs/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sudo</title>
+      <link>http://localhost:1313/tags/sudo/</link>
+      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/sudo/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Python-Library-Hijacking</title>
+      <link>http://localhost:1313/tags/python-library-hijacking/</link>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/python-library-hijacking/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Command-Injection</title>
+      <link>http://localhost:1313/tags/command-injection/</link>
+      <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/command-injection/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Steganography</title>
+      <link>http://localhost:1313/tags/steganography/</link>
+      <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/steganography/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>http://localhost:1313/tags/web/</link>
+      <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/web/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Dirtyfrag</title>
+      <link>http://localhost:1313/tags/dirtyfrag/</link>
       <pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/tags/snmp/</guid>
+      <guid>http://localhost:1313/tags/dirtyfrag/</guid>
       
       <description></description>
       
@@ -174,10 +218,10 @@
     
     <item>
       <title>Network</title>
-      <link>https://nvru.github.io/tags/network/</link>
+      <link>http://localhost:1313/tags/network/</link>
       <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/tags/network/</guid>
+      <guid>http://localhost:1313/tags/network/</guid>
       
       <description></description>
       
