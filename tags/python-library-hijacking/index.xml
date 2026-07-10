@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python-Library-Hijacking on My Blog</title>
-    <link>http://localhost:1313/tags/python-library-hijacking/</link>
+    <link>https://nvru.github.io/tags/python-library-hijacking/</link>
     <description>Recent content in Python-Library-Hijacking on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 07 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/python-library-hijacking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/python-library-hijacking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jabita - Walkthrough</title>
-      <link>http://localhost:1313/posts/hmv/jabita/</link>
+      <link>https://nvru.github.io/posts/hmv/jabita/</link>
       <pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/hmv/jabita/</guid>
+      <guid>https://nvru.github.io/posts/hmv/jabita/</guid>
       
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
@@ -20,7 +20,7 @@
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.15&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access through a Local File Inclusion vulnerability, and escalate privileges through sudo misconfigurations and Python library hijacking.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/jabita/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/jabita/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;

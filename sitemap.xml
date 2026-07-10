@@ -2,124 +2,139 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/apache/</loc>
+    <loc>https://nvru.github.io/tags/ctf/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/file-upload/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/ftp/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/posts/hmv/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/posts/hmv/immortal/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/linux/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/posts/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/reverse-shell/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/sudo/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/systemd/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/walkthrough/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/apache/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bash/</loc>
+    <loc>https://nvru.github.io/tags/bash/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ctf/</loc>
+    <loc>https://nvru.github.io/tags/lfi/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hmv/</loc>
+    <loc>https://nvru.github.io/tags/snmp/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lfi/</loc>
+    <loc>https://nvru.github.io/tags/snmp-enumeration/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>https://nvru.github.io/tags/ssh/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://nvru.github.io/tags/wfuzz/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://nvru.github.io/tags/xml/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
+    <loc>https://nvru.github.io/tags/xxe/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/snmp/</loc>
+    <loc>https://nvru.github.io/posts/hmv/yuan111/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/snmp-enumeration/</loc>
+    <loc>https://nvru.github.io/posts/hmv/yuan112/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ssh/</loc>
+    <loc>https://nvru.github.io/posts/hmv/yuan113/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sudo/</loc>
-    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/walkthrough/</loc>
-    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/wfuzz/</loc>
-    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/xml/</loc>
-    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/xxe/</loc>
-    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/hmv/yuan111/</loc>
-    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/hmv/yuan112/</loc>
-    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/hmv/yuan113/</loc>
-    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/procfs/</loc>
+    <loc>https://nvru.github.io/tags/procfs/</loc>
     <lastmod>2026-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hmv/yuan114/</loc>
+    <loc>https://nvru.github.io/posts/hmv/yuan114/</loc>
     <lastmod>2026-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hmv/jabita/</loc>
+    <loc>https://nvru.github.io/posts/hmv/jabita/</loc>
     <lastmod>2026-07-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python-library-hijacking/</loc>
+    <loc>https://nvru.github.io/tags/python-library-hijacking/</loc>
     <lastmod>2026-07-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/command-injection/</loc>
+    <loc>https://nvru.github.io/tags/command-injection/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hmv/find/</loc>
+    <loc>https://nvru.github.io/posts/hmv/find/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/steganography/</loc>
+    <loc>https://nvru.github.io/tags/steganography/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hmv/translator/</loc>
+    <loc>https://nvru.github.io/posts/hmv/translator/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/web/</loc>
+    <loc>https://nvru.github.io/tags/web/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dirtyfrag/</loc>
+    <loc>https://nvru.github.io/tags/dirtyfrag/</loc>
     <lastmod>2026-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hmv/helix/</loc>
+    <loc>https://nvru.github.io/posts/hmv/helix/</loc>
     <lastmod>2026-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hmv/suidy/</loc>
+    <loc>https://nvru.github.io/posts/hmv/suidy/</loc>
     <lastmod>2026-07-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hmv/phantom/</loc>
+    <loc>https://nvru.github.io/posts/hmv/phantom/</loc>
     <lastmod>2026-07-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://nvru.github.io/about/</loc>
     <lastmod>2026-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hmv/bonjur/</loc>
+    <loc>https://nvru.github.io/posts/hmv/bonjur/</loc>
     <lastmod>2026-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/network/</loc>
+    <loc>https://nvru.github.io/tags/network/</loc>
     <lastmod>2026-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hmv/darkside/</loc>
+    <loc>https://nvru.github.io/posts/hmv/darkside/</loc>
     <lastmod>2026-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://nvru.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/posts/htb/</loc>
+    <loc>https://nvru.github.io/posts/htb/</loc>
   </url><url>
-    <loc>http://localhost:1313/posts/thm/</loc>
+    <loc>https://nvru.github.io/posts/thm/</loc>
   </url>
 </urlset>

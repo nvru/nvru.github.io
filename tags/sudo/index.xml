@@ -2,17 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sudo on My Blog</title>
-    <link>http://localhost:1313/tags/sudo/</link>
+    <link>https://nvru.github.io/tags/sudo/</link>
     <description>Recent content in Sudo on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/sudo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/sudo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Immortal - Walkthrough</title>
+      <link>https://nvru.github.io/posts/hmv/immortal/</link>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/posts/hmv/immortal/</guid>
+      
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.20&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access through an unrestricted file upload vulnerability, and escalate privileges by abusing writable Python code and a misconfigured &lt;code&gt;systemctl&lt;/code&gt; sudo rule.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/immortal/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;discovering-the-target&#34;&gt;Discovering the Target&lt;/h2&gt;
+&lt;p&gt;First, I identified the target IP address on the local network.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo arp-scan --interface vboxnet0 --localnet
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Output:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Interface: vboxnet0, type: EN10MB, MAC: 0a:00:27:00:00:00, IPv4: 10.10.10.2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;10.10.10.20     08:00:27:13:bb:b5       PCS Systemtechnik GmbH
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
+&lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.20 -- -sC -sV -A -oA nmap/rust
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;21/tcp open  ftp     vsftpd 3.0.3
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;22/tcp open  ssh     OpenSSH 8.4p1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;80/tcp open  http    Apache httpd 2.4.56
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The machine exposed only three services: FTP, SSH, and HTTP.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Yuan111 - Walkthrough</title>
-      <link>http://localhost:1313/posts/hmv/yuan111/</link>
+      <link>https://nvru.github.io/posts/hmv/yuan111/</link>
       <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/hmv/yuan111/</guid>
+      <guid>https://nvru.github.io/posts/hmv/yuan111/</guid>
       
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
@@ -20,7 +53,7 @@
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.19&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access through a Local File Inclusion (LFI) vulnerability, and escalate privileges by abusing a sudo misconfiguration allowing the execution of &lt;code&gt;wfuzz&lt;/code&gt; as root.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/yuan111/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/yuan111/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;
@@ -38,10 +71,10 @@
     
     <item>
       <title>Yuan114 - Walkthrough</title>
-      <link>http://localhost:1313/posts/hmv/yuan114/</link>
+      <link>https://nvru.github.io/posts/hmv/yuan114/</link>
       <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/hmv/yuan114/</guid>
+      <guid>https://nvru.github.io/posts/hmv/yuan114/</guid>
       
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
@@ -49,7 +82,7 @@
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.16&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The objective was to enumerate the target, identify exposed services, exploit a Local File Inclusion vulnerability to obtain credentials, gain SSH access, and escalate privileges through a vulnerable sudo script.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/yuan114/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/yuan114/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;
@@ -77,10 +110,10 @@
     
     <item>
       <title>Jabita - Walkthrough</title>
-      <link>http://localhost:1313/posts/hmv/jabita/</link>
+      <link>https://nvru.github.io/posts/hmv/jabita/</link>
       <pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/hmv/jabita/</guid>
+      <guid>https://nvru.github.io/posts/hmv/jabita/</guid>
       
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
@@ -88,7 +121,7 @@
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.15&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access through a Local File Inclusion vulnerability, and escalate privileges through sudo misconfigurations and Python library hijacking.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/hmv/jabita/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/jabita/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;
