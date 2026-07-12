@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 06 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/command-injection/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Translator - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/translator/</link>
+      <link>https://nvru.github.io/walkthrough/hmv/translator/</link>
       <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/translator/</guid>
+      <guid>https://nvru.github.io/walkthrough/hmv/translator/</guid>
       
       <description>&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/translator/vm.png&#34; alt=&#34;Translator VM&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;target-information&#34;&gt;Target Information&lt;/h2&gt;

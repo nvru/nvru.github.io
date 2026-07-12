@@ -6,22 +6,11 @@
     <description>Recent content in Tags on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 11 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Credential-Disclosure</title>
-      <link>https://nvru.github.io/tags/credential-disclosure/</link>
-      <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/credential-disclosure/</guid>
-      
-      <description></description>
-      
-    </item>
-    
+    <lastBuildDate>Sun, 12 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ctf</title>
       <link>https://nvru.github.io/tags/ctf/</link>
-      <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/ctf/</guid>
       
@@ -32,9 +21,75 @@
     <item>
       <title>Http</title>
       <link>https://nvru.github.io/tags/http/</link>
-      <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/http/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://nvru.github.io/tags/linux/</link>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/linux/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Privilege-Escalation</title>
+      <link>https://nvru.github.io/tags/privilege-escalation/</link>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sql-Injection</title>
+      <link>https://nvru.github.io/tags/sql-injection/</link>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/sql-injection/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>https://nvru.github.io/tags/ssh/</link>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/ssh/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Walkthrough</title>
+      <link>https://nvru.github.io/tags/walkthrough/</link>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/walkthrough/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Credential-Disclosure</title>
+      <link>https://nvru.github.io/tags/credential-disclosure/</link>
+      <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/credential-disclosure/</guid>
       
       <description></description>
       
@@ -52,33 +107,11 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>https://nvru.github.io/tags/linux/</link>
-      <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/linux/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Medium</title>
       <link>https://nvru.github.io/tags/medium/</link>
       <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/medium/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Privilege-Escalation</title>
-      <link>https://nvru.github.io/tags/privilege-escalation/</link>
-      <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
       
       <description></description>
       
@@ -101,17 +134,6 @@
       <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/traffic-analysis/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Walkthrough</title>
-      <link>https://nvru.github.io/tags/walkthrough/</link>
-      <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/walkthrough/</guid>
       
       <description></description>
       
@@ -211,17 +233,6 @@
       <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/snmp-enumeration/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Ssh</title>
-      <link>https://nvru.github.io/tags/ssh/</link>
-      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/ssh/</guid>
       
       <description></description>
       

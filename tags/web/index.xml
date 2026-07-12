@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 06 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Translator - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/translator/</link>
+      <link>https://nvru.github.io/walkthrough/hmv/translator/</link>
       <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/translator/</guid>
+      <guid>https://nvru.github.io/walkthrough/hmv/translator/</guid>
       
       <description>&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/translator/vm.png&#34; alt=&#34;Translator VM&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;target-information&#34;&gt;Target Information&lt;/h2&gt;
@@ -70,10 +70,10 @@
     
     <item>
       <title>The Suidy - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/suidy/</link>
+      <link>https://nvru.github.io/walkthrough/hmv/suidy/</link>
       <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/suidy/</guid>
+      <guid>https://nvru.github.io/walkthrough/hmv/suidy/</guid>
       
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
@@ -102,10 +102,10 @@ Open 10.10.10.8:80
     
     <item>
       <title>Phantom - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/phantom/</link>
+      <link>https://nvru.github.io/walkthrough/hmv/phantom/</link>
       <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/phantom/</guid>
+      <guid>https://nvru.github.io/walkthrough/hmv/phantom/</guid>
       
       <description>&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/phantom/vm.png&#34; alt=&#34;VM&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -140,10 +140,10 @@ Open 10.10.10.8:80
     
     <item>
       <title>The DarkSide - Walkthrough</title>
-      <link>https://nvru.github.io/posts/hmv/darkside/</link>
+      <link>https://nvru.github.io/walkthrough/hmv/darkside/</link>
       <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/posts/hmv/darkside/</guid>
+      <guid>https://nvru.github.io/walkthrough/hmv/darkside/</guid>
       
       <description>&lt;h2 id=&#34;target-information&#34;&gt;Target Information&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/darkside/darkside_vm.png&#34; alt=&#34;The DarkSide VM&#34;&gt;&lt;/p&gt;
