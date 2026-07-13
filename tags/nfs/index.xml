@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nfs on Null Blog</title>
+    <link>https://nvru.github.io/tags/nfs/</link>
+    <description>Recent content in Nfs on Null Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 13 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/nfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Printer - Walkthrough</title>
+      <link>https://nvru.github.io/walkthrough/hmv/printer/</link>
+      <pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/walkthrough/hmv/printer/</guid>
+      
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.22&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access through an exposed NFS share, and escalate privileges by abusing an insecure log archiving script.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/printer/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h2&gt;
+&lt;h3 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h3&gt;
+&lt;h4 id=&#34;rustscan&#34;&gt;RustScan&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.22 -- -sC -sV -A -oA nmap/rust
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;results&#34;&gt;Results&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT      STATE SERVICE  VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;22/tcp    open  ssh      OpenSSH 8.4p1 Debian
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;111/tcp   open  rpcbind
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;2049/tcp  open  nfs_acl
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;38975/tcp open  nlockmgr
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;39487/tcp open  mountd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;48189/tcp open  mountd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;52073/tcp open  mountd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The scan showed SSH was available on port &lt;strong&gt;22&lt;/strong&gt; and an exposed &lt;strong&gt;NFS&lt;/strong&gt; service on &lt;strong&gt;2049&lt;/strong&gt;, making NFS the most interesting attack surface.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
