@@ -2,16 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nvru.github.io/tags/apache/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/command-injection/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/ctf/</loc>
-    <lastmod>2026-07-13T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/cups/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/</loc>
-    <lastmod>2026-07-13T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/hard/</loc>
-    <lastmod>2026-07-13T00:00:00+00:00</lastmod>
+    <loc>https://nvru.github.io/tags/lfi/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/linux/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/php-filter-chain/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hmv/printer2/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/ssh/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/sudo/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/walkthrough/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/hard/</loc>
     <lastmod>2026-07-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/misconfiguration/</loc>
@@ -20,28 +59,10 @@
     <loc>https://nvru.github.io/tags/nfs/</loc>
     <lastmod>2026-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/</loc>
-    <lastmod>2026-07-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/printer/</loc>
     <lastmod>2026-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
-    <lastmod>2026-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/ssh/</loc>
-    <lastmod>2026-07-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/symlink/</loc>
-    <lastmod>2026-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/</loc>
-    <lastmod>2026-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/walkthrough/</loc>
-    <lastmod>2026-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/walkthrough/</loc>
     <lastmod>2026-07-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/htb/cctv/</loc>
@@ -68,9 +89,6 @@
     <loc>https://nvru.github.io/walkthrough/hmv/pingme/</loc>
     <lastmod>2026-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/sudo/</loc>
-    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/traffic-analysis/</loc>
     <lastmod>2026-07-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -89,13 +107,7 @@
     <loc>https://nvru.github.io/tags/systemd/</loc>
     <lastmod>2026-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/apache/</loc>
-    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/bash/</loc>
-    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/lfi/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/snmp/</loc>
@@ -133,9 +145,6 @@
   </url><url>
     <loc>https://nvru.github.io/tags/python-library-hijacking/</loc>
     <lastmod>2026-07-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/command-injection/</loc>
-    <lastmod>2026-07-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/find/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
@@ -175,13 +184,13 @@
   </url><url>
     <loc>https://nvru.github.io/categories/</loc>
   </url><url>
+    <loc>https://nvru.github.io/nix/</loc>
+  </url><url>
     <loc>https://nvru.github.io/techniques/</loc>
   </url><url>
     <loc>https://nvru.github.io/tools/</loc>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/thm/</loc>
-  </url><url>
-    <loc>https://nvru.github.io/unix/</loc>
   </url><url>
     <loc>https://nvru.github.io/windows/</loc>
   </url>
