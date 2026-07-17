@@ -6,7 +6,42 @@
     <description>Recent content in Sudo on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 16 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/sudo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/sudo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Economists - Walkthrough</title>
+      <link>https://nvru.github.io/walkthrough/hmv/economists/</link>
+      <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/walkthrough/hmv/economists/</guid>
+      
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.26&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access by brute-forcing SSH credentials obtained during enumeration, and escalate privileges by abusing a misconfigured &lt;code&gt;sudo&lt;/code&gt; rule allowing execution of &lt;code&gt;systemctl&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/economists/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h1&gt;
+&lt;h2 id=&#34;rustscan&#34;&gt;RustScan&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.26 -- -sC -sV -A -oA nmap/rust
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT   STATE SERVICE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;21/tcp open  ftp     vsftpd 3.0.3
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| -rw-rw-r--    Brochure-1.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| -rw-rw-r--    Brochure-2.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| -rw-rw-r--    Financial-infographics-poster.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| -rw-rw-r--    Gameboard-poster.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| -rw-rw-r--    Growth-timeline.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| -rw-rw-r--    Population-poster.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;80/tcp open  http    Apache httpd 2.4.41
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The target exposed three services:&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Friendly - Walkthrough</title>
       <link>https://nvru.github.io/walkthrough/hmv/friendly/</link>

