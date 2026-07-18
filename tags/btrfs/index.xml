@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Btrfs on Null Blog</title>
+    <link>http://localhost:1313/tags/btrfs/</link>
+    <description>Recent content in Btrfs on Null Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/btrfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing Arch Linux with LUKS2, Btrfs, and the BlackArch Repository</title>
+      <link>http://localhost:1313/nix/install/arch/</link>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/nix/install/arch/</guid>
+      
+      <description>&lt;h2 id=&#34;explaoning-the-installation&#34;&gt;explaoning the installation&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;parition&#34;&gt;parition&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;make-file-system&#34;&gt;make file system&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;mount-and-make-btrfs-subvolumes&#34;&gt;mount and make btrfs subvolumes&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;bootstrap-arch-linux&#34;&gt;bootstrap arch-linux&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;chroot&#34;&gt;chroot&lt;/h2&gt;
+&lt;h3 id=&#34;set-time-and-date&#34;&gt;set time and date&lt;/h3&gt;
+&lt;h3 id=&#34;set-locales&#34;&gt;set locales&lt;/h3&gt;
+&lt;h3 id=&#34;make-user&#34;&gt;make user&lt;/h3&gt;
+&lt;h3 id=&#34;install-grub-and-edit-init-ramfs&#34;&gt;install grub and edit init ramfs&lt;/h3&gt;
+&lt;h3 id=&#34;optional-network-audio-ect&#34;&gt;optional network audio ect&lt;/h3&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Installing Arch Linux with LUKS2, Btrfs, and the BlackArch Repository</title>
+      <link>http://localhost:1313/nix/install/installarch/</link>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/nix/install/installarch/</guid>
+      
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;This guide demonstrates how to install &lt;strong&gt;Arch Linux&lt;/strong&gt; with the following configuration:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GPT partition table&lt;/li&gt;
+&lt;li&gt;UEFI boot&lt;/li&gt;
+&lt;li&gt;LUKS2 full disk encryption&lt;/li&gt;
+&lt;li&gt;Btrfs filesystem&lt;/li&gt;
+&lt;li&gt;Multiple Btrfs subvolumes&lt;/li&gt;
+&lt;li&gt;GRUB bootloader&lt;/li&gt;
+&lt;li&gt;PipeWire audio&lt;/li&gt;
+&lt;li&gt;NetworkManager&lt;/li&gt;
+&lt;li&gt;BlackArch repository&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;final-layout&#34;&gt;Final Layout&lt;/h2&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Partition&lt;/th&gt;
+					&lt;th&gt;Filesystem&lt;/th&gt;
+					&lt;th&gt;Purpose&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;EFI&lt;/td&gt;
+					&lt;td&gt;FAT32&lt;/td&gt;
+					&lt;td&gt;EFI System Partition&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Boot&lt;/td&gt;
+					&lt;td&gt;EXT4&lt;/td&gt;
+					&lt;td&gt;Kernel and bootloader&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;LUKS2&lt;/td&gt;
+					&lt;td&gt;Btrfs&lt;/td&gt;
+					&lt;td&gt;Root filesystem&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;btrfs-subvolumes&#34;&gt;Btrfs Subvolumes&lt;/h2&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Subvolume&lt;/th&gt;
+					&lt;th&gt;Mount Point&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;@&lt;/td&gt;
+					&lt;td&gt;/&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;@home&lt;/td&gt;
+					&lt;td&gt;/home&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;@opt&lt;/td&gt;
+					&lt;td&gt;/opt&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;@cache&lt;/td&gt;
+					&lt;td&gt;/var/cache&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;@log&lt;/td&gt;
+					&lt;td&gt;/var/log&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;@libvirt&lt;/td&gt;
+					&lt;td&gt;/var/lib/libvirt&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;@containers&lt;/td&gt;
+					&lt;td&gt;/var/lib/containers&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/arch/final-layout.png&#34; alt=&#34;Final layout&#34;&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Installing Arch Linux with LUKS2, Btrfs, and the BlackArch Repository</title>
+      <link>http://localhost:1313/nix/install/test1/</link>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/nix/install/test1/</guid>
+      
+      <description>&lt;h1 id=&#34;installing-arch-linux-with-luks2-btrfs-and-the-blackarch-repository&#34;&gt;Installing Arch Linux with LUKS2, Btrfs, and the BlackArch Repository&lt;/h1&gt;
+&lt;p&gt;This guide explains how to install Arch Linux using:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GPT partitioning&lt;/li&gt;
+&lt;li&gt;LUKS2 full-disk encryption&lt;/li&gt;
+&lt;li&gt;Btrfs with multiple subvolumes&lt;/li&gt;
+&lt;li&gt;GRUB as the bootloader&lt;/li&gt;
+&lt;li&gt;UEFI firmware&lt;/li&gt;
+&lt;li&gt;BlackArch repository (optional)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The layout is designed to work well with Timeshift snapshots while also separating logs, caches, virtual machines, and containers into their own Btrfs subvolumes.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;explaoning-the-installation&#34;&gt;explaoning the installation&lt;/h1&gt;
+&lt;p&gt;This tutorial assumes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You booted the official Arch Linux ISO.&lt;/li&gt;
+&lt;li&gt;Your system uses UEFI.&lt;/li&gt;
+&lt;li&gt;You want GPT partitioning.&lt;/li&gt;
+&lt;li&gt;You are comfortable using the terminal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;First, identify your storage device.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
