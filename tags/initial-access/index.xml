@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Walkthroughs on Null Blog</title>
-    <link>https://nvru.github.io/walkthrough/</link>
-    <description>Recent content in Walkthroughs on Null Blog</description>
+    <title>Initial-Access on Null Blog</title>
+    <link>https://nvru.github.io/tags/initial-access/</link>
+    <description>Recent content in Initial-Access on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/walkthrough/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/initial-access/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chronos - Walkthrough</title>
       <link>https://nvru.github.io/walkthrough/vulnhub/chronos/</link>
