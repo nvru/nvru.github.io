@@ -6,13 +6,13 @@
     <description>Recent content in Tags on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Apache</title>
-      <link>https://nvru.github.io/tags/apache/</link>
-      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+      <title>Credentials</title>
+      <link>https://nvru.github.io/tags/credentials/</link>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/tags/apache/</guid>
+      <guid>https://nvru.github.io/tags/credentials/</guid>
       
       <description></description>
       
@@ -21,9 +21,152 @@
     <item>
       <title>Ctf</title>
       <link>https://nvru.github.io/tags/ctf/</link>
-      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/ctf/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Easy</title>
+      <link>https://nvru.github.io/tags/easy/</link>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/easy/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Http</title>
+      <link>https://nvru.github.io/tags/http/</link>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/http/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://nvru.github.io/tags/linux/</link>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/linux/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Password-Reuse</title>
+      <link>https://nvru.github.io/tags/password-reuse/</link>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/password-reuse/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Privilege-Escalation</title>
+      <link>https://nvru.github.io/tags/privilege-escalation/</link>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>https://nvru.github.io/tags/ssh/</link>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/ssh/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Walkthrough</title>
+      <link>https://nvru.github.io/tags/walkthrough/</link>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/walkthrough/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Apache</title>
+      <link>https://nvru.github.io/tags/apache/</link>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/apache/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Command-Injection</title>
+      <link>https://nvru.github.io/tags/command-injection/</link>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/command-injection/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Express-Fileupload</title>
+      <link>https://nvru.github.io/tags/express-fileupload/</link>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/express-fileupload/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Initial-Access</title>
+      <link>https://nvru.github.io/tags/initial-access/</link>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/initial-access/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Medium</title>
+      <link>https://nvru.github.io/tags/medium/</link>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/medium/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>https://nvru.github.io/tags/nodejs/</link>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/nodejs/</guid>
       
       <description></description>
       
@@ -35,50 +178,6 @@
       <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/lfi/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://nvru.github.io/tags/linux/</link>
-      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/linux/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Privilege-Escalation</title>
-      <link>https://nvru.github.io/tags/privilege-escalation/</link>
-      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Ssh</title>
-      <link>https://nvru.github.io/tags/ssh/</link>
-      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/ssh/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Walkthrough</title>
-      <link>https://nvru.github.io/tags/walkthrough/</link>
-      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/walkthrough/</guid>
       
       <description></description>
       
@@ -134,17 +233,6 @@
       <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/systemctl/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Easy</title>
-      <link>https://nvru.github.io/tags/easy/</link>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/easy/</guid>
       
       <description></description>
       
@@ -217,17 +305,6 @@
     </item>
     
     <item>
-      <title>Command-Injection</title>
-      <link>https://nvru.github.io/tags/command-injection/</link>
-      <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/command-injection/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Cups</title>
       <link>https://nvru.github.io/tags/cups/</link>
       <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
@@ -294,17 +371,6 @@
     </item>
     
     <item>
-      <title>Http</title>
-      <link>https://nvru.github.io/tags/http/</link>
-      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/http/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Sql-Injection</title>
       <link>https://nvru.github.io/tags/sql-injection/</link>
       <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
@@ -332,17 +398,6 @@
       <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/icmp/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Medium</title>
-      <link>https://nvru.github.io/tags/medium/</link>
-      <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/medium/</guid>
       
       <description></description>
       
@@ -508,39 +563,6 @@
       <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/network/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Express-Fileupload</title>
-      <link>https://nvru.github.io/tags/express-fileupload/</link>
-      <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/express-fileupload/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Initial-Access</title>
-      <link>https://nvru.github.io/tags/initial-access/</link>
-      <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/initial-access/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Nodejs</title>
-      <link>https://nvru.github.io/tags/nodejs/</link>
-      <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/nodejs/</guid>
       
       <description></description>
       

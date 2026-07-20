@@ -6,7 +6,89 @@
     <description>Recent content in Privilege-Escalation on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Who Wants to Be King? 1 - Walkthrough</title>
+      <link>https://nvru.github.io/walkthrough/vulnhub/who_wants_to_be_king1/</link>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/walkthrough/vulnhub/who_wants_to_be_king1/</guid>
+      
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.245.58.142&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.245.58.27&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access by recovering credentials from an exposed binary, and escalate privileges by discovering the root password through user artifacts.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/vulnhub/who_wants_to_be_king1/logscreen.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h2&gt;
+&lt;h3 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h3&gt;
+&lt;h4 id=&#34;rustscan&#34;&gt;RustScan&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.245.58.27
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Output:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Open 10.245.58.27:22
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Open 10.245.58.27:80
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;nmap&#34;&gt;Nmap&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sSCV 10.245.58.27 -A -p22,80 -oN nmap/ports
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Results:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT   STATE SERVICE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;80/tcp open  http    Apache httpd 2.4.41
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;http-title: Index of /
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;http-server-header: Apache/2.4.41 (Ubuntu)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Index of /
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;31K  skeylogger
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Only SSH and HTTP were exposed. The web server had directory listing enabled and exposed a single file named &lt;strong&gt;skeylogger&lt;/strong&gt;, making it the obvious target for further enumeration.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Chronos - Walkthrough</title>
+      <link>https://nvru.github.io/walkthrough/vulnhub/chronos/</link>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/walkthrough/vulnhub/chronos/</guid>
+      
+      <description>&lt;h1 id=&#34;chronos---walkthrough&#34;&gt;Chronos - Walkthrough&lt;/h1&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.151.249.142&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.151.249.111&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access through a &lt;strong&gt;command injection vulnerability&lt;/strong&gt;, and escalate privileges by exploiting a vulnerable &lt;strong&gt;express-fileupload&lt;/strong&gt; application running on an internal service.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/vulnhub/chronos/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
+&lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.151.249.111
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Open 10.151.249.111:22
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Open 10.151.249.111:80
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Open 10.151.249.111:8000
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To gather additional information, I performed a full Nmap scan.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sSCV -A -p22,80,3306,8080 -oN nmap/ports 10.151.249.111
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;nmap-output&#34;&gt;Nmap Output&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Starting Nmap 7.99 ( https://nmap.org ) at 2026-05-26 00:07 +0200
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Nmap scan report for 10.151.249.111
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Host is up (0.00030s latency).
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT     STATE  SERVICE    VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;22/tcp   open   ssh        OpenSSH 7.6p1 Ubuntu 4ubuntu0.3
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;80/tcp   open   http       Apache httpd 2.4.29 ((Ubuntu))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3306/tcp closed mysql
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;8080/tcp closed http-proxy
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Service Info: OS: Linux
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Only SSH and Apache were publicly accessible, so web enumeration became the next step.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>p4l4nc4 (Palanca) - Walkthrough</title>
       <link>https://nvru.github.io/walkthrough/hmv/p4l4nc4/</link>
@@ -796,48 +878,6 @@ Open 10.10.10.8:80
 &lt;h1 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h1&gt;
 &lt;h2 id=&#34;http-port-80&#34;&gt;HTTP (Port 80)&lt;/h2&gt;
 &lt;p&gt;The web application presents a regular login page.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Chronos - Walkthrough</title>
-      <link>https://nvru.github.io/walkthrough/vulnhub/chronos/</link>
-      <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/walkthrough/vulnhub/chronos/</guid>
-      
-      <description>&lt;h1 id=&#34;chronos---walkthrough&#34;&gt;Chronos - Walkthrough&lt;/h1&gt;
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.151.249.142&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.151.249.111&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access through a &lt;strong&gt;command injection vulnerability&lt;/strong&gt;, and escalate privileges by exploiting a vulnerable &lt;strong&gt;express-fileupload&lt;/strong&gt; application running on an internal service.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/vulnhub/chronos/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
-&lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.151.249.111
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Open 10.151.249.111:22
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Open 10.151.249.111:80
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Open 10.151.249.111:8000
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To gather additional information, I performed a full Nmap scan.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sSCV -A -p22,80,3306,8080 -oN nmap/ports 10.151.249.111
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;nmap-output&#34;&gt;Nmap Output&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Starting Nmap 7.99 ( https://nmap.org ) at 2026-05-26 00:07 +0200
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Nmap scan report for 10.151.249.111
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Host is up (0.00030s latency).
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT     STATE  SERVICE    VERSION
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;22/tcp   open   ssh        OpenSSH 7.6p1 Ubuntu 4ubuntu0.3
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;80/tcp   open   http       Apache httpd 2.4.29 ((Ubuntu))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3306/tcp closed mysql
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;8080/tcp closed http-proxy
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Service Info: OS: Linux
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Only SSH and Apache were publicly accessible, so web enumeration became the next step.&lt;/p&gt;</description>
       
     </item>
     
