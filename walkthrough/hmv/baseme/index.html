@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en-US"><head><meta charset="utf-8">
+<html lang="en-US"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Linux | Null Blog</title>
-<meta property="og:title" content="Linux | Null Blog" />
-<meta name="twitter:title" content="Linux | Null Blog" />
-<meta itemprop="name" content="Linux | Null Blog" />
-<meta name="application-name" content="Linux | Null Blog" />
+<title itemprop="name">Baseme - Walkthrough | Null Blog</title>
+<meta property="og:title" content="Baseme - Walkthrough | Null Blog" />
+<meta name="twitter:title" content="Baseme - Walkthrough | Null Blog" />
+<meta itemprop="name" content="Baseme - Walkthrough | Null Blog" />
+<meta name="application-name" content="Baseme - Walkthrough | Null Blog" />
 <meta property="og:site_name" content="Null Blog" />
 
-<meta name="description" content="CTF writeups, hacking notes, and walkthroughs.">
-<meta itemprop="description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta name="description" content="Walkthrough for the Baseme machine.">
+<meta itemprop="description" content="Walkthrough for the Baseme machine." />
+<meta property="og:description" content="Walkthrough for the Baseme machine." />
+<meta name="twitter:description" content="Walkthrough for the Baseme machine." />
 
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
 
-  <link rel="alternate" hreflang="en" href="https://nvru.github.io/tags/linux/" title="" />
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/walkthrough/hmv/baseme/" title="" />
 
 
 
@@ -28,26 +28,33 @@
 <meta name="generator" content="Hugo 0.164.0">
 
     
-    <meta property="og:url" content="https://nvru.github.io/tags/linux/">
+    <meta property="og:url" content="http://localhost:1313/walkthrough/hmv/baseme/">
 	<meta property="og:site_name" content="Null Blog">
-	<meta property="og:title" content="Linux">
-	<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta property="og:title" content="Baseme - Walkthrough">
+	<meta property="og:description" content="Walkthrough for the Baseme machine.">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="walkthrough">
+		<meta property="article:published_time" content="2026-07-21T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-21T00:00:00+00:00">
+		<meta property="article:tag" content="Ctf">
+		<meta property="article:tag" content="Walkthrough">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Nginx">
+		<meta property="article:tag" content="Base64">
+		<meta property="article:tag" content="Ssh">
 
 
     
     
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Linux">
-	<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta name="twitter:title" content="Baseme - Walkthrough">
+	<meta name="twitter:description" content="Walkthrough for the Baseme machine.">
 
 
     
 
-    <link rel="canonical" href="https://nvru.github.io/tags/linux/">
-    <link href="/tags/linux/index.xml" rel="alternate" type="application/rss+xml" title="Null Blog">
-    <link href="/tags/linux/index.xml" rel="feed" type="application/rss+xml" title="Null Blog">
+    <link rel="canonical" href="http://localhost:1313/walkthrough/hmv/baseme/">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -61,7 +68,7 @@
 
 
 
-<link rel="manifest" href="https://nvru.github.io/site.webmanifest">
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
 
 <meta name="msapplication-config" content="/browserconfig.xml">
 <meta name="msapplication-TileColor" content="#2d89ef">
@@ -73,15 +80,14 @@
 
     
     
-    
 </head>
 <body data-theme = "dark" class="notransition">
 
-<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+<script src="/js/theme.js"></script>
 
 <div class="navbar" role="navigation">
     <nav class="menu" aria-label="Main Navigation">
-        <a href="https://nvru.github.io/" class="logo">
+        <a href="http://localhost:1313/" class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
 stroke-linejoin="round" class="feather feather-home">
@@ -109,7 +115,7 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/walkthrough/">
+                    <a class="menu-link active" href="/walkthrough/">
                         Walkthroughs
                     </a>
                     
@@ -165,439 +171,166 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Linux</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2026</h2>
-
-        
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/iot/">IoT - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-21T00:00:00Z">
-        21 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/hostname/">Hostname - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-21T00:00:00Z">
-        21 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/who_wants_to_be_king1/">Who Wants to Be King? 1 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-20T00:00:00Z">
-        20 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/colddbox/">ColddBox - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-20T00:00:00Z">
-        20 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/chronos/">Chronos - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-19T00:00:00Z">
-        19 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/p4l4nc4/">p4l4nc4 (Palanca) - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-18T00:00:00Z">
-        18 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/economists/">Economists - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-17T00:00:00Z">
-        17 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/friendly/">Friendly - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-16T00:00:00Z">
-        16 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/hannah/">Hannah - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-15T00:00:00Z">
-        15 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/printer2/">Printer2 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-14T00:00:00Z">
-        14 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/printer/">Printer - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-13T00:00:00Z">
-        13 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/htb/cctv/">CCTV - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-12T00:00:00Z">
-        12 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/pingme/">Pingme - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-11T00:00:00Z">
-        11 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/immortal/">Immortal - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-10T00:00:00Z">
-        10 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan113/">Yuan113 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan112/">Yuan112 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan111/">Yuan111 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan114/">Yuan114 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-08T00:00:00Z">
-        8 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/jabita/">Jabita - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-07T00:00:00Z">
-        7 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/translator/">Translator - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/find/">Find - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/helix/">Helix - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-05T00:00:00Z">
-        5 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/suidy/">The Suidy - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-04T00:00:00Z">
-        4 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/phantom/">Phantom - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-03T00:00:00Z">
-        3 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/darkside/">The DarkSide - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-01T00:00:00Z">
-        1 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/bonjur/">Bonjur - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-01T00:00:00Z">
-        1 Jul 2026
-    </time>
-</article>
-
-
-         
-
-         
-
-    </main>
-</div><footer class="footer">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Baseme - Walkthrough</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-07-21T00:00:00&#43;00:00" itemprop="datePublished"> 21 Jul 2026 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#port-scanning">Port Scanning</a>
+      <ul>
+        <li><a href="#rustscan">RustScan</a></li>
+        <li><a href="#results">Results</a></li>
+      </ul>
+    </li>
+    <li><a href="#enumeration">Enumeration</a>
+      <ul>
+        <li><a href="#web-enumeration">Web Enumeration</a></li>
+        <li><a href="#directory-enumeration">Directory Enumeration</a></li>
+        <li><a href="#recovering-the-ssh-key">Recovering the SSH Key</a></li>
+      </ul>
+    </li>
+    <li><a href="#initial-access">Initial Access</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a>
+      <ul>
+        <li><a href="#lucas--root">lucas → root</a></li>
+      </ul>
+    </li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#flags">Flags</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="overview">Overview</h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.34</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access by abusing Base64-encoded resources, and escalate privileges through a misconfigured sudo rule allowing access to sensitive files.</p>
+<p><img src="/images/hmv/baseme/vm.png" alt="Machine information"></p>
+<hr>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="rustscan">RustScan</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.34 -- -sC -sV -A -oA nmap/rust
+</span></span></code></pre></div><h3 id="results">Results</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2
+</span></span><span style="display:flex;"><span>80/tcp open  http    nginx 1.14.2
+</span></span></code></pre></div><p>The scan revealed two exposed services:</p>
+<ul>
+<li>SSH on port <code>22</code></li>
+<li>HTTP on port <code>80</code></li>
+</ul>
+<p>The web application was the obvious starting point.</p>
+<hr>
+<h2 id="enumeration">Enumeration</h2>
+<h3 id="web-enumeration">Web Enumeration</h3>
+<p>Visiting the web page displayed what appeared to be a Base64-encoded string.</p>
+<p><img src="/images/hmv/baseme/http.png" alt="HTTP page"></p>
+<p>Inspecting the page source revealed the following HTML comment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- iloveyou youloveyou shelovesyou helovesyou weloveyou theyhatesme --&gt;</span>
+</span></span></code></pre></div><p><img src="/images/hmv/baseme/http_src.png" alt="Page source"></p>
+<p>Decoding the Base64 string displayed on the page revealed the following message:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ALL, absolutely ALL that you need is in BASE64.
+</span></span><span style="display:flex;"><span>Including the password that you need :)
+</span></span><span style="display:flex;"><span>Remember, BASE64 has the answer to all your questions.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-lucas
+</span></span></code></pre></div><p>The message introduced the username <code>lucas</code> and strongly hinted that everything required to solve the machine was Base64 encoded.</p>
+<p>At this point, I attempted to authenticate over SSH using the words from the HTML comment as the password, including Base64-encoded variations, but none were successful.</p>
+<hr>
+<h3 id="directory-enumeration">Directory Enumeration</h3>
+<p>Since the hint repeatedly referenced Base64, I generated a Base64-encoded wordlist from SecLists and used it for directory brute forcing.</p>
+<p>First, I generated a list from the medium DirBuster wordlist:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>cat /opt/wordlists/seclists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> | base64
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &gt; misc/dir_medium_64
+</span></span></code></pre></div><p>Unfortunately, this did not reveal anything useful.</p>
+<p>Next, I generated a Base64 version of the common wordlist:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>cat /opt/wordlists/seclists/Discovery/Web-Content/common.txt<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> | base64
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &gt; misc/common_64
+</span></span></code></pre></div><p>This time, two interesting paths were discovered:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>aWRfcnNhCg==
+</span></span><span style="display:flex;"><span>cm9ib3RzLnR4dAo=
+</span></span></code></pre></div><p><img src="/images/hmv/baseme/gobus_common_64.png" alt="Directory discovery"></p>
+<hr>
+<h3 id="recovering-the-ssh-key">Recovering the SSH Key</h3>
+<p>Requesting the first path returned a very large Base64 blob.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s http://10.10.10.34/aWRfcnNhCg<span style="color:#f92672">==</span>
+</span></span></code></pre></div><p><img src="/images/hmv/baseme/curl_sshkey_64.png" alt="Downloading the key"></p>
+<p>After decoding it, the content was identified as an SSH private key.</p>
+<p><img src="/images/hmv/baseme/curl_ssh.png" alt="Decoded SSH key"></p>
+<p>The second path did not return any useful data.</p>
+<p><img src="/images/hmv/baseme/other_curl_nothing.png" alt="Other endpoint"></p>
+<p>Since the earlier message mentioned the user <code>lucas</code>, I attempted to authenticate using the recovered key.</p>
+<p>SSH accepted the key but requested its passphrase.</p>
+<p><img src="/images/hmv/baseme/ssh_need_pass.png" alt="SSH passphrase"></p>
+<hr>
+<h2 id="initial-access">Initial Access</h2>
+<p>Initially, I attempted to crack the passphrase using RockYou:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh2john creds/ssh_web &gt; misc/ssh_hash
+</span></span><span style="display:flex;"><span>john --wordlist<span style="color:#f92672">=</span>~/wordlists/rockyou.txt misc/ssh_hash
+</span></span></code></pre></div><p>Since the machine revolved around Base64, I instead generated a Base64-encoded version of the RockYou wordlist.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>cat ~/wordlists/rockyou.txt<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> | base64
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &gt; misc/rock_64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>john --wordlist<span style="color:#f92672">=</span>misc/rock_64 misc/ssh_hash
+</span></span></code></pre></div><p><img src="/images/hmv/baseme/john_pass_suc.png" alt="Passphrase recovered"></p>
+<p>The recovered passphrase successfully unlocked the private key.</p>
+<p>Using the decrypted key, I authenticated as <code>lucas</code>.</p>
+<p><img src="/images/hmv/baseme/ssh_lucas.png" alt="SSH login"></p>
+<hr>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
+<h3 id="lucas--root">lucas → root</h3>
+<p>The first thing I checked was the user&rsquo;s sudo permissions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
+</span></span></code></pre></div><p><img src="/images/hmv/baseme/sudo_perm.png" alt="sudo permissions"></p>
+<p>The user could execute:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/usr/bin/base64
+</span></span></code></pre></div><p>as any user without supplying a password.</p>
+<p>Although <code>base64</code> cannot execute commands directly, it can read files that the invoking user normally cannot access.</p>
+<p>I used it to read root&rsquo;s private SSH key:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -u root /usr/bin/base64 /root/.ssh/id_rsa
+</span></span></code></pre></div><p><img src="/images/hmv/baseme/sudo_root_key.png" alt="Reading root SSH key"></p>
+<p>After copying the output and decoding it locally, the root private key was recovered.</p>
+<p><img src="/images/hmv/baseme/decode_root_key.png" alt="Decoded root key"></p>
+<p>Using the recovered key, I authenticated directly as <code>root</code>.</p>
+<p><img src="/images/hmv/baseme/ssh_root.png" alt="Root SSH login"></p>
+<p>Root access was obtained.</p>
+<hr>
+<h2 id="credentials">Credentials</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>User: lucas
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SSH Private Key:
+</span></span><span style="display:flex;"><span>aWxvdmV5b3UK
+</span></span></code></pre></div><hr>
+<h2 id="flags">Flags</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:HMV8nnJAJAJA
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root:HMVFKBS64
+</span></span></code></pre></div>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 
@@ -675,7 +408,7 @@ stroke-linejoin="round" class="feather feather-home">
 
 
     
-    <script src="https://nvru.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+    <script async src="http://localhost:1313/js/main.js" ></script>
 
     
 

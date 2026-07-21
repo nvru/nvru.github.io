@@ -3,22 +3,22 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Linux | Null Blog</title>
-<meta property="og:title" content="Linux | Null Blog" />
-<meta name="twitter:title" content="Linux | Null Blog" />
-<meta itemprop="name" content="Linux | Null Blog" />
-<meta name="application-name" content="Linux | Null Blog" />
+<title itemprop="name">Hostname - Walkthrough | Null Blog</title>
+<meta property="og:title" content="Hostname - Walkthrough | Null Blog" />
+<meta name="twitter:title" content="Hostname - Walkthrough | Null Blog" />
+<meta itemprop="name" content="Hostname - Walkthrough | Null Blog" />
+<meta name="application-name" content="Hostname - Walkthrough | Null Blog" />
 <meta property="og:site_name" content="Null Blog" />
 
-<meta name="description" content="CTF writeups, hacking notes, and walkthroughs.">
-<meta itemprop="description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta name="description" content="Walkthrough for the Hostname machine.">
+<meta itemprop="description" content="Walkthrough for the Hostname machine." />
+<meta property="og:description" content="Walkthrough for the Hostname machine." />
+<meta name="twitter:description" content="Walkthrough for the Hostname machine." />
 
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
 
-  <link rel="alternate" hreflang="en" href="https://nvru.github.io/tags/linux/" title="" />
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/walkthrough/hmv/hostname/" title="" />
 
 
 
@@ -28,26 +28,33 @@
 <meta name="generator" content="Hugo 0.164.0">
 
     
-    <meta property="og:url" content="https://nvru.github.io/tags/linux/">
+    <meta property="og:url" content="https://nvru.github.io/walkthrough/hmv/hostname/">
 	<meta property="og:site_name" content="Null Blog">
-	<meta property="og:title" content="Linux">
-	<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta property="og:title" content="Hostname - Walkthrough">
+	<meta property="og:description" content="Walkthrough for the Hostname machine.">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="walkthrough">
+		<meta property="article:published_time" content="2026-07-21T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-21T00:00:00+00:00">
+		<meta property="article:tag" content="Ctf">
+		<meta property="article:tag" content="Walkthrough">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Nginx">
+		<meta property="article:tag" content="Source-Code-Disclosure">
+		<meta property="article:tag" content="Cronjob">
 
 
     
     
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Linux">
-	<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta name="twitter:title" content="Hostname - Walkthrough">
+	<meta name="twitter:description" content="Walkthrough for the Hostname machine.">
 
 
     
 
-    <link rel="canonical" href="https://nvru.github.io/tags/linux/">
-    <link href="/tags/linux/index.xml" rel="alternate" type="application/rss+xml" title="Null Blog">
-    <link href="/tags/linux/index.xml" rel="feed" type="application/rss+xml" title="Null Blog">
+    <link rel="canonical" href="https://nvru.github.io/walkthrough/hmv/hostname/">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -109,7 +116,7 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/walkthrough/">
+                    <a class="menu-link active" href="/walkthrough/">
                         Walkthroughs
                     </a>
                     
@@ -165,439 +172,168 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Linux</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2026</h2>
-
-        
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/iot/">IoT - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-21T00:00:00Z">
-        21 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/hostname/">Hostname - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-21T00:00:00Z">
-        21 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/who_wants_to_be_king1/">Who Wants to Be King? 1 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-20T00:00:00Z">
-        20 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/colddbox/">ColddBox - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-20T00:00:00Z">
-        20 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/chronos/">Chronos - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-19T00:00:00Z">
-        19 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/p4l4nc4/">p4l4nc4 (Palanca) - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-18T00:00:00Z">
-        18 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/economists/">Economists - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-17T00:00:00Z">
-        17 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/friendly/">Friendly - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-16T00:00:00Z">
-        16 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/hannah/">Hannah - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-15T00:00:00Z">
-        15 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/printer2/">Printer2 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-14T00:00:00Z">
-        14 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/printer/">Printer - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-13T00:00:00Z">
-        13 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/htb/cctv/">CCTV - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-12T00:00:00Z">
-        12 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/pingme/">Pingme - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-11T00:00:00Z">
-        11 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/immortal/">Immortal - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-10T00:00:00Z">
-        10 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan113/">Yuan113 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan112/">Yuan112 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan111/">Yuan111 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan114/">Yuan114 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-08T00:00:00Z">
-        8 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/jabita/">Jabita - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-07T00:00:00Z">
-        7 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/translator/">Translator - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/find/">Find - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/helix/">Helix - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-05T00:00:00Z">
-        5 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/suidy/">The Suidy - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-04T00:00:00Z">
-        4 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/phantom/">Phantom - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-03T00:00:00Z">
-        3 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/darkside/">The DarkSide - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-01T00:00:00Z">
-        1 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/bonjur/">Bonjur - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-01T00:00:00Z">
-        1 Jul 2026
-    </time>
-</article>
-
-
-         
-
-         
-
-    </main>
-</div><footer class="footer">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Hostname - Walkthrough</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-07-21T00:00:00&#43;00:00" itemprop="datePublished"> 21 Jul 2026 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#port-scanning">Port Scanning</a>
+      <ul>
+        <li><a href="#rustscan">RustScan</a></li>
+        <li><a href="#results">Results</a></li>
+      </ul>
+    </li>
+    <li><a href="#enumeration">Enumeration</a>
+      <ul>
+        <li><a href="#web-enumeration">Web Enumeration</a></li>
+        <li><a href="#hidden-parameter">Hidden Parameter</a></li>
+      </ul>
+    </li>
+    <li><a href="#initial-access">Initial Access</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a>
+      <ul>
+        <li><a href="#po--oogway">po → oogway</a></li>
+        <li><a href="#oogway--root">oogway → root</a></li>
+      </ul>
+    </li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#flags">Flags</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="overview">Overview</h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.33</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access through information disclosed in the web application, and escalate privileges by abusing a vulnerable tar backup cron job.</p>
+<p><img src="/images/hmv/hostname/vm.png" alt="Machine information"></p>
+<hr>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="rustscan">RustScan</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.33 -- -sC -sV -A -oA nmap/rust
+</span></span></code></pre></div><h3 id="results">Results</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 8.4p1 Debian 5
+</span></span><span style="display:flex;"><span>80/tcp open  http    nginx 1.18.0
+</span></span></code></pre></div><p>The scan revealed two services:</p>
+<ul>
+<li>SSH on port <code>22</code></li>
+<li>HTTP (nginx) on port <code>80</code></li>
+</ul>
+<p>The web application was the obvious starting point.</p>
+<hr>
+<h2 id="enumeration">Enumeration</h2>
+<h3 id="web-enumeration">Web Enumeration</h3>
+<p>Browsing the website presented a simple page asking for a secret.</p>
+<p><img src="/images/hmv/hostname/http.png" alt="HTTP page"></p>
+<p>Inspecting the page source revealed two interesting pieces of information:</p>
+<p><img src="/images/hmv/hostname/http_src.png" alt="Page source"></p>
+<ul>
+<li>Username: <code>po</code></li>
+<li>Base64 string:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>S3VuZ19GdV9QNG5kYQ==
+</span></span></code></pre></div><p><img src="/images/hmv/hostname/http_src.png" alt="Source code"></p>
+<p>Decoding the Base64 string produced:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Kung_Fu_P4nda
+</span></span></code></pre></div><p><img src="/images/hmv/hostname/decode.png" alt="Decoded value"></p>
+<p>Since SSH was exposed, I first attempted to authenticate using these values, but the login failed.</p>
+<p><img src="/images/hmv/hostname/no_ssh.png" alt="Failed SSH login"></p>
+<hr>
+<h3 id="hidden-parameter">Hidden Parameter</h3>
+<p>After reviewing the source code again, I discovered a hidden parameter named <code>secret</code>.</p>
+<p><img src="/images/hmv/hostname/secret_param.png" alt="Hidden parameter"></p>
+<p>Sending a POST request with the recovered values produced the following JavaScript alert:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s http://10.10.10.33/ <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -d <span style="color:#e6db74">&#34;secret=Kung_Fu_P4nda&amp;username=po&#34;</span>
+</span></span></code></pre></div><p>Response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;!ts-bl4nk&#34;</span>);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/hmv/hostname/alert.png" alt="Alert response"></p>
+<p>The alert revealed another password:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>!ts-bl4nk
+</span></span></code></pre></div><hr>
+<h2 id="initial-access">Initial Access</h2>
+<p>SSH access was obtained using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: po
+</span></span><span style="display:flex;"><span>Password: !ts-bl4nk
+</span></span></code></pre></div><p>Using these credentials, I successfully authenticated over SSH.</p>
+<p><img src="/images/hmv/hostname/ssh_po.png" alt="SSH login"></p>
+<hr>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
+<h3 id="po--oogway">po → oogway</h3>
+<p>The first check was the user&rsquo;s sudo permissions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
+</span></span></code></pre></div><p><img src="/images/hmv/hostname/sudo_perm_po.png" alt="sudo permissions"></p>
+<p>The user had no direct sudo permissions.</p>
+<p>While enumerating the system, I checked <code>/etc/sudoers.d/</code> and noticed that the current user could read the configuration files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -l /etc/sudoers.d
+</span></span><span style="display:flex;"><span>cat /etc/sudoers.d/po
+</span></span></code></pre></div><p><img src="/images/hmv/hostname/sudoers.png" alt="sudoers file"></p>
+<p>The configuration allowed the user <code>po</code> to execute Bash as <code>oogway</code>, provided the hostname was <code>HackMyVm</code>.</p>
+<p>The following command successfully spawned a shell as <code>oogway</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -h HackMyVm -u oogway /bin/bash
+</span></span></code></pre></div><p><img src="/images/hmv/hostname/su_oogway.png" alt="oogway shell"></p>
+<hr>
+<h3 id="oogway--root">oogway → root</h3>
+<p>As <code>oogway</code>, I checked sudo permissions again, but the account required a password that was not known.</p>
+<p><img src="/images/hmv/hostname/sudo_perm_oogway.png" alt="sudo permissions"></p>
+<p>During enumeration, I discovered the directory <code>/opt/secret</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -la /opt/secret
+</span></span></code></pre></div><p>The directory was empty, but the user had read, write, and execute permissions.</p>
+<p><img src="/images/hmv/hostname/opt_sec.png" alt="Secret directory"></p>
+<p>This suggested it might be used by an automated process.</p>
+<p>Checking the system cron jobs confirmed that a cron task executed every second and archived the contents of <code>/opt/secret</code> using <code>tar</code> with a wildcard (<code>*</code>).</p>
+<p><img src="/images/hmv/hostname/crontab.png" alt="Cron job"></p>
+<p>Since the backup used a wildcard, it was vulnerable to the classic GNU tar wildcard injection technique.</p>
+<p>Reference:</p>
+<ul>
+<li><a href="https://dev.to/devon_argent_f9a11303298a/day-12-auditing-linux-privilege-escalation-vectors-gm3">https://dev.to/devon_argent_f9a11303298a/day-12-auditing-linux-privilege-escalation-vectors-gm3</a></li>
+</ul>
+<p>I placed the required payload files inside <code>/opt/secret</code> to exploit the wildcard injection. When the cron job executed, it copied <code>/bin/bash</code> to <code>/tmp/shell</code> and set the SUID bit on the copied binary.</p>
+<p><img src="/images/hmv/hostname/exp_tar.png" alt="Tar exploitation"></p>
+<p>After the cron job ran, the SUID binary was successfully created.</p>
+<p><img src="/images/hmv/hostname/it_worked.png" alt="SUID bash created"></p>
+<p>Executing the SUID binary with the <code>-p</code> option spawned a root shell.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/tmp/shell -p
+</span></span></code></pre></div><p><img src="/images/hmv/hostname/shell_p.png" alt="Root "></p>
+<hr>
+<h2 id="credentials">Credentials</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Web:
+</span></span><span style="display:flex;"><span>secret=Kung_Fu_P4nda
+</span></span><span style="display:flex;"><span>username=po
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SSH:
+</span></span><span style="display:flex;"><span>po:!ts-bl4nk
+</span></span></code></pre></div><hr>
+<h2 id="flags">Flags</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:081ecc5e6dd6ba0d150fc4bc0e62ec50
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root:d5806296126a30ceebeaa172ff9c9151
+</span></span></code></pre></div>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 
