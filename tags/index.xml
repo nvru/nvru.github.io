@@ -30,6 +30,17 @@
     </item>
     
     <item>
+      <title>Easy</title>
+      <link>https://nvru.github.io/tags/easy/</link>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/easy/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Linux</title>
       <link>https://nvru.github.io/tags/linux/</link>
       <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
@@ -57,6 +68,17 @@
       <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Python-Library-Hijacking</title>
+      <link>https://nvru.github.io/tags/python-library-hijacking/</link>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/python-library-hijacking/</guid>
       
       <description></description>
       
@@ -96,6 +118,17 @@
     </item>
     
     <item>
+      <title>Xxe</title>
+      <link>https://nvru.github.io/tags/xxe/</link>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/xxe/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Capabilities</title>
       <link>https://nvru.github.io/tags/capabilities/</link>
       <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
@@ -112,17 +145,6 @@
       <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/cronjob/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Easy</title>
-      <link>https://nvru.github.io/tags/easy/</link>
-      <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/easy/</guid>
       
       <description></description>
       
@@ -613,33 +635,11 @@
     </item>
     
     <item>
-      <title>Xxe</title>
-      <link>https://nvru.github.io/tags/xxe/</link>
-      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/xxe/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Procfs</title>
       <link>https://nvru.github.io/tags/procfs/</link>
       <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/procfs/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Python-Library-Hijacking</title>
-      <link>https://nvru.github.io/tags/python-library-hijacking/</link>
-      <pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/python-library-hijacking/</guid>
       
       <description></description>
       

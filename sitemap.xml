@@ -11,6 +11,9 @@
     <loc>https://nvru.github.io/tags/ctf/</loc>
     <lastmod>2026-07-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/tags/easy/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/</loc>
     <lastmod>2026-07-22T00:00:00+00:00</lastmod>
   </url><url>
@@ -26,10 +29,16 @@
     <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
     <lastmod>2026-07-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/tags/python-library-hijacking/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/ssh/</loc>
     <lastmod>2026-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/sudo/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hmv/system/</loc>
     <lastmod>2026-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/</loc>
@@ -41,13 +50,13 @@
     <loc>https://nvru.github.io/walkthrough/</loc>
     <lastmod>2026-07-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/tags/xxe/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/capabilities/</loc>
     <lastmod>2026-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/cronjob/</loc>
-    <lastmod>2026-07-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/easy/</loc>
     <lastmod>2026-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/hostname/</loc>
@@ -230,9 +239,6 @@
     <loc>https://nvru.github.io/tags/xml/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/xxe/</loc>
-    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/yuan111/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url><url>
@@ -249,9 +255,6 @@
     <lastmod>2026-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/jabita/</loc>
-    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/python-library-hijacking/</loc>
     <lastmod>2026-07-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/find/</loc>
