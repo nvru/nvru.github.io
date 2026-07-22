@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<html lang="en-US"><head><meta charset="utf-8">
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
 
-  <link rel="alternate" hreflang="en" href="http://localhost:1313/walkthrough/hmv/baseme/" title="" />
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/walkthrough/hmv/baseme/" title="" />
 
 
 
@@ -28,15 +28,15 @@
 <meta name="generator" content="Hugo 0.164.0">
 
     
-    <meta property="og:url" content="http://localhost:1313/walkthrough/hmv/baseme/">
+    <meta property="og:url" content="https://nvru.github.io/walkthrough/hmv/baseme/">
 	<meta property="og:site_name" content="Null Blog">
 	<meta property="og:title" content="Baseme - Walkthrough">
 	<meta property="og:description" content="Walkthrough for the Baseme machine.">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="walkthrough">
-		<meta property="article:published_time" content="2026-07-21T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-07-21T00:00:00+00:00">
+		<meta property="article:published_time" content="2026-07-22T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-22T00:00:00+00:00">
 		<meta property="article:tag" content="Ctf">
 		<meta property="article:tag" content="Walkthrough">
 		<meta property="article:tag" content="Linux">
@@ -54,7 +54,7 @@
 
     
 
-    <link rel="canonical" href="http://localhost:1313/walkthrough/hmv/baseme/">
+    <link rel="canonical" href="https://nvru.github.io/walkthrough/hmv/baseme/">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -68,7 +68,7 @@
 
 
 
-<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+<link rel="manifest" href="https://nvru.github.io/site.webmanifest">
 
 <meta name="msapplication-config" content="/browserconfig.xml">
 <meta name="msapplication-TileColor" content="#2d89ef">
@@ -80,14 +80,15 @@
 
     
     
+    
 </head>
 <body data-theme = "dark" class="notransition">
 
-<script src="/js/theme.js"></script>
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
 
 <div class="navbar" role="navigation">
     <nav class="menu" aria-label="Main Navigation">
-        <a href="http://localhost:1313/" class="logo">
+        <a href="https://nvru.github.io/" class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
 stroke-linejoin="round" class="feather feather-home">
@@ -181,7 +182,7 @@ stroke-linejoin="round" class="feather feather-home">
                 
                 
                 <div class="post-meta">
-                    <time datetime="2026-07-21T00:00:00&#43;00:00" itemprop="datePublished"> 21 Jul 2026 </time>
+                    <time datetime="2026-07-22T00:00:00&#43;00:00" itemprop="datePublished"> 22 Jul 2026 </time>
                 </div>
                 
             </header>
@@ -288,7 +289,7 @@ stroke-linejoin="round" class="feather feather-home">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh2john creds/ssh_web &gt; misc/ssh_hash
 </span></span><span style="display:flex;"><span>john --wordlist<span style="color:#f92672">=</span>~/wordlists/rockyou.txt misc/ssh_hash
 </span></span></code></pre></div><p>Since the machine revolved around Base64, I instead generated a Base64-encoded version of the RockYou wordlist.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>cat ~/wordlists/rockyou.txt<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>cat ~/wordlists/rockyou-50.txt<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> | base64
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &gt; misc/rock_64
 </span></span><span style="display:flex;"><span>
@@ -408,7 +409,7 @@ stroke-linejoin="round" class="feather feather-home">
 
 
     
-    <script async src="http://localhost:1313/js/main.js" ></script>
+    <script src="https://nvru.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
 
     
 

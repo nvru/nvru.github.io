@@ -2,19 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nvru.github.io/tags/base64/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hmv/baseme/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/ctf/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hmv/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/linux/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/nginx/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/ssh/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/sudo/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/walkthrough/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/capabilities/</loc>
     <lastmod>2026-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/cronjob/</loc>
     <lastmod>2026-07-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/ctf/</loc>
-    <lastmod>2026-07-21T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/easy/</loc>
-    <lastmod>2026-07-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/walkthrough/hmv/</loc>
     <lastmod>2026-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/hostname/</loc>
@@ -26,37 +59,16 @@
     <loc>https://nvru.github.io/walkthrough/hmv/iot/</loc>
     <lastmod>2026-07-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/linux/</loc>
-    <lastmod>2026-07-21T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/mosquitto/</loc>
     <lastmod>2026-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/mqtt/</loc>
     <lastmod>2026-07-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/nginx/</loc>
-    <lastmod>2026-07-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/</loc>
-    <lastmod>2026-07-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
-    <lastmod>2026-07-21T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/source-code-disclosure/</loc>
     <lastmod>2026-07-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/</loc>
-    <lastmod>2026-07-21T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/tar/</loc>
-    <lastmod>2026-07-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/walkthrough/</loc>
-    <lastmod>2026-07-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/walkthrough/</loc>
     <lastmod>2026-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/vulnhub/colddbox/</loc>
@@ -75,9 +87,6 @@
     <lastmod>2026-07-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/php-reverse-shell/</loc>
-    <lastmod>2026-07-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/ssh/</loc>
     <lastmod>2026-07-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/suid/</loc>
@@ -126,9 +135,6 @@
     <lastmod>2026-07-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/ftp/</loc>
-    <lastmod>2026-07-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/sudo/</loc>
     <lastmod>2026-07-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/systemctl/</loc>
