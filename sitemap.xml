@@ -18,10 +18,19 @@
     <loc>https://nvru.github.io/tags/docker/</loc>
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/tags/ffuf/</loc>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/flask/</loc>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/hack-smarter/</loc>
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/hsm/</loc>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hsm/hunter/</loc>
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/lab/</loc>
@@ -51,10 +60,16 @@
     <loc>https://nvru.github.io/tags/</loc>
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/tags/username-enumeration/</loc>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/walkthrough/</loc>
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/</loc>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/werkzeug/</loc>
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/wordpress/</loc>
