@@ -6,7 +6,19 @@
     <loc>https://nvru.github.io/tags/ctf/</loc>
     <lastmod>2026-07-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/tags/cve-2026-23550/</loc>
+    <lastmod>2026-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hsm/dark/</loc>
+    <lastmod>2026-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/docker/</loc>
+    <lastmod>2026-07-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/</loc>
+    <lastmod>2026-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hsm/</loc>
     <lastmod>2026-07-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/http/</loc>
@@ -40,6 +52,9 @@
     <lastmod>2026-07-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/</loc>
+    <lastmod>2026-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/wordpress/</loc>
     <lastmod>2026-07-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/file-observation/</loc>
@@ -121,9 +136,6 @@
     <lastmod>2026-07-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/vulnhub/who_wants_to_be_king1/</loc>
-    <lastmod>2026-07-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/wordpress/</loc>
     <lastmod>2026-07-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/wpscan/</loc>
