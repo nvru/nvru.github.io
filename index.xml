@@ -35,6 +35,22 @@
     </item>
     
     <item>
+      <title>SQL Basics (Easy) - Walkthrough</title>
+      <link>https://nvru.github.io/walkthrough/hsm/sql_basics/</link>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/walkthrough/hsm/sql_basics/</guid>
+      
+      <description>&lt;h1 id=&#34;hack-smarter---sql-fundamentals-lab-walkthrough&#34;&gt;Hack Smarter - SQL Fundamentals Lab Walkthrough&lt;/h1&gt;
+&lt;p&gt;In this lab, the objective was to complete four SQL missions by interacting directly with a live SQLite database. Rather than exploiting a vulnerable application, this exercise focused on understanding how SQL works from the database administrator&amp;rsquo;s perspective.&lt;/p&gt;
+&lt;p&gt;Before completing the missions, I first explored the database to understand its structure.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;step-1---identify-the-database-type&#34;&gt;Step 1 - Identify the Database Type&lt;/h2&gt;
+&lt;p&gt;The first thing I wanted to know was which database engine the application was using.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>Noob - Walkthrough</title>
       <link>https://nvru.github.io/walkthrough/hmv/noob/</link>
       <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>

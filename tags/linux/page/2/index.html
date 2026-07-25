@@ -1,956 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
 
-
-
-
-
-
-<!doctype html>
-<html
-  lang="en-US"
-  dir="ltr"
-  class="scroll-smooth"
-  data-default-appearance="light"
-  data-auto-appearance="true"
-><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#FFFFFF" />
-  
-  <title>Linux &middot; My Blog</title>
-    <meta name="title" content="Linux &middot; My Blog" />
-  
-  
-  
-  
-  
-  <script
-    type="text/javascript"
-    src="http://localhost:1313/js/appearance.min.8a082f81b27f3cb2ee528df0b0bdc39787034cf2cc34d4669fbc9977c929023c.js"
-    integrity="sha256-iggvgbJ/PLLuUo3wsL3Dl4cDTPLMNNRmn7yZd8kpAjw="
-  ></script>
-  
-  
-  
-  
-  
-  
-  
-  
-  <link
-    type="text/css"
-    rel="stylesheet"
-    href="http://localhost:1313/css/main.bundle.min.77a79972dfd1fba3e37eaab972e5cf479aea24376fc39d827f5760735ebc834e.css"
-    integrity="sha256-d6eZct/R&#43;6Pjfqq5cuXPR5rqJDdvw52Cf1dgc168g04="
-  />
-  
-  
-  
-  
-  
-  
-  
-  <meta
-    name="description"
-    content="
-      
-        CTF writeups, hacking notes, and walkthroughs.
-      
-    "
-  />
-  
-  
-  
-  
-    <link rel="canonical" href="http://localhost:1313/tags/linux/" />
-  
-  <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/linux/index.xml" title="My Blog" />
-  
-  
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-  
-  
-  
-  
-  
-  
-  
-  
-  <meta property="og:url" content="http://localhost:1313/tags/linux/">
-	<meta property="og:site_name" content="My Blog">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/tags/linux/">
+	<meta property="og:site_name" content="Null Blog">
 	<meta property="og:title" content="Linux">
-	<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs.">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="website">
 
-  
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Linux">
-	<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs.">
 
-  
-  
+	<meta itemprop="name" content="Linux">
+	<meta itemprop="datePublished" content="2026-07-25T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2026-07-25T00:00:00+00:00">
 
-  
-  
-    <meta name="author" content="null void root" />
-  
-  
-  
-  
+<title>Linux • Null Blog</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/tags/linux/">
+<link rel="stylesheet" href="/book.min.b71fe3c1d3675e52d80430d63a71819e12d05dee934e099a700bacfd4c49a7be.css" integrity="sha256-tx/jwdNnXlLYBDDWOnGBnhLQXe6TTgmacAus/UxJp74=" crossorigin="anonymous">
 
 
+  <script defer type="module" src="/en.search.min.b7041304dda60ada1ce0024c515f334fca6e3aca1b2a15a123da53bdda16b71e.js" integrity="sha256-twQTBN2mCtoc4AJMUV8zT8puOsobKhWhI9pTvdoWtx4=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/linux/index.xml" title="Linux" />
 
-
-
-
-
-  
-  
-
-  
   
 </head>
-<body
-    class="m-auto flex h-screen max-w-7xl flex-col bg-neutral px-6 text-lg leading-7 text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"
-  >
-    <div id="the-top" class="absolute flex self-center">
-      <a
-        class="-translate-y-8 rounded-b-lg bg-primary-200 px-3 py-1 text-sm focus:translate-y-0 dark:bg-neutral-600"
-        href="#main-content"
-        ><span class="pe-2 font-bold text-primary-600 dark:text-primary-400">&darr;</span
-        >Skip to main content</a
-      >
-    </div>
+<body dir="ltr" class="book-kind-term book-type-tags">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
     
+<aside class="book-menu">
+  <div class="book-menu-content">
     
-      <header class="py-6 font-semibold text-neutral-900 dark:text-neutral sm:py-10 print:hidden">
-  <nav class="flex items-start justify-between sm:items-center">
-    
-    <div class="flex flex-row items-center">
-      
-  <a
-    class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
-    rel="me"
-    href="/"
-    >My Blog</a
-  >
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Null Blog</span>
+  </a>
+</h2>
 
-    </div>
-    
-    
-      <ul class="flex list-none flex-col text-end sm:flex-row">
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
         
-          
-            
-            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
-              
-                <a
-                  href="/"
-                  title="My Blog"
-                  
-                  
-                  ><span
-                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
-                      >Home</span
-                    >
-                  </a
-                >
-              
-            </li>
-          
-            
-            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
-              
-                <a
-                  href="/writeups/"
-                  title="Writeups"
-                  
-                  
-                  ><span
-                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
-                      >Writupes</span
-                    >
-                  </a
-                >
-              
-            </li>
-          
-            
-            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
-              
-                <a
-                  href="/posts/"
-                  title="Posts"
-                  
-                  
-                  ><span
-                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
-                      >Posts</span
-                    >
-                  </a
-                >
-              
-            </li>
-          
-            
-            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
-              
-                <a
-                  href="/about/"
-                  title="About"
-                  
-                  
-                  ><span
-                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
-                      >About</span
-                    >
-                  </a
-                >
-              
-            </li>
-          
-          
-        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Linux</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  <nav>
+  <ul>
+  
+    
+    <li class="book-section-flat">
+      <a>Categories</a>
+      <ul>
+      
       </ul>
+    </li>
     
-  </nav>
-</header>
+  
+    
+    <li class="book-section-flat">
+      <a>Tags</a>
+      <ul>
+      
+        <li class="flex align-center">
+          <a href="/tags/ctf/">Ctf</a>
+          <span>31</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/cve-2026-23550/">Cve-2026-23550</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/docker/">Docker</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/linux/">Linux</a>
+          <span>31</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/privilege-escalation/">Privilege-Escalation</a>
+          <span>31</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/walkthrough/">Walkthrough</a>
+          <span>31</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/wordpress/">Wordpress</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/http/">Http</a>
+          <span>5</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/initial-access/">Initial-Access</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/ssh/">Ssh</a>
+          <span>17</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/symlink/">Symlink</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/file-observation/">File-Observation</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/golang/">Golang</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/base64/">Base64</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/easy/">Easy</a>
+          <span>5</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/nginx/">Nginx</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/python-library-hijacking/">Python-Library-Hijacking</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/sudo/">Sudo</a>
+          <span>9</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/xxe/">Xxe</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/capabilities/">Capabilities</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/cronjob/">Cronjob</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/mosquitto/">Mosquitto</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/mqtt/">Mqtt</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/source-code-disclosure/">Source-Code-Disclosure</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/tar/">Tar</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/credentials/">Credentials</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/password-bruteforce/">Password-Bruteforce</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/password-reuse/">Password-Reuse</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/php-reverse-shell/">Php-Reverse-Shell</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/suid/">Suid</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/wpscan/">Wpscan</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/apache/">Apache</a>
+          <span>9</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/command-injection/">Command-Injection</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/express-fileupload/">Express-Fileupload</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/medium/">Medium</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/nodejs/">Nodejs</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/lfi/">Lfi</a>
+          <span>5</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/anonymous-ftp/">Anonymous-Ftp</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/ftp/">Ftp</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/systemctl/">Systemctl</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/file-upload/">File-Upload</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/vim/">Vim</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/cron/">Cron</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/path-hijacking/">Path-Hijacking</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/ssh-bruteforce/">Ssh-Bruteforce</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/cups/">Cups</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/php-filter-chain/">Php-Filter-Chain</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/hard/">Hard</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/misconfiguration/">Misconfiguration</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/nfs/">Nfs</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/sql-injection/">Sql-Injection</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/credential-disclosure/">Credential-Disclosure</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/icmp/">Icmp</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/traffic-analysis/">Traffic-Analysis</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/reverse-shell/">Reverse-Shell</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/systemd/">Systemd</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/bash/">Bash</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/snmp/">Snmp</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/snmp-enumeration/">Snmp-Enumeration</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/wfuzz/">Wfuzz</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/xml/">Xml</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/procfs/">Procfs</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/steganography/">Steganography</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/web/">Web</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/dirtyfrag/">Dirtyfrag</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/network/">Network</a>
+          <span>1</span>
+        </li>
+      
+      </ul>
+    </li>
+    
+  
+  </ul>
+</nav>
 
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/walkthrough/hmv/p4l4nc4/">p4l4nc4 (Palanca) - Walkthrough</a>
+    </h2>
     
-    <div class="relative flex grow flex-col">
-      <main id="main-content" class="grow">
+  <div class="flex align-center text-small book-post-date">
+    <img src="/icons/calendar.svg" class="book-icon" alt="Calendar" />
+    <span>July 18, 2026</span>
+  </div>
+
+
+
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/tags/ctf/">Ctf</a>, 
+      <a href="/tags/walkthrough/">Walkthrough</a>, 
+      <a href="/tags/linux/">Linux</a>, 
+      <a href="/tags/apache/">Apache</a>, 
+      <a href="/tags/lfi/">Lfi</a>, 
+      <a href="/tags/ssh/">Ssh</a>, 
+      <a href="/tags/privilege-escalation/">Privilege-Escalation</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.27</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access through a Local File Inclusion (LFI) vulnerability, and escalate privileges by abusing insecure permissions on <code>/etc/passwd</code>.</p>
+<p><img src="/images/hmv/p4l4nc4/vm.png" alt="Machine information" /></p>
+<hr>
+<h2 id="port-scanning">Port Scanning<a class="anchor" href="#port-scanning">#</a></h2>
+<h3 id="rustscan">RustScan<a class="anchor" href="#rustscan">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.27 -- -sC -sV -A -oA nmap/rust</span></span></code></pre></div><h3 id="results">Results<a class="anchor" href="#results">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u3
+</span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.62 ((Debian))</span></span></code></pre></div><p>Only SSH and an Apache web server were exposed, making the web service the obvious starting point.</p></div>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/walkthrough/hmv/economists/">Economists - Walkthrough</a>
+    </h2>
+    
+  <div class="flex align-center text-small book-post-date">
+    <img src="/icons/calendar.svg" class="book-icon" alt="Calendar" />
+    <span>July 17, 2026</span>
+  </div>
+
+
+
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/tags/ctf/">Ctf</a>, 
+      <a href="/tags/walkthrough/">Walkthrough</a>, 
+      <a href="/tags/linux/">Linux</a>, 
+      <a href="/tags/ftp/">Ftp</a>, 
+      <a href="/tags/ssh/">Ssh</a>, 
+      <a href="/tags/apache/">Apache</a>, 
+      <a href="/tags/anonymous-ftp/">Anonymous-Ftp</a>, 
+      <a href="/tags/password-bruteforce/">Password-Bruteforce</a>, 
+      <a href="/tags/sudo/">Sudo</a>, 
+      <a href="/tags/systemctl/">Systemctl</a>, 
+      <a href="/tags/privilege-escalation/">Privilege-Escalation</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><h1 id="overview">Overview<a class="anchor" href="#overview">#</a></h1>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.26</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access by brute-forcing SSH credentials obtained during enumeration, and escalate privileges by abusing a misconfigured <code>sudo</code> rule allowing execution of <code>systemctl</code>.</p>
+<p><img src="/images/hmv/economists/vm.png" alt="Machine information" /></p>
+<hr>
+<h1 id="port-scanning">Port Scanning<a class="anchor" href="#port-scanning">#</a></h1>
+<h2 id="rustscan">RustScan<a class="anchor" href="#rustscan">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.26 -- -sC -sV -A -oA nmap/rust</span></span></code></pre></div><h2 id="results">Results<a class="anchor" href="#results">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>21/tcp open  ftp     vsftpd 3.0.3
+</span></span><span style="display:flex;"><span>| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+</span></span><span style="display:flex;"><span>| -rw-rw-r--    Brochure-1.pdf
+</span></span><span style="display:flex;"><span>| -rw-rw-r--    Brochure-2.pdf
+</span></span><span style="display:flex;"><span>| -rw-rw-r--    Financial-infographics-poster.pdf
+</span></span><span style="display:flex;"><span>| -rw-rw-r--    Gameboard-poster.pdf
+</span></span><span style="display:flex;"><span>| -rw-rw-r--    Growth-timeline.pdf
+</span></span><span style="display:flex;"><span>| -rw-rw-r--    Population-poster.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu
+</span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.41</span></span></code></pre></div><p>The target exposed three services:</p></div>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/walkthrough/hmv/friendly/">Friendly - Walkthrough</a>
+    </h2>
+    
+  <div class="flex align-center text-small book-post-date">
+    <img src="/icons/calendar.svg" class="book-icon" alt="Calendar" />
+    <span>July 16, 2026</span>
+  </div>
+
+
+
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/tags/ctf/">Ctf</a>, 
+      <a href="/tags/walkthrough/">Walkthrough</a>, 
+      <a href="/tags/linux/">Linux</a>, 
+      <a href="/tags/ftp/">Ftp</a>, 
+      <a href="/tags/apache/">Apache</a>, 
+      <a href="/tags/anonymous-ftp/">Anonymous-Ftp</a>, 
+      <a href="/tags/file-upload/">File-Upload</a>, 
+      <a href="/tags/sudo/">Sudo</a>, 
+      <a href="/tags/vim/">Vim</a>, 
+      <a href="/tags/privilege-escalation/">Privilege-Escalation</a>, 
+      <a href="/tags/easy/">Easy</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.25</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access through an anonymous FTP file upload, and escalate privileges by abusing a misconfigured sudo rule that allowed execution of Vim as root.</p>
+<p><img src="/images/hmv/friendly/vm.png" alt="Machine information" /></p>
+<hr>
+<h2 id="port-scanning">Port Scanning<a class="anchor" href="#port-scanning">#</a></h2>
+<h3 id="rustscan">RustScan<a class="anchor" href="#rustscan">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.25 -- -sC -sV -A -oA nmap/rust</span></span></code></pre></div><h3 id="results">Results<a class="anchor" href="#results">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE REASON  VERSION
+</span></span><span style="display:flex;"><span>21/tcp open  ftp     syn-ack ProFTPD
+</span></span><span style="display:flex;"><span>| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+</span></span><span style="display:flex;"><span>|_-rw-r--r--   1 root     root        10725 Feb 23  2023 index.html
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>80/tcp open  http    syn-ack Apache httpd 2.4.54 ((Debian))
+</span></span><span style="display:flex;"><span>|_http-server-header: Apache/2.4.54 (Debian)
+</span></span><span style="display:flex;"><span>| http-methods:
+</span></span><span style="display:flex;"><span>|_  Supported Methods: GET POST OPTIONS HEAD
+</span></span><span style="display:flex;"><span>|_http-title: Apache2 Debian Default Page: It works</span></span></code></pre></div><p>Only two services were exposed: FTP on port <strong>21</strong> and Apache HTTP on port <strong>80</strong>. Since anonymous FTP access was enabled, it became the primary focus of enumeration.</p></div>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/walkthrough/hmv/hannah/">Hannah - Walkthrough</a>
+    </h2>
+    
+  <div class="flex align-center text-small book-post-date">
+    <img src="/icons/calendar.svg" class="book-icon" alt="Calendar" />
+    <span>July 15, 2026</span>
+  </div>
+
+
+
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/tags/ctf/">Ctf</a>, 
+      <a href="/tags/walkthrough/">Walkthrough</a>, 
+      <a href="/tags/linux/">Linux</a>, 
+      <a href="/tags/nginx/">Nginx</a>, 
+      <a href="/tags/cron/">Cron</a>, 
+      <a href="/tags/path-hijacking/">Path-Hijacking</a>, 
+      <a href="/tags/ssh-bruteforce/">Ssh-Bruteforce</a>, 
+      <a href="/tags/privilege-escalation/">Privilege-Escalation</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><h1 id="overview">Overview<a class="anchor" href="#overview">#</a></h1>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.24</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access through SSH credential brute forcing, and escalate privileges by abusing an insecure <code>PATH</code> configuration in a root cron job.</p>
+<p><img src="/images/hmv/hannah/vm.png" alt="Machine information" /></p>
+<hr>
+<h1 id="port-scanning">Port Scanning<a class="anchor" href="#port-scanning">#</a></h1>
+<h2 id="rustscan">RustScan<a class="anchor" href="#rustscan">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.24 -- -sC -sV -A -oA nmap/rust</span></span></code></pre></div><h2 id="results">Results<a class="anchor" href="#results">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT    STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp  open  ssh     OpenSSH 8.4p1 Debian 5+deb11u1
+</span></span><span style="display:flex;"><span>80/tcp  open  http    nginx 1.18.0
+</span></span><span style="display:flex;"><span>113/tcp open  ident</span></span></code></pre></div><p>Only three ports were exposed:</p></div>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/walkthrough/hmv/printer2/">Printer2 - Walkthrough</a>
+    </h2>
+    
+  <div class="flex align-center text-small book-post-date">
+    <img src="/icons/calendar.svg" class="book-icon" alt="Calendar" />
+    <span>July 14, 2026</span>
+  </div>
+
+
+
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/tags/ctf/">Ctf</a>, 
+      <a href="/tags/walkthrough/">Walkthrough</a>, 
+      <a href="/tags/linux/">Linux</a>, 
+      <a href="/tags/apache/">Apache</a>, 
+      <a href="/tags/cups/">Cups</a>, 
+      <a href="/tags/lfi/">Lfi</a>, 
+      <a href="/tags/php-filter-chain/">Php-Filter-Chain</a>, 
+      <a href="/tags/command-injection/">Command-Injection</a>, 
+      <a href="/tags/ssh/">Ssh</a>, 
+      <a href="/tags/sudo/">Sudo</a>, 
+      <a href="/tags/privilege-escalation/">Privilege-Escalation</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.23</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access through a Local File Inclusion (LFI) vulnerability combined with a PHP filter chain, and escalate privileges by abusing a backdoored CUPS filter together with an insecure sudo configuration.</p>
+<p><img src="/images/hmv/printer2/vm.png" alt="Machine information" /></p>
+<hr>
+<h2 id="enumeration">Enumeration<a class="anchor" href="#enumeration">#</a></h2>
+<h3 id="port-scanning">Port Scanning<a class="anchor" href="#port-scanning">#</a></h3>
+<h4 id="rustscan">RustScan<a class="anchor" href="#rustscan">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.23 -- -sC -sV -A -oA nmap/rust</span></span></code></pre></div><h4 id="results">Results<a class="anchor" href="#results">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT    STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp  open  ssh     OpenSSH 8.4p1 Debian 5+deb11u1
+</span></span><span style="display:flex;"><span>80/tcp  open  http    Apache httpd 2.4.56 ((Debian))
+</span></span><span style="display:flex;"><span>631/tcp open  ipp     CUPS 2.3</span></span></code></pre></div><p>Only three services were exposed:</p></div>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/walkthrough/hmv/printer/">Printer - Walkthrough</a>
+    </h2>
+    
+  <div class="flex align-center text-small book-post-date">
+    <img src="/icons/calendar.svg" class="book-icon" alt="Calendar" />
+    <span>July 13, 2026</span>
+  </div>
+
+
+
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/tags/ctf/">Ctf</a>, 
+      <a href="/tags/walkthrough/">Walkthrough</a>, 
+      <a href="/tags/linux/">Linux</a>, 
+      <a href="/tags/nfs/">Nfs</a>, 
+      <a href="/tags/misconfiguration/">Misconfiguration</a>, 
+      <a href="/tags/ssh/">Ssh</a>, 
+      <a href="/tags/symlink/">Symlink</a>, 
+      <a href="/tags/privilege-escalation/">Privilege-Escalation</a>, 
+      <a href="/tags/hard/">Hard</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.22</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access through an exposed NFS share, and escalate privileges by abusing an insecure log archiving script.</p>
+<p><img src="/images/hmv/printer/vm.png" alt="Machine information" /></p>
+<hr>
+<h2 id="enumeration">Enumeration<a class="anchor" href="#enumeration">#</a></h2>
+<h3 id="port-scanning">Port Scanning<a class="anchor" href="#port-scanning">#</a></h3>
+<h4 id="rustscan">RustScan<a class="anchor" href="#rustscan">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.22 -- -sC -sV -A -oA nmap/rust</span></span></code></pre></div><h4 id="results">Results<a class="anchor" href="#results">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT      STATE SERVICE  VERSION
+</span></span><span style="display:flex;"><span>22/tcp    open  ssh      OpenSSH 8.4p1 Debian
+</span></span><span style="display:flex;"><span>111/tcp   open  rpcbind
+</span></span><span style="display:flex;"><span>2049/tcp  open  nfs_acl
+</span></span><span style="display:flex;"><span>38975/tcp open  nlockmgr
+</span></span><span style="display:flex;"><span>39487/tcp open  mountd
+</span></span><span style="display:flex;"><span>48189/tcp open  mountd
+</span></span><span style="display:flex;"><span>52073/tcp open  mountd</span></span></code></pre></div><p>The scan showed SSH was available on port <strong>22</strong> and an exposed <strong>NFS</strong> service on <strong>2049</strong>, making NFS the most interesting attack surface.</p></div>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/walkthrough/htb/cctv/">CCTV - Walkthrough</a>
+    </h2>
+    
+  <div class="flex align-center text-small book-post-date">
+    <img src="/icons/calendar.svg" class="book-icon" alt="Calendar" />
+    <span>July 12, 2026</span>
+  </div>
+
+
+
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/tags/ctf/">Ctf</a>, 
+      <a href="/tags/walkthrough/">Walkthrough</a>, 
+      <a href="/tags/linux/">Linux</a>, 
+      <a href="/tags/http/">Http</a>, 
+      <a href="/tags/sql-injection/">Sql-Injection</a>, 
+      <a href="/tags/ssh/">Ssh</a>, 
+      <a href="/tags/privilege-escalation/">Privilege-Escalation</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.14.24</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.129.50.93</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access through a SQL injection vulnerability in ZoneMinder, and escalate privileges by exploiting a vulnerable MotionEye instance.</p>
+<p><img src="/images/htb/cctv/vm.png" alt="Machine information" /></p>
+<hr>
+<h2 id="port-scanning">Port Scanning<a class="anchor" href="#port-scanning">#</a></h2>
+<h3 id="rustscan">RustScan<a class="anchor" href="#rustscan">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.129.50.93 -- -A -oA nmap/rust</span></span></code></pre></div><h3 id="results">Results<a class="anchor" href="#results">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 9.6p1 Ubuntu 3ubuntu13.14 (Ubuntu Linux; protocol 2.0)
+</span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.58
+</span></span><span style="display:flex;"><span>|_http-title: Did not follow redirect to http://cctv.htb/</span></span></code></pre></div><p>Only a few services were exposed externally, making web enumeration the next logical step.</p></div>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/walkthrough/hmv/pingme/">Pingme - Walkthrough</a>
+    </h2>
+    
+  <div class="flex align-center text-small book-post-date">
+    <img src="/icons/calendar.svg" class="book-icon" alt="Calendar" />
+    <span>July 11, 2026</span>
+  </div>
+
+
+
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/tags/ctf/">Ctf</a>, 
+      <a href="/tags/walkthrough/">Walkthrough</a>, 
+      <a href="/tags/linux/">Linux</a>, 
+      <a href="/tags/http/">Http</a>, 
+      <a href="/tags/icmp/">Icmp</a>, 
+      <a href="/tags/credential-disclosure/">Credential-Disclosure</a>, 
+      <a href="/tags/traffic-analysis/">Traffic-Analysis</a>, 
+      <a href="/tags/sudo/">Sudo</a>, 
+      <a href="/tags/privilege-escalation/">Privilege-Escalation</a>, 
+      <a href="/tags/medium/">Medium</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><h1 id="overview">Overview<a class="anchor" href="#overview">#</a></h1>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.21</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access by recovering credentials leaked through ICMP packets, and escalate privileges by abusing a root-owned script that allowed arbitrary file transmission over ICMP.</p>
+<p><img src="/images/hmv/pingme/vm.png" alt="Machine information" /></p>
+<hr>
+<h2 id="port-scanning">Port Scanning<a class="anchor" href="#port-scanning">#</a></h2>
+<h3 id="rustscan">RustScan<a class="anchor" href="#rustscan">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.21 -- -sC -sV -A -oA nmap/rust</span></span></code></pre></div><h4 id="results">Results<a class="anchor" href="#results">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 8.4p1 Debian 5 (protocol 2.0)
+</span></span><span style="display:flex;"><span>80/tcp open  http    nginx 1.18.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Service Info: OS: Linux</span></span></code></pre></div><p>Only SSH and HTTP were exposed. Since SSH did not provide an entry point yet, I started with web enumeration.</p></div>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/walkthrough/hmv/immortal/">Immortal - Walkthrough</a>
+    </h2>
+    
+  <div class="flex align-center text-small book-post-date">
+    <img src="/icons/calendar.svg" class="book-icon" alt="Calendar" />
+    <span>July 10, 2026</span>
+  </div>
+
+
+
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/tags/ctf/">Ctf</a>, 
+      <a href="/tags/walkthrough/">Walkthrough</a>, 
+      <a href="/tags/linux/">Linux</a>, 
+      <a href="/tags/ftp/">Ftp</a>, 
+      <a href="/tags/file-upload/">File-Upload</a>, 
+      <a href="/tags/reverse-shell/">Reverse-Shell</a>, 
+      <a href="/tags/sudo/">Sudo</a>, 
+      <a href="/tags/systemd/">Systemd</a>, 
+      <a href="/tags/privilege-escalation/">Privilege-Escalation</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><h1 id="overview">Overview<a class="anchor" href="#overview">#</a></h1>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.20</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access through an unrestricted file upload vulnerability, and escalate privileges by abusing writable Python code and a misconfigured <code>systemctl</code> sudo rule.</p>
+<p><img src="/images/hmv/immortal/vm.png" alt="Machine information" /></p>
+<hr>
+<h2 id="discovering-the-target">Discovering the Target<a class="anchor" href="#discovering-the-target">#</a></h2>
+<p>First, I identified the target IP address on the local network.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo arp-scan --interface vboxnet0 --localnet</span></span></code></pre></div><p>Output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Interface: vboxnet0, type: EN10MB, MAC: 0a:00:27:00:00:00, IPv4: 10.10.10.2
+</span></span><span style="display:flex;"><span>10.10.10.20     08:00:27:13:bb:b5       PCS Systemtechnik GmbH</span></span></code></pre></div><hr>
+<h2 id="port-scanning">Port Scanning<a class="anchor" href="#port-scanning">#</a></h2>
+<h3 id="rustscan">RustScan<a class="anchor" href="#rustscan">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.20 -- -sC -sV -A -oA nmap/rust</span></span></code></pre></div><h3 id="results">Results<a class="anchor" href="#results">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>21/tcp open  ftp     vsftpd 3.0.3
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 8.4p1
+</span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.56</span></span></code></pre></div><p>The machine exposed only three services: FTP, SSH, and HTTP.</p></div>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/walkthrough/hmv/yuan111/">Yuan111 - Walkthrough</a>
+    </h2>
+    
+  <div class="flex align-center text-small book-post-date">
+    <img src="/icons/calendar.svg" class="book-icon" alt="Calendar" />
+    <span>July 9, 2026</span>
+  </div>
+
+
+
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/tags/ctf/">Ctf</a>, 
+      <a href="/tags/walkthrough/">Walkthrough</a>, 
+      <a href="/tags/linux/">Linux</a>, 
+      <a href="/tags/apache/">Apache</a>, 
+      <a href="/tags/lfi/">Lfi</a>, 
+      <a href="/tags/ssh/">Ssh</a>, 
+      <a href="/tags/wfuzz/">Wfuzz</a>, 
+      <a href="/tags/sudo/">Sudo</a>, 
+      <a href="/tags/privilege-escalation/">Privilege-Escalation</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.10.10.19</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access through a Local File Inclusion (LFI) vulnerability, and escalate privileges by abusing a sudo misconfiguration allowing the execution of <code>wfuzz</code> as root.</p>
+<p><img src="/images/hmv/yuan111/vm.png" alt="Machine information" /></p>
+<hr>
+<h2 id="port-scanning">Port Scanning<a class="anchor" href="#port-scanning">#</a></h2>
+<h3 id="rustscan">RustScan<a class="anchor" href="#rustscan">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.19 -- -A -oA nmap/rust</span></span></code></pre></div><h3 id="results">Results<a class="anchor" href="#results">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u3
+</span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.62 (Debian)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP Title:
+</span></span><span style="display:flex;"><span>Rockyou.txt - 密码字典文件介绍</span></span></code></pre></div><p>Only SSH and an Apache web server were exposed, so web enumeration was the obvious next step.</p></div>
+  </article>
+  
+
+  
+		<ul class="pagination pagination-default">
+			<li class="page-item">
+				<a href="/tags/linux/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+			</li>
+		<li class="page-item">
+			<a href="/tags/linux/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+		</li>
+			<li class="page-item">
+				<a href="/tags/linux/" aria-label="Page 1" class="page-link" role="button">1</a>
+			</li>
+			<li class="page-item active">
+				<a aria-current="page" aria-label="Page 2" class="page-link" role="button">2</a>
+			</li>
+			<li class="page-item">
+				<a href="/tags/linux/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+			</li>
+			<li class="page-item">
+				<a href="/tags/linux/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+			</li>
+		<li class="page-item">
+			<a href="/tags/linux/page/3/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+		</li>
+			<li class="page-item">
+				<a href="/tags/linux/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+			</li>
+		</ul>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+ 
         
   
-  <header>
-    
-    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">Linux</h1>
-  </header>
-  <section
-    class="mt-0 prose flex max-w-full flex-col dark:prose-invert lg:flex-row"
-  >
-    
-    <div class="min-h-0 min-w-0 max-w-prose grow">
-      
-    </div>
-  </section>
-  
-    <section>
-      
+ 
         
-          <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-            2026
-          </h2>
-          <hr class="w-36 border-dotted border-neutral-400" />
-          
-            <article class="mt-6 flex max-w-prose flex-row">
-  <div>
-    <h3 class="flex items-center text-xl font-semibold">
-      
-        <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="http://localhost:1313/writeups/hmv/yuan114/"
-          >Yuan114 - Walkthrough</a
-        >
-      
-      
-      
-    </h3>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-    
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2026-07-08 00:00:00 &#43;0000 UTC">July 8, 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-  
-
-
-    </div>
-    
-  </div>
-</article>
-
-          
-            <article class="mt-6 flex max-w-prose flex-row">
-  <div>
-    <h3 class="flex items-center text-xl font-semibold">
-      
-        <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="http://localhost:1313/posts/hmv/yuan114/"
-          >Yuan114 - Walkthrough</a
-        >
-      
-      
-      
-    </h3>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-    
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2026-07-08 00:00:00 &#43;0000 UTC">July 8, 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-  
-
-
-    </div>
-    
-  </div>
-</article>
-
-          
-            <article class="mt-6 flex max-w-prose flex-row">
-  <div>
-    <h3 class="flex items-center text-xl font-semibold">
-      
-        <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="http://localhost:1313/writeups/hmv/jabita/"
-          >Jabita - Walkthrough</a
-        >
-      
-      
-      
-    </h3>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-    
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2026-07-07 00:00:00 &#43;0000 UTC">July 7, 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-  
-
-
-    </div>
-    
-  </div>
-</article>
-
-          
-            <article class="mt-6 flex max-w-prose flex-row">
-  <div>
-    <h3 class="flex items-center text-xl font-semibold">
-      
-        <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="http://localhost:1313/posts/hmv/jabita/"
-          >Jabita - Walkthrough</a
-        >
-      
-      
-      
-    </h3>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-    
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2026-07-07 00:00:00 &#43;0000 UTC">July 7, 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-  
-
-
-    </div>
-    
-  </div>
-</article>
-
-          
-            <article class="mt-6 flex max-w-prose flex-row">
-  <div>
-    <h3 class="flex items-center text-xl font-semibold">
-      
-        <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="http://localhost:1313/writeups/hmv/translator/"
-          >Translator - Walkthrough</a
-        >
-      
-      
-      
-    </h3>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-    
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2026-07-06 00:00:00 &#43;0000 UTC">July 6, 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-  
-
-
-    </div>
-    
-  </div>
-</article>
-
-          
-            <article class="mt-6 flex max-w-prose flex-row">
-  <div>
-    <h3 class="flex items-center text-xl font-semibold">
-      
-        <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="http://localhost:1313/posts/hmv/translator/"
-          >Translator - Walkthrough</a
-        >
-      
-      
-      
-    </h3>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-    
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2026-07-06 00:00:00 &#43;0000 UTC">July 6, 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-  
-
-
-    </div>
-    
-  </div>
-</article>
-
-          
-            <article class="mt-6 flex max-w-prose flex-row">
-  <div>
-    <h3 class="flex items-center text-xl font-semibold">
-      
-        <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="http://localhost:1313/writeups/hmv/find/"
-          >Find - Walkthrough</a
-        >
-      
-      
-      
-    </h3>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-    
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2026-07-06 00:00:00 &#43;0000 UTC">July 6, 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-  
-
-
-    </div>
-    
-  </div>
-</article>
-
-          
-            <article class="mt-6 flex max-w-prose flex-row">
-  <div>
-    <h3 class="flex items-center text-xl font-semibold">
-      
-        <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="http://localhost:1313/posts/hmv/find/"
-          >Find - Walkthrough</a
-        >
-      
-      
-      
-    </h3>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-    
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2026-07-06 00:00:00 &#43;0000 UTC">July 6, 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-  
-
-
-    </div>
-    
-  </div>
-</article>
-
-          
-            <article class="mt-6 flex max-w-prose flex-row">
-  <div>
-    <h3 class="flex items-center text-xl font-semibold">
-      
-        <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="http://localhost:1313/writeups/hmv/helix/"
-          >Helix - Walkthrough</a
-        >
-      
-      
-      
-    </h3>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-    
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2026-07-05 00:00:00 &#43;0000 UTC">July 5, 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-  
-
-
-    </div>
-    
-  </div>
-</article>
-
-          
-            <article class="mt-6 flex max-w-prose flex-row">
-  <div>
-    <h3 class="flex items-center text-xl font-semibold">
-      
-        <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="http://localhost:1313/posts/hmv/helix/"
-          >Helix - Walkthrough</a
-        >
-      
-      
-      
-    </h3>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-    
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2026-07-05 00:00:00 &#43;0000 UTC">July 5, 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-  
-
-
-    </div>
-    
-  </div>
-</article>
-
-          
         
-      
-    </section>
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
     
-    <ul class="mt-8 flex flex-row">
-        <li>
-          <a
-            href="/tags/linux/"
-            class="mx-1 block min-w-[1.8rem] rounded text-center hover:bg-primary-600 hover:text-neutral"
-            aria-label="Previous page"
-            rel="prev"
-          >
-            &larr;
-          </a>
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  <nav>
+  <ul>
+  
+    
+    <li class="book-section-flat">
+      <a>Categories</a>
+      <ul>
+      
+      </ul>
+    </li>
+    
+  
+    
+    <li class="book-section-flat">
+      <a>Tags</a>
+      <ul>
+      
+        <li class="flex align-center">
+          <a href="/tags/ctf/">Ctf</a>
+          <span>31</span>
         </li>
-        <li class="mx-1 min-w-[1.8rem] text-center">
-            <a
-              href="/tags/linux/"
-              class="block rounded hover:bg-primary-600 hover:text-neutral"
-              aria-label="Page 1"
-            >
-              1
-            </a>
+      
+        <li class="flex align-center">
+          <a href="/tags/cve-2026-23550/">Cve-2026-23550</a>
+          <span>1</span>
         </li>
-        <li class="mx-1 min-w-[1.8rem] text-center">
-            <span
-              aria-current="page"
-              aria-label="Page 2"
-              class="block rounded bg-primary-200 font-semibold text-primary-700 dark:bg-primary-400 dark:text-neutral-800"
-            >
-              2
-            </span>
+      
+        <li class="flex align-center">
+          <a href="/tags/docker/">Docker</a>
+          <span>1</span>
         </li>
-        <li class="mx-1 min-w-[1.8rem] text-center">
-            <a
-              href="/tags/linux/page/3/"
-              class="block rounded hover:bg-primary-600 hover:text-neutral"
-              aria-label="Page 3"
-            >
-              3
-            </a>
+      
+        <li class="flex align-center">
+          <a href="/tags/linux/">Linux</a>
+          <span>31</span>
         </li>
-        <li>
-          <a
-            href="/tags/linux/page/3/"
-            class="mx-1 block min-w-[1.8rem] rounded text-center hover:bg-primary-600 hover:text-neutral"
-            aria-label="Next page"
-            rel="next"
-          >
-            &rarr;
-          </a>
+      
+        <li class="flex align-center">
+          <a href="/tags/privilege-escalation/">Privilege-Escalation</a>
+          <span>31</span>
         </li>
-    </ul>
+      
+        <li class="flex align-center">
+          <a href="/tags/walkthrough/">Walkthrough</a>
+          <span>31</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/wordpress/">Wordpress</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/http/">Http</a>
+          <span>5</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/initial-access/">Initial-Access</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/ssh/">Ssh</a>
+          <span>17</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/symlink/">Symlink</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/file-observation/">File-Observation</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/golang/">Golang</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/base64/">Base64</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/easy/">Easy</a>
+          <span>5</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/nginx/">Nginx</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/python-library-hijacking/">Python-Library-Hijacking</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/sudo/">Sudo</a>
+          <span>9</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/xxe/">Xxe</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/capabilities/">Capabilities</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/cronjob/">Cronjob</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/mosquitto/">Mosquitto</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/mqtt/">Mqtt</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/source-code-disclosure/">Source-Code-Disclosure</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/tar/">Tar</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/credentials/">Credentials</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/password-bruteforce/">Password-Bruteforce</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/password-reuse/">Password-Reuse</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/php-reverse-shell/">Php-Reverse-Shell</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/suid/">Suid</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/wpscan/">Wpscan</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/apache/">Apache</a>
+          <span>9</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/command-injection/">Command-Injection</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/express-fileupload/">Express-Fileupload</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/medium/">Medium</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/nodejs/">Nodejs</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/lfi/">Lfi</a>
+          <span>5</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/anonymous-ftp/">Anonymous-Ftp</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/ftp/">Ftp</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/systemctl/">Systemctl</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/file-upload/">File-Upload</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/vim/">Vim</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/cron/">Cron</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/path-hijacking/">Path-Hijacking</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/ssh-bruteforce/">Ssh-Bruteforce</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/cups/">Cups</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/php-filter-chain/">Php-Filter-Chain</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/hard/">Hard</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/misconfiguration/">Misconfiguration</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/nfs/">Nfs</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/sql-injection/">Sql-Injection</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/credential-disclosure/">Credential-Disclosure</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/icmp/">Icmp</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/traffic-analysis/">Traffic-Analysis</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/reverse-shell/">Reverse-Shell</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/systemd/">Systemd</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/bash/">Bash</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/snmp/">Snmp</a>
+          <span>2</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/snmp-enumeration/">Snmp-Enumeration</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/wfuzz/">Wfuzz</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/xml/">Xml</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/procfs/">Procfs</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/steganography/">Steganography</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/web/">Web</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/dirtyfrag/">Dirtyfrag</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex align-center">
+          <a href="/tags/network/">Network</a>
+          <span>1</span>
+        </li>
+      
+      </ul>
+    </li>
+    
+  
+  </ul>
+</nav>
 
-  
 
-      </main>
-      
-        <div
-          class="pointer-events-none absolute bottom-0 end-0 top-[100vh] w-12"
-          id="to-top"
-          hidden="true"
-        >
-          <a
-            href="#the-top"
-            class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
-            aria-label="Scroll to top"
-            title="Scroll to top"
-          >
-            &uarr;
-          </a>
-        </div>
-      <footer class="py-10 print:hidden">
-  
-  
-  <div class="flex items-center justify-between">
-    <div>
-      
-      
-        <p class="text-sm text-neutral-500 dark:text-neutral-400">
-            &copy;
-            2026
-            null void root
-        </p>
-      
-      
-      
-        <p class="text-xs text-neutral-500 dark:text-neutral-400">
-          
-          
-          Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
-            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://github.com/jpanther/congo" target="_blank" rel="noopener noreferrer">Congo</a>
-        </p>
-      
-    </div>
-    <div class="flex flex-row items-center">
-      
-      
-      
-      
-    </div>
   </div>
-  
-  
-</footer>
+</aside>
+ 
+  </main>
 
-    </div>
-  </body>
+  
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

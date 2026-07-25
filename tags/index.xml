@@ -30,11 +30,44 @@
     </item>
     
     <item>
+      <title>Database</title>
+      <link>https://nvru.github.io/tags/database/</link>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/database/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Docker</title>
       <link>https://nvru.github.io/tags/docker/</link>
       <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/docker/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Hack-Smarter</title>
+      <link>https://nvru.github.io/tags/hack-smarter/</link>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/hack-smarter/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Lab</title>
+      <link>https://nvru.github.io/tags/lab/</link>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/lab/</guid>
       
       <description></description>
       
@@ -57,6 +90,39 @@
       <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sql</title>
+      <link>https://nvru.github.io/tags/sql/</link>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/sql/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sql-Basics</title>
+      <link>https://nvru.github.io/tags/sql-basics/</link>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/sql-basics/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sqlite</title>
+      <link>https://nvru.github.io/tags/sqlite/</link>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/sqlite/</guid>
       
       <description></description>
       
