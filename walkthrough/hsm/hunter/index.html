@@ -269,10 +269,12 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></span><span style="display:flex;"><span>-w creds/users <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>-d <span style="color:#e6db74">&#34;username=FUZZ&#34;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>-H <span style="color:#e6db74">&#34;Content-Type: application/x-www-form-urlencoded&#34;</span>
-</span></span></code></pre></div><p>The scan identified a valid username:</p>
+</span></span></code></pre></div><p>The response behavior did not return a clear success or failure message. Instead, the difference was visible through the response timing.</p>
+<p>Most usernames returned a delay between <strong>200-300 ms</strong>, while the username <code>joey</code> caused a much longer response time of around <strong>1000 ms</strong>.</p>
+<p>This timing difference indicated that <code>joey</code> was a valid username.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>joey
 </span></span></code></pre></div><p><img src="/images/hsm/hunter/joey.png" alt="Valid Username"></p>
-<p>This confirmed that the password reset endpoint leaked whether a supplied username existed, making it vulnerable to username enumeration.</p>
+<p>This confirmed that the password reset endpoint leaked whether a supplied username existed, making it vulnerable to username enumeration through response-time analysis.</p>
 <hr>
 <h2 id="discovered-credentials">Discovered Credentials</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Valid Username
