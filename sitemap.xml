@@ -3,7 +3,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nvru.github.io/tags/apache/</loc>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/command-injection/</loc>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/ctf/</loc>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/cve-2023-23752/</loc>
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/cve-2026-23550/</loc>
@@ -33,6 +42,9 @@
     <loc>https://nvru.github.io/walkthrough/hsm/hunter/</loc>
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/tags/joomla/</loc>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/lab/</loc>
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
@@ -43,6 +55,9 @@
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hsm/samurai/</loc>
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/sql/</loc>
@@ -177,13 +192,7 @@
     <loc>https://nvru.github.io/tags/wpscan/</loc>
     <lastmod>2026-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/apache/</loc>
-    <lastmod>2026-07-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/walkthrough/vulnhub/chronos/</loc>
-    <lastmod>2026-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/command-injection/</loc>
     <lastmod>2026-07-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/express-fileupload/</loc>
