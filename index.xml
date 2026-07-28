@@ -6,7 +6,57 @@
     <description>Recent content on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 27 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hommie - Walkthrough</title>
+      <link>https://nvru.github.io/walkthrough/hmv/hommie/</link>
+      <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/walkthrough/hmv/hommie/</guid>
+      
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Machine:&lt;/strong&gt; Hommie&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Easy&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Platform:&lt;/strong&gt; HackMyVM&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.38&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access by recovering an exposed SSH private key from the TFTP service, and escalate privileges by abusing a vulnerable SUID binary through PATH hijacking.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
+&lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.38 -- -A -oA nmap/rust
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT   STATE SERVICE REASON  VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;21/tcp open  ftp     syn-ack vsftpd 3.0.3
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_-rw-r--r--    1 0        0               0 Sep 30  2020 index.html
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| ftp-syst:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   STAT:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| FTP server status:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      Connected to ::ffff:10.10.10.2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      Logged in as ftp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      TYPE: ASCII
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      No session bandwidth limit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      Session timeout in seconds is 300
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      Control connection is plain text
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      Data connections will be plain text
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      At session startup, client count was 3
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      vsFTPd 3.0.3 - secure, fast, stable
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_End of status
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;22/tcp open  ssh     syn-ack OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;80/tcp open  http    syn-ack nginx 1.14.2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| http-methods:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_  Supported Methods: GET HEAD
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_http-server-header: nginx/1.14.2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_http-title: Site doesn&amp;#39;t have a title (text/html).
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The initial scan revealed three exposed services:&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Hackable II - Walkthrough</title>
       <link>https://nvru.github.io/walkthrough/vulnhub/hackable2/</link>
