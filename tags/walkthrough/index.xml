@@ -23,6 +23,7 @@
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.38&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access by recovering an exposed SSH private key from the TFTP service, and escalate privileges by abusing a vulnerable SUID binary through PATH hijacking.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/hommie/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h3 id=&#34;rustscan&#34;&gt;RustScan&lt;/h3&gt;
