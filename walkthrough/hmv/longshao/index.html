@@ -3,22 +3,22 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Privilege-Escalation | Null Blog</title>
-<meta property="og:title" content="Privilege-Escalation | Null Blog" />
-<meta name="twitter:title" content="Privilege-Escalation | Null Blog" />
-<meta itemprop="name" content="Privilege-Escalation | Null Blog" />
-<meta name="application-name" content="Privilege-Escalation | Null Blog" />
+<title itemprop="name">Longshao - Walkthrough | Null Blog</title>
+<meta property="og:title" content="Longshao - Walkthrough | Null Blog" />
+<meta name="twitter:title" content="Longshao - Walkthrough | Null Blog" />
+<meta itemprop="name" content="Longshao - Walkthrough | Null Blog" />
+<meta name="application-name" content="Longshao - Walkthrough | Null Blog" />
 <meta property="og:site_name" content="Null Blog" />
 
-<meta name="description" content="CTF writeups, hacking notes, and walkthroughs.">
-<meta itemprop="description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta name="description" content="Walkthrough for the Longshao machine.">
+<meta itemprop="description" content="Walkthrough for the Longshao machine." />
+<meta property="og:description" content="Walkthrough for the Longshao machine." />
+<meta name="twitter:description" content="Walkthrough for the Longshao machine." />
 
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
 
-  <link rel="alternate" hreflang="en" href="https://nvru.github.io/tags/privilege-escalation/" title="" />
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/walkthrough/hmv/longshao/" title="" />
 
 
 
@@ -28,26 +28,33 @@
 <meta name="generator" content="Hugo 0.164.0">
 
     
-    <meta property="og:url" content="https://nvru.github.io/tags/privilege-escalation/">
+    <meta property="og:url" content="https://nvru.github.io/walkthrough/hmv/longshao/">
 	<meta property="og:site_name" content="Null Blog">
-	<meta property="og:title" content="Privilege-Escalation">
-	<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta property="og:title" content="Longshao - Walkthrough">
+	<meta property="og:description" content="Walkthrough for the Longshao machine.">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="walkthrough">
+		<meta property="article:published_time" content="2026-07-30T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-30T00:00:00+00:00">
+		<meta property="article:tag" content="Ctf">
+		<meta property="article:tag" content="Walkthrough">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Apache">
+		<meta property="article:tag" content="Php">
+		<meta property="article:tag" content="Information-Disclosure">
 
 
     
     
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Privilege-Escalation">
-	<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta name="twitter:title" content="Longshao - Walkthrough">
+	<meta name="twitter:description" content="Walkthrough for the Longshao machine.">
 
 
     
 
-    <link rel="canonical" href="https://nvru.github.io/tags/privilege-escalation/">
-    <link href="/tags/privilege-escalation/index.xml" rel="alternate" type="application/rss+xml" title="Null Blog">
-    <link href="/tags/privilege-escalation/index.xml" rel="feed" type="application/rss+xml" title="Null Blog">
+    <link rel="canonical" href="https://nvru.github.io/walkthrough/hmv/longshao/">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -109,7 +116,7 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/walkthrough/">
+                    <a class="menu-link active" href="/walkthrough/">
                         Walkthroughs
                     </a>
                     
@@ -165,583 +172,173 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Privilege-Escalation</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2026</h2>
-
-        
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/longshao/">Longshao - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-30T00:00:00Z">
-        30 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/hommie/">Hommie - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-28T00:00:00Z">
-        28 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/hackable2/">Hackable II - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-27T00:00:00Z">
-        27 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hsm/samurai/">Samurai - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-26T00:00:00Z">
-        26 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hsm/dark/">Dark - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-25T00:00:00Z">
-        25 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/noob/">Noob - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-24T00:00:00Z">
-        24 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/observer/">Observer - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-23T00:00:00Z">
-        23 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/system/">System - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-22T00:00:00Z">
-        22 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/baseme/">Baseme - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-22T00:00:00Z">
-        22 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/iot/">IoT - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-21T00:00:00Z">
-        21 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/hostname/">Hostname - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-21T00:00:00Z">
-        21 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/who_wants_to_be_king1/">Who Wants to Be King? 1 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-20T00:00:00Z">
-        20 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/colddbox/">ColddBox - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-20T00:00:00Z">
-        20 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/chronos/">Chronos - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-19T00:00:00Z">
-        19 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/p4l4nc4/">p4l4nc4 (Palanca) - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-18T00:00:00Z">
-        18 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/economists/">Economists - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-17T00:00:00Z">
-        17 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/friendly/">Friendly - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-16T00:00:00Z">
-        16 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/hannah/">Hannah - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-15T00:00:00Z">
-        15 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/printer2/">Printer2 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-14T00:00:00Z">
-        14 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/printer/">Printer - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-13T00:00:00Z">
-        13 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/htb/cctv/">CCTV - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-12T00:00:00Z">
-        12 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/pingme/">Pingme - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-11T00:00:00Z">
-        11 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/immortal/">Immortal - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-10T00:00:00Z">
-        10 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan113/">Yuan113 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan112/">Yuan112 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan111/">Yuan111 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan114/">Yuan114 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-08T00:00:00Z">
-        8 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/jabita/">Jabita - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-07T00:00:00Z">
-        7 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/translator/">Translator - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/find/">Find - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/helix/">Helix - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-05T00:00:00Z">
-        5 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/suidy/">The Suidy - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-04T00:00:00Z">
-        4 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/phantom/">Phantom - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-03T00:00:00Z">
-        3 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/darkside/">The DarkSide - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-01T00:00:00Z">
-        1 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/bonjur/">Bonjur - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-01T00:00:00Z">
-        1 Jul 2026
-    </time>
-</article>
-
-
-         
-
-         
-
-    </main>
-</div><footer class="footer">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Longshao - Walkthrough</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-07-30T00:00:00&#43;00:00" itemprop="datePublished"> 30 Jul 2026 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#port-scanning">Port Scanning</a>
+      <ul>
+        <li><a href="#rustscan">RustScan</a></li>
+        <li><a href="#results">Results</a></li>
+      </ul>
+    </li>
+    <li><a href="#enumeration">Enumeration</a>
+      <ul>
+        <li><a href="#web-application">Web Application</a></li>
+        <li><a href="#directory-enumeration">Directory Enumeration</a></li>
+        <li><a href="#information-disclosure">Information Disclosure</a></li>
+      </ul>
+    </li>
+    <li><a href="#initial-access">Initial Access</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a>
+      <ul>
+        <li><a href="#baolong--baolong">baolong → baolong</a></li>
+        <li><a href="#interesting-files">Interesting Files</a></li>
+        <li><a href="#kernel-vulnerability-cve-2026-46331">Kernel Vulnerability (CVE-2026-46331)</a></li>
+        <li><a href="#root-access">Root Access</a></li>
+      </ul>
+    </li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#flags">Flags</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="overview">Overview</h2>
+<ul>
+<li><strong>Attacker IP:</strong> <code>10.33.146.142</code></li>
+<li><strong>Target Machine IP:</strong> <code>10.33.146.133</code></li>
+</ul>
+<p>The objective was to enumerate the target, identify exposed services, gain initial SSH access using disclosed credentials, and escalate privileges by exploiting <strong>CVE-2026-46331</strong> affecting the Alpine Linux kernel.</p>
+<p><img src="/images/hmv/longshao/vm.png" alt="Machine information"></p>
+<hr>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="rustscan">RustScan</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.33.146.133 -- -sC -sV -A -oN nmap/rust
+</span></span></code></pre></div><h3 id="results">Results</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE REASON  VERSION
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     syn-ack OpenSSH 10.3 (protocol 2.0)
+</span></span><span style="display:flex;"><span>80/tcp open  http    syn-ack Apache httpd 2.4.67 ((Unix))
+</span></span><span style="display:flex;"><span>|_http-server-header: Apache/2.4.67 (Unix)
+</span></span><span style="display:flex;"><span>| http-methods:
+</span></span><span style="display:flex;"><span>|_  Supported Methods: GET HEAD POST OPTIONS
+</span></span><span style="display:flex;"><span>|_http-title: Maze 内部管理系统 - 登录
+</span></span></code></pre></div><p>Only two services were exposed:</p>
+<ul>
+<li><strong>SSH</strong> on port <strong>22</strong></li>
+<li><strong>Apache HTTP Server</strong> on port <strong>80</strong></li>
+</ul>
+<p>The web application became the primary focus for further enumeration.</p>
+<hr>
+<h2 id="enumeration">Enumeration</h2>
+<h3 id="web-application">Web Application</h3>
+<p>Browsing to the web server presented a simple login page.</p>
+<p><img src="/images/hmv/longshao/http.png" alt="Login page"></p>
+<p>Inspecting the page source did not reveal anything useful, and there were no hidden comments or JavaScript files of interest.</p>
+<p>The <code>robots.txt</code> file also did not contain any interesting entries.</p>
+<p><img src="/images/hmv/longshao/robots.png" alt="robots.txt"></p>
+<p>Using the Wappalyzer browser extension showed the application was powered by <strong>PHP 8.2.31</strong> running behind Apache.</p>
+<p><img src="/images/hmv/longshao/wapp.png" alt="Wappalyzer"></p>
+<p>After searching for publicly known vulnerabilities affecting this PHP version, nothing useful was found.</p>
+<hr>
+<h3 id="directory-enumeration">Directory Enumeration</h3>
+<p>Since the login page did not provide an obvious attack surface, I performed directory brute-forcing.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gobuster dir <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-u http://10.33.146.133/ <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-w /opt/wordlists/seclists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-big.txt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-x php,html,js,xml,db,sql,txt,png
+</span></span></code></pre></div><p>A hidden page was discovered:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/dashboard.php
+</span></span></code></pre></div><p><img src="/images/hmv/longshao/dir_brute.png" alt="Directory enumeration"></p>
+<p>Visiting the page displayed a warning message intended for administrators. More importantly, it accidentally disclosed SSH credentials.</p>
+<p><img src="/images/hmv/longshao/dashboard.png" alt="Dashboard"></p>
+<hr>
+<h3 id="information-disclosure">Information Disclosure</h3>
+<p>The exposed page contained valid SSH credentials:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: baolong
+</span></span><span style="display:flex;"><span>Password: jinhua
+</span></span></code></pre></div><p>This information disclosure provided direct access to the target system.</p>
+<hr>
+<h2 id="initial-access">Initial Access</h2>
+<p>Using the recovered credentials, SSH authentication succeeded immediately.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: baolong
+</span></span><span style="display:flex;"><span>Password: jinhua
+</span></span></code></pre></div><p><img src="/images/hmv/longshao/ssh_baolong.png" alt="SSH Login"></p>
+<hr>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
+<h3 id="baolong--baolong">baolong → baolong</h3>
+<p>The first step after obtaining a shell was checking for common privilege escalation vectors.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
+</span></span></code></pre></div><p>The user had no useful sudo permissions.</p>
+<p><img src="/images/hmv/longshao/sudo.png" alt="sudo"></p>
+<p>I also checked the user&rsquo;s groups and searched the <code>/home</code> directory for other user accounts.</p>
+<p>Although multiple home directories existed, they were empty.</p>
+<p><img src="/images/hmv/longshao/home.png" alt="Home directories"></p>
+<p>To verify whether those users actually existed, I checked <code>/etc/passwd</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /etc/passwd | grep sh$
+</span></span></code></pre></div><p><img src="/images/hmv/longshao/check_users.png" alt="User enumeration"></p>
+<p>Nothing useful was obtained from user enumeration.</p>
+<hr>
+<h3 id="interesting-files">Interesting Files</h3>
+<p>While enumerating the filesystem, I noticed two unusual files located in the root directory.</p>
+<p><img src="/images/hmv/longshao/two_files.png" alt="Interesting files"></p>
+<p>One of them was an extremely large file that could be read by the current user.</p>
+<p>Because of its size, I copied it to my attacking machine for offline analysis instead of processing it locally.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scp baolong@10.33.146.133:/empty .
+</span></span></code></pre></div><p><img src="/images/hmv/longshao/huge.png" alt="Large file"></p>
+<p>Although these files were interesting, they ultimately were not required for privilege escalation.</p>
+<hr>
+<h3 id="kernel-vulnerability-cve-2026-46331">Kernel Vulnerability (CVE-2026-46331)</h3>
+<p>Checking the operating system version revealed the machine was running Alpine Linux with kernel version <strong>7.0.10</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uname -a
+</span></span></code></pre></div><p><img src="/images/hmv/longshao/uname.png" alt="Kernel version"></p>
+<p>Searching for public exploits targeting this kernel version led to <strong>CVE-2026-46331</strong>.</p>
+<p>Reference:</p>
+<ul>
+<li><a href="https://github.com/yanxinwu946/CVE-2026-46331">https://github.com/yanxinwu946/CVE-2026-46331</a></li>
+</ul>
+<p>The proof-of-concept repository even included examples using the same kernel version.</p>
+<p><img src="/images/hmv/longshao/cve_targets.png" alt="Affected targets"></p>
+<p>After compiling and executing the exploit, root privileges were obtained successfully.</p>
+<p><img src="/images/hmv/longshao/exploit.png" alt="Exploit"></p>
+<hr>
+<h3 id="root-access">Root Access</h3>
+<p>After obtaining a root shell, I navigated to the root user&rsquo;s home directory and found a file containing the root password.</p>
+<p><img src="/images/hmv/longshao/pass.png" alt="Password file"></p>
+<p>Using the recovered password, I authenticated as the root user.</p>
+<p><img src="/images/hmv/longshao/su.png" alt="Root login"></p>
+<hr>
+<h2 id="credentials">Credentials</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>baolong:jinhua
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root:chaojiheianwudilong
+</span></span></code></pre></div><hr>
+<h2 id="flags">Flags</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:flag{user-3408c2a9ca636da4a40f054eea401fd9}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root:flag{root-e0bf0dabcccb7d4519c0ad4b431aff16}
+</span></span></code></pre></div>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 
