@@ -2,43 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nvru.github.io/tags/cpulimit/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/ctf/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hmv/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/information-disclosure/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/linux/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hmv/rootme/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/ssh/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/suid/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/upnp/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/walkthrough/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/bruteforce/</loc>
     <lastmod>2026-07-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/bruteforcelab/</loc>
     <lastmod>2026-07-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/ctf/</loc>
-    <lastmod>2026-07-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/walkthrough/hmv/</loc>
-    <lastmod>2026-07-31T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/initial-access/</loc>
     <lastmod>2026-07-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/linux/</loc>
-    <lastmod>2026-07-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/</loc>
-    <lastmod>2026-07-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
-    <lastmod>2026-07-31T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/smb/</loc>
-    <lastmod>2026-07-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/ssh/</loc>
-    <lastmod>2026-07-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/</loc>
-    <lastmod>2026-07-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/walkthrough/</loc>
-    <lastmod>2026-07-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/walkthrough/</loc>
     <lastmod>2026-07-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/webmin/</loc>
@@ -51,9 +66,6 @@
     <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/easy/</loc>
-    <lastmod>2026-07-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/information-disclosure/</loc>
     <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/kernel-exploit/</loc>
@@ -75,9 +87,6 @@
     <lastmod>2026-07-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/path-hijacking/</loc>
-    <lastmod>2026-07-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/suid/</loc>
     <lastmod>2026-07-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/tftp/</loc>
