@@ -3,17 +3,17 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">RootMe - Walkthrough | Null Blog</title>
-<meta property="og:title" content="RootMe - Walkthrough | Null Blog" />
-<meta name="twitter:title" content="RootMe - Walkthrough | Null Blog" />
-<meta itemprop="name" content="RootMe - Walkthrough | Null Blog" />
-<meta name="application-name" content="RootMe - Walkthrough | Null Blog" />
+<title itemprop="name">Rooted - Walkthrough | Null Blog</title>
+<meta property="og:title" content="Rooted - Walkthrough | Null Blog" />
+<meta name="twitter:title" content="Rooted - Walkthrough | Null Blog" />
+<meta itemprop="name" content="Rooted - Walkthrough | Null Blog" />
+<meta name="application-name" content="Rooted - Walkthrough | Null Blog" />
 <meta property="og:site_name" content="Null Blog" />
 
-<meta name="description" content="Walkthrough for the RootMe machine.">
-<meta itemprop="description" content="Walkthrough for the RootMe machine." />
-<meta property="og:description" content="Walkthrough for the RootMe machine." />
-<meta name="twitter:description" content="Walkthrough for the RootMe machine." />
+<meta name="description" content="Walkthrough for the Rooted machine.">
+<meta itemprop="description" content="Walkthrough for the Rooted machine." />
+<meta property="og:description" content="Walkthrough for the Rooted machine." />
+<meta name="twitter:description" content="Walkthrough for the Rooted machine." />
 
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
@@ -30,8 +30,8 @@
     
     <meta property="og:url" content="https://nvru.github.io/walkthrough/hmv/rootme/">
 	<meta property="og:site_name" content="Null Blog">
-	<meta property="og:title" content="RootMe - Walkthrough">
-	<meta property="og:description" content="Walkthrough for the RootMe machine.">
+	<meta property="og:title" content="Rooted - Walkthrough">
+	<meta property="og:description" content="Walkthrough for the Rooted machine.">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="walkthrough">
@@ -48,8 +48,8 @@
     
     
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="RootMe - Walkthrough">
-	<meta name="twitter:description" content="Walkthrough for the RootMe machine.">
+	<meta name="twitter:title" content="Rooted - Walkthrough">
+	<meta name="twitter:description" content="Walkthrough for the Rooted machine.">
 
 
     
@@ -177,7 +177,7 @@ stroke-linejoin="round" class="feather feather-home">
     <main class="page-content" aria-label="Content">
         <article>
             <header class="header">
-                <h1 class="header-title">RootMe - Walkthrough</h1>
+                <h1 class="header-title">Rooted - Walkthrough</h1>
                 
                 
                 
@@ -218,7 +218,7 @@ stroke-linejoin="round" class="feather feather-home">
 <li><strong>Target Machine IP:</strong> <code>10.10.10.6</code></li>
 </ul>
 <p>The objective was to enumerate the target, identify exposed services, gain initial access using credentials disclosed by the UPnP service, and escalate privileges by abusing a SUID <code>cpulimit</code> binary.</p>
-<p><img src="/images/hmv/rootme/vm.png" alt="Machine Information"></p>
+<p><img src="/images/hmv/rooted/vm.png" alt="Machine Information"></p>
 <hr>
 <h2 id="enumeration">Enumeration</h2>
 <h3 id="port-scanning">Port Scanning</h3>
@@ -270,7 +270,7 @@ stroke-linejoin="round" class="feather feather-home">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s http://10.10.10.6:8888/rootDesc.xml
 </span></span></code></pre></div><p>The response contained what appeared to be valid credentials:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>upnp:nat123!
-</span></span></code></pre></div><p><img src="/images/hmv/rootme/upnp_creds.png" alt="UPnP Credentials"></p>
+</span></span></code></pre></div><p><img src="/images/hmv/rooted/upnp_creds.png" alt="UPnP Credentials"></p>
 <p>Since SSH was exposed on port <code>22</code>, I tested these credentials against the SSH service.</p>
 <hr>
 <h2 id="initial-access">Initial Access</h2>
@@ -279,11 +279,11 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>Password: nat123!
 </span></span></code></pre></div><p>I connected to the machine using SSH:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh upnp@10.10.10.6
-</span></span></code></pre></div><p><img src="/images/hmv/rootme/ssh_upnp.png" alt="SSH Login"></p>
+</span></span></code></pre></div><p><img src="/images/hmv/rooted/ssh_upnp.png" alt="SSH Login"></p>
 <p>After obtaining a shell, I first checked the user&rsquo;s sudo permissions.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
 </span></span></code></pre></div><p>The <code>upnp</code> user did not have any useful sudo permissions.</p>
-<p><img src="/images/hmv/rootme/no_sudo.png" alt="No Sudo Permissions"></p>
+<p><img src="/images/hmv/rooted/no_sudo.png" alt="No Sudo Permissions"></p>
 <p>Since sudo was not an option, I continued looking for other privilege-escalation opportunities.</p>
 <hr>
 <h2 id="privilege-escalation">Privilege Escalation</h2>
@@ -291,13 +291,13 @@ stroke-linejoin="round" class="feather feather-home">
 <p>I searched the filesystem for SUID binaries:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -perm -4000 -type f 2&gt;/dev/null
 </span></span></code></pre></div><p>A <code>cpulimit</code> binary with the SUID bit set was found.</p>
-<p><img src="/images/hmv/rootme/find_suid.png" alt="SUID Files"></p>
+<p><img src="/images/hmv/rooted/find_suid.png" alt="SUID Files"></p>
 <p>A SUID binary runs with the privileges of its owner. Since <code>cpulimit</code> was running with elevated privileges, I investigated whether it could be abused to execute another program with those privileges.</p>
 <hr>
 <h3 id="cpulimit">cpulimit</h3>
 <p>I checked the available options:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cpulimit --help
-</span></span></code></pre></div><p><img src="/images/hmv/rootme/cpulimit_help.png" alt="cpulimit Help"></p>
+</span></span></code></pre></div><p><img src="/images/hmv/rooted/cpulimit_help.png" alt="cpulimit Help"></p>
 <p>The <code>-f</code> option allows the specified program to run in the foreground, while <code>-l</code> specifies the CPU usage limit.</p>
 <p>A CPU limit needs to be supplied. Without one, attempting to launch a shell can cause the process to exit immediately.</p>
 <p>GTFOBins documents a similar technique:</p>
@@ -307,7 +307,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>I used:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cpulimit -l <span style="color:#ae81ff">100</span> -f -- /bin/sh -p
 </span></span></code></pre></div><p>The command spawned a privileged shell.</p>
-<p><img src="/images/hmv/rootme/root.png" alt="Root Shell"></p>
+<p><img src="/images/hmv/rooted/root.png" alt="Root Shell"></p>
 <p>I verified the privileges:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>id
 </span></span></code></pre></div><p>The shell was running as <code>root</code>, completing the privilege escalation.</p>
