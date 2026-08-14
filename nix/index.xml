@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nixes on Null Blog</title>
+    <link>https://nvru.github.io/nix/</link>
+    <description>Recent content in Nixes on Null Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 12 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/nix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Void Linux: LUKS1 &#43; Btrfs Guide</title>
+      <link>https://nvru.github.io/nix/install_void_luks1/</link>
+      <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/nix/install_void_luks1/</guid>
+      
+      <description>&lt;!-- # Void Linux Installation Guide (LUKS1 + Btrfs Subvolumes) --&gt;
+&lt;p&gt;A complete guide for installing Void Linux with &lt;strong&gt;LUKS1 full-disk encryption&lt;/strong&gt;, a &lt;strong&gt;Btrfs subvolume layout&lt;/strong&gt; (Timeshift-compatible), and single-passphrase GRUB unlocking.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-disk-identification--partitioning&#34;&gt;1. Disk Identification &amp;amp; Partitioning&lt;/h2&gt;
+&lt;p&gt;Identify target block devices:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lsblk
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Partition the target disk using &lt;code&gt;fdisk&lt;/code&gt; (or &lt;code&gt;cfdisk&lt;/code&gt; for a TUI interface):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fdisk /dev/sdX
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;partition-scheme-uefi-vs-bios&#34;&gt;Partition Scheme (UEFI vs. BIOS)&lt;/h3&gt;
+&lt;h4 id=&#34;uefi-system-gpt-scheme&#34;&gt;UEFI System (GPT Scheme)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create GPT Partition Table:&lt;/strong&gt; Command &lt;code&gt;g&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create EFI System Partition (ESP) (128M - 1G recommended):&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Command &lt;code&gt;n&lt;/code&gt; -&amp;gt; Partition &lt;code&gt;1&lt;/code&gt; -&amp;gt; First sector: &lt;code&gt;Default&lt;/code&gt; -&amp;gt; Last sector: &lt;code&gt;+200M&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Wipe signature if prompted: &lt;code&gt;Y&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change partition type: Command &lt;code&gt;t&lt;/code&gt; -&amp;gt; Type &lt;code&gt;1&lt;/code&gt; (EFI System)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create Root Partition:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Command &lt;code&gt;n&lt;/code&gt; -&amp;gt; Partition &lt;code&gt;2&lt;/code&gt; -&amp;gt; First sector: &lt;code&gt;Default&lt;/code&gt; -&amp;gt; Last sector: &lt;code&gt;Default&lt;/code&gt; (Use remaining space)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Write Changes:&lt;/strong&gt; Command &lt;code&gt;w&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;bios--legacy-system-mbr-scheme&#34;&gt;BIOS / Legacy System (MBR Scheme)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create MBR Partition Table:&lt;/strong&gt; Command &lt;code&gt;o&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create Root Partition:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Command &lt;code&gt;n&lt;/code&gt; -&amp;gt; Primary -&amp;gt; Partition &lt;code&gt;1&lt;/code&gt; -&amp;gt; First sector: &lt;code&gt;Default&lt;/code&gt; -&amp;gt; Last sector: &lt;code&gt;Default&lt;/code&gt; (Use entire disk)&lt;/li&gt;
+&lt;li&gt;Set bootable flag: Command &lt;code&gt;a&lt;/code&gt; -&amp;gt; Partition &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Write Changes:&lt;/strong&gt; Command &lt;code&gt;w&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-encryption--file-system-creation&#34;&gt;2. Encryption &amp;amp; File System Creation&lt;/h2&gt;
+&lt;p&gt;Encrypt the root partition using &lt;strong&gt;LUKS1&lt;/strong&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
