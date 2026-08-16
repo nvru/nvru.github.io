@@ -6,13 +6,13 @@
     <description>Recent content in Tags on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 15 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Adm</title>
-      <link>https://nvru.github.io/tags/adm/</link>
-      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <title>Credential-Reuse</title>
+      <link>https://nvru.github.io/tags/credential-reuse/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/tags/adm/</guid>
+      <guid>https://nvru.github.io/tags/credential-reuse/</guid>
       
       <description></description>
       
@@ -21,9 +21,108 @@
     <item>
       <title>Ctf</title>
       <link>https://nvru.github.io/tags/ctf/</link>
-      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/ctf/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Cve-2025-32463</title>
+      <link>https://nvru.github.io/tags/cve-2025-32463/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/cve-2025-32463/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Ftp</title>
+      <link>https://nvru.github.io/tags/ftp/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/ftp/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Information-Disclosure</title>
+      <link>https://nvru.github.io/tags/information-disclosure/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/information-disclosure/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://nvru.github.io/tags/linux/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/linux/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://nvru.github.io/tags/nginx/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/nginx/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Privilege-Escalation</title>
+      <link>https://nvru.github.io/tags/privilege-escalation/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Snmp</title>
+      <link>https://nvru.github.io/tags/snmp/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/snmp/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Walkthrough</title>
+      <link>https://nvru.github.io/tags/walkthrough/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/walkthrough/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Adm</title>
+      <link>https://nvru.github.io/tags/adm/</link>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/adm/</guid>
       
       <description></description>
       
@@ -52,17 +151,6 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>https://nvru.github.io/tags/linux/</link>
-      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/linux/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Log-Poisoning</title>
       <link>https://nvru.github.io/tags/log-poisoning/</link>
       <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
@@ -74,11 +162,11 @@
     </item>
     
     <item>
-      <title>Privilege-Escalation</title>
-      <link>https://nvru.github.io/tags/privilege-escalation/</link>
+      <title>Medium</title>
+      <link>https://nvru.github.io/tags/medium/</link>
       <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
+      <guid>https://nvru.github.io/tags/medium/</guid>
       
       <description></description>
       
@@ -118,17 +206,6 @@
     </item>
     
     <item>
-      <title>Walkthrough</title>
-      <link>https://nvru.github.io/tags/walkthrough/</link>
-      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/walkthrough/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Btrfs</title>
       <link>https://nvru.github.io/tags/btrfs/</link>
       <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
@@ -145,17 +222,6 @@
       <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/cpulimit/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Information-Disclosure</title>
-      <link>https://nvru.github.io/tags/information-disclosure/</link>
-      <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/information-disclosure/</guid>
       
       <description></description>
       
@@ -310,17 +376,6 @@
       <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/anonymous-ftp/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Ftp</title>
-      <link>https://nvru.github.io/tags/ftp/</link>
-      <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/ftp/</guid>
       
       <description></description>
       
@@ -602,17 +657,6 @@
     </item>
     
     <item>
-      <title>Nginx</title>
-      <link>https://nvru.github.io/tags/nginx/</link>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/nginx/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Python-Library-Hijacking</title>
       <link>https://nvru.github.io/tags/python-library-hijacking/</link>
       <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
@@ -761,17 +805,6 @@
       <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/express-fileupload/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Medium</title>
-      <link>https://nvru.github.io/tags/medium/</link>
-      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/medium/</guid>
       
       <description></description>
       
@@ -959,17 +992,6 @@
       <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/bash/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Snmp</title>
-      <link>https://nvru.github.io/tags/snmp/</link>
-      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/snmp/</guid>
       
       <description></description>
       
