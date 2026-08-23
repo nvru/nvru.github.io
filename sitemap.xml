@@ -2,10 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nvru.github.io/tags/apache/</loc>
-    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+    <loc>https://nvru.github.io/tags/active-directory/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/credential-disclosure/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/ctf/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/domain-admin/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hsm/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/kerberoasting/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hsm/martiniad/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/smb/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/walkthrough/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/windows/</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/apache/</loc>
     <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/cve/</loc>
@@ -17,9 +53,6 @@
     <loc>https://nvru.github.io/walkthrough/hsm/exception/</loc>
     <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/walkthrough/hsm/</loc>
-    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/linux/</loc>
     <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   </url><url>
@@ -29,9 +62,6 @@
     <loc>https://nvru.github.io/tags/nosql-injection/</loc>
     <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/</loc>
-    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
     <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   </url><url>
@@ -39,15 +69,6 @@
     <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/sudo/</loc>
-    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/</loc>
-    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/walkthrough/</loc>
-    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/walkthrough/</loc>
     <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/credential-reuse/</loc>
@@ -129,9 +150,6 @@
     <lastmod>2026-07-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/initial-access/</loc>
-    <lastmod>2026-07-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/smb/</loc>
     <lastmod>2026-07-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/webmin/</loc>
@@ -376,9 +394,6 @@
   </url><url>
     <loc>https://nvru.github.io/tags/sql-injection/</loc>
     <lastmod>2026-07-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/credential-disclosure/</loc>
-    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/icmp/</loc>
     <lastmod>2026-07-11T00:00:00+00:00</lastmod>
