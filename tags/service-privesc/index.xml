@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Service-Privesc on Null Blog</title>
+    <link>http://localhost:1313/tags/service-privesc/</link>
+    <description>Recent content in Service-Privesc on Null Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 25 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/service-privesc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DarkHaven - Walkthrough</title>
+      <link>http://localhost:1313/walkthrough/hsm/kiosk/</link>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/walkthrough/hsm/kiosk/</guid>
+      
+      <description>&lt;p&gt;Overview
+Platform: HackMyVM
+Difficulty: Medium
+OS: Windows
+Attacker IP: 10.200.84.107
+Target IP: 10.0.23.202&lt;/p&gt;
+&lt;p&gt;The objective was to assess DarkHaven&amp;rsquo;s Virtual Desktop Infrastructure (VDI) portal and underlying Windows environment. The initial credentials provided were intended to give access to a low-privileged VDI session. From there, the objective was to escape the restricted VDI environment, obtain local access, enumerate sensitive information, and ultimately escalate privileges to an administrative account.&lt;/p&gt;
+&lt;p&gt;Initial Access&lt;/p&gt;
+&lt;p&gt;DarkHaven provided low-privileged credentials for the VDI portal:&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

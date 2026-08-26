@@ -6,7 +6,57 @@
     <description>Recent content in Privilege-Escalation on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 17 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kiosk - Walkthrough</title>
+      <link>https://nvru.github.io/walkthrough/hsm/kiosk/</link>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/walkthrough/hsm/kiosk/</guid>
+      
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Platform:&lt;/strong&gt; HackSmarter&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Medium&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OS:&lt;/strong&gt; Windows&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.200.84.107&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Target IP:&lt;/strong&gt; &lt;code&gt;10.0.23.202&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The objective was to assess DarkHaven&amp;rsquo;s Virtual Desktop Infrastructure (VDI), escape the restricted kiosk environment, obtain additional credentials, and escalate privileges to Administrator.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h2&gt;
+&lt;h3 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h3&gt;
+&lt;h4 id=&#34;rustscan&#34;&gt;RustScan&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.0.23.202 -- -sC -sV -A -oN nmap/rust
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;results&#34;&gt;Results&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT     STATE SERVICE       REASON  VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;80/tcp   open  http          syn-ack Microsoft IIS httpd 10.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| http-methods:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   Supported Methods: OPTIONS TRACE GET HEAD POST
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_  Potentially risky methods: TRACE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_http-server-header: Microsoft-IIS/10.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_http-title: IIS Windows Server
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;445/tcp  open  microsoft-ds? syn-ack
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Services
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| rdp-ntlm-info:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   Target_Name: EC2AMAZ-0536LUM
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   NetBIOS_Domain_Name: EC2AMAZ-0536LUM
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   NetBIOS_Computer_Name: EC2AMAZ-0536LUM
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   DNS_Domain_Name: EC2AMAZ-0536LUM
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   DNS_Computer_Name: EC2AMAZ-0536LUM
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   Product_Version: 10.0.17763
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_  System_Time: 2026-08-23T02:31:43+00:00
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_ssl-date: 2026-08-23T02:32:03+00:00; -8s from scanner time.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| ssl-cert: Subject: commonName=EC2AMAZ-0536LUM
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| Issuer: commonName=EC2AMAZ-0536LUM
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;5985/tcp open  http          syn-ack Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_http-server-header: Microsoft-HTTPAPI/2.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_http-title: Not Found
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The port scan revealed the following services:&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Exception - Walkthrough</title>
       <link>https://nvru.github.io/walkthrough/hsm/exception/</link>
