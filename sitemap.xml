@@ -2,8 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nvru.github.io/walkthrough/hmv/banner/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/ctf/</loc>
-    <lastmod>2026-08-26T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/directory-traversal/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hmv/encrypt/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/ftp/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hmv/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/http/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/linux/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/ssh/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/suid/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/walkthrough/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/werkzeug/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/hacksmarter/</loc>
     <lastmod>2026-08-26T00:00:00+00:00</lastmod>
@@ -17,28 +62,13 @@
     <loc>https://nvru.github.io/tags/medium/</loc>
     <lastmod>2026-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/</loc>
-    <lastmod>2026-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
-    <lastmod>2026-08-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/service-misconfiguration/</loc>
-    <lastmod>2026-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/</loc>
     <lastmod>2026-08-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/unattend-xml/</loc>
     <lastmod>2026-08-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/vdi-escape/</loc>
-    <lastmod>2026-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/walkthrough/</loc>
-    <lastmod>2026-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/walkthrough/</loc>
     <lastmod>2026-08-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/windows/</loc>
@@ -74,9 +104,6 @@
     <loc>https://nvru.github.io/walkthrough/hsm/exception/</loc>
     <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/linux/</loc>
-    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/nosql-injection/</loc>
     <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   </url><url>
@@ -90,9 +117,6 @@
     <lastmod>2026-08-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/cve-2025-32463/</loc>
-    <lastmod>2026-08-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/ftp/</loc>
     <lastmod>2026-08-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/information-disclosure/</loc>
@@ -113,13 +137,7 @@
     <loc>https://nvru.github.io/walkthrough/hsm/casino/</loc>
     <lastmod>2026-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/http/</loc>
-    <lastmod>2026-08-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/log-poisoning/</loc>
-    <lastmod>2026-08-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/ssh/</loc>
     <lastmod>2026-08-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/ssti/</loc>
@@ -134,9 +152,6 @@
     <loc>https://nvru.github.io/tags/cpulimit/</loc>
     <lastmod>2026-08-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/walkthrough/hmv/</loc>
-    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/luks/</loc>
     <lastmod>2026-08-12T00:00:00+00:00</lastmod>
   </url><url>
@@ -144,9 +159,6 @@
     <lastmod>2026-08-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/rooted/</loc>
-    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/suid/</loc>
     <lastmod>2026-08-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/upnp/</loc>
@@ -261,9 +273,6 @@
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/username-enumeration/</loc>
-    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/werkzeug/</loc>
     <lastmod>2026-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/wordpress/</loc>
