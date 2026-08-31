@@ -6,13 +6,112 @@
     <description>Recent content in Tags on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 29 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Away</title>
+      <link>https://nvru.github.io/tags/away/</link>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/away/</guid>
+      
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>Ctf</title>
       <link>https://nvru.github.io/tags/ctf/</link>
-      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/ctf/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Hackmyvm</title>
+      <link>https://nvru.github.io/tags/hackmyvm/</link>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/hackmyvm/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://nvru.github.io/tags/linux/</link>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/linux/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux-Capabilities</title>
+      <link>https://nvru.github.io/tags/linux-capabilities/</link>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/linux-capabilities/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Privilege-Escalation</title>
+      <link>https://nvru.github.io/tags/privilege-escalation/</link>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>https://nvru.github.io/tags/ssh/</link>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/ssh/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sudo</title>
+      <link>https://nvru.github.io/tags/sudo/</link>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/sudo/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Walkthrough</title>
+      <link>https://nvru.github.io/tags/walkthrough/</link>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/walkthrough/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Web-Enumeration</title>
+      <link>https://nvru.github.io/tags/web-enumeration/</link>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/web-enumeration/</guid>
       
       <description></description>
       
@@ -52,55 +151,11 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>https://nvru.github.io/tags/linux/</link>
-      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/linux/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Privilege-Escalation</title>
-      <link>https://nvru.github.io/tags/privilege-escalation/</link>
-      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Ssh</title>
-      <link>https://nvru.github.io/tags/ssh/</link>
-      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/ssh/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Suid</title>
       <link>https://nvru.github.io/tags/suid/</link>
       <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/suid/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Walkthrough</title>
-      <link>https://nvru.github.io/tags/walkthrough/</link>
-      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/walkthrough/</guid>
       
       <description></description>
       
@@ -288,17 +343,6 @@
       <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/rocket.chat/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Sudo</title>
-      <link>https://nvru.github.io/tags/sudo/</link>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/sudo/</guid>
       
       <description></description>
       

@@ -2,10 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nvru.github.io/walkthrough/hmv/banner/</loc>
-    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+    <loc>https://nvru.github.io/tags/away/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hmv/away/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/ctf/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/hackmyvm/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hmv/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/linux/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/linux-capabilities/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/ssh/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/sudo/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/walkthrough/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/web-enumeration/</loc>
+    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/hmv/banner/</loc>
     <lastmod>2026-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/directory-traversal/</loc>
@@ -17,34 +59,10 @@
     <loc>https://nvru.github.io/tags/ftp/</loc>
     <lastmod>2026-08-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/walkthrough/hmv/</loc>
-    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/http/</loc>
     <lastmod>2026-08-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/linux/</loc>
-    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/</loc>
-    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
-    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/ssh/</loc>
-    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/suid/</loc>
-    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/</loc>
-    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/walkthrough/</loc>
-    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/walkthrough/</loc>
     <lastmod>2026-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/werkzeug/</loc>
@@ -108,9 +126,6 @@
     <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/rocket.chat/</loc>
-    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/sudo/</loc>
     <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/credential-reuse/</loc>
