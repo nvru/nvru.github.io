@@ -6,11 +6,11 @@
     <description>Recent content in Tags on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 22 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ctf</title>
       <link>https://nvru.github.io/tags/ctf/</link>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/ctf/</guid>
       
@@ -19,9 +19,31 @@
     </item>
     
     <item>
+      <title>Cve-2025-55182</title>
+      <link>https://nvru.github.io/tags/cve-2025-55182/</link>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/cve-2025-55182/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Http</title>
+      <link>https://nvru.github.io/tags/http/</link>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/http/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Linux</title>
       <link>https://nvru.github.io/tags/linux/</link>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/linux/</guid>
       
@@ -30,9 +52,42 @@
     </item>
     
     <item>
+      <title>Nextjs</title>
+      <link>https://nvru.github.io/tags/nextjs/</link>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/nextjs/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>https://nvru.github.io/tags/nodejs/</link>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/nodejs/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Privilege-Escalation</title>
+      <link>https://nvru.github.io/tags/privilege-escalation/</link>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Walkthrough</title>
       <link>https://nvru.github.io/tags/walkthrough/</link>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/walkthrough/</guid>
       
@@ -68,17 +123,6 @@
       <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/linux-capabilities/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Privilege-Escalation</title>
-      <link>https://nvru.github.io/tags/privilege-escalation/</link>
-      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
       
       <description></description>
       
@@ -167,17 +211,6 @@
       <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/ftp/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Http</title>
-      <link>https://nvru.github.io/tags/http/</link>
-      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/http/</guid>
       
       <description></description>
       
@@ -1014,17 +1047,6 @@
       <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/express-fileupload/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Nodejs</title>
-      <link>https://nvru.github.io/tags/nodejs/</link>
-      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/nodejs/</guid>
       
       <description></description>
       
