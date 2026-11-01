@@ -2,58 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nvru.github.io/walkthrough/htb/cap/</loc>
-    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/ctf/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/easy/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/ftp/</loc>
-    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/gunicorn/</loc>
-    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/hack-the-box/</loc>
-    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/walkthrough/htb/</loc>
-    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/htb/</loc>
-    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/linux/</loc>
+    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/vulnyx/lower2/</loc>
+    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/nginx/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/pkexec/</loc>
+    <loc>https://nvru.github.io/tags/password-bruteforce/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/privilege-escalation/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/python/</loc>
+    <loc>https://nvru.github.io/tags/shadow-group/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/suid/</loc>
+    <loc>https://nvru.github.io/tags/ssh/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/</loc>
+    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/telnet/</loc>
+    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/vulnyx/</loc>
+    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/vulnyx/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/walkthrough/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/</loc>
-    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/wireshark/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/apache/</loc>
@@ -86,19 +80,10 @@
     <loc>https://nvru.github.io/walkthrough/vulnyx/lower1/</loc>
     <lastmod>2026-10-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/password-bruteforce/</loc>
-    <lastmod>2026-10-31T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/sudo/</loc>
     <lastmod>2026-10-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/virtual-host/</loc>
-    <lastmod>2026-10-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/vulnyx/</loc>
-    <lastmod>2026-10-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/walkthrough/vulnyx/</loc>
     <lastmod>2026-10-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/invernadero/</loc>
@@ -125,9 +110,6 @@
     <loc>https://nvru.github.io/tags/ruby/</loc>
     <lastmod>2026-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/ssh/</loc>
-    <lastmod>2026-08-31T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/ssti/</loc>
     <lastmod>2026-08-31T00:00:00+00:00</lastmod>
   </url><url>
@@ -143,7 +125,13 @@
     <loc>https://nvru.github.io/walkthrough/hmv/encrypt/</loc>
     <lastmod>2026-08-29T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/tags/ftp/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/http/</loc>
+    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/suid/</loc>
     <lastmod>2026-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/werkzeug/</loc>
@@ -210,9 +198,6 @@
     <lastmod>2026-08-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/information-disclosure/</loc>
-    <lastmod>2026-08-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/nginx/</loc>
     <lastmod>2026-08-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/snmp/</loc>
@@ -297,6 +282,9 @@
     <lastmod>2026-07-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/vulnhub/hackable2/</loc>
+    <lastmod>2026-07-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/python/</loc>
     <lastmod>2026-07-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/reverse-shell/</loc>
@@ -488,6 +476,9 @@
     <loc>https://nvru.github.io/walkthrough/htb/cctv/</loc>
     <lastmod>2026-07-12T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/walkthrough/htb/</loc>
+    <lastmod>2026-07-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/sql-injection/</loc>
     <lastmod>2026-07-12T00:00:00+00:00</lastmod>
   </url><url>
@@ -571,6 +562,8 @@
   </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/darkside/</loc>
     <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/htb/cap/</loc>
   </url><url>
     <loc>https://nvru.github.io/categories/</loc>
   </url><url>

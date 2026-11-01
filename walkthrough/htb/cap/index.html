@@ -3,17 +3,17 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Cap - Walkthrough | Null Blog</title>
-<meta property="og:title" content="Cap - Walkthrough | Null Blog" />
-<meta name="twitter:title" content="Cap - Walkthrough | Null Blog" />
-<meta itemprop="name" content="Cap - Walkthrough | Null Blog" />
-<meta name="application-name" content="Cap - Walkthrough | Null Blog" />
+<title itemprop="name"> | Null Blog</title>
+<meta property="og:title" content=" | Null Blog" />
+<meta name="twitter:title" content=" | Null Blog" />
+<meta itemprop="name" content=" | Null Blog" />
+<meta name="application-name" content=" | Null Blog" />
 <meta property="og:site_name" content="Null Blog" />
 
-<meta name="description" content="Walkthrough for the Hack The Box Cap machine.">
-<meta itemprop="description" content="Walkthrough for the Hack The Box Cap machine." />
-<meta property="og:description" content="Walkthrough for the Hack The Box Cap machine." />
-<meta name="twitter:description" content="Walkthrough for the Hack The Box Cap machine." />
+<meta name="description" content="CTF writeups, hacking notes, and walkthroughs.">
+<meta itemprop="description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta property="og:description" content="CTF writeups, hacking notes, and walkthroughs." />
+<meta name="twitter:description" content="CTF writeups, hacking notes, and walkthroughs." />
 
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
@@ -30,26 +30,18 @@
     
     <meta property="og:url" content="https://nvru.github.io/walkthrough/htb/cap/">
 	<meta property="og:site_name" content="Null Blog">
-	<meta property="og:title" content="Cap - Walkthrough">
-	<meta property="og:description" content="Walkthrough for the Hack The Box Cap machine.">
+	<meta property="og:title" content="Null Blog">
+	<meta property="og:description" content="&#43;&#43;&#43; title = &#34;Lower2 - Walkthrough&#34; date = &#34;2026-11-01&#34; author = &#34;nvru&#34; description = &#34;Walkthrough for the Vulnyx Lower2 machine.&#34; tags = [ &#34;ctf&#34;, &#34;walkthrough&#34;, &#34;vulnyx&#34;, &#34;linux&#34;, &#34;nginx&#34;, &#34;ssh&#34;, &#34;telnet&#34;, &#34;password-bruteforce&#34;, &#34;shadow-group&#34;, &#34;privilege-escalation&#34;, &#34;easy&#34; ] draft = false &#43;&#43;&#43; ## Overview - **Attacker IP:** `10.10.10.2` - **Target Machine IP:** `10.10.10.4` The objective was to enumerate the target, identify exposed services, gain initial access through Telnet using a recovered password, and escalate privileges by abusing membership in the `shadow` group, which allowed modification of `/etc/shadow`. --- ## Port Scanning ### RustScan ```bash rustscan -a 10.10.10.4 -b 500 -- -sC -sV -A -oN nmap/init Results text">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="walkthrough">
-		<meta property="article:published_time" content="2026-11-01T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-11-01T00:00:00+00:00">
-		<meta property="article:tag" content="Ctf">
-		<meta property="article:tag" content="Walkthrough">
-		<meta property="article:tag" content="Hack-the-Box">
-		<meta property="article:tag" content="Htb">
-		<meta property="article:tag" content="Linux">
-		<meta property="article:tag" content="Ftp">
 
 
     
     
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Cap - Walkthrough">
-	<meta name="twitter:description" content="Walkthrough for the Hack The Box Cap machine.">
+	<meta name="twitter:title" content="Null Blog">
+	<meta name="twitter:description" content="&#43;&#43;&#43; title = &#34;Lower2 - Walkthrough&#34; date = &#34;2026-11-01&#34; author = &#34;nvru&#34; description = &#34;Walkthrough for the Vulnyx Lower2 machine.&#34; tags = [ &#34;ctf&#34;, &#34;walkthrough&#34;, &#34;vulnyx&#34;, &#34;linux&#34;, &#34;nginx&#34;, &#34;ssh&#34;, &#34;telnet&#34;, &#34;password-bruteforce&#34;, &#34;shadow-group&#34;, &#34;privilege-escalation&#34;, &#34;easy&#34; ] draft = false &#43;&#43;&#43; ## Overview - **Attacker IP:** `10.10.10.2` - **Target Machine IP:** `10.10.10.4` The objective was to enumerate the target, identify exposed services, gain initial access through Telnet using a recovered password, and escalate privileges by abusing membership in the `shadow` group, which allowed modification of `/etc/shadow`. --- ## Port Scanning ### RustScan ```bash rustscan -a 10.10.10.4 -b 500 -- -sC -sV -A -oN nmap/init Results text">
 
 
     
@@ -177,13 +169,8 @@ stroke-linejoin="round" class="feather feather-home">
     <main class="page-content" aria-label="Content">
         <article>
             <header class="header">
-                <h1 class="header-title">Cap - Walkthrough</h1>
+                <h1 class="header-title"></h1>
                 
-                
-                
-                <div class="post-meta">
-                    <time datetime="2026-11-01T00:00:00&#43;00:00" itemprop="datePublished"> 1 Nov 2026 </time>
-                </div>
                 
             </header>
             
@@ -192,166 +179,167 @@ stroke-linejoin="round" class="feather feather-home">
         <summary><b>Table of Contents</b></summary>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#port-scanning">Port Scanning</a>
+    <li>
       <ul>
-        <li><a href="#rustscan">RustScan</a></li>
         <li><a href="#results">Results</a></li>
       </ul>
     </li>
     <li><a href="#enumeration">Enumeration</a>
       <ul>
         <li><a href="#http-enumeration">HTTP Enumeration</a></li>
-        <li><a href="#network-information">Network Information</a></li>
-        <li><a href="#security-snapshots">Security Snapshots</a></li>
-        <li><a href="#ftp-credential-discovery">FTP Credential Discovery</a></li>
+        <li><a href="#ssh-enumeration">SSH Enumeration</a></li>
+        <li><a href="#telnet-enumeration">Telnet Enumeration</a></li>
       </ul>
     </li>
-    <li><a href="#initial-access">Initial Access</a>
-      <ul>
-        <li><a href="#ftp-access">FTP Access</a></li>
-        <li><a href="#user-flag">User Flag</a></li>
-        <li><a href="#ssh-access">SSH Access</a></li>
-      </ul>
-    </li>
+    <li><a href="#initial-access">Initial Access</a></li>
     <li><a href="#privilege-escalation">Privilege Escalation</a>
       <ul>
         <li><a href="#local-enumeration">Local Enumeration</a></li>
-        <li><a href="#suid-python-binary">SUID Python Binary</a></li>
-        <li><a href="#root-using-python">Root Using Python</a></li>
-        <li><a href="#alternative-method-pkexec">Alternative Method: pkexec</a></li>
+        <li><a href="#abusing-the-shadow-group">Abusing the Shadow Group</a></li>
+        <li><a href="#changing-the-root-password">Changing the Root Password</a></li>
       </ul>
     </li>
     <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#privilege-escalation-summary">Privilege Escalation Summary</a></li>
     <li><a href="#flags">Flags</a></li>
   </ul>
 </nav>
     </details>
             <div class="page-content">
-                <h2 id="overview">Overview</h2>
-<ul>
-<li><strong>Attacker IP:</strong> <code>10.10.15.194</code></li>
-<li><strong>Target Machine IP:</strong> <code>10.129.131.33</code></li>
-</ul>
-<p>The objective was to enumerate the target, discover an insecurely exposed FTP credential through the web dashboard&rsquo;s security snapshots, gain initial access as <code>nathan</code>, and escalate privileges to root by abusing a SUID-enabled Python binary.</p>
-<hr>
-<h2 id="port-scanning">Port Scanning</h2>
-<h3 id="rustscan">RustScan</h3>
-<p>I started with a RustScan scan to identify the exposed services and gather additional information using Nmap.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.129.131.33 -b <span style="color:#ae81ff">500</span> -- -sC -sS -sV -A -oN nmap/init
+                <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>title = &#34;Lower2 - Walkthrough&#34;
+</span></span><span style="display:flex;"><span>date = &#34;2026-11-01&#34;
+</span></span><span style="display:flex;"><span>author = &#34;nvru&#34;
+</span></span><span style="display:flex;"><span>description = &#34;Walkthrough for the Vulnyx Lower2 machine.&#34;
+</span></span><span style="display:flex;"><span>tags = [
+</span></span><span style="display:flex;"><span>  &#34;ctf&#34;,
+</span></span><span style="display:flex;"><span>  &#34;walkthrough&#34;,
+</span></span><span style="display:flex;"><span>  &#34;vulnyx&#34;,
+</span></span><span style="display:flex;"><span>  &#34;linux&#34;,
+</span></span><span style="display:flex;"><span>  &#34;nginx&#34;,
+</span></span><span style="display:flex;"><span>  &#34;ssh&#34;,
+</span></span><span style="display:flex;"><span>  &#34;telnet&#34;,
+</span></span><span style="display:flex;"><span>  &#34;password-bruteforce&#34;,
+</span></span><span style="display:flex;"><span>  &#34;shadow-group&#34;,
+</span></span><span style="display:flex;"><span>  &#34;privilege-escalation&#34;,
+</span></span><span style="display:flex;"><span>  &#34;easy&#34;
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>draft = false
+</span></span><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## Overview
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- **Attacker IP:** `10.10.10.2`
+</span></span><span style="display:flex;"><span>- **Target Machine IP:** `10.10.10.4`
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The objective was to enumerate the target, identify exposed services, gain initial access through Telnet using a recovered password, and escalate privileges by abusing membership in the `shadow` group, which allowed modification of `/etc/shadow`.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## Port Scanning
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>### RustScan
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>```bash
+</span></span><span style="display:flex;"><span>rustscan -a 10.10.10.4 -b 500 -- -sC -sV -A -oN nmap/init
 </span></span></code></pre></div><h3 id="results">Results</h3>
+<p>text</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT   STATE SERVICE REASON  VERSION
-</span></span><span style="display:flex;"><span>21/tcp open  ftp     syn-ack vsftpd 3.0.3
-</span></span><span style="display:flex;"><span>22/tcp open  ssh     syn-ack OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
-</span></span><span style="display:flex;"><span>80/tcp open  http    syn-ack Gunicorn
-</span></span><span style="display:flex;"><span>|_http-title: Security Dashboard
+</span></span><span style="display:flex;"><span>22/tcp open  ssh     syn-ack OpenSSH 9.2p1 Debian 2+deb12u4 (protocol 2.0)
+</span></span><span style="display:flex;"><span>| ssh-hostkey:
+</span></span><span style="display:flex;"><span>|   256 a9:a8:52:f3:cd:ec:0d:5b:5f:f3:af:5b:3c:db:76:b6 (ECDSA)
+</span></span><span style="display:flex;"><span>| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAEAAABBBIzUvGOaZF4gJoYBGR4NrMZOj32x98uVDUQ0dY0RENRdIyokD8RvJG8g9g71aoh/20m4mcEEdSyp+eE9ABu1kwk=
+</span></span><span style="display:flex;"><span>|   256 73:f5:8e:44:0c:b9:0a:e0:e7:31:0c:04:ac:7e:ff:fd (ED25519)
+</span></span><span style="display:flex;"><span>|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPrNZ9AQg+cgX4w0wabsDTAVeo9/VWThsF5efc2OzsFo
+</span></span><span style="display:flex;"><span>23/tcp open  telnet  syn-ack Netkit telnet-ssl telnetd
+</span></span><span style="display:flex;"><span>80/tcp open  http    syn-ack nginx 1.22.1
 </span></span><span style="display:flex;"><span>| http-methods:
-</span></span><span style="display:flex;"><span>|_  Supported Methods: GET OPTIONS HEAD
-</span></span><span style="display:flex;"><span>|_http-server-header: gunicorn
-</span></span><span style="display:flex;"><span>Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span><span style="display:flex;"><span>|_  Supported Methods: GET HEAD
+</span></span><span style="display:flex;"><span>|_http-server-header: nginx/1.22.1
+</span></span><span style="display:flex;"><span>|_http-title: Site doesn&#39;t have a title (text/html).
+</span></span><span style="display:flex;"><span>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 </span></span></code></pre></div><p>Three services were exposed:</p>
 <ul>
-<li>FTP on port <strong>21</strong> running vsftpd 3.0.3.</li>
-<li>SSH on port <strong>22</strong> running OpenSSH 8.2p1.</li>
-<li>HTTP on port <strong>80</strong> running Gunicorn.</li>
+<li>SSH on port 22</li>
+<li>Telnet on port 23</li>
+<li>HTTP (nginx) on port 80</li>
 </ul>
-<p>The HTTP service looked particularly interesting, so I started enumerating the web application.</p>
-<hr>
 <h2 id="enumeration">Enumeration</h2>
 <h3 id="http-enumeration">HTTP Enumeration</h3>
-<p>Visiting the web server on port 80 presented a Security Dashboard.</p>
-<p>The dashboard appeared to be running under the user <code>nathan</code>.</p>
-<p><img src="/images/htb/cap/http.png" alt="Security Dashboard"></p>
-<p>After exploring the dashboard, I found some useful network information displayed by the application.</p>
-<h3 id="network-information">Network Information</h3>
-<p>The dashboard contained an IP configuration section.</p>
-<p><img src="/images/htb/cap/ifconfig.png" alt="IP Configuration"></p>
-<p>There was also a network status section showing information about the network connections.</p>
-<p><img src="/images/htb/cap/netstat.png" alt="Network Status"></p>
-<p>These features suggested that the application was collecting and displaying system network information.</p>
-<h3 id="security-snapshots">Security Snapshots</h3>
-<p>While exploring the dashboard, I found a section called Security Snapshots.</p>
-<p><img src="/images/htb/cap/snapshots.png" alt="Security Snapshots"></p>
-<p>The interesting part was that each snapshot had a numerical identifier in its URL.</p>
-<p>In my case, the URL contained the number <code>1</code>.</p>
-<p><img src="/images/htb/cap/url_number.png" alt="Snapshot URL"></p>
-<p>I decided to change the identifier from <code>1</code> to <code>0</code>.</p>
-<p>Interestingly, the application returned a different file instead of the original snapshot.</p>
-<p>This indicated that the application might be allowing access to other users&rsquo; or previous network captures by manipulating the snapshot identifier.</p>
-<h3 id="ftp-credential-discovery">FTP Credential Discovery</h3>
-<p>I downloaded the different snapshot and inspected its contents using Wireshark.</p>
-<p>While analyzing the captured network traffic, I discovered FTP authentication credentials transmitted in plaintext.</p>
-<p><img src="/images/htb/cap/fnd_nathan.png" alt="Nathan Credentials"></p>
+<p>Browsing to the website on port 80 only displayed the default nginx landing page.</p>
+<p>I tried directory brute forcing to discover hidden directories and files.</p>
+<p>bash</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>feroxbuster -u http://10.10.10.4/ -w /usr/share/seclist/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-small.txt -x php,html,js,bak,py,sql,xml,phtml
+</span></span></code></pre></div><p>Unfortunately, nothing useful was discovered, so I moved on to the other exposed services.</p>
+<h3 id="ssh-enumeration">SSH Enumeration</h3>
+<p>I tried connecting to SSH as <code>root</code>.</p>
+<p>Interestingly, the server displayed a welcome message referencing the <code>b.taylor</code> user.</p>
+<p>I also tried connecting as <code>b.taylor</code>, but SSH required a public key for authentication rather than accepting a password.</p>
+<p>Since password authentication was not an option, I moved on to Telnet.</p>
+<h3 id="telnet-enumeration">Telnet Enumeration</h3>
+<p>Telnet was exposed on port 23, so I attempted to brute-force the service to find valid credentials.</p>
+<p>The attempt successfully recovered a password for the <code>b.taylor</code> account.</p>
 <p>The recovered credentials were:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: nathan
-</span></span><span style="display:flex;"><span>Password: Buck3tH4TF0RM3!
-</span></span></code></pre></div><p>Since FTP was exposed on port 21, I decided to test these credentials.</p>
-<hr>
+<p>text</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>b.taylor:rockyou
+</span></span></code></pre></div><p>I used these credentials to log in through Telnet and obtained an interactive shell as <code>b.taylor</code>.</p>
 <h2 id="initial-access">Initial Access</h2>
-<h3 id="ftp-access">FTP Access</h3>
-<p>Using the recovered credentials, I successfully authenticated to the FTP service.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ftp 10.129.131.33
-</span></span></code></pre></div><p>Credentials:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>nathan:Buck3tH4TF0RM3!
-</span></span></code></pre></div><p><img src="/images/htb/cap/ftp_nathan.png" alt="FTP Login"></p>
-<p>After logging in, I listed the available files.</p>
-<pre tabindex="0"><code class="language-ftp" data-lang="ftp">ls -la
-</code></pre><p>The directory structure looked like a regular Unix user&rsquo;s home directory.</p>
-<p><img src="/images/htb/cap/ftp_home.png" alt="FTP Home Directory"></p>
-<p>Among the available files, I found <code>user.txt</code>.</p>
-<h3 id="user-flag">User Flag</h3>
-<p>I downloaded the file and retrieved the user flag.</p>
-<p><img src="/images/htb/cap/user_flag.png" alt="User Flag"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>f6706c0f8c08a2a9ee94b23554a145a8
-</span></span></code></pre></div><h3 id="ssh-access">SSH Access</h3>
-<p>Since the FTP credentials were valid, I tried reusing them to authenticate over SSH.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh nathan@10.129.131.33
-</span></span></code></pre></div><p>The credentials worked, giving me an interactive shell as <code>nathan</code>.</p>
-<p><img src="/images/htb/cap/ssh_nathan.png" alt="SSH Login"></p>
-<p>With initial access established, I moved on to local enumeration and privilege escalation.</p>
-<hr>
+<p>With the recovered credentials, I connected to the target through Telnet.</p>
+<p>bash</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>telnet 10.10.10.4
+</span></span></code></pre></div><p>After authenticating as <code>b.taylor</code>, I had access to a shell on the target machine.</p>
 <h2 id="privilege-escalation">Privilege Escalation</h2>
 <h3 id="local-enumeration">Local Enumeration</h3>
-<p>The first thing I checked was whether <code>nathan</code> had any sudo permissions.</p>
+<p>As usual, I started by checking the user&rsquo;s sudo permissions.</p>
+<p>bash</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
-</span></span></code></pre></div><p>Unfortunately, no sudo permissions were available.</p>
-<p><img src="/images/htb/cap/no_sudo.png" alt="No Sudo"></p>
-<p>I also checked for <code>doas</code>, but it was not available.</p>
-<p><img src="/images/htb/cap/no_doas.png" alt="No Doas"></p>
-<p>Next, I checked which users had valid login shells.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /etc/passwd | grep sh$
-</span></span></code></pre></div><p>There were no interesting additional users besides <code>nathan</code> and <code>root</code>.</p>
-<p><img src="/images/htb/cap/no_users.png" alt="No Other Users"></p>
-<hr>
-<h3 id="suid-python-binary">SUID Python Binary</h3>
-<p>I continued enumerating the system and checking for unusual SUID binaries.</p>
-<p>During this process, I discovered that Python 3 had the SUID permission enabled.</p>
-<p><img src="/images/htb/cap/python_suid.png" alt="Python SUID"></p>
-<p>This was interesting because a SUID-enabled Python interpreter can potentially be abused to execute commands with elevated privileges.</p>
-<h3 id="root-using-python">Root Using Python</h3>
-<p>I used Python to set the process UID to <code>0</code> and spawn a Bash shell.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 -c <span style="color:#e6db74">&#34;import os; os.setuid(0); os.system(&#39;bash&#39;)&#34;</span>
-</span></span></code></pre></div><p><img src="/images/htb/cap/exp_python.png" alt="Python Exploitation"></p>
-<p>The command successfully spawned a root shell.</p>
-<p>This provided full root access to the machine.</p>
-<hr>
-<h3 id="alternative-method-pkexec">Alternative Method: pkexec</h3>
-<p>Another privilege-escalation path was also available through <code>pkexec</code>.</p>
-<p>The installed version was vulnerable to <strong>CVE-2021-4034</strong>, also known as PwnKit.</p>
-<p><img src="/images/htb/cap/pkexec.png" alt="pkexec"></p>
-<p>This vulnerability allows local privilege escalation to root on affected Linux systems.</p>
-<p>I used the following exploit:</p>
-<p><a href="https://github.com/mebeim/CVE-2021-4034">https://github.com/mebeim/CVE-2021-4034</a></p>
-<p><img src="/images/htb/cap/exp_pkexec.png" alt="pkexec Exploitation"></p>
-<p>This provided another route to obtain root privileges.</p>
-<hr>
+</span></span></code></pre></div><p>There were no sudo permissions available.</p>
+<p>I also checked for <code>doas</code>, but it was not available on the machine.</p>
+<p>Next, I checked the groups that the current user belonged to.</p>
+<p>bash</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>id
+</span></span></code></pre></div><p>The output revealed something interesting: <code>b.taylor</code> was a member of the <code>shadow</code> group.</p>
+<h3 id="abusing-the-shadow-group">Abusing the Shadow Group</h3>
+<p>On Linux systems, the <code>shadow</code> group is associated with <code>/etc/shadow</code>, which stores password hashes for local user accounts.</p>
+<p>Since <code>b.taylor</code> belonged to this group, I checked the permissions on <code>/etc/shadow</code>.</p>
+<p>bash</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -l /etc/shadow
+</span></span></code></pre></div><p>The file was owned by the <code>shadow</code> group, meaning the current user had the ability to modify it.</p>
+<p>To confirm the finding, I searched for files writable by the <code>shadow</code> group.</p>
+<p>bash</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -writable -group shadow 2&gt;/dev/null | grep -Ev <span style="color:#e6db74">&#34;proc|home|sys|dev|tmp|run&#34;</span>
+</span></span></code></pre></div><p>The search confirmed that <code>/etc/shadow</code> was writable by the current user.</p>
+<h3 id="changing-the-root-password">Changing the Root Password</h3>
+<p>Since I could modify <code>/etc/shadow</code>, I could replace the root password hash with one that I controlled.</p>
+<p>I generated a new password hash using <code>mkpasswd</code>.</p>
+<p>Alternatively, OpenSSL can be used:</p>
+<p>bash</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl passwd -6
+</span></span></code></pre></div><p>I then replaced the existing root password hash in <code>/etc/shadow</code> with the newly generated hash.</p>
+<p>After updating the file, I switched to the root account using <code>su</code>.</p>
+<p>bash</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>su root
+</span></span></code></pre></div><p>I entered the password associated with the new hash and successfully obtained a root shell.</p>
 <h2 id="credentials">Credentials</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>FTP / SSH
-</span></span><span style="display:flex;"><span>    nathan:Buck3tH4TF0RM3!
-</span></span></code></pre></div><hr>
+<p>text</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Telnet
+</span></span><span style="display:flex;"><span>    b.taylor:rockyou
+</span></span></code></pre></div><h2 id="privilege-escalation-summary">Privilege Escalation Summary</h2>
+<p>The privilege escalation path was straightforward:</p>
+<ol>
+<li>Gain access as <code>b.taylor</code> through Telnet.</li>
+<li>Enumerate the user&rsquo;s group memberships.</li>
+<li>Discover that <code>b.taylor</code> belongs to the <code>shadow</code> group.</li>
+<li>Identify that <code>/etc/shadow</code> is writable by the group.</li>
+<li>Replace the root password hash.</li>
+<li>Switch to root using <code>su</code>.</li>
+</ol>
+<p>The misconfigured group permissions allowed a regular user to modify the system&rsquo;s password database and ultimately obtain root access.</p>
 <h2 id="flags">Flags</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:f6706c0f8c08a2a9ee94b23554a145a8
-</span></span><span style="display:flex;"><span>root:685981c0b9be5162b2d4c4951bfda618
+<p>text</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root:
 </span></span></code></pre></div>
             </div>
         </article></main>

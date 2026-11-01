@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wireshark on Null Blog</title>
-    <link>https://nvru.github.io/tags/wireshark/</link>
+    <link>http://localhost:1313/tags/wireshark/</link>
     <description>Recent content in Wireshark on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 01 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/wireshark/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/wireshark/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cap - Walkthrough</title>
-      <link>https://nvru.github.io/walkthrough/htb/cap/</link>
+      <link>http://localhost:1313/walkthrough/htb/cap/</link>
       <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://nvru.github.io/walkthrough/htb/cap/</guid>
+      <guid>http://localhost:1313/walkthrough/htb/cap/</guid>
       
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
