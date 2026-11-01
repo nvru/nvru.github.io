@@ -25,7 +25,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.167.0">
+<meta name="generator" content="Hugo 0.165.0">
 
     
     <meta property="og:url" content="https://nvru.github.io/nix/install_void_luks1/">
@@ -213,9 +213,10 @@ stroke-linejoin="round" class="feather feather-home">
     <li><a href="#9-automated-luks-unlock-initramfs-keyfile">9. Automated LUKS Unlock (Initramfs Keyfile)</a></li>
     <li><a href="#10-core-runtime-services">10. Core Runtime Services</a>
       <ul>
+        <li><a href="#d-bus-required-for-networking--many-desktop-services">D-Bus (required for networking &amp; many desktop services)</a></li>
         <li><a href="#networkmanager">NetworkManager</a></li>
-        <li><a href="#pipewire-audio-infrastructure">PipeWire Audio Infrastructure</a></li>
-        <li><a href="#pulseaudio-interface">PulseAudio interface</a></li>
+        <li><a href="#audio-pipewire--pulseaudio-compatibility-recommended">Audio: PipeWire + PulseAudio compatibility (recommended)</a></li>
+        <li><a href="#polkit-desktop-users-only">Polkit (desktop users only)</a></li>
       </ul>
     </li>
     <li><a href="#11-final-reconfiguration--system-exit">11. Final Reconfiguration &amp; System Exit</a></li>
@@ -288,6 +289,7 @@ GRUB requires LUKS1 for direct header decryption. LUKS2 is not natively supporte
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>btrfs subvolume create /mnt/@
 </span></span><span style="display:flex;"><span>btrfs subvolume create /mnt/@home
+</span></span><span style="display:flex;"><span>btrfs subvolume create /mnt/@opt
 </span></span><span style="display:flex;"><span>btrfs subvolume create /mnt/@cache
 </span></span><span style="display:flex;"><span>btrfs subvolume create /mnt/@log
 </span></span><span style="display:flex;"><span>btrfs subvolume create /mnt/@libvirt
@@ -308,10 +310,11 @@ GRUB requires LUKS1 for direct header decryption. LUKS2 is not natively supporte
 </span></span><span style="display:flex;"><span>mount -o $BTRFS_OPTS,subvol<span style="color:#f92672">=</span>@ /dev/mapper/Void /mnt
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Subvolume mount points</span>
-</span></span><span style="display:flex;"><span>mkdir -p /mnt/<span style="color:#f92672">{</span>home,var/log,var/cache,var/lib/libvirt,var/lib/containers,var/lib/docker<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>mkdir -p /mnt/<span style="color:#f92672">{</span>home,opt,var/log,var/cache,var/lib/libvirt,var/lib/containers,var/lib/docker<span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Mount secondary subvolumes</span>
 </span></span><span style="display:flex;"><span>mount -o $BTRFS_OPTS,subvol<span style="color:#f92672">=</span>@home /dev/mapper/Void /mnt/home
+</span></span><span style="display:flex;"><span>mount -o $BTRFS_OPTS,subvol<span style="color:#f92672">=</span>@opt /dev/mapper/Void /mnt/opt
 </span></span><span style="display:flex;"><span>mount -o $BTRFS_OPTS,subvol<span style="color:#f92672">=</span>@log /dev/mapper/Void /mnt/var/log
 </span></span><span style="display:flex;"><span>mount -o $BTRFS_OPTS,subvol<span style="color:#f92672">=</span>@cache /dev/mapper/Void /mnt/var/cache
 </span></span><span style="display:flex;"><span>mount -o $BTRFS_OPTS,subvol<span style="color:#f92672">=</span>@libvirt /dev/mapper/Void /mnt/var/lib/libvirt
@@ -399,6 +402,7 @@ Repository paths: <code>glibc</code> -&gt; <code>/current</code> | <code>musl</c
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/fstab
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">UUID=$ROOT_UUID / btrfs $BTRFS_OPTS,subvol=@ 0 1
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">UUID=$ROOT_UUID /home btrfs $BTRFS_OPTS,subvol=@home 0 2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">UUID=$ROOT_UUID /opt  btrfs $BTRFS_OPTS,subvol=@home 0 2
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">UUID=$ROOT_UUID /var/cache btrfs $BTRFS_OPTS,subvol=@cache 0 2
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">UUID=$ROOT_UUID /var/log btrfs $BTRFS_OPTS,subvol=@log 0 2
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">UUID=$ROOT_UUID /var/lib/libvirt btrfs $BTRFS_OPTS,subvol=@libvirt 0 2
@@ -413,6 +417,7 @@ Repository paths: <code>glibc</code> -&gt; <code>/current</code> | <code>musl</c
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/fstab
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">UUID=$ROOT_UUID / btrfs $BTRFS_OPTS,subvol=@ 0 1
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">UUID=$ROOT_UUID /home btrfs $BTRFS_OPTS,subvol=@home 0 2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">UUID=$ROOT_UUID /opt btrfs $BTRFS_OPTS,subvol=@opt 0 2
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">UUID=$ROOT_UUID /var/cache btrfs $BTRFS_OPTS,subvol=@cache 0 2
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">UUID=$ROOT_UUID /var/log btrfs $BTRFS_OPTS,subvol=@log 0 2
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">UUID=$ROOT_UUID /var/lib/libvirt btrfs $BTRFS_OPTS,subvol=@libvirt 0 2
@@ -424,9 +429,33 @@ Repository paths: <code>glibc</code> -&gt; <code>/current</code> | <code>musl</c
 </ul>
 <hr>
 <h2 id="8-bootloader-grub">8. Bootloader (GRUB)</h2>
-<p>Configure LUKS support in <code>/etc/default/grub</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;GRUB_ENABLE_CRYPTODISK=y&#34;</span> &gt;&gt; /etc/default/grub
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;GRUB_CMDLINE_LINUX=&#34;rd.auto=1 rd.luks.allow-discards&#34;&#39;</span> &gt;&gt; /etc/default/grub
+<p>Add these options to <code>/etc/default/grub</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>GRUB_CMDLINE_LINUX=&#34;rd.auto=1 rd.luks.allow-discards&#34;
+</span></span><span style="display:flex;"><span>GRUB_ENABLE_CRYPTODISK=y
+</span></span></code></pre></div><p>Or just copy and paste this whole file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#
+</span></span><span style="display:flex;"><span># Configuration file for GRUB.
+</span></span><span style="display:flex;"><span>#
+</span></span><span style="display:flex;"><span>GRUB_DEFAULT=0
+</span></span><span style="display:flex;"><span>#GRUB_HIDDEN_TIMEOUT=0
+</span></span><span style="display:flex;"><span>#GRUB_HIDDEN_TIMEOUT_QUIET=false
+</span></span><span style="display:flex;"><span>GRUB_TIMEOUT=5
+</span></span><span style="display:flex;"><span>GRUB_DISTRIBUTOR=&#34;Void&#34;
+</span></span><span style="display:flex;"><span>GRUB_CMDLINE_LINUX_DEFAULT=&#34;loglevel=4&#34;
+</span></span><span style="display:flex;"><span>GRUB_CMDLINE_LINUX=&#34;rd.auto=1 rd.luks.allow-discards&#34;
+</span></span><span style="display:flex;"><span>GRUB_ENABLE_CRYPTODISK=y
+</span></span><span style="display:flex;"><span># Uncomment to use basic console
+</span></span><span style="display:flex;"><span>#GRUB_TERMINAL_INPUT=&#34;console&#34;
+</span></span><span style="display:flex;"><span># Uncomment to disable graphical terminal
+</span></span><span style="display:flex;"><span>#GRUB_TERMINAL_OUTPUT=console
+</span></span><span style="display:flex;"><span>#GRUB_BACKGROUND=/usr/share/void-artwork/splash.png
+</span></span><span style="display:flex;"><span>#GRUB_GFXMODE=1920x1080x32
+</span></span><span style="display:flex;"><span>#GRUB_DISABLE_LINUX_UUID=true
+</span></span><span style="display:flex;"><span>#GRUB_DISABLE_RECOVERY=true
+</span></span><span style="display:flex;"><span># Uncomment and set to the desired menu colors.  Used by normal and wallpaper
+</span></span><span style="display:flex;"><span># modes only.  Entries specified as foreground/background.
+</span></span><span style="display:flex;"><span>#GRUB_COLOR_NORMAL=&#34;light-blue/black&#34;
+</span></span><span style="display:flex;"><span>#GRUB_COLOR_HIGHLIGHT=&#34;light-cyan/blue&#34;
 </span></span></code></pre></div><p>Install and target GRUB based on system architecture:</p>
 <ul>
 <li>
@@ -458,33 +487,62 @@ Repository paths: <code>glibc</code> -&gt; <code>/current</code> | <code>musl</c
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;install_items+=&#34; /boot/keyfile.bin /etc/crypttab &#34;&#39;</span> &gt; /etc/dracut.conf.d/10-crypt.conf
 </span></span></code></pre></div><hr>
 <h2 id="10-core-runtime-services">10. Core Runtime Services</h2>
-<h3 id="networkmanager">NetworkManager</h3>
+<h3 id="d-bus-required-for-networking--many-desktop-services">D-Bus (required for networking &amp; many desktop services)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xbps-install dbus
+</span></span><span style="display:flex;"><span>ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
+</span></span></code></pre></div><h3 id="networkmanager">NetworkManager</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xbps-install NetworkManager
 </span></span><span style="display:flex;"><span>ln -s /etc/sv/NetworkManager /etc/runit/runsvdir/default/
-</span></span></code></pre></div><h3 id="pipewire-audio-infrastructure">PipeWire Audio Infrastructure</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xbps-install pipewire wireplumber
-</span></span></code></pre></div><p>WirePlumber serves as the primary session manager. Link configuration for startup execution:</p>
-<p><strong>System-wide Configuration:</strong></p>
+</span></span></code></pre></div><h3 id="audio-pipewire--pulseaudio-compatibility-recommended">Audio: PipeWire + PulseAudio compatibility (recommended)</h3>
+<p>For most desktop setups, use <strong>PipeWire</strong> with its <strong>PulseAudio compatibility layer</strong> to maximize app compatibility. WirePlumber is used as the session manager.</p>
+<ol>
+<li>
+<p><strong>Install packages:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xbps-install pipewire wireplumber pulseaudio
+</span></span></code></pre></div><blockquote>
+<p><em>Note:</em> If <code>pulseaudio</code> is already running, stop/remove it first. The goal is to have PipeWire provide the PulseAudio interface.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Enable WirePlumber (session manager):</strong></p>
+<ul>
+<li>
+<p><strong>System-wide:</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /etc/pipewire/pipewire.conf.d
 </span></span><span style="display:flex;"><span>ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
-</span></span><span style="display:flex;"><span>ln -s /usr/share/examples/wireplumber/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
-</span></span></code></pre></div><p><strong>Per-user Configuration:</strong></p>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Per-user:</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>XDG_CONFIG_HOME:=<span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/.config<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>mkdir -p <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>XDG_CONFIG_HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/pipewire/pipewire.conf.d&#34;</span>
 </span></span><span style="display:flex;"><span>ln -s /usr/share/examples/wireplumber/10-wireplumber.conf <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>XDG_CONFIG_HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/pipewire/pipewire.conf.d/&#34;</span>
 </span></span><span style="display:flex;"><span>ln -s /usr/share/examples/wireplumber/20-pipewire-pulse.conf <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>XDG_CONFIG_HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/pipewire/pipewire.conf.d/&#34;</span>
-</span></span></code></pre></div><h3 id="pulseaudio-interface">PulseAudio interface</h3>
-<p>The PulseAudio interface is optional but highly recommended. Most applications cannot speak directly to PipeWire, but instead speak to PipeWire&rsquo;s PulseAudio interface.</p>
-<p>If pulseaudio is installed, uninstall it and ensure pulseaudio is not running.</p>
-<p>Modify the PipeWire configuration to launch pipewire-pulse:</p>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Enable the PipeWire PulseAudio interface (for app compatibility):</strong></p>
+<p>Most apps still expect PulseAudio. Enable PipeWire&rsquo;s PulseAudio shim:</p>
+<ul>
+<li>
+<p><strong>System-wide:</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /etc/pipewire/pipewire.conf.d
 </span></span><span style="display:flex;"><span>ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
-</span></span></code></pre></div><p>for system configurations, or</p>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Per-user:</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>XDG_CONFIG_HOME:=<span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/.config<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>mkdir -p <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>XDG_CONFIG_HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/pipewire/pipewire.conf.d&#34;</span>
 </span></span><span style="display:flex;"><span>ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>XDG_CONFIG_HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/pipewire/pipewire.conf.d/&#34;</span>
-</span></span></code></pre></div><p>for per-user configurations.</p>
-<hr>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h3 id="polkit-desktop-users-only">Polkit (desktop users only)</h3>
+<p>Polkit (<code>polkitd</code>) is recommended for desktop environments that need privilege escalation prompts. <strong>Skip this on headless/servers</strong> unless a specific service requires it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xbps-install polkit
+</span></span><span style="display:flex;"><span>ln -s /etc/sv/polkitd /etc/runit/runsvdir/default/
+</span></span></code></pre></div><hr>
 <h2 id="11-final-reconfiguration--system-exit">11. Final Reconfiguration &amp; System Exit</h2>
 <p>Reconfigure installed packages to trigger initramfs generation and update GRUB targets:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xbps-reconfigure -fa

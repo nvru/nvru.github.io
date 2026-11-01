@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pipewire on Null Blog</title>
+    <link>http://localhost:1313/tags/pipewire/</link>
+    <description>Recent content in Pipewire on Null Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 01 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/pipewire/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>runit in Practice: Root and Non-Root Services</title>
+      <link>http://localhost:1313/nix/runit/</link>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/nix/runit/</guid>
+      
+      <description>&lt;!-- # runit in Practice: Root and Non-Root Services --&gt;
+&lt;p&gt;runit is small enough to explain in a few sentences, but the details matter when
+you actually want a service to start at boot, restart after a crash, and log
+properly. This guide covers both sides of the same system:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;System services&lt;/strong&gt; live in &lt;code&gt;/etc/sv&lt;/code&gt;, are enabled by symlinking them into
+&lt;code&gt;/var/service&lt;/code&gt;, and are managed by root.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;User services&lt;/strong&gt; live in a directory owned by a normal user and are managed
+by that user without &lt;code&gt;sudo&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The second part is the interesting one. It uses a small root-owned supervisor
+that drops privileges once, then lets the user create and control services
+forever after. That is exactly how the &lt;code&gt;runsvdir-nvru&lt;/code&gt; + PipeWire setup works.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
