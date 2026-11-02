@@ -11,19 +11,34 @@
     <loc>https://nvru.github.io/tags/easy/</loc>
     <lastmod>2026-11-02T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/tags/gpg/</loc>
+    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/hydra/</loc>
     <lastmod>2026-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/ident/</loc>
     <lastmod>2026-11-02T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/tags/john-the-ripper/</loc>
+    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/lfi/</loc>
+    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/linux/</loc>
+    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/log-poisoning/</loc>
     <lastmod>2026-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/vulnyx/lower3/</loc>
     <lastmod>2026-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/vulnyx/lower4/</loc>
+    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/vulnyx/lower5/</loc>
     <lastmod>2026-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/multitail/</loc>
@@ -236,9 +251,6 @@
     <loc>https://nvru.github.io/walkthrough/hsm/casino/</loc>
     <lastmod>2026-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/tags/log-poisoning/</loc>
-    <lastmod>2026-08-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/tags/twig/</loc>
     <lastmod>2026-08-15T00:00:00+00:00</lastmod>
   </url><url>
@@ -445,9 +457,6 @@
   </url><url>
     <loc>https://nvru.github.io/tags/nodejs/</loc>
     <lastmod>2026-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/lfi/</loc>
-    <lastmod>2026-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/p4l4nc4/</loc>
     <lastmod>2026-07-18T00:00:00+00:00</lastmod>

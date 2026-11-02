@@ -41,6 +41,17 @@
     </item>
     
     <item>
+      <title>Gpg</title>
+      <link>https://nvru.github.io/tags/gpg/</link>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/gpg/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Hydra</title>
       <link>https://nvru.github.io/tags/hydra/</link>
       <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
@@ -63,11 +74,44 @@
     </item>
     
     <item>
+      <title>John-the-Ripper</title>
+      <link>https://nvru.github.io/tags/john-the-ripper/</link>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/john-the-ripper/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Lfi</title>
+      <link>https://nvru.github.io/tags/lfi/</link>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/lfi/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Linux</title>
       <link>https://nvru.github.io/tags/linux/</link>
       <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/linux/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Log-Poisoning</title>
+      <link>https://nvru.github.io/tags/log-poisoning/</link>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/log-poisoning/</guid>
       
       <description></description>
       
@@ -635,17 +679,6 @@
     </item>
     
     <item>
-      <title>Log-Poisoning</title>
-      <link>https://nvru.github.io/tags/log-poisoning/</link>
-      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/log-poisoning/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Twig</title>
       <link>https://nvru.github.io/tags/twig/</link>
       <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
@@ -1168,17 +1201,6 @@
       <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/nodejs/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Lfi</title>
-      <link>https://nvru.github.io/tags/lfi/</link>
-      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/lfi/</guid>
       
       <description></description>
       
