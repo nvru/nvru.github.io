@@ -11,10 +11,22 @@
     <loc>https://nvru.github.io/tags/easy/</loc>
     <lastmod>2026-11-02T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/tags/hydra/</loc>
+    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/ident/</loc>
+    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/linux/</loc>
     <lastmod>2026-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/vulnyx/lower3/</loc>
+    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/walkthrough/vulnyx/lower4/</loc>
+    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/multitail/</loc>
     <lastmod>2026-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/nfs/</loc>
@@ -33,6 +45,9 @@
     <lastmod>2026-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/ssh/</loc>
+    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/sudo/</loc>
     <lastmod>2026-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/</loc>
@@ -90,9 +105,6 @@
     <lastmod>2026-10-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/walkthrough/vulnyx/lower1/</loc>
-    <lastmod>2026-10-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/sudo/</loc>
     <lastmod>2026-10-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/virtual-host/</loc>
