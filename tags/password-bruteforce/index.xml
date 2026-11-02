@@ -16,6 +16,9 @@
       
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Platform&lt;/strong&gt;: &lt;code&gt;Vulnyx&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Difficulty&lt;/strong&gt;: &lt;code&gt;Low&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OS&lt;/strong&gt;: &lt;code&gt;Linux&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.4&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -52,6 +55,9 @@
       
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Platform&lt;/strong&gt;: &lt;code&gt;Vulnyx&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Difficulty&lt;/strong&gt;: &lt;code&gt;Low&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OS&lt;/strong&gt;: &lt;code&gt;Linux&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.3&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
