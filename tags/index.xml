@@ -6,11 +6,11 @@
     <description>Recent content in Tags on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 02 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apache</title>
       <link>https://nvru.github.io/tags/apache/</link>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/apache/</guid>
       
@@ -19,9 +19,31 @@
     </item>
     
     <item>
+      <title>Capabilities</title>
+      <link>https://nvru.github.io/tags/capabilities/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/capabilities/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Credential-Discovery</title>
+      <link>https://nvru.github.io/tags/credential-discovery/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/credential-discovery/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Ctf</title>
       <link>https://nvru.github.io/tags/ctf/</link>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/ctf/</guid>
       
@@ -30,11 +52,286 @@
     </item>
     
     <item>
+      <title>Debian</title>
+      <link>https://nvru.github.io/tags/debian/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/debian/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Easy</title>
       <link>https://nvru.github.io/tags/easy/</link>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/easy/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Express</title>
+      <link>https://nvru.github.io/tags/express/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/express/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>File-Upload</title>
+      <link>https://nvru.github.io/tags/file-upload/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/file-upload/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Ftp</title>
+      <link>https://nvru.github.io/tags/ftp/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/ftp/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Gdb</title>
+      <link>https://nvru.github.io/tags/gdb/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/gdb/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Hard</title>
+      <link>https://nvru.github.io/tags/hard/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/hard/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>John-the-Ripper</title>
+      <link>https://nvru.github.io/tags/john-the-ripper/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/john-the-ripper/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Lfi</title>
+      <link>https://nvru.github.io/tags/lfi/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/lfi/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://nvru.github.io/tags/linux/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/linux/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>MremoteNG</title>
+      <link>https://nvru.github.io/tags/mremoteng/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/mremoteng/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>https://nvru.github.io/tags/nodejs/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/nodejs/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Password-Cracking</title>
+      <link>https://nvru.github.io/tags/password-cracking/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/password-cracking/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Password-Decryption</title>
+      <link>https://nvru.github.io/tags/password-decryption/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/password-decryption/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Php</title>
+      <link>https://nvru.github.io/tags/php/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/php/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Privilege-Escalation</title>
+      <link>https://nvru.github.io/tags/privilege-escalation/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>https://nvru.github.io/tags/redis/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/redis/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Reverse-Shell</title>
+      <link>https://nvru.github.io/tags/reverse-shell/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/reverse-shell/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Shadow</title>
+      <link>https://nvru.github.io/tags/shadow/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/shadow/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Smb</title>
+      <link>https://nvru.github.io/tags/smb/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/smb/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>https://nvru.github.io/tags/ssh/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/ssh/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Suid</title>
+      <link>https://nvru.github.io/tags/suid/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/suid/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Vulnyx</title>
+      <link>https://nvru.github.io/tags/vulnyx/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/vulnyx/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Walkthrough</title>
+      <link>https://nvru.github.io/tags/walkthrough/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/walkthrough/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://nvru.github.io/tags/windows/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/windows/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Winrm</title>
+      <link>https://nvru.github.io/tags/winrm/</link>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/winrm/</guid>
       
       <description></description>
       
@@ -68,39 +365,6 @@
       <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/ident/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>John-the-Ripper</title>
-      <link>https://nvru.github.io/tags/john-the-ripper/</link>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/john-the-ripper/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Lfi</title>
-      <link>https://nvru.github.io/tags/lfi/</link>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/lfi/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://nvru.github.io/tags/linux/</link>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/linux/</guid>
       
       <description></description>
       
@@ -151,66 +415,11 @@
     </item>
     
     <item>
-      <title>Privilege-Escalation</title>
-      <link>https://nvru.github.io/tags/privilege-escalation/</link>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/privilege-escalation/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Reverse-Shell</title>
-      <link>https://nvru.github.io/tags/reverse-shell/</link>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/reverse-shell/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Ssh</title>
-      <link>https://nvru.github.io/tags/ssh/</link>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/ssh/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Sudo</title>
       <link>https://nvru.github.io/tags/sudo/</link>
       <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/sudo/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Vulnyx</title>
-      <link>https://nvru.github.io/tags/vulnyx/</link>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/vulnyx/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Walkthrough</title>
-      <link>https://nvru.github.io/tags/walkthrough/</link>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/walkthrough/</guid>
       
       <description></description>
       
@@ -426,33 +635,11 @@
     </item>
     
     <item>
-      <title>Ftp</title>
-      <link>https://nvru.github.io/tags/ftp/</link>
-      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/ftp/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Http</title>
       <link>https://nvru.github.io/tags/http/</link>
       <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/http/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Suid</title>
-      <link>https://nvru.github.io/tags/suid/</link>
-      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/suid/</guid>
       
       <description></description>
       
@@ -525,17 +712,6 @@
     </item>
     
     <item>
-      <title>Windows</title>
-      <link>https://nvru.github.io/tags/windows/</link>
-      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/windows/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Active-Directory</title>
       <link>https://nvru.github.io/tags/active-directory/</link>
       <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
@@ -574,17 +750,6 @@
       <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/kerberoasting/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Smb</title>
-      <link>https://nvru.github.io/tags/smb/</link>
-      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/smb/</guid>
       
       <description></description>
       
@@ -800,17 +965,6 @@
     </item>
     
     <item>
-      <title>Php</title>
-      <link>https://nvru.github.io/tags/php/</link>
-      <pubDate>Thu, 30 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/php/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Anonymous-Ftp</title>
       <link>https://nvru.github.io/tags/anonymous-ftp/</link>
       <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
@@ -838,17 +992,6 @@
       <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/tftp/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>File-Upload</title>
-      <link>https://nvru.github.io/tags/file-upload/</link>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/file-upload/</guid>
       
       <description></description>
       
@@ -1075,17 +1218,6 @@
     </item>
     
     <item>
-      <title>Capabilities</title>
-      <link>https://nvru.github.io/tags/capabilities/</link>
-      <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/capabilities/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Cronjob</title>
       <link>https://nvru.github.io/tags/cronjob/</link>
       <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
@@ -1196,17 +1328,6 @@
     </item>
     
     <item>
-      <title>Nodejs</title>
-      <link>https://nvru.github.io/tags/nodejs/</link>
-      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/nodejs/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Systemctl</title>
       <link>https://nvru.github.io/tags/systemctl/</link>
       <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
@@ -1267,17 +1388,6 @@
       <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/php-filter-chain/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Hard</title>
-      <link>https://nvru.github.io/tags/hard/</link>
-      <pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/hard/</guid>
       
       <description></description>
       
