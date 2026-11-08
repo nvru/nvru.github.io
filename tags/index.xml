@@ -6,7 +6,51 @@
     <description>Recent content in Tags on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 03 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Btrfs</title>
+      <link>https://nvru.github.io/tags/btrfs/</link>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/btrfs/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://nvru.github.io/tags/linux/</link>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/linux/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Luks</title>
+      <link>https://nvru.github.io/tags/luks/</link>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/luks/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Void</title>
+      <link>https://nvru.github.io/tags/void/</link>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/void/</guid>
+      
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>Apache</title>
       <link>https://nvru.github.io/tags/apache/</link>
@@ -145,17 +189,6 @@
       <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/lfi/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://nvru.github.io/tags/linux/</link>
-      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/linux/</guid>
       
       <description></description>
       
@@ -497,17 +530,6 @@
       <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/telnet/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Void</title>
-      <link>https://nvru.github.io/tags/void/</link>
-      <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/void/</guid>
       
       <description></description>
       
@@ -899,33 +921,11 @@
     </item>
     
     <item>
-      <title>Btrfs</title>
-      <link>https://nvru.github.io/tags/btrfs/</link>
-      <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/btrfs/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Cpulimit</title>
       <link>https://nvru.github.io/tags/cpulimit/</link>
       <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/cpulimit/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Luks</title>
-      <link>https://nvru.github.io/tags/luks/</link>
-      <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/luks/</guid>
       
       <description></description>
       
