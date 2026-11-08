@@ -127,7 +127,7 @@
       
       <guid>https://nvru.github.io/walkthrough/vulnhub/chronos/</guid>
       
-      <description>&lt;h1 id=&#34;chronos---walkthrough&#34;&gt;Chronos - Walkthrough&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;chronos---walkthrough&#34;&gt;Chronos - Walkthrough&lt;/h2&gt;
 &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.151.249.142&lt;/code&gt;&lt;/li&gt;

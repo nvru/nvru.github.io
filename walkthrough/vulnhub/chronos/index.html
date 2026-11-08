@@ -192,6 +192,7 @@ stroke-linejoin="round" class="feather feather-home">
         <summary><b>Table of Contents</b></summary>
         <nav id="TableOfContents">
   <ul>
+    <li><a href="#chronos---walkthrough">Chronos - Walkthrough</a></li>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#port-scanning">Port Scanning</a>
       <ul>
@@ -200,9 +201,7 @@ stroke-linejoin="round" class="feather feather-home">
         <li><a href="#nmap-output">Nmap Output</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#enumeration">Enumeration</a></li>
     <li><a href="#apache-web-server">Apache Web Server</a></li>
     <li><a href="#command-injection">Command Injection</a></li>
     <li><a href="#privilege-escalation">Privilege Escalation</a>
@@ -212,11 +211,12 @@ stroke-linejoin="round" class="feather feather-home">
         <li><a href="#imera--root">imera → root</a></li>
       </ul>
     </li>
+    <li><a href="#flags">Flags</a></li>
   </ul>
 </nav>
     </details>
             <div class="page-content">
-                <h1 id="chronos---walkthrough">Chronos - Walkthrough</h1>
+                <h2 id="chronos---walkthrough">Chronos - Walkthrough</h2>
 <h2 id="overview">Overview</h2>
 <ul>
 <li><strong>Attacker IP:</strong> <code>10.151.249.142</code></li>
@@ -249,7 +249,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>Service Info: OS: Linux
 </span></span></code></pre></div><p>Only SSH and Apache were publicly accessible, so web enumeration became the next step.</p>
 <hr>
-<h1 id="enumeration">Enumeration</h1>
+<h2 id="enumeration">Enumeration</h2>
 <h2 id="apache-web-server">Apache Web Server</h2>
 <p>Browsing to the web server initially displayed a simple page showing only the text <strong>&ldquo;Chronos&rdquo;</strong> in a custom font.</p>
 <p><img src="/images/vulnhub/chronos/http.png" alt="Http"></p>
@@ -312,7 +312,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></code></pre></div><p><img src="/images/vulnhub/chronos/sudo_perm_imera.png" alt="Sudo Permissions"></p>
 <p>Executing the command immediately spawned a root shell, completing the privilege escalation.</p>
 <hr>
-<h1 id="flags">Flags</h1>
+<h2 id="flags">Flags</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user.txt
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>byBjaHJvbm9zIHBlcm5hZWkgZmlsZSBtb3UK

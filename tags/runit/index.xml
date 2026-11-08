@@ -2,31 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Runit on Null Blog</title>
-    <link>http://localhost:1313/tags/runit/</link>
+    <link>https://nvru.github.io/tags/runit/</link>
     <description>Recent content in Runit on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 01 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/runit/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/runit/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>runit in Practice: Root and Non-Root Services</title>
-      <link>http://localhost:1313/nix/runit/</link>
+      <title>runit: Simple, Fast, Easy</title>
+      <link>https://nvru.github.io/nix/runit/</link>
       <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/nix/runit/</guid>
+      <guid>https://nvru.github.io/nix/runit/</guid>
       
-      <description>&lt;!-- # runit in Practice: Root and Non-Root Services --&gt;
-&lt;p&gt;runit is small enough to explain in a few sentences, but the details matter when
-you actually want a service to start at boot, restart after a crash, and log
-properly. This guide covers both sides of the same system:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;System services&lt;/strong&gt; live in &lt;code&gt;/etc/sv&lt;/code&gt;, are enabled by symlinking them into
-&lt;code&gt;/var/service&lt;/code&gt;, and are managed by root.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;User services&lt;/strong&gt; live in a directory owned by a normal user and are managed
-by that user without &lt;code&gt;sudo&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The second part is the interesting one. It uses a small root-owned supervisor
-that drops privileges once, then lets the user create and control services
-forever after. That is exactly how the &lt;code&gt;runsvdir-nvru&lt;/code&gt; + PipeWire setup works.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;runit is a small init system built on one idea:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;A service is a directory with an executable &lt;code&gt;run&lt;/code&gt; script.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;No unit files, no dependency graph, no enable database. If the directory exists
+and has no &lt;code&gt;down&lt;/code&gt; file, runit runs &lt;code&gt;./run&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Root:&lt;/strong&gt; system commands assume a root shell. Prefix with &lt;code&gt;sudo&lt;/code&gt; or &lt;code&gt;doas&lt;/code&gt; if
+needed. &lt;strong&gt;User services:&lt;/strong&gt; run as yourself.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Editors:&lt;/strong&gt; &lt;code&gt;vi file&lt;/code&gt;, &lt;code&gt;vim file&lt;/code&gt;, or &lt;code&gt;nano file&lt;/code&gt;. In nano, use &lt;code&gt;Ctrl+O&lt;/code&gt;,
+&lt;code&gt;Enter&lt;/code&gt;, &lt;code&gt;Ctrl+X&lt;/code&gt; to save and quit. In vi/vim, press &lt;code&gt;i&lt;/code&gt;, type, then &lt;code&gt;Esc&lt;/code&gt;,
+&lt;code&gt;:wq&lt;/code&gt;, &lt;code&gt;Enter&lt;/code&gt;.&lt;/p&gt;</description>
       
     </item>
     

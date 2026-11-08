@@ -192,6 +192,8 @@ stroke-linejoin="round" class="feather feather-home">
         <summary><b>Table of Contents</b></summary>
         <nav id="TableOfContents">
   <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enumeration">Enumeration</a></li>
     <li><a href="#host-discovery">Host Discovery</a></li>
     <li><a href="#dns">DNS</a></li>
     <li><a href="#port-scanning">Port Scanning</a>
@@ -201,22 +203,23 @@ stroke-linejoin="round" class="feather feather-home">
       </ul>
     </li>
     <li><a href="#http-80">HTTP (80)</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#initial-access">Initial Access</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a></li>
     <li><a href="#tula--lula">Tula → lula</a></li>
     <li><a href="#stabilizing-the-shell">Stabilizing the Shell</a></li>
     <li><a href="#lula--root">Lula → root</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#root">Root</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#flags">Flags</a></li>
     <li><a href="#user">User</a></li>
     <li><a href="#root-1">Root</a></li>
+    <li><a href="#attack-path">Attack Path</a></li>
+    <li><a href="#references">References</a></li>
   </ul>
 </nav>
     </details>
             <div class="page-content">
-                <h1 id="overview">Overview</h1>
+                <h2 id="overview">Overview</h2>
 <ul>
 <li><strong>Platform:</strong> HackMyVM</li>
 <li><strong>Difficulty:</strong> Medium</li>
@@ -226,7 +229,7 @@ stroke-linejoin="round" class="feather feather-home">
 </ul>
 <p>The objective was to enumerate the exposed services, obtain an initial foothold through exposed SSH keys, abuse a misconfigured sudo rule to compromise another user, and leverage Linux capabilities to recover the root SSH private key and gain full system access.</p>
 <hr>
-<h1 id="enumeration">Enumeration</h1>
+<h2 id="enumeration">Enumeration</h2>
 <h2 id="host-discovery">Host Discovery</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>netdiscover -i vboxnet0 -r 10.10.10.0/24
 </span></span></code></pre></div><h2 id="dns">DNS</h2>
@@ -275,14 +278,14 @@ stroke-linejoin="round" class="feather feather-home">
 <p>While enumerating further, I discovered that the private key itself was also exposed and could be downloaded.</p>
 <p><img src="/images/hmv/away/private_key.png" alt="Private Key"></p>
 <hr>
-<h1 id="initial-access">Initial Access</h1>
+<h2 id="initial-access">Initial Access</h2>
 <p>Using the downloaded private key to authenticate as <code>tula</code>, SSH prompted for the key&rsquo;s passphrase.</p>
 <p>Entering:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Theclockisticking
 </span></span></code></pre></div><p>successfully authenticated the session.</p>
 <p><img src="/images/hmv/away/tula_shell.png" alt="SSH as tula"></p>
 <hr>
-<h1 id="privilege-escalation">Privilege Escalation</h1>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
 <h2 id="tula--lula">Tula → lula</h2>
 <p>Nothing interesting was found in <code>tula</code>&rsquo;s home directory.</p>
 <p>Checking the user&rsquo;s sudo permissions revealed that <code>tula</code> could execute <code>/usr/bin/webhook</code> as the user <code>lula</code> without supplying a password.</p>
@@ -333,22 +336,22 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></code></pre></div><p><img src="/images/hmv/away/root_key.png" alt="Root Key"></p>
 <p>Saving the key locally and authenticating as <code>root</code> provided full administrative access.</p>
 <hr>
-<h1 id="root">Root</h1>
+<h2 id="root">Root</h2>
 <p><img src="/images/hmv/away/root.png" alt="Root"></p>
 <hr>
-<h1 id="credentials">Credentials</h1>
+<h2 id="credentials">Credentials</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>SSH Key
 </span></span><span style="display:flex;"><span>--------
 </span></span><span style="display:flex;"><span>tula
 </span></span><span style="display:flex;"><span>Passphrase: Theclockisticking
 </span></span></code></pre></div><hr>
-<h1 id="flags">Flags</h1>
+<h2 id="flags">Flags</h2>
 <h2 id="user">User</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>HMVDULEMISPLCYDKEG
 </span></span></code></pre></div><h2 id="root-1">Root</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>HMVNYDWAPOQNDYUBNI
 </span></span></code></pre></div><hr>
-<h1 id="attack-path">Attack Path</h1>
+<h2 id="attack-path">Attack Path</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Host Discovery
 </span></span><span style="display:flex;"><span>    ↓
 </span></span><span style="display:flex;"><span>Port Scan (RustScan / Nmap)
@@ -369,7 +372,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>    ↓
 </span></span><span style="display:flex;"><span>SSH Login as root
 </span></span></code></pre></div><hr>
-<h1 id="references">References</h1>
+<h2 id="references">References</h2>
 <ul>
 <li><a href="https://gtfobins.github.io/gtfobins/more/">GTFOBins – more</a></li>
 <li><a href="https://docs.aikedejongste.nl/linux-utils/webhook.html">Webhook – Aikes Docs</a></li>

@@ -152,13 +152,31 @@
     <loc>https://nvru.github.io/tags/nginx/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://nvru.github.io/nix/</loc>
+    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nvru.github.io/tags/password-bruteforce/</loc>
+    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/pipewire/</loc>
+    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/runit/</loc>
+    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/nix/runit/</loc>
+    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/services/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/shadow-group/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/telnet/</loc>
+    <lastmod>2026-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nvru.github.io/tags/void/</loc>
     <lastmod>2026-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/blacklist-bypass/</loc>
@@ -317,16 +335,10 @@
     <loc>https://nvru.github.io/tags/luks/</loc>
     <lastmod>2026-08-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nvru.github.io/nix/</loc>
-    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nvru.github.io/walkthrough/hmv/rooted/</loc>
     <lastmod>2026-08-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/tags/upnp/</loc>
-    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nvru.github.io/tags/void/</loc>
     <lastmod>2026-08-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nvru.github.io/nix/install_void_luks1/</loc>

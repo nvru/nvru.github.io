@@ -14,7 +14,7 @@
       
       <guid>https://nvru.github.io/walkthrough/hsm/sql_basics/</guid>
       
-      <description>&lt;h1 id=&#34;hack-smarter---sql-fundamentals-lab-walkthrough&#34;&gt;Hack Smarter - SQL Fundamentals Lab Walkthrough&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;hack-smarter---sql-fundamentals-lab-walkthrough&#34;&gt;Hack Smarter - SQL Fundamentals Lab Walkthrough&lt;/h2&gt;
 &lt;p&gt;In this lab, the objective was to complete four SQL missions by interacting directly with a live SQLite database. Rather than exploiting a vulnerable application, this exercise focused on understanding how SQL works from the database administrator&amp;rsquo;s perspective.&lt;/p&gt;
 &lt;p&gt;Before completing the missions, I first explored the database to understand its structure.&lt;/p&gt;
 &lt;hr&gt;

@@ -104,7 +104,7 @@
       
       <guid>https://nvru.github.io/walkthrough/hmv/away/</guid>
       
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Platform:&lt;/strong&gt; HackMyVM&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Medium&lt;/li&gt;
@@ -114,7 +114,7 @@
 &lt;/ul&gt;
 &lt;p&gt;The objective was to enumerate the exposed services, obtain an initial foothold through exposed SSH keys, abuse a misconfigured sudo rule to compromise another user, and leverage Linux capabilities to recover the root SSH private key and gain full system access.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h1&gt;
+&lt;h2 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h2&gt;
 &lt;h2 id=&#34;host-discovery&#34;&gt;Host Discovery&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netdiscover -i vboxnet0 -r 10.10.10.0/24
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;dns&#34;&gt;DNS&lt;/h2&gt;
@@ -137,7 +137,7 @@
       
       <guid>https://nvru.github.io/walkthrough/hmv/fianso/</guid>
       
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Platform:&lt;/strong&gt; HackMyVM&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Hard&lt;/li&gt;
@@ -263,7 +263,7 @@
       
       <guid>https://nvru.github.io/walkthrough/hmv/economists/</guid>
       
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.26&lt;/code&gt;&lt;/li&gt;
@@ -271,7 +271,7 @@
 &lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access by brute-forcing SSH credentials obtained during enumeration, and escalate privileges by abusing a misconfigured &lt;code&gt;sudo&lt;/code&gt; rule allowing execution of &lt;code&gt;systemctl&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/economists/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h1&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h2 id=&#34;rustscan&#34;&gt;RustScan&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.26 -- -sC -sV -A -oA nmap/rust
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
@@ -359,7 +359,7 @@
       
       <guid>https://nvru.github.io/walkthrough/hmv/pingme/</guid>
       
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.21&lt;/code&gt;&lt;/li&gt;
@@ -387,7 +387,7 @@
       
       <guid>https://nvru.github.io/walkthrough/hmv/immortal/</guid>
       
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.20&lt;/code&gt;&lt;/li&gt;

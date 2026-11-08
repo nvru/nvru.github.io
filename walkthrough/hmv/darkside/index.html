@@ -192,9 +192,7 @@ stroke-linejoin="round" class="feather feather-home">
         <nav id="TableOfContents">
   <ul>
     <li><a href="#target-information">Target Information</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#port-scanning">Port Scanning</a></li>
     <li><a href="#rustscan">RustScan</a>
       <ul>
         <li><a href="#results">Results</a></li>
@@ -205,9 +203,7 @@ stroke-linejoin="round" class="feather feather-home">
         <li><a href="#results-1">Results</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#enumeration">Enumeration</a></li>
     <li><a href="#http-port-80">HTTP (Port 80)</a>
       <ul>
         <li><a href="#source-code">Source Code</a></li>
@@ -219,22 +215,18 @@ stroke-linejoin="round" class="feather feather-home">
         <li><a href="#credentials-found">Credentials Found</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#web-access">Web Access</a></li>
     <li><a href="#source-code-1">Source Code</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#ssh-access">SSH Access</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a></li>
     <li><a href="#vulnerability">Vulnerability</a></li>
     <li><a href="#exploitation">Exploitation</a></li>
     <li><a href="#impact">Impact</a></li>
     <li><a href="#remediation">Remediation</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#credentials">Credentials</a></li>
     <li><a href="#web">Web</a></li>
     <li><a href="#ssh">SSH</a></li>
+    <li><a href="#flags">Flags</a></li>
   </ul>
 </nav>
     </details>
@@ -260,7 +252,7 @@ stroke-linejoin="round" class="feather feather-home">
 	</tbody>
 </table>
 <hr>
-<h1 id="port-scanning">Port Scanning</h1>
+<h2 id="port-scanning">Port Scanning</h2>
 <h2 id="rustscan">RustScan</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.7 -- -oA nmap/rust
 </span></span></code></pre></div><h3 id="results">Results</h3>
@@ -295,7 +287,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>|_http-server-header: Apache/2.4.56 (Debian)
 </span></span><span style="display:flex;"><span>|_http-title: The DarkSide
 </span></span></code></pre></div><hr>
-<h1 id="enumeration">Enumeration</h1>
+<h2 id="enumeration">Enumeration</h2>
 <h2 id="http-port-80">HTTP (Port 80)</h2>
 <p>The web application presents a regular login page.</p>
 <p><img src="/images/hmv/darkside/http.png" alt="HTTP Login Page"></p>
@@ -352,7 +344,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>Password: iloveyou
 </span></span></code></pre></div><p><img src="/images/hmv/darkside/kevin_web_pass.png" alt="Kevin Web Password"></p>
 <hr>
-<h1 id="web-access">Web Access</h1>
+<h2 id="web-access">Web Access</h2>
 <p>Successfully logged into the web application as <strong>kevin</strong>.</p>
 <p><img src="/images/hmv/darkside/logged_in.png" alt="Logged In"></p>
 <p>A string was discovered that was encoded twice:</p>
@@ -371,11 +363,11 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></code></pre></div><p>the application appends the following file to the requested path:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>hwvhysntovtanj.password
 </span></span></code></pre></div><hr>
-<h1 id="ssh-access">SSH Access</h1>
+<h2 id="ssh-access">SSH Access</h2>
 <p>Successfully logged into SSH using the <strong>kevin</strong> account.</p>
 <p><img src="/images/hmv/darkside/ssh_as_kevin.png" alt="SSH as Kevin"></p>
 <hr>
-<h1 id="privilege-escalation">Privilege Escalation</h1>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
 <p>After obtaining access as the <strong>rijaba</strong> user, I enumerated the user&rsquo;s <code>sudo</code> permissions using:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
 </span></span></code></pre></div><p>The output showed that <strong>rijaba</strong> was permitted to execute <strong>nano</strong> as the <strong>root</strong> user without additional restrictions.</p>
@@ -408,14 +400,14 @@ stroke-linejoin="round" class="feather feather-home">
 <li>Regularly audit <code>sudo</code> permissions for unnecessary or unsafe entries.</li>
 </ul>
 <hr>
-<h1 id="credentials">Credentials</h1>
+<h2 id="credentials">Credentials</h2>
 <h2 id="web">Web</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>kevin : iloveyou
 </span></span></code></pre></div><h2 id="ssh">SSH</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>kevin  : ILoveCalisthenics
 </span></span><span style="display:flex;"><span>rijaba : ILoveJabita
 </span></span></code></pre></div><hr>
-<h1 id="flags">Flags</h1>
+<h2 id="flags">Flags</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user flag : UnbelievableHumble
 </span></span><span style="display:flex;"><span>root flag : youcametothedarkside
 </span></span></code></pre></div>

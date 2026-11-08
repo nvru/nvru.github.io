@@ -192,23 +192,24 @@ stroke-linejoin="round" class="feather feather-home">
         <summary><b>Table of Contents</b></summary>
         <nav id="TableOfContents">
   <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#port-scanning">Port Scanning</a></li>
     <li><a href="#rustscan">RustScan</a></li>
     <li><a href="#results">Results</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#enumeration">Enumeration</a></li>
     <li><a href="#ftp">FTP</a></li>
     <li><a href="#web-enumeration">Web Enumeration</a></li>
     <li><a href="#ssh-password-attack">SSH Password Attack</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#initial-access">Initial Access</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a></li>
     <li><a href="#joesph--root">joesph → root</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#flags">Flags</a></li>
   </ul>
 </nav>
     </details>
             <div class="page-content">
-                <h1 id="overview">Overview</h1>
+                <h2 id="overview">Overview</h2>
 <ul>
 <li><strong>Attacker IP:</strong> <code>10.10.10.2</code></li>
 <li><strong>Target Machine IP:</strong> <code>10.10.10.26</code></li>
@@ -216,7 +217,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>The objective was to enumerate the target, identify exposed services, gain initial access by brute-forcing SSH credentials obtained during enumeration, and escalate privileges by abusing a misconfigured <code>sudo</code> rule allowing execution of <code>systemctl</code>.</p>
 <p><img src="/images/hmv/economists/vm.png" alt="Machine information"></p>
 <hr>
-<h1 id="port-scanning">Port Scanning</h1>
+<h2 id="port-scanning">Port Scanning</h2>
 <h2 id="rustscan">RustScan</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.26 -- -sC -sV -A -oA nmap/rust
 </span></span></code></pre></div><h2 id="results">Results</h2>
@@ -240,7 +241,7 @@ stroke-linejoin="round" class="feather feather-home">
 </ul>
 <p>Anonymous FTP immediately stood out as the most promising attack surface.</p>
 <hr>
-<h1 id="enumeration">Enumeration</h1>
+<h2 id="enumeration">Enumeration</h2>
 <h2 id="ftp">FTP</h2>
 <p>Nmap revealed that anonymous authentication was enabled on the FTP service.</p>
 <p>After logging in as <code>anonymous</code>, I downloaded all available PDF files.</p>
@@ -276,13 +277,13 @@ stroke-linejoin="round" class="feather feather-home">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>joesph : wealthiest
 </span></span></code></pre></div><p><img src="/images/hmv/economists/medusa.png" alt="Medusa"></p>
 <hr>
-<h1 id="initial-access">Initial Access</h1>
+<h2 id="initial-access">Initial Access</h2>
 <p>Using the recovered credentials, I successfully logged in through SSH.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: joesph
 </span></span><span style="display:flex;"><span>Password: wealthiest
 </span></span></code></pre></div><p><img src="/images/hmv/economists/ssh_joseph.png" alt="SSH Login"></p>
 <hr>
-<h1 id="privilege-escalation">Privilege Escalation</h1>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
 <h2 id="joesph--root">joesph → root</h2>
 <p>The first step after obtaining a shell was checking the user&rsquo;s sudo permissions.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
@@ -302,10 +303,10 @@ stroke-linejoin="round" class="feather feather-home">
 <p>Verifying the current user confirmed successful privilege escalation to root</p>
 <p><img src="/images/hmv/economists/root.png" alt="Root shell"></p>
 <hr>
-<h1 id="credentials">Credentials</h1>
+<h2 id="credentials">Credentials</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>joesph:wealthiest
 </span></span></code></pre></div><hr>
-<h1 id="flags">Flags</h1>
+<h2 id="flags">Flags</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:HMV{37q3p33CsMJgJQbrbYZMUFfTu}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>root:HMV{NwER6XWyM8p5VpeFEkkcGYyeJ}

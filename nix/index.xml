@@ -6,7 +6,29 @@
     <description>Recent content in Nixes on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 12 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/nix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/nix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>runit: Simple, Fast, Easy</title>
+      <link>https://nvru.github.io/nix/runit/</link>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/nix/runit/</guid>
+      
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;runit is a small init system built on one idea:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;A service is a directory with an executable &lt;code&gt;run&lt;/code&gt; script.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;No unit files, no dependency graph, no enable database. If the directory exists
+and has no &lt;code&gt;down&lt;/code&gt; file, runit runs &lt;code&gt;./run&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Root:&lt;/strong&gt; system commands assume a root shell. Prefix with &lt;code&gt;sudo&lt;/code&gt; or &lt;code&gt;doas&lt;/code&gt; if
+needed. &lt;strong&gt;User services:&lt;/strong&gt; run as yourself.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Editors:&lt;/strong&gt; &lt;code&gt;vi file&lt;/code&gt;, &lt;code&gt;vim file&lt;/code&gt;, or &lt;code&gt;nano file&lt;/code&gt;. In nano, use &lt;code&gt;Ctrl+O&lt;/code&gt;,
+&lt;code&gt;Enter&lt;/code&gt;, &lt;code&gt;Ctrl+X&lt;/code&gt; to save and quit. In vi/vim, press &lt;code&gt;i&lt;/code&gt;, type, then &lt;code&gt;Esc&lt;/code&gt;,
+&lt;code&gt;:wq&lt;/code&gt;, &lt;code&gt;Enter&lt;/code&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Void Linux: LUKS1 &#43; Btrfs Guide</title>
       <link>https://nvru.github.io/nix/install_void_luks1/</link>

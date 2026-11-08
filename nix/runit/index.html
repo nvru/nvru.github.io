@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<html lang="en-US"><head><meta charset="utf-8">
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en-US" />
 <meta name="language" content="en-US" />
 
-  <link rel="alternate" hreflang="en" href="http://localhost:1313/nix/runit/" title="" />
+  <link rel="alternate" hreflang="en" href="https://nvru.github.io/nix/runit/" title="" />
 
 
 
@@ -28,7 +28,7 @@
 <meta name="generator" content="Hugo 0.165.0">
 
     
-    <meta property="og:url" content="http://localhost:1313/nix/runit/">
+    <meta property="og:url" content="https://nvru.github.io/nix/runit/">
 	<meta property="og:site_name" content="Null Blog">
 	<meta property="og:title" content="runit: Simple, Fast, Easy">
 	<meta property="og:description" content="A short guide to runit on Void Linux: /var/service, run scripts, sv commands, user services, and PipeWire.">
@@ -53,7 +53,7 @@
 
     
 
-    <link rel="canonical" href="http://localhost:1313/nix/runit/">
+    <link rel="canonical" href="https://nvru.github.io/nix/runit/">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -67,7 +67,7 @@
 
 
 
-<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+<link rel="manifest" href="https://nvru.github.io/site.webmanifest">
 
 <meta name="msapplication-config" content="/browserconfig.xml">
 <meta name="msapplication-TileColor" content="#2d89ef">
@@ -79,14 +79,15 @@
 
     
     
+    
 </head>
 <body data-theme = "dark" class="notransition">
 
-<script src="/js/theme.js"></script>
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
 
 <div class="navbar" role="navigation">
     <nav class="menu" aria-label="Main Navigation">
-        <a href="http://localhost:1313/" class="logo">
+        <a href="https://nvru.github.io/" class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
 stroke-linejoin="round" class="feather feather-home">
@@ -190,29 +191,34 @@ stroke-linejoin="round" class="feather feather-home">
         <summary><b>Table of Contents</b></summary>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#the-model">The model</a></li>
-    <li><a href="#the-varservice-chain">The <code>/var/service</code> chain</a></li>
-    <li><a href="#the-run-script">The <code>run</code> script</a></li>
-    <li><a href="#the-service-directory">The service directory</a></li>
-    <li><a href="#the-rest-of-sv">The rest of <code>sv</code></a></li>
-    <li><a href="#user-services">User services</a></li>
-    <li><a href="#pipewire">PipeWire</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#process-model">Process Model</a></li>
+    <li><a href="#service-chain">Service Chain</a></li>
+    <li><a href="#run-script">Run Script</a></li>
+    <li><a href="#service-directory">Service Directory</a></li>
+    <li><a href="#sv-commands">sv Commands</a></li>
+    <li><a href="#user-services">User Services</a>
+      <ul>
+        <li><a href="#pipewire">PipeWire</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </details>
             <div class="page-content">
-                <p>runit is a small init system:</p>
+                <h2 id="overview">Overview</h2>
+<p>runit is a small init system built on one idea:</p>
 <blockquote>
 <p><strong>A service is a directory with an executable <code>run</code> script.</strong></p>
 </blockquote>
 <p>No unit files, no dependency graph, no enable database. If the directory exists
-and there is no <code>down</code> file, runit runs <code>./run</code>.</p>
+and has no <code>down</code> file, runit runs <code>./run</code>.</p>
 <p><strong>Root:</strong> system commands assume a root shell. Prefix with <code>sudo</code> or <code>doas</code> if
 needed. <strong>User services:</strong> run as yourself.</p>
-<p><strong>Editors:</strong> <code>vi file</code>, <code>vim file</code>, or <code>nano file</code>. In nano use <code>Ctrl+O</code>,
-<code>Enter</code>, <code>Ctrl+X</code> to save and quit. In vi/vim press <code>i</code>, type, then <code>Esc</code>,
+<p><strong>Editors:</strong> <code>vi file</code>, <code>vim file</code>, or <code>nano file</code>. In nano, use <code>Ctrl+O</code>,
+<code>Enter</code>, <code>Ctrl+X</code> to save and quit. In vi/vim, press <code>i</code>, type, then <code>Esc</code>,
 <code>:wq</code>, <code>Enter</code>.</p>
-<h2 id="the-model">The model</h2>
+<h2 id="process-model">Process Model</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>runit (PID 1)
 </span></span><span style="display:flex;"><span>└── runsvdir /var/service
 </span></span><span style="display:flex;"><span>    ├── runsv sshd
@@ -223,37 +229,39 @@ needed. <strong>User services:</strong> run as yourself.</p>
 </span></span><span style="display:flex;"><span>                └── ./run
 </span></span></code></pre></div><p><code>runsvdir</code> rescans every five seconds and starts one <code>runsv</code> per service
 directory. <code>runsv</code> runs <code>./run</code>, restarts it, and listens to <code>sv</code>.</p>
-<h2 id="the-varservice-chain">The <code>/var/service</code> chain</h2>
+<h2 id="service-chain">Service Chain</h2>
 <p><code>/var/service</code> is a chain of symlinks:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/var/service
 </span></span><span style="display:flex;"><span>  -&gt; ../run/runit/runsvdir/current
 </span></span><span style="display:flex;"><span>     -&gt; /etc/runit/runsvdir/current
 </span></span><span style="display:flex;"><span>        -&gt; default
 </span></span><span style="display:flex;"><span>           -&gt; /etc/runit/runsvdir/default/
-</span></span><span style="display:flex;"><span>              ├── sshd            -&gt; /etc/sv/sshd
-</span></span><span style="display:flex;"><span>              ├── NetworkManager  -&gt; /etc/sv/NetworkManager
+</span></span><span style="display:flex;"><span>              ├── sshd           -&gt; /etc/sv/sshd
+</span></span><span style="display:flex;"><span>              ├── NetworkManager -&gt; /etc/sv/NetworkManager
 </span></span><span style="display:flex;"><span>              └── ...
-</span></span></code></pre></div><p>So <code>/var/service/myservice</code> = <code>/etc/runit/runsvdir/default/myservice</code>.</p>
+</span></span></code></pre></div><p>So <code>/var/service/myservice</code> resolves to
+<code>/etc/runit/runsvdir/default/myservice</code>.</p>
 <ul>
 <li><code>/var/service</code> is the stable name.</li>
 <li><code>/run</code> is volatile.</li>
 <li><code>current</code> is the active runlevel.</li>
 <li><code>default</code> holds symlinks to <code>/etc/sv</code>.</li>
 </ul>
-<p><strong>Quick test:</strong> create the directory directly.</p>
+<p><strong>Quick test:</strong> create the service directory directly in <code>/var/service</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir /var/service/myservice
 </span></span><span style="display:flex;"><span>vi /var/service/myservice/run
 </span></span><span style="display:flex;"><span>chmod +x /var/service/myservice/run
-</span></span></code></pre></div><p>It works, but it lives in <code>default</code>, so it disappears from the active set if
-you switch runlevels with <code>runsvchdir</code>.</p>
-<p><strong>Recommended:</strong> definition in <code>/etc/sv</code>, symlink in <code>/var/service</code>.</p>
+</span></span></code></pre></div><p>It works, but the service lives in <code>default</code>, so it disappears from the active
+set if you switch runlevels with <code>runsvchdir</code>.</p>
+<p><strong>Recommended:</strong> keep the definition in <code>/etc/sv</code> and symlink it into
+<code>/var/service</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /etc/sv/myservice
 </span></span><span style="display:flex;"><span>vi /etc/sv/myservice/run
 </span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">755</span> /etc/sv/myservice/run
 </span></span><span style="display:flex;"><span>ln -s /etc/sv/myservice /var/service/myservice
 </span></span></code></pre></div><p>The symlink <strong>is</strong> the enable switch. Remove it to disable the service; the
 definition stays in <code>/etc/sv</code>.</p>
-<h2 id="the-run-script">The <code>run</code> script</h2>
+<h2 id="run-script">Run Script</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
 </span></span></span><span style="display:flex;"><span>exec 2&gt;&amp;<span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>
@@ -270,10 +278,10 @@ definition stays in <code>/etc/sv</code>.</p>
 <li>Use absolute paths and set <code>HOME</code>, <code>PATH</code>, and other variables yourself.</li>
 <li><code>runsv</code> starts in the service directory, so <code>./conf</code> works.</li>
 </ul>
-<p>It starts automatically unless a <code>down</code> file exists. <code>sv up</code> starts
+<p>The service starts automatically unless a <code>down</code> file exists. <code>sv up</code> starts it
 immediately; <code>sv start</code> also waits up to seven seconds and runs <code>./check</code> if
 present. Both remove <code>down</code>.</p>
-<h2 id="the-service-directory">The service directory</h2>
+<h2 id="service-directory">Service Directory</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/etc/sv/myservice/
 </span></span><span style="display:flex;"><span>├── run          # required, executable
 </span></span><span style="display:flex;"><span>├── finish       # optional, runs after ./run exits
@@ -293,7 +301,7 @@ present. Both remove <code>down</code>.</p>
 <p>For logs, add <code>log/run</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
 </span></span></span><span style="display:flex;"><span>exec svlogd -tt /var/log/myservice
-</span></span></code></pre></div><h2 id="the-rest-of-sv">The rest of <code>sv</code></h2>
+</span></span></code></pre></div><h2 id="sv-commands">sv Commands</h2>
 <p>For system services, run <code>sv</code> as root.</p>
 <table>
 	<thead>
@@ -362,17 +370,21 @@ present. Both remove <code>down</code>.</p>
 	</tbody>
 </table>
 <p>Signals: <code>sv pause</code>, <code>cont</code>, <code>hup</code>, <code>alarm</code>, <code>interrupt</code>, <code>quit</code>, <code>1</code>, <code>2</code>,
-<code>term</code>, <code>kill</code>. <code>sv</code> only checks the first character, so <code>sv t</code> is <code>sv term</code>.</p>
-<p>Options: <code>-v</code> waits for low-level commands; <code>-w sec</code> changes the timeout and
-implies <code>-v</code>; <code>SVDIR=/path</code> changes the default service directory; <code>SVWAIT=sec</code>
-changes the default timeout.</p>
+<code>term</code>, <code>kill</code>. <code>sv</code> only checks the first character, so <code>sv t</code> means <code>sv term</code>.</p>
+<p>Options:</p>
+<ul>
+<li><code>-v</code> waits for low-level commands.</li>
+<li><code>-w sec</code> changes the timeout and implies <code>-v</code>.</li>
+<li><code>SVDIR=/path</code> changes the default service directory.</li>
+<li><code>SVWAIT=sec</code> changes the default timeout.</li>
+</ul>
 <blockquote>
 <p><strong><code>sv down</code> is persistent.</strong> It writes a <code>down</code> file, so the service stays
 down across reboots until <code>sv up</code> removes it.</p>
 <p><strong><code>sv exit</code> is not disable.</strong> <code>runsvdir</code> starts a new <code>runsv</code> for any service
 directory that still exists. Use <code>sv down</code> or remove the symlink.</p>
 </blockquote>
-<h2 id="user-services">User services</h2>
+<h2 id="user-services">User Services</h2>
 <p>Run desktop daemons such as PipeWire as yourself. A root-owned launcher drops
 privileges once, then lets you manage services without root.</p>
 <p><code>runsvdir-nvru</code> is an arbitrary name. Use <code>runsvdir-alice</code>, <code>user-services</code>, or
@@ -394,12 +406,12 @@ commands consistent.</p>
 <li><code>svdir</code> is the directory you own. Change it freely.</li>
 <li><code>exec chpst ...</code> drops privileges and becomes the user <code>runsvdir</code>.</li>
 </ul>
-<p>As the user:</p>
+<p>As the user, create the service directory:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>install -d -m <span style="color:#ae81ff">700</span> <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.config/service&#34;</span>
-</span></span></code></pre></div><p>As root:</p>
+</span></span></code></pre></div><p>As root, enable the launcher:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">755</span> /etc/sv/runsvdir-nvru/run
 </span></span><span style="display:flex;"><span>ln -s /etc/sv/runsvdir-nvru /var/service/runsvdir-nvru
-</span></span></code></pre></div><p>As your normal user, add a service:</p>
+</span></span></code></pre></div><p>As the user, add a service:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.config/service/hello&#34;</span>
 </span></span><span style="display:flex;"><span>cat &gt; <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.config/service/hello/run&#34;</span> <span style="color:#e6db74">&lt;&lt;&#39;EOF&#39;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#!/bin/sh
@@ -420,37 +432,40 @@ launcher again. This is also how you apply changes to the launcher.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sv down runsvdir-nvru
 </span></span><span style="display:flex;"><span>pkill -TERM -u nvru -x runsv <span style="color:#f92672">||</span> true
 </span></span><span style="display:flex;"><span>rm /var/service/runsvdir-nvru
-</span></span></code></pre></div><h2 id="pipewire">PipeWire</h2>
-<p>Complete <code>~/.config/service/pipewire/run</code>:</p>
+</span></span></code></pre></div><h3 id="pipewire">PipeWire</h3>
+<p><code>~/.config/service/pipewire/run</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># PipeWire sound server (runit user service)</span>
-</span></span><span style="display:flex;"><span>exec 2&gt;&amp;<span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># runsvdir does not give us a login/desktop environment, so provide the</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># runtime directory ourselves instead of relying on the session.</span>
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># runsvdir does not start a login session, so provide XDG_RUNTIME_DIR here.</span>
 </span></span><span style="display:flex;"><span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>XDG_RUNTIME_DIR:=/run/user/<span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>export XDG_RUNTIME_DIR
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d <span style="color:#e6db74">&#34;</span>$XDG_RUNTIME_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>	echo <span style="color:#e6db74">&#34;pipewire: XDG_RUNTIME_DIR (</span>$XDG_RUNTIME_DIR<span style="color:#e6db74">) is missing; is elogind running?&#34;</span> &gt;&amp;<span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>	exit <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Without the runtime directory PipeWire cannot create its sockets.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exit and let runsv retry after one second.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span> -d <span style="color:#e6db74">&#34;</span>$XDG_RUNTIME_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> exit <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use the session bus if it exists.  PipeWire works without D-Bus, but</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use the session bus when it exists. PipeWire works without D-Bus, but</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># rtkit (realtime scheduling) and some portal/Bluetooth features need it.</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -S <span style="color:#e6db74">&#34;</span>$XDG_RUNTIME_DIR<span style="color:#e6db74">/bus&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
 </span></span><span style="display:flex;"><span>	export DBUS_SESSION_BUS_ADDRESS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;unix:path=</span>$XDG_RUNTIME_DIR<span style="color:#e6db74">/bus&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Optional per-service configuration.</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span> -r ./conf <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> . ./conf
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Stay in the foreground so runsv can supervise PipeWire directly.</span>
 </span></span><span style="display:flex;"><span>exec pipewire
+</span></span></code></pre></div><p><code>~/.config/service/pipewire/log/run</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Forward service output to syslog with the pipewire tag.</span>
+</span></span><span style="display:flex;"><span>exec vlogger -t pipewire -p daemon
 </span></span></code></pre></div><ul>
-<li><code>exec 2&gt;&amp;1</code> sends errors to stdout so a log service captures them.</li>
 <li><code>XDG_RUNTIME_DIR</code> defaults to <code>/run/user/$(id -u)</code>.</li>
 <li>If it is missing, the script exits and <code>runsv</code> retries after one second.</li>
 <li><code>DBUS_SESSION_BUS_ADDRESS</code> is set only if the session bus socket exists.</li>
 <li><code>exec pipewire</code> lets <code>runsv</code> supervise PipeWire directly.</li>
+<li><code>vlogger</code> sends the service output to syslog, tagged <code>pipewire</code> with the <code>daemon</code> facility.</li>
 </ul>
 
             </div>
@@ -534,7 +549,7 @@ launcher again. This is also how you apply changes to the launcher.</p>
 
 
     
-    <script async src="http://localhost:1313/js/main.js" ></script>
+    <script src="https://nvru.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
 
     
 

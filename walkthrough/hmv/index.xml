@@ -86,7 +86,7 @@
       
       <guid>https://nvru.github.io/walkthrough/hmv/away/</guid>
       
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Platform:&lt;/strong&gt; HackMyVM&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Medium&lt;/li&gt;
@@ -96,7 +96,7 @@
 &lt;/ul&gt;
 &lt;p&gt;The objective was to enumerate the exposed services, obtain an initial foothold through exposed SSH keys, abuse a misconfigured sudo rule to compromise another user, and leverage Linux capabilities to recover the root SSH private key and gain full system access.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h1&gt;
+&lt;h2 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h2&gt;
 &lt;h2 id=&#34;host-discovery&#34;&gt;Host Discovery&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netdiscover -i vboxnet0 -r 10.10.10.0/24
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;dns&#34;&gt;DNS&lt;/h2&gt;
@@ -119,7 +119,7 @@
       
       <guid>https://nvru.github.io/walkthrough/hmv/fianso/</guid>
       
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Platform:&lt;/strong&gt; HackMyVM&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Hard&lt;/li&gt;
@@ -568,7 +568,7 @@
       
       <guid>https://nvru.github.io/walkthrough/hmv/economists/</guid>
       
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.26&lt;/code&gt;&lt;/li&gt;
@@ -576,7 +576,7 @@
 &lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access by brute-forcing SSH credentials obtained during enumeration, and escalate privileges by abusing a misconfigured &lt;code&gt;sudo&lt;/code&gt; rule allowing execution of &lt;code&gt;systemctl&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/economists/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h1&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h2 id=&#34;rustscan&#34;&gt;RustScan&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.26 -- -sC -sV -A -oA nmap/rust
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
@@ -636,7 +636,7 @@
       
       <guid>https://nvru.github.io/walkthrough/hmv/hannah/</guid>
       
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.24&lt;/code&gt;&lt;/li&gt;
@@ -644,7 +644,7 @@
 &lt;p&gt;The objective was to enumerate the target, identify exposed services, gain initial access through SSH credential brute forcing, and escalate privileges by abusing an insecure &lt;code&gt;PATH&lt;/code&gt; configuration in a root cron job.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/hannah/vm.png&#34; alt=&#34;Machine information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h1&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h2 id=&#34;rustscan&#34;&gt;RustScan&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.24 -- -sC -sV -A -oA nmap/rust
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
@@ -723,7 +723,7 @@
       
       <guid>https://nvru.github.io/walkthrough/hmv/pingme/</guid>
       
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.21&lt;/code&gt;&lt;/li&gt;
@@ -751,7 +751,7 @@
       
       <guid>https://nvru.github.io/walkthrough/hmv/immortal/</guid>
       
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;10.10.10.2&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Target Machine IP:&lt;/strong&gt; &lt;code&gt;10.10.10.20&lt;/code&gt;&lt;/li&gt;
@@ -821,7 +821,7 @@
 &lt;p&gt;The objective was to enumerate the target, identify an XML External Entity (XXE) vulnerability to recover user credentials, gain initial access through SSH, and escalate privileges by abusing an insecure URL validation script executed with sudo.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/yuan112/vm.png&#34; alt=&#34;Machine Information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h1&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h2 id=&#34;rustscan&#34;&gt;RustScan&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.18 -- -sC -sV -A -oA nmap/rust
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
@@ -847,7 +847,7 @@
 &lt;p&gt;The objective was to enumerate the target, identify exposed services, obtain initial access by enumerating SNMP credentials, and escalate privileges by exploiting an insecure use of Bash&amp;rsquo;s &lt;code&gt;declare&lt;/code&gt; builtin in a sudo-allowed script.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://nvru.github.io/images/hmv/yuan113/vm.png&#34; alt=&#34;Machine Information&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h1&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h2 id=&#34;rustscan&#34;&gt;RustScan&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.17 -- -sC -sV -A -oA nmap/rust
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
@@ -965,7 +965,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h1&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h2 id=&#34;rustscan&#34;&gt;RustScan&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.14 -- -oA nmap/rust
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
@@ -1002,7 +1002,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Device type: general purpose|router
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Running: Linux 4.X|5.X, MikroTik RouterOS 7.X
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h1 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h1&gt;
+&lt;h2 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h2&gt;
 &lt;h2 id=&#34;http-port-80&#34;&gt;HTTP (Port 80)&lt;/h2&gt;
 &lt;p&gt;The web server was running Apache2.&lt;/p&gt;</description>
       
@@ -1201,7 +1201,7 @@ Open 10.10.10.8:80
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h1&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h2 id=&#34;rustscan&#34;&gt;RustScan&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.4 -- -A -oN nmap/rust
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
@@ -1225,7 +1225,7 @@ Open 10.10.10.8:80
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h1 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h1&gt;
+&lt;h2 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h2&gt;
 &lt;h2 id=&#34;mdns-service-discovery&#34;&gt;mDNS Service Discovery&lt;/h2&gt;
 &lt;p&gt;Reference:&lt;/p&gt;</description>
       
@@ -1259,7 +1259,7 @@ Open 10.10.10.8:80
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h1&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
 &lt;h2 id=&#34;rustscan&#34;&gt;RustScan&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustscan -a 10.10.10.7 -- -oA nmap/rust
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
@@ -1294,7 +1294,7 @@ Open 10.10.10.8:80
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_http-server-header: Apache/2.4.56 (Debian)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_http-title: The DarkSide
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h1 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h1&gt;
+&lt;h2 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h2&gt;
 &lt;h2 id=&#34;http-port-80&#34;&gt;HTTP (Port 80)&lt;/h2&gt;
 &lt;p&gt;The web application presents a regular login page.&lt;/p&gt;</description>
       

@@ -193,24 +193,21 @@ stroke-linejoin="round" class="feather feather-home">
         <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#port-scanning">Port Scanning</a></li>
     <li><a href="#rustscan">RustScan</a>
       <ul>
         <li><a href="#results">Results</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#enumeration">Enumeration</a></li>
     <li><a href="#http-enumeration">HTTP Enumeration</a></li>
     <li><a href="#xml-external-entity-xxe">XML External Entity (XXE)</a></li>
     <li><a href="#recovering-the-password">Recovering the Password</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#initial-access">Initial Access</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a></li>
     <li><a href="#tuf--root">tuf → root</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#flags">Flags</a></li>
   </ul>
 </nav>
     </details>
@@ -223,7 +220,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>The objective was to enumerate the target, identify an XML External Entity (XXE) vulnerability to recover user credentials, gain initial access through SSH, and escalate privileges by abusing an insecure URL validation script executed with sudo.</p>
 <p><img src="/images/hmv/yuan112/vm.png" alt="Machine Information"></p>
 <hr>
-<h1 id="port-scanning">Port Scanning</h1>
+<h2 id="port-scanning">Port Scanning</h2>
 <h2 id="rustscan">RustScan</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.10.18 -- -sC -sV -A -oA nmap/rust
 </span></span></code></pre></div><h3 id="results">Results</h3>
@@ -232,7 +229,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.62 (Debian)
 </span></span></code></pre></div><p>Only SSH and an Apache web server were exposed, so I began with web enumeration.</p>
 <hr>
-<h1 id="enumeration">Enumeration</h1>
+<h2 id="enumeration">Enumeration</h2>
 <h2 id="http-enumeration">HTTP Enumeration</h2>
 <p>Browsing to the website revealed a simple XML parser that accepted arbitrary XML input.</p>
 <p><img src="/images/hmv/yuan112/http.png" alt="XML Parser"></p>
@@ -281,14 +278,14 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></code></pre></div><p>Using the generated wordlist against SSH eventually revealed the correct password.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>KQNPHFqG6mJHcYJossIe
 </span></span></code></pre></div><hr>
-<h1 id="initial-access">Initial Access</h1>
+<h2 id="initial-access">Initial Access</h2>
 <p>Using the recovered credentials:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Username: tuf
 </span></span><span style="display:flex;"><span>Password: KQNPHFqG6mJHcYJossIe
 </span></span></code></pre></div><p>I successfully authenticated over SSH.</p>
 <p><img src="/images/hmv/yuan112/ssh_as_tuf.png" alt="SSH Login"></p>
 <hr>
-<h1 id="privilege-escalation">Privilege Escalation</h1>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
 <h2 id="tuf--root">tuf → root</h2>
 <p>The first thing I checked was the user&rsquo;s sudo permissions.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -l
@@ -340,12 +337,12 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></code></pre></div><p>Executing the crafted payload resulted in arbitrary file access as root and ultimately provided access to the root password.</p>
 <p><img src="/images/hmv/yuan112/exp_to_root.png" alt="Privilege Escalation"></p>
 <hr>
-<h1 id="credentials">Credentials</h1>
+<h2 id="credentials">Credentials</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>tuf:KQNPHFqG6mJHcYJossIe
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>root:OArZQcW05k5QmPX8lKQ7
 </span></span></code></pre></div><hr>
-<h1 id="flags">Flags</h1>
+<h2 id="flags">Flags</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user:flag{user-b1e12c74f19aac8e57f6fca1ff472905}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>root:flag{root-538dc127225a0c97b060b1ff9570390a}
