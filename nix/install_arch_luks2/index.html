@@ -222,7 +222,8 @@ stroke-linejoin="round" class="feather feather-home">
         <li><a href="#audio-pipewire--pulseaudio">Audio: PipeWire &amp; PulseAudio</a></li>
       </ul>
     </li>
-    <li><a href="#11-final-reconfiguration--system-exit">11. Final Reconfiguration &amp; System Exit</a></li>
+    <li><a href="#11-blackarch-repository-optional">11. BlackArch Repository (Optional)</a></li>
+    <li><a href="#12-final-reconfiguration--system-exit">12. Final Reconfiguration &amp; System Exit</a></li>
   </ul>
 </nav>
     </details>
@@ -479,7 +480,26 @@ stroke-linejoin="round" class="feather feather-home">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -S pulseaudio pulseaudio-alsa pavucontrol
 </span></span><span style="display:flex;"><span>systemctl --user enable pulseaudio.socket
 </span></span></code></pre></div><hr>
-<h2 id="11-final-reconfiguration--system-exit">11. Final Reconfiguration &amp; System Exit</h2>
+<h2 id="11-blackarch-repository-optional">11. BlackArch Repository (Optional)</h2>
+<p><a href="https://blackarch.org/">BlackArch</a> is an Arch-based penetration testing distribution. Its package repository can be added to an existing Arch installation.</p>
+<p>Download the setup script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -O https://blackarch.org/strap.sh
+</span></span></code></pre></div><p>Verify the SHA1 checksum:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo d338a4bb95d9e09f97508da68ac9e17d963b85f6 strap.sh | sha1sum -c
+</span></span></code></pre></div><p>Review the script, then make it executable and run it as root:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>less strap.sh
+</span></span><span style="display:flex;"><span>chmod +x strap.sh
+</span></span><span style="display:flex;"><span>./strap.sh
+</span></span></code></pre></div><blockquote>
+<p><strong>Warning:</strong> <code>strap.sh</code> modifies your pacman configuration and adds the BlackArch repository. Read it before running it.</p>
+</blockquote>
+<p>Enable the multilib repository by following the <a href="https://wiki.archlinux.org/title/Official_repositories#Enabling_multilib">Arch Wiki instructions</a>, then sync the package databases:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -Syu
+</span></span></code></pre></div><blockquote>
+<p><strong>Note:</strong> These commands run as root inside the chroot. If you run them later as a regular user, prefix them with <code>sudo</code> or <code>doas</code>.</p>
+</blockquote>
+<hr>
+<h2 id="12-final-reconfiguration--system-exit">12. Final Reconfiguration &amp; System Exit</h2>
 <p>Regenerate the initramfs after finishing the system configuration:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkinitcpio -P
 </span></span></code></pre></div><p>Exit the chroot, unmount the targets, and reboot:</p>
