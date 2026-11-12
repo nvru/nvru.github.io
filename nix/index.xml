@@ -6,7 +6,50 @@
     <description>Recent content in Nixes on Null Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 08 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/nix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/nix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch Linux: LUKS2 &#43; Btrfs Guide</title>
+      <link>https://nvru.github.io/nix/install_arch_luks2/</link>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/nix/install_arch_luks2/</guid>
+      
+      <description>&lt;p&gt;A complete guide for installing Arch Linux with &lt;strong&gt;LUKS2 full-disk encryption&lt;/strong&gt; and a &lt;strong&gt;Btrfs subvolume layout&lt;/strong&gt; that is compatible with snapshot tools such as Timeshift.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-disk-identification--partitioning&#34;&gt;1. Disk Identification &amp;amp; Partitioning&lt;/h2&gt;
+&lt;p&gt;Identify the target block device:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lsblk
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Partition the disk with &lt;code&gt;fdisk&lt;/code&gt; (or &lt;code&gt;cfdisk&lt;/code&gt; for a TUI):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fdisk /dev/sdX
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;partition-scheme-uefi&#34;&gt;Partition Scheme (UEFI)&lt;/h3&gt;
+&lt;p&gt;Create a GPT partition table:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;g&lt;/code&gt; — create a new GPT partition table.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;n&lt;/code&gt; — create partition &lt;code&gt;1&lt;/code&gt;, the EFI system partition (ESP). Accept the default first sector and use &lt;code&gt;+200M&lt;/code&gt; (128M–1G is sufficient).
+&lt;ul&gt;
+&lt;li&gt;Wipe the signature if prompted: &lt;code&gt;Y&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Set the type with &lt;code&gt;t&lt;/code&gt; -&amp;gt; &lt;code&gt;1&lt;/code&gt; (EFI System).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;n&lt;/code&gt; — create partition &lt;code&gt;2&lt;/code&gt;, the boot partition. Accept the default first sector and use &lt;code&gt;+2G&lt;/code&gt; (1G minimum, 2G recommended).
+&lt;ul&gt;
+&lt;li&gt;Wipe the signature if prompted: &lt;code&gt;Y&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Set the type with &lt;code&gt;t&lt;/code&gt; -&amp;gt; &lt;code&gt;20&lt;/code&gt; (Linux filesystem).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;n&lt;/code&gt; — create partition &lt;code&gt;3&lt;/code&gt;, the root partition. Accept the default first and last sectors to use the remaining space.
+&lt;ul&gt;
+&lt;li&gt;Set the type with &lt;code&gt;t&lt;/code&gt; -&amp;gt; &lt;code&gt;20&lt;/code&gt; (Linux filesystem).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt; — write the changes and exit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This guide targets UEFI. On BIOS/MBR, skip the ESP, create a boot partition instead, encrypt &lt;code&gt;/dev/sdX2&lt;/code&gt;, and install the &lt;code&gt;grub&lt;/code&gt; package with &lt;code&gt;grub-install /dev/sdX&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Void Linux: LUKS2 &#43; Btrfs Guide</title>
       <link>https://nvru.github.io/nix/install_void_luks2/</link>
@@ -45,7 +88,8 @@
 &lt;li&gt;&lt;code&gt;w&lt;/code&gt; — write the changes and exit.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This guide targets UEFI. On BIOS/MBR, skip the ESP, create a boot partition instead, encrypt &lt;code&gt;/dev/sdX2&lt;/code&gt;, and install the &lt;code&gt;grub&lt;/code&gt; package with &lt;code&gt;grub-install /dev/sdX&lt;/code&gt;.&lt;/p&gt;</description>
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This guide targets UEFI. On BIOS/MBR, skip the ESP, create a boot partition instead, encrypt &lt;code&gt;/dev/sdX2&lt;/code&gt;, and install the &lt;code&gt;grub&lt;/code&gt; package with &lt;code&gt;grub-install /dev/sdX&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
       
     </item>
     

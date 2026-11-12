@@ -45,7 +45,8 @@
 &lt;li&gt;&lt;code&gt;w&lt;/code&gt; — write the changes and exit.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This guide targets UEFI. On BIOS/MBR, skip the ESP, create a boot partition instead, encrypt &lt;code&gt;/dev/sdX2&lt;/code&gt;, and install the &lt;code&gt;grub&lt;/code&gt; package with &lt;code&gt;grub-install /dev/sdX&lt;/code&gt;.&lt;/p&gt;</description>
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This guide targets UEFI. On BIOS/MBR, skip the ESP, create a boot partition instead, encrypt &lt;code&gt;/dev/sdX2&lt;/code&gt;, and install the &lt;code&gt;grub&lt;/code&gt; package with &lt;code&gt;grub-install /dev/sdX&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
       
     </item>
     
