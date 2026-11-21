@@ -51,6 +51,54 @@
     </item>
     
     <item>
+      <title>GearVault - Walkthrough</title>
+      <link>https://nvru.github.io/walkthrough/hsm/gearvault/</link>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/walkthrough/hsm/gearvault/</guid>
+      
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Attacker IP:&lt;/strong&gt; &lt;code&gt;192.168.211.2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Domain Controller:&lt;/strong&gt; &lt;code&gt;10.0.0.4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Web Server:&lt;/strong&gt; &lt;code&gt;10.0.0.5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; &lt;code&gt;Medium&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OS:&lt;/strong&gt; Windows / Active Directory&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Creator:&lt;/strong&gt; &lt;a href=&#34;https://www.linkedin.com/in/marc-w-5346a3267/&#34;&gt;Marc W.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The objective was to enumerate the GearVault domain, gain initial access through a SQL injection in the shop web application, escalate to &lt;code&gt;NT AUTHORITY\SYSTEM&lt;/code&gt; on the web server using &lt;code&gt;SeImpersonatePrivilege&lt;/code&gt;, recover domain credentials, and pivot to the Domain Controller through Active Directory permission abuse and a backup operator account.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;port-scanning&#34;&gt;Port Scanning&lt;/h2&gt;
+&lt;h3 id=&#34;domain-controller&#34;&gt;Domain Controller&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT      STATE SERVICE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;53/tcp    open  domain
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;88/tcp    open  kerberos-sec
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;135/tcp   open  msrpc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;139/tcp   open  netbios-ssn
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;389/tcp   open  ldap
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;445/tcp   open  microsoft-ds
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;464/tcp   open  kpasswd5
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;593/tcp   open  ncacn_http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;636/tcp   open  tcpwrapped
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3268/tcp  open  ldap
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3269/tcp  open  tcpwrapped
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3389/tcp  open  ms-wbt-server
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;5985/tcp  open  http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;9389/tcp  open  mc-nmf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;49664/tcp open  msrpc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;49666/tcp open  msrpc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;49671/tcp open  msrpc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;49674/tcp open  msrpc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;49675/tcp open  msrpc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;49676/tcp open  ncacn_http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;49699/tcp open  msrpc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;49711/tcp open  msrpc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;49714/tcp open  msrpc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The Domain Controller exposed the expected Active Directory services:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>ConvertMyVideo - Walkthrough</title>
       <link>https://nvru.github.io/walkthrough/thm/convertmyvideo/</link>
       <pubDate>Sun, 15 Nov 2026 00:00:00 +0000</pubDate>

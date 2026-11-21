@@ -8,11 +8,33 @@
     <language>en-US</language>
     <lastBuildDate>Sat, 21 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nvru.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Active-Directory</title>
+      <link>https://nvru.github.io/tags/active-directory/</link>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/active-directory/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Apache</title>
       <link>https://nvru.github.io/tags/apache/</link>
       <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/apache/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Bloodhound</title>
+      <link>https://nvru.github.io/tags/bloodhound/</link>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/bloodhound/</guid>
       
       <description></description>
       
@@ -63,11 +85,66 @@
     </item>
     
     <item>
+      <title>Godpotato</title>
+      <link>https://nvru.github.io/tags/godpotato/</link>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/godpotato/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Iis</title>
+      <link>https://nvru.github.io/tags/iis/</link>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/iis/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Linux</title>
       <link>https://nvru.github.io/tags/linux/</link>
       <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/linux/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Medium</title>
+      <link>https://nvru.github.io/tags/medium/</link>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/medium/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mimikatz</title>
+      <link>https://nvru.github.io/tags/mimikatz/</link>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/mimikatz/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mssql</title>
+      <link>https://nvru.github.io/tags/mssql/</link>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/mssql/</guid>
       
       <description></description>
       
@@ -107,6 +184,17 @@
     </item>
     
     <item>
+      <title>Sql-Injection</title>
+      <link>https://nvru.github.io/tags/sql-injection/</link>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/sql-injection/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Ssh-Key</title>
       <link>https://nvru.github.io/tags/ssh-key/</link>
       <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
@@ -134,6 +222,28 @@
       <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/walkthrough/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://nvru.github.io/tags/windows/</link>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/windows/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Xp-Cmdshell</title>
+      <link>https://nvru.github.io/tags/xp-cmdshell/</link>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://nvru.github.io/tags/xp-cmdshell/</guid>
       
       <description></description>
       
@@ -514,17 +624,6 @@
     </item>
     
     <item>
-      <title>Windows</title>
-      <link>https://nvru.github.io/tags/windows/</link>
-      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/windows/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Winrm</title>
       <link>https://nvru.github.io/tags/winrm/</link>
       <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
@@ -877,17 +976,6 @@
     </item>
     
     <item>
-      <title>Medium</title>
-      <link>https://nvru.github.io/tags/medium/</link>
-      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/medium/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Service-Misconfiguration</title>
       <link>https://nvru.github.io/tags/service-misconfiguration/</link>
       <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
@@ -915,17 +1003,6 @@
       <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/vdi-escape/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Active-Directory</title>
-      <link>https://nvru.github.io/tags/active-directory/</link>
-      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/active-directory/</guid>
       
       <description></description>
       
@@ -1553,17 +1630,6 @@
       <pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate>
       
       <guid>https://nvru.github.io/tags/misconfiguration/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Sql-Injection</title>
-      <link>https://nvru.github.io/tags/sql-injection/</link>
-      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://nvru.github.io/tags/sql-injection/</guid>
       
       <description></description>
       
