@@ -429,10 +429,13 @@ Repository paths: <code>glibc</code> -&gt; <code>/current</code> | <code>musl</c
 </ul>
 <hr>
 <h2 id="8-bootloader-grub">8. Bootloader (GRUB)</h2>
-<p>Add these options to <code>/etc/default/grub</code>:</p>
+<p>Add these options to <code>/etc/default/grub</code> to enable GRUB&rsquo;s LUKS1 decryption and dracut&rsquo;s automatic volume unlock:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>GRUB_CMDLINE_LINUX=&#34;rd.auto=1 rd.luks.allow-discards&#34;
 </span></span><span style="display:flex;"><span>GRUB_ENABLE_CRYPTODISK=y
-</span></span></code></pre></div><p>Or just copy and paste this whole file:</p>
+</span></span></code></pre></div><blockquote>
+<p><code>rd.luks.allow-discards</code> enables TRIM passthrough and should only be used on SSD targets. Remove it from the <code>GRUB_CMDLINE_LINUX</code> value on HDD systems.</p>
+</blockquote>
+<p>Alternatively, replace <code>/etc/default/grub</code> in full:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#
 </span></span><span style="display:flex;"><span># Configuration file for GRUB.
 </span></span><span style="display:flex;"><span>#

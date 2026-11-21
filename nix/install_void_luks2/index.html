@@ -211,7 +211,9 @@ stroke-linejoin="round" class="feather feather-home">
     </li>
     <li><a href="#8-bootloader-grub">8. Bootloader (GRUB)</a>
       <ul>
-        <li><a href="#kernel-command-line">Kernel Command Line</a></li>
+        <li><a href="#install-grub">Install GRUB</a></li>
+        <li><a href="#kernel-command-line">Kernel command line</a></li>
+        <li><a href="#generate-configuration">Generate configuration</a></li>
       </ul>
     </li>
     <li><a href="#9-core-runtime-services">9. Core Runtime Services</a>
@@ -425,24 +427,35 @@ Repository paths: <code>glibc</code> -&gt; <code>/current</code>, <code>musl</co
 </span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">0400</span> /etc/doas.conf
 </span></span></code></pre></div><hr>
 <h2 id="8-bootloader-grub">8. Bootloader (GRUB)</h2>
-<p>Install GRUB for UEFI:</p>
+<h3 id="install-grub">Install GRUB</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xbps-install grub-x86_64-efi
 </span></span><span style="display:flex;"><span>grub-install --target<span style="color:#f92672">=</span>x86_64-efi --efi-directory<span style="color:#f92672">=</span>/efi --bootloader-id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Void&#34;</span>
 </span></span></code></pre></div><blockquote>
-<p><strong>Note:</strong> For BIOS/MBR, install <code>grub</code> and run <code>grub-install /dev/sdX</code> instead.</p>
+<p><strong>Note:</strong> On BIOS/MBR, install <code>grub</code> and run <code>grub-install /dev/sdX</code> instead.</p>
 </blockquote>
-<h3 id="kernel-command-line">Kernel Command Line</h3>
-<p>Tell the initramfs which LUKS2 container holds the root filesystem:</p>
+<h3 id="kernel-command-line">Kernel command line</h3>
+<p>Tell the initramfs which LUKS2 container holds the root filesystem and which Btrfs subvolume to mount as root:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>LUKS_UUID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>blkid -s UUID -o value /dev/sdX3<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#34;s|^#\?GRUB_CMDLINE_LINUX_DEFAULT=\&#34;\(.*\)\&#34;|GRUB_CMDLINE_LINUX_DEFAULT=\&#34;\1 rd.luks.uuid=</span>$LUKS_UUID<span style="color:#e6db74">\&#34;|&#34;</span> /etc/default/grub
-</span></span></code></pre></div><p>Verify the result:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep GRUB_CMDLINE_LINUX_DEFAULT /etc/default/grub
-</span></span></code></pre></div><p>Generate the GRUB configuration:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SSD/NVMe: allow TRIM through the encrypted mapping</span>
+</span></span><span style="display:flex;"><span>DISCARD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34; rd.luks.allow-discards=</span>$LUKS_UUID<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># HDD: DISCARD=&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>GRUB_CMDLINE_DEFAULT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;root=/dev/mapper/luks-</span>$LUKS_UUID<span style="color:#e6db74"> rd.luks.uuid=</span>$LUKS_UUID<span style="color:#e6db74">${</span>DISCARD<span style="color:#e6db74">}</span><span style="color:#e6db74"> rootflags=subvol=@ rw quiet splash loglevel=3&#34;</span>
+</span></span><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#34;s|^GRUB_CMDLINE_LINUX_DEFAULT=.*|GRUB_CMDLINE_LINUX_DEFAULT=\&#34;</span>$GRUB_CMDLINE_DEFAULT<span style="color:#e6db74">\&#34;|&#34;</span> /etc/default/grub
+</span></span></code></pre></div><p><code>rd.luks.allow-discards</code> takes the <strong>LUKS container</strong> UUID (from <code>$LUKS_UUID</code>), not the Btrfs UUID. It passes TRIM requests through the encrypted mapping, matching <code>discard=async</code> in <code>BTRFS_OPTS</code>. Use it on SSD/NVMe only; on HDD set <code>DISCARD=&quot;&quot;</code> — TRIM does not apply, and allowing discards only exposes free-block information through the encryption layer.</p>
+<p>Resulting line on an SSD (UUIDs are placeholders):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>GRUB_CMDLINE_LINUX_DEFAULT=&#34;root=/dev/mapper/luks-00000000-0000-0000-0000-000000000000 rd.luks.uuid=00000000-0000-0000-0000-000000000000 rd.luks.allow-discards=00000000-0000-0000-0000-000000000000 rootflags=subvol=@ rw quiet splash loglevel=3&#34;
+</span></span></code></pre></div><p>On an HDD, the same line without <code>rd.luks.allow-discards=...</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>GRUB_CMDLINE_LINUX_DEFAULT=&#34;root=/dev/mapper/luks-00000000-0000-0000-0000-000000000000 rd.luks.uuid=00000000-0000-0000-0000-000000000000 rootflags=subvol=@ rw quiet splash loglevel=3&#34;
 </span></span></code></pre></div><blockquote>
-<p><strong>Note:</strong> <code>GRUB_ENABLE_CRYPTODISK</code> is not required here because <code>/boot</code> is unencrypted.</p>
+<p><strong>Note:</strong> <code>GRUB_ENABLE_CRYPTODISK</code> is not needed because <code>/boot</code> is unencrypted.</p>
 </blockquote>
-<hr>
+<h3 id="generate-configuration">Generate configuration</h3>
+<p>Verify the command line, then regenerate <code>grub.cfg</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep GRUB_CMDLINE_LINUX_DEFAULT /etc/default/grub
+</span></span><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></div><hr>
 <h2 id="9-core-runtime-services">9. Core Runtime Services</h2>
 <h3 id="d-bus">D-Bus</h3>
 <p>D-Bus is required by networking and many desktop services:</p>
